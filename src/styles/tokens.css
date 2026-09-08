@@ -1,0 +1,766 @@
+/**
+ * CreditBird Design System — 3-Layer Token Architecture
+ * Formance Architectural Standard & Logo-Calibrated Cobalt Universe
+ * Target: creditbirdtech.com
+ */
+
+html {
+  container-type: inline-size;
+}
+
+/* ==========================================================================
+   LAYER 1: PRIMITIVE TOKENS (Foundational Raw Values)
+   ========================================================================== */
+:root {
+  /* Brand Primitives (Sampled from creditbird-logo.png) */
+  --cb-cobalt-950: #030611;
+  --cb-cobalt-900: #070e22; /* Primary Void Background */
+  --cb-cobalt-850: #0c1633; /* Card Substrate */
+  --cb-cobalt-800: #101e44; /* Raised Container */
+  --cb-cobalt-700: #16295c; /* Hover / Tray Surface */
+  --cb-cobalt-600: #1c3575; /* Inactive Borders */
+  --cb-cobalt-500: #22439c; /* Core Brand Cobalt Disc */
+  --cb-cobalt-400: #2b55c4;
+  --cb-cobalt-300: #426fe4;
+  --cb-cobalt-200: #7a9cf5;
+  --cb-cobalt-100: #c2d2fc;
+  --cb-cobalt-50:  #edf2ff;
+
+  /* Electric Azure Primitives (Logo Wing Highlight) */
+  --cb-azure-900: #0c2b5e;
+  --cb-azure-700: #14499e;
+  --cb-azure-600: #1d65d9;
+  --cb-azure-500: #3287ff; /* Electric Azure Wing */
+  --cb-azure-400: #599eff;
+  --cb-azure-300: #85b8ff;
+  --cb-azure-200: #b5d5ff;
+  --cb-azure-100: #e0eeff;
+  --cb-azure-50:  #f3f8ff;
+
+  /* Neutrals & Slate */
+  --cb-slate-950: #020617;
+  --cb-slate-900: #0f172a;
+  --cb-slate-800: #1e293b;
+  --cb-slate-700: #334155;
+  --cb-slate-600: #475569;
+  --cb-slate-500: #64748b;
+  --cb-slate-400: #94a3b8;
+  --cb-slate-300: #cbd5e1;
+  --cb-slate-200: #e2e8f0;
+  --cb-slate-100: #f1f5f9;
+  --cb-slate-50:  #f8fafc;
+  --cb-white:     #ffffff;
+
+  /* Status Accents */
+  --cb-emerald-500: #10b981;
+  --cb-amber-500:   #f59e0b;
+  --cb-rose-500:    #f43f5e;
+
+  /* Strict Grid Units (Formance Parity: round(clamp(22px, 2cqi, 32px), 1px), desktop base 32px) */
+  --grid-unit: round(clamp(22px, 2cqi, 32px), 1px);
+  --grid-unit-base: var(--grid-unit);
+  --snap-step: var(--grid-unit);
+  --gu: var(--grid-unit);
+  --gu-0-25: calc(var(--grid-unit) * 0.25);
+  --gu-0-5:  calc(var(--grid-unit) * 0.5);
+  --gu-0-75: calc(var(--grid-unit) * 0.75);
+  --gu-1:    calc(var(--grid-unit) * 1);
+  --gu-1-5:  calc(var(--grid-unit) * 1.5);
+  --gu-2:    calc(var(--grid-unit) * 2);
+  --gu-2-5:  calc(var(--grid-unit) * 2.5);
+  --gu-3:    calc(var(--grid-unit) * 3);
+  --gu-4:    calc(var(--grid-unit) * 4);
+  --gu-5:    calc(var(--grid-unit) * 5);
+  --gu-6:    calc(var(--grid-unit) * 6);
+  --spacing-50gu: calc(var(--grid-unit) * 50);
+  --spacing-40gu: calc(var(--grid-unit) * 40);
+  --spacing-30gu: calc(var(--grid-unit) * 30);
+  --spacing-2gu:  calc(var(--grid-unit) * 2);
+  --spacing-1gu:  var(--grid-unit);
+
+  /* Formance Container Max Width: 50 grid units = 1600px on desktop */
+  --max-w-grid: calc(var(--grid-unit) * 50);
+  --header-h: calc(var(--grid-unit) * 3);
+  --banner-h: calc(var(--grid-unit) * 1.6);
+
+  /* Typography Stacks */
+  --font-sans: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Geist Mono', 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Hairlines & Elevation */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Springs & Motion */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-micro: 150ms;
+  --duration-snappy: 200ms;
+  --duration-smooth: 350ms;
+}
+
+/* ==========================================================================
+   LAYER 2: SECTION-LEVEL ARCHITECTURE (Formance Dual-Tone Themes)
+   ========================================================================== */
+
+/* 2.1 CreditBird Sovereign Theme Cobalt & Azure (Light Parity) */
+.theme-cobalt,
+.theme-emerald,
+:is(.theme-cobalt, .theme-emerald):not(.dark) {
+  --theme-100: #f8fafc;
+  --theme-200: #ffffff;
+  --theme-300: #edf2ff;
+  --theme-400: #c2d2fc;
+  --theme-500: #7a9cf5;
+  --theme-600: #426fe4;
+  --theme-700: #22439c; /* Core Royal Cobalt from Logo */
+  --theme-800: #162347;
+  --theme-900: #090e1f;
+
+  --background: #f8fafc;
+  --foreground: #090e1f;
+  --muted-foreground: #475569;
+  --icon-background: #162347;
+  --icon-foreground: #edf2ff;
+  --card-background: #ffffff;
+  --card-foreground: #090e1f;
+  --card-muted-foreground: #475569;
+  --card-element-background: #edf2ff;
+  --card-element-foreground: #22439c;
+  --eyebrow-background: #edf2ff;
+  --eyebrow-foreground: #22439c;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --button-background: #22439c;
+  --button-foreground: #ffffff;
+  --button-hover-background: #1b2d5c;
+  --grid-line-color: #cbd5e1;
+  --grid-line-opacity: 0.45;
+  --grid-pattern-opacity: 0.45;
+  --section-accent: #22439c;
+  --emerald-accent: #22439c;
+  --cobalt-accent: #22439c;
+
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* 2.2 CreditBird Sovereign Theme Cobalt & Azure (Dark Primary Blueprint) */
+.theme-cobalt.dark,
+.theme-cobalt .dark,
+.dark.theme-cobalt,
+.theme-emerald.dark,
+.theme-emerald .dark,
+.dark.theme-emerald,
+.theme-cobalt-primary,
+.theme-cobalt-primary.dark,
+.dark.theme-cobalt-primary {
+  --theme-100: #f0f4fd;
+  --theme-200: #c2d2fc;
+  --theme-300: #7a9cf5;
+  --theme-400: #60a5fa;
+  --theme-500: #3287ff;
+  --theme-600: #22439c;
+  --theme-700: #16295c;
+  --theme-800: #101e44;
+  --theme-900: #0c1633;
+
+  --background: #16295c;
+  --foreground: #ffffff;
+  --muted-foreground: #cbd5e1;
+  --icon-background: #101e44;
+  --icon-foreground: #93c5fd;
+  --card-background: #16295c;
+  --card-foreground: #ffffff;
+  --card-muted-foreground: #cbd5e1;
+  --card-element-background: rgba(50, 135, 255, 0.15);
+  --card-element-foreground: #ffffff;
+  --eyebrow-background: rgba(50, 135, 255, 0.2);
+  --eyebrow-foreground: #93c5fd;
+  --border: rgba(74, 144, 226, 0.3);
+  --input: rgba(50, 135, 255, 0.15);
+  --button-background: #22439c;
+  --button-foreground: #ffffff;
+  --button-hover-background: #3287ff;
+  --grid-line-color: rgba(74, 144, 226, 0.35);
+  --grid-line-opacity: 0.45;
+  --grid-pattern-opacity: 0.45;
+  --section-accent: #60a5fa;
+  --emerald-accent: #60a5fa;
+  --cobalt-accent: #60a5fa;
+
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* 2.2 Default Crisp Light Blueprint Atmosphere (Formance Light Base) */
+:root,
+.theme-light {
+  --background: #ffffff;
+  --foreground: #090e1f;
+  --muted-foreground: #64748b;
+  --card-background: #f8fafc;
+  --card-foreground: #090e1f;
+  --eyebrow-background: #f1f5f9;
+  --eyebrow-foreground: #1d4ed8;
+  --grid-line-color: #cbd5e1;
+  --grid-line-opacity: 0.4;
+  --grid-pattern-opacity: 0.4;
+  --section-accent: #2563eb;
+
+  --color-bg-base: #ffffff;
+  --color-bg-subtle: #f8fafc;
+  --color-bg-surface: #ffffff;
+  --color-bg-raised: #f1f5f9;
+  --color-bg-overlay: #ffffff;
+
+  --color-border-hairline: #e2e8f0;
+  --color-border-subtle: rgba(0, 0, 0, 0.04);
+  --color-border-strong: #cbd5e1;
+  --color-border-active: var(--cb-azure-500);
+
+  --color-text-primary: #090e1f;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+
+  --color-brand-primary: var(--cb-cobalt-500);
+  --color-brand-accent: #2563eb;
+  --color-brand-glow: rgba(37, 99, 235, 0.12);
+
+  --eyebrow-bg: #f1f5f9;
+  --eyebrow-border: #e2e8f0;
+  --eyebrow-text: #1d4ed8;
+
+  --shiki-bg: #070e24;
+  --shiki-header-bg: #040816;
+  --shiki-border: rgba(50, 135, 255, 0.18);
+  --shiki-fg: #cbd5e1;
+
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+}
+
+/* 2.3 Optional Dark High-Contrast Accent (Deep Sovereign Cockpits & Code Panels) */
+.theme-cobalt-dark {
+  --background: var(--cb-cobalt-900);
+  --foreground: var(--cb-slate-50);
+  --muted-foreground: var(--cb-slate-400);
+  --card-background: var(--cb-cobalt-850);
+  --card-foreground: var(--cb-slate-50);
+  --eyebrow-background: rgba(50, 135, 255, 0.08);
+  --eyebrow-foreground: var(--cb-azure-400);
+  --grid-line-color: rgba(50, 135, 255, 0.35);
+  --grid-line-opacity: 0.4;
+  --grid-pattern-opacity: 0.4;
+  --section-accent: var(--cb-azure-500);
+
+  --color-bg-base: var(--cb-cobalt-900);
+  --color-bg-surface: var(--cb-cobalt-850);
+  --color-bg-raised: var(--cb-cobalt-800);
+  --color-bg-overlay: var(--cb-cobalt-700);
+  --color-bg-subtle: rgba(50, 135, 255, 0.05);
+
+  --color-border-hairline: rgba(50, 135, 255, 0.14);
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(50, 135, 255, 0.35);
+  --color-border-active: var(--cb-azure-500);
+
+  --color-text-primary: var(--cb-slate-50);
+  --color-text-secondary: var(--cb-slate-400);
+  --color-text-muted: var(--cb-slate-500);
+
+  --color-brand-primary: var(--cb-cobalt-500);
+  --color-brand-accent: var(--cb-azure-500);
+  --color-brand-glow: rgba(50, 135, 255, 0.25);
+
+  --eyebrow-bg: rgba(50, 135, 255, 0.08);
+  --eyebrow-border: rgba(50, 135, 255, 0.22);
+  --eyebrow-text: var(--cb-azure-400);
+
+  --shiki-bg: #040816;
+  --shiki-header-bg: #070d24;
+  --shiki-border: rgba(50, 135, 255, 0.18);
+  --shiki-fg: #cbd5e1;
+
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+}
+
+/* 2.4 Massive Deep Sovereign Footer */
+.theme-footer {
+  --color-bg-base: #0a1329;
+  --color-bg-surface: #0f1c3d;
+  --color-border-hairline: rgba(74, 144, 226, 0.2);
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+  --color-brand-accent: #60a5fa;
+
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+/* Buttons */
+.btn-cta-primary {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background-color: var(--cb-cobalt-500, #22439c);
+  color: #ffffff;
+  padding: 0 var(--gu-1);
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--duration-micro) var(--ease-spring);
+  box-shadow: 0 1px 3px rgba(34, 67, 156, 0.2), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.btn-cta-primary:hover {
+  background-color: #1b367d;
+  box-shadow: 0 4px 16px rgba(34, 67, 156, 0.28);
+  transform: translateY(-1px);
+}
+
+.btn-cta-primary:active {
+  background-color: #152c66;
+  transform: translateY(1px);
+}
+
+.btn-cta-outline {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background-color: transparent;
+  color: #090e1f;
+  border: 1px solid var(--color-border-strong);
+  padding: 0 var(--gu-1);
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--duration-micro) var(--ease-spring);
+}
+
+.btn-cta-outline:hover {
+  border-color: var(--cb-cobalt-500, #22439c);
+  color: var(--cb-cobalt-500, #22439c);
+  background-color: rgba(34, 67, 156, 0.04);
+  transform: translateY(-1px);
+}
+
+.btn-cta-outline:active {
+  transform: translateY(1px);
+}
+
+/* Crisp Section Surface Utilities (No intrusive square grids!) */
+.bg-section-white {
+  background-color: #ffffff;
+}
+
+.bg-section-subtle {
+  background-color: #f8fafc;
+}
+
+.no-bg-grid {
+  background-image: none !important;
+}
+
+/* Octi-Grow Bar Chart Animation (Formance Parity) */
+@keyframes octiGrow {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.octi-grow {
+  animation: octiGrow 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: bottom;
+}
+
+/* Formance Typography Classes */
+.h2, :where(:not(.prose) .h2), :where(:not(.prose) h2) {
+  font-family: var(--font-sans);
+  font-size: 1.75rem;
+  line-height: 1.15;
+  font-weight: 600;
+}
+@media (min-width: 1024px) {
+  .h2, :where(:not(.prose) .h2), :where(:not(.prose) h2) {
+    font-size: 3.75rem; /* 60px */
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+}
+
+.h3, :where(:not(.prose) .h3), :where(:not(.prose) h3) {
+  font-family: var(--font-sans);
+  font-size: clamp(1.875rem, 3.5vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.h4, :where(:not(.prose) .h4), :where(:not(.prose) h4) {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+@media (min-width: 1024px) {
+  .h4, :where(:not(.prose) .h4), :where(:not(.prose) h4) {
+    font-size: 2.25rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+}
+
+.h5, :where(:not(.prose) .h5), :where(:not(.prose) h5) {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: var(--grid-unit, 32px);
+}
+@media (min-width: 768px) {
+  .h5, :where(:not(.prose) .h5), :where(:not(.prose) h5) {
+    font-size: 1.875rem; /* 30px */
+    line-height: var(--grid-unit, 32px);
+    letter-spacing: -0.01em;
+  }
+}
+
+.subheading-md {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.p-sm {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.p-md {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.p-lg {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.badge-sm {
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+}
+
+.badge-md {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+/* Formance Structural Grid Row Utilities */
+.grid-row {
+  gap: var(--grid-unit);
+  grid-template-columns: minmax(0px, 1fr);
+  display: grid;
+}
+@media (min-width: 1024px) {
+  .grid-row {
+    grid-template-columns: repeat(var(--_cols-md, 1), minmax(0, 1fr));
+    column-gap: calc(var(--grid-unit) * 2);
+  }
+}
+@media (min-width: 1280px) {
+  .grid-row {
+    grid-template-columns: repeat(var(--_cols-lg, var(--_cols-md, 1)), minmax(0, 1fr));
+    column-gap: var(--_col-gap-lg, 0);
+  }
+}
+.grid-row-intro {
+  grid-template-columns: minmax(calc(var(--grid-unit) * 12), max-content) repeat(var(--_cols-lg, 1), minmax(0, 1fr));
+  column-gap: var(--grid-unit);
+}
+.grid-row-exact {
+  --_track: round(down, calc((100% - (var(--_cols-lg, 1) - 1) * var(--_col-gap-lg, 0px)) / var(--_cols-lg, 1)), var(--grid-unit));
+  grid-template-columns: repeat(var(--_cols-lg, 1), var(--_track));
+  justify-content: space-between;
+}
+
+/* Snap Layout Primitives */
+.snap-card {
+  --_card-h: auto;
+  --_card-mh: auto;
+}
+.snap-badge {
+  --_badge-w: max-content;
+  --_badge-mw: max-content;
+}
+.snap-btn {
+  --_btn-w: max-content;
+  --_btn-mw: max-content;
+}
+@supports (height: calc-size(max-content, size)) {
+  .snap-card {
+    --_card-h: calc-size(max-content, round(up, size, var(--grid-unit-base)));
+    --_card-mh: calc-size(max-content, round(up, size, var(--grid-unit-base)));
+  }
+  .snap-group-item {
+    min-height: calc-size(max-content, round(up, size, var(--grid-unit-base)));
+  }
+  .snap-badge {
+    --_badge-w: calc-size(max-content, round(up, size, var(--grid-unit-base)));
+    --_badge-mw: calc-size(max-content, round(up, size, var(--grid-unit-base)));
+  }
+  .snap-btn {
+    --_btn-w: calc-size(max-content, round(up, size, var(--grid-unit-base)));
+    --_btn-mw: calc-size(max-content, round(up, size, var(--grid-unit-base)));
+  }
+  .snap-block {
+    height: calc-size(max-content, round(up, size, var(--grid-unit-base)));
+  }
+  .snap-block-w {
+    width: calc-size(fit-content, round(up, size, var(--grid-unit-base)));
+  }
+  .snap-h-px {
+    height: calc-size(auto, round(up, size, 1px));
+  }
+}
+
+/* Formance Tailwind v4 Compatibility Utility Classes */
+.py-\(--grid-unit\) {
+  padding-top: var(--grid-unit);
+  padding-bottom: var(--grid-unit);
+}
+.px-\(--grid-unit\) {
+  padding-left: var(--grid-unit);
+  padding-right: var(--grid-unit);
+}
+.p-\(--grid-unit\) {
+  padding: var(--grid-unit);
+}
+.gap-\(--grid-unit\) {
+  gap: var(--grid-unit);
+}
+.gap-x-\(--grid-unit\) {
+  column-gap: var(--grid-unit);
+}
+.gap-y-\(--grid-unit\) {
+  row-gap: var(--grid-unit);
+}
+.mb-\(--grid-unit\) {
+  margin-bottom: var(--grid-unit);
+}
+.mt-\(--grid-unit\) {
+  margin-top: var(--grid-unit);
+}
+.h-\(--grid-unit\) {
+  height: var(--grid-unit);
+}
+.w-\(--grid-unit\) {
+  width: var(--grid-unit);
+}
+.w-\(--_badge-mw\) {
+  width: var(--_badge-mw, max-content);
+}
+.w-\(--_badge-w\) {
+  width: var(--_badge-w, max-content);
+}
+.h-\(--_card-mh\) {
+  height: var(--_card-mh, auto);
+}
+.bg-\(--shiki-background\) {
+  background-color: var(--shiki-background, #040711);
+}
+.text-\(--section-accent\) {
+  color: var(--section-accent);
+}
+.text-\(--section-accent\)\! {
+  color: var(--section-accent) !important;
+}
+
+@media (min-width: 768px) {
+  .md\:w-\(--_badge-w\) {
+    width: var(--_badge-w, max-content);
+  }
+  .md\:w-\(--_heading-w\) {
+    width: var(--_heading-w, auto);
+  }
+  .md\:h-\(--_card-h\) {
+    height: var(--_card-h, auto);
+  }
+  .md\:p-\(--grid-unit\) {
+    padding: var(--grid-unit);
+  }
+  .md\:px-\(--grid-unit\) {
+    padding-left: var(--grid-unit);
+    padding-right: var(--grid-unit);
+  }
+  .md\:pb-\(--grid-unit\) {
+    padding-bottom: var(--grid-unit);
+  }
+}
+
+/* ==========================================================================
+   LAYER 4: ARCHITECTURAL GRID SYSTEM (.strict-grid & .grid-ring)
+   Formance Parity: Hairline borders, 32px grid units, 1600px container shell
+   ========================================================================== */
+
+.strict-grid {
+  --_pad-base: var(--grid-unit);
+  --grid-shell-width: min(100cqi, calc(var(--grid-unit) * 50));
+  --grid-content-width: round(down, calc(var(--grid-shell-width) - var(--_pad-base) * 2), calc(var(--grid-unit) * 2));
+  --grid-side-pad: round(down, calc((var(--grid-shell-width) - var(--grid-content-width)) / 2), 1px);
+  --_grid-line: var(--grid-line-color);
+  --_grid-line-opaque: var(--grid-line-color);
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+  .strict-grid {
+    --_grid-line: color-mix(in srgb, var(--grid-line-color) calc(var(--grid-pattern-opacity, 0.4) * 100%), transparent);
+    --_grid-line-opaque: color-mix(in srgb, var(--grid-line-color) calc(var(--grid-pattern-opacity, 0.4) * 100%), var(--background));
+  }
+}
+
+.strict-grid {
+  grid-template-columns: repeat(auto-fill, calc(var(--grid-unit) * 2));
+  max-width: calc(var(--grid-unit) * 50);
+  margin-inline: round(down, calc((100cqi - var(--grid-shell-width)) / 2), 1px);
+  padding-inline: var(--grid-side-pad);
+  background-image: 
+    linear-gradient(var(--_grid-line-opaque), var(--_grid-line-opaque)),
+    linear-gradient(var(--_grid-line-opaque), var(--_grid-line-opaque)),
+    linear-gradient(var(--_grid-line-opaque), var(--_grid-line-opaque)),
+    conic-gradient(from 90deg at 1px 1px, transparent 90deg, var(--_grid-line) 0);
+  background-size: 100% 1px, 1px 100%, 1px 100%, var(--grid-unit-base, var(--grid-unit)) var(--grid-unit-base, var(--grid-unit));
+  background-position: 0 0, 0 0, 100% 0, 0 0;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+  background-origin: border-box, border-box, border-box, content-box;
+  grid-auto-rows: auto;
+  display: grid;
+  position: relative;
+}
+
+@media not all and (min-width: 40rem) {
+  .strict-grid {
+    --grid-shell-width: round(down, min(100cqi, calc(var(--grid-unit) * 50)), var(--grid-unit));
+    --grid-content-width: calc(var(--grid-shell-width) - var(--_pad-base) * 2);
+    --grid-side-pad: var(--_pad-base);
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.strict-grid > * {
+  grid-column: 1 / -1;
+  position: relative;
+}
+
+.strict-grid:after {
+  content: "";
+  background: var(--_grid-line);
+  pointer-events: none;
+  height: 1px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+header .strict-grid,
+header.strict-grid,
+.no-bg-grid .strict-grid,
+.no-bg-grid.strict-grid {
+  background-image: none !important;
+}
+
+header .strict-grid:after,
+header.strict-grid:after,
+.no-bg-grid .strict-grid:after,
+.no-bg-grid.strict-grid:after {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .strict-grid,
+  .strict-grid:after {
+    background-image: none !important;
+  }
+}
+
+/* Container variant sharing identical max-width (50gu), auto-centering, and side padding (1gu) */
+.strict-grid-container {
+  width: 100%;
+  max-width: calc(var(--grid-unit) * 50);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 768px) {
+  .strict-grid-container {
+    padding-inline: var(--grid-unit);
+  }
+}
+
+/* Hairline Grid-Ring Frame (Zero double borders, seamless abutting cells) */
+.grid-ring {
+  isolation: isolate;
+  position: relative;
+}
+
+.grid-ring:before {
+  content: "";
+  z-index: -1;
+  background: inherit;
+  box-shadow: inset 0 0 0 1px var(--grid-line-color);
+  position: absolute;
+  inset: 0 -1px -1px 0;
+  pointer-events: none;
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+  .grid-ring:before {
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--grid-line-color) calc(var(--grid-line-opacity, 0.4) * 100%), transparent);
+  }
+}
+
+.card-bg-grid.grid-ring:before {
+  box-shadow: none;
+}
+
+.grid-ring.snack-table:after {
+  content: "";
+  z-index: 30;
+  pointer-events: none;
+  background: var(--grid-line-color);
+  width: 1px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+  .grid-ring.snack-table:after {
+    background: color-mix(in srgb, var(--grid-line-color) calc(var(--grid-line-opacity, 0.4) * 100%), transparent);
+  }
+}

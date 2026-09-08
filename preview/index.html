@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CreditBird — Programmable Credit & Ledger Infrastructure</title>
+  
+  <!-- Typography Stacks: Geist Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- 3-Layer Token System -->
+  <link rel="stylesheet" href="../src/styles/tokens.css" />
+
+  <style>
+    /* Reset & Architectural Foundations */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.15s ease, opacity 0.15s ease;
+    }
+
+    /* Section Rhythm Boundaries */
+    .section-boundary {
+      border-bottom: 1px solid var(--color-border-hairline);
+      position: relative;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+    }
+
+    .section-title {
+      font-size: clamp(1.85rem, 3.4vw, 2.75rem);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+
+    /* Animated Circuit Vectors */
+    @keyframes pulseDash {
+      to {
+        stroke-dashoffset: -40;
+      }
+    }
+
+    .circuit-pulse {
+      stroke-dasharray: 6 6;
+      animation: pulseDash 1.8s linear infinite;
+    }
+
+    /* Shiki-style Code Snippet Blocks */
+    .code-card {
+      border: 1px solid var(--shiki-border);
+      background-color: var(--shiki-bg);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .code-card-header {
+      height: 40px;
+      background-color: var(--shiki-header-bg);
+      border-bottom: 1px solid var(--shiki-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+    }
+
+    .code-card-body {
+      padding: var(--gu-1);
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      line-height: 1.7;
+      color: var(--shiki-fg);
+      overflow-x: auto;
+    }
+
+    /* Giant Watermark in Footer */
+    .footer-watermark {
+      position: absolute;
+      right: -80px;
+      bottom: -100px;
+      width: 540px;
+      height: 540px;
+      pointer-events: none;
+      opacity: 0.05;
+      background-image: url('../creditbird-logo.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      filter: grayscale(1) invert(1) brightness(2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       SECTION 1: DARK COBALT TOP ATMOSPHERE (Hero, Nav, Why)
+       ========================================================================= -->
+  <div class="theme-cobalt-dark bg-graph-grid-dark section-boundary">
+    
+    <!-- Announcement Bar -->
+    <div class="announcement-bar" style="background-color: #030611; border-bottom: 1px solid rgba(50, 135, 255, 0.14); height: 38px; display: flex; align-items: center; justify-content: center; font-size: 0.8125rem; color: #94a3b8; padding: 0 16px;">
+      <span class="announcement-badge" style="background: var(--cb-azure-500); color: #fff; font-family: var(--font-mono); font-size: 0.6875rem; padding: 2px 8px; font-weight: 700; margin-right: 12px; border-radius: 2px;">NEW</span>
+      <span>CreditBird Engine v2.4 released: Programmable credit tranches and real-time ledger settlement →</span>
+      <a href="#code-ledger" style="margin-left: 12px; color: var(--cb-azure-400); font-family: var(--font-mono); font-size: 0.75rem; text-decoration: underline; text-underline-offset: 4px;">Explore Spec</a>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="site-header" style="height: 72px; border-bottom: 1px solid rgba(50, 135, 255, 0.14); background: rgba(7, 14, 34, 0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 50;">
+      <div class="strict-grid-container" style="display: flex; align-items: center; justify-content: space-between; height: 100%;">
+        
+        <!-- Logo + Brand Wordmark -->
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <img src="../creditbird-logo.png" alt="CreditBird Logo" style="width: 38px; height: 38px; object-fit: contain; border-radius: 50%; border: 1px solid rgba(50, 135, 255, 0.35);" />
+          <span style="font-size: 1.25rem; font-weight: 700; letter-spacing: -0.03em; color: #f8fafc;">
+            CreditBird<span style="color: var(--cb-azure-500);">.</span>
+          </span>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav style="display: flex; align-items: center; gap: 28px; font-size: 0.875rem; font-weight: 500;">
+          <a href="#why" style="color: #94a3b8; hover:color: #fff;">Platform ▾</a>
+          <a href="#build-vs-buy" style="color: #94a3b8; hover:color: #fff;">Solutions ▾</a>
+          <a href="#connectivity" style="color: #94a3b8; hover:color: #fff;">Connectors</a>
+          <a href="#use-cases" style="color: #94a3b8; hover:color: #fff;">Use Cases</a>
+          <a href="#footer-links" style="color: #94a3b8; hover:color: #fff;">Docs</a>
+        </nav>
+
+        <!-- Right Action CTAs -->
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <a href="https://github.com/creditbirdtech" target="_blank" class="grid-ring" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.75rem; color: #94a3b8;">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+            <span>★ 2.4k</span>
+          </a>
+          <a href="#code-ledger" class="btn-cta-outline" style="height: 36px; padding: 0 16px; font-size: 0.75rem; border-color: rgba(50, 135, 255, 0.25); color: #f8fafc;">
+            Start building
+          </a>
+          <a href="#cta-bottom" class="btn-cta-primary" style="height: 36px; padding: 0 16px; font-size: 0.75rem;">
+            Book a demo
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section style="padding-top: calc(var(--gu) * 4); padding-bottom: calc(var(--gu) * 3);">
+      <div class="strict-grid-container" style="text-align: center; max-width: 960px;">
+        
+        <h1 class="hero-title" style="margin-bottom: var(--gu-1); color: #f8fafc;">
+          The ledger your money deserves
+        </h1>
+
+        <p style="font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.6; color: #94a3b8; margin-bottom: calc(var(--gu) * 1.5); max-width: 780px; margin-left: auto; margin-right: auto;">
+          The open-source programmable ledger for fiat and digital credit. Model any flow of funds, track every cent in real time, and build on the immutable system of record trusted by regulators and auditors.
+        </p>
+
+        <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: calc(var(--gu) * 2); flex-wrap: wrap;">
+          <a href="#code-ledger" class="btn-cta-outline" style="min-width: 180px; border-color: rgba(50, 135, 255, 0.3);">
+            START BUILDING
+          </a>
+          <a href="#cta-bottom" class="btn-cta-primary" style="min-width: 180px;">
+            BOOK A DEMO
+          </a>
+        </div>
+
+        <!-- Centerpiece: Live Volume Processed Card (Exact Formance Reference) -->
+        <div class="grid-ring" style="max-width: 760px; margin: 0 auto; padding: var(--gu-1); border-radius: 6px; border: 1px solid rgba(50, 135, 255, 0.25); text-align: left; background: #070e24;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(50, 135, 255, 0.14); padding-bottom: 12px; margin-bottom: 14px;">
+            <div style="font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.12em; color: #94a3b8;">
+              LEDGER • TRANSACTIONS
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 0.6875rem; color: var(--cb-emerald-500);">
+              <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--cb-emerald-500);"></span>
+              LIVE LEDGER MAIN
+            </div>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Volume Processed (Real-Time)</div>
+            <div style="font-family: var(--font-mono); font-size: 2.25rem; font-weight: 700; color: #f8fafc; letter-spacing: -0.02em;">
+              USDC 13,341,950.00
+            </div>
+          </div>
+
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #94a3b8; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; border-top: 1px solid rgba(50, 135, 255, 0.1); pt: 10px; padding-top: 10px;">
+            <div>SOURCE: <span style="color: #cbd5e1;">@world</span></div>
+            <div>DESTINATION: <span style="color: var(--cb-azure-400);">@credit:growth_facility</span></div>
+            <div style="text-align: right; color: var(--cb-emerald-500);">+2,500,000 USDC</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Trusted By Logo Bar (Dark) -->
+    <div style="border-top: 1px solid rgba(50, 135, 255, 0.14); padding: calc(var(--gu) * 1.5) 0;">
+      <div class="strict-grid-container">
+        <div style="margin-bottom: 12px; font-family: var(--font-mono); font-size: 0.725rem; letter-spacing: 0.15em; color: #64748b; text-transform: uppercase;">
+          _TRUSTED BY TEAMS MOVING MONEY/
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: rgba(50, 135, 255, 0.14);">
+          <div class="grid-ring" style="height: 64px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 600; font-size: 0.875rem; color: #cbd5e1;">Liberis</div>
+          <div class="grid-ring" style="height: 64px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 600; font-size: 0.875rem; color: #cbd5e1;">Doctolib</div>
+          <div class="grid-ring" style="height: 64px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 600; font-size: 0.875rem; color: #cbd5e1;">Payflip</div>
+          <div class="grid-ring" style="height: 64px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 600; font-size: 0.875rem; color: #cbd5e1;">Shares</div>
+          <div class="grid-ring" style="height: 64px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 600; font-size: 0.875rem; color: #cbd5e1;">Bastion</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Section (Dark with 3D Wireframe Visuals) -->
+    <section id="why" style="padding: calc(var(--gu) * 3) 0; border-top: 1px solid rgba(50, 135, 255, 0.14);">
+      <div class="strict-grid-container">
+        <div style="text-align: center; max-width: 680px; margin: 0 auto calc(var(--gu) * 2);">
+          <span class="snap-badge" style="margin-bottom: 12px;">_WHY CREDITBIRD/</span>
+          <h2 class="section-title" style="color: #f8fafc;">The ledger you build on. The record you trust.</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1px; background: rgba(50, 135, 255, 0.14);">
+          
+          <!-- Card 1 -->
+          <div class="grid-ring" style="padding: calc(var(--gu) * 1.5);">
+            <div style="height: 100px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--cb-azure-400)" stroke-width="1.2">
+                <polygon points="32,6 58,20 58,48 32,62 6,48 6,20" />
+                <line x1="32" y1="6" x2="32" y2="62" />
+                <line x1="6" y1="20" x2="58" y2="48" />
+                <line x1="58" y1="20" x2="6" y2="48" />
+              </svg>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: #f8fafc; margin-bottom: 8px;">Build fast</h3>
+            <p style="color: #94a3b8; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 14px;">
+              A ledger built to design financial products, not just record them. Model flows in CreditScript, ship in days.
+            </p>
+            <a href="#code-ledger" style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--cb-azure-400); display: inline-flex; align-items: center; gap: 4px;">
+              See CreditScript →
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="grid-ring" style="padding: calc(var(--gu) * 1.5);">
+            <div style="height: 100px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--cb-azure-400)" stroke-width="1.2">
+                <circle cx="32" cy="32" r="26" />
+                <ellipse cx="32" cy="32" rx="26" ry="10" />
+                <line x1="32" y1="6" x2="32" y2="58" />
+              </svg>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: #f8fafc; margin-bottom: 8px;">Track every cent</h3>
+            <p style="color: #94a3b8; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 14px;">
+              One real-time source of truth across every rail, asset, and account. No more drift between balance sheets.
+            </p>
+            <a href="#connectivity" style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--cb-azure-400); display: inline-flex; align-items: center; gap: 4px;">
+              See Connectors →
+            </a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="grid-ring" style="padding: calc(var(--gu) * 1.5);">
+            <div style="height: 100px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--cb-azure-400)" stroke-width="1.2">
+                <rect x="14" y="14" width="36" height="36" />
+                <rect x="22" y="22" width="20" height="20" stroke-dasharray="2 2" />
+                <circle cx="32" cy="32" r="4" fill="var(--cb-azure-400)" />
+              </svg>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: #f8fafc; margin-bottom: 8px;">Trust your ledger</h3>
+            <p style="color: #94a3b8; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 14px;">
+              An immutable, hash-linked system of record that auditors and bank regulators accept with full confidence.
+            </p>
+            <a href="#compliance" style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--cb-azure-400); display: inline-flex; align-items: center; gap: 4px;">
+              Read the trust model →
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- =========================================================================
+       SECTION 2: CRISP LIGHT ARCHITECTURAL GRID (Exact Formance Parity)
+       Provides bright clarity, graph paper precision, and zero oppressive darkness!
+       ========================================================================= -->
+  <div class="theme-light-grid bg-graph-grid-light section-boundary">
+
+    <!-- Section 2.1: Build vs Buy (Light Canvas with Dark Contrast Card) -->
+    <section id="build-vs-buy" style="padding: calc(var(--gu) * 4) 0; border-bottom: 1px solid var(--color-border-hairline);">
+      <div class="strict-grid-container">
+        
+        <div style="text-align: center; max-width: 680px; margin: 0 auto calc(var(--gu) * 2);">
+          <span class="snap-badge" style="margin-bottom: 12px;">_BUILD VS BUY/</span>
+          <h2 class="section-title">Why not build it yourself?</h2>
+          <p style="color: var(--color-text-secondary); font-size: 1.05rem; margin-top: 8px;">
+            Every team that moves money rebuilds the same core, under deadline, rarely with the guarantees a bank would require. Here's what that costs, and what you get instead.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: var(--gu-1);">
+          
+          <!-- Left Card: Build In-House (Light / Dimmed) -->
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: calc(var(--gu) * 1.5); border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+            <div style="margin-bottom: var(--gu-1);">
+              <span class="snap-badge" style="color: #64748b; background: #f1f5f9; border-color: #cbd5e1;">_BUILD IN-HOUSE/</span>
+            </div>
+            <ol style="list-style: none; display: flex; flex-direction: column; gap: 16px;">
+              <li style="display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 0.8125rem; color: #94a3b8;">01</span><p style="font-size: 0.9375rem; color: #64748b;">Balances drift when ledger writes aren't atomic.</p></li>
+              <li style="display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 0.8125rem; color: #94a3b8;">02</span><p style="font-size: 0.9375rem; color: #64748b;">Reconciliation scripts you babysit; internal records disagree with bank provider statements.</p></li>
+              <li style="display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 0.8125rem; color: #94a3b8;">03</span><p style="font-size: 0.9375rem; color: #64748b;">Every new PSP or bank is another bespoke integration.</p></li>
+              <li style="display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 0.8125rem; color: #64748b;">04</span><p style="font-size: 0.9375rem; color: #64748b;">Engineering, finance and ops all read disparate numbers.</p></li>
+              <li style="display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 0.8125rem; color: #94a3b8;">05</span><p style="font-size: 0.9375rem; color: #64748b;">Audits become fire drills; history is mutable and hard to prove.</p></li>
+            </ol>
+          </div>
+
+          <!-- Right Card: With CreditBird (Embedded Dark Cobalt Surface for High Contrast) -->
+          <div style="background: #070e24; border: 1px solid var(--cb-azure-500); padding: calc(var(--gu) * 1.5); border-radius: 4px; box-shadow: 0 12px 32px rgba(7, 14, 36, 0.18);">
+            <div style="margin-bottom: var(--gu-1);">
+              <span class="snap-badge" style="color: var(--cb-azure-400); background: rgba(50, 135, 255, 0.12); border-color: var(--cb-azure-500);">_WITH CREDITBIRD/</span>
+            </div>
+            <ol style="list-style: none; display: flex; flex-direction: column; gap: 16px;">
+              <li style="display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--cb-azure-400);">01</span><p style="font-size: 0.9375rem; color: #f8fafc;">Double-entry, atomic by construction: debits always equal credits.</p></li>
+              <li style="display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--cb-azure-400);">02</span><p style="font-size: 0.9375rem; color: #f8fafc;">Continuous reconciliation, drift surfaced instantly, with a full audit trail.</p></li>
+              <li style="display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--cb-azure-400);">03</span><p style="font-size: 0.9375rem; color: #f8fafc;">One normalized model across native connectors; add a provider without a rewrite.</p></li>
+              <li style="display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--cb-azure-400);">04</span><p style="font-size: 0.9375rem; color: #f8fafc;">One real-time source of truth everyone trusts.</p></li>
+              <li style="display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--cb-azure-400);">05</span><p style="font-size: 0.9375rem; color: #f8fafc;">Append-only, immutable log; SOC 2 Type II, ISO 27001, DORA-aligned.</p></li>
+            </ol>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2.2: Always Balanced (LEDGER - Light Theme) -->
+    <section id="code-ledger" style="padding: calc(var(--gu) * 3) 0; border-bottom: 1px solid var(--color-border-hairline);">
+      <div class="strict-grid-container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--gu-2); align-items: center;">
+          
+          <div>
+            <span class="snap-badge" style="margin-bottom: 12px;">_LEDGER/</span>
+            <h2 class="section-title" style="margin-bottom: 10px;">Always balanced</h2>
+            <p style="font-size: 1.15rem; font-weight: 500; color: #090e1f; margin-bottom: 8px;">A double-entry ledger built for engineers.</p>
+            <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6;">
+              Model any money movement with CreditScript. Every transaction is atomic, immutable, and reconciled by construction, so your books never drift, even at scale.
+            </p>
+          </div>
+
+          <!-- Code Card (Clean White Background with Hairline Border) -->
+          <div class="code-card">
+            <div class="code-card-header">
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #64748b;">creditscript</span>
+              <div style="display: flex; gap: 4px;">
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: #cbd5e1;"></span>
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: #cbd5e1;"></span>
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--cb-azure-500);"></span>
+              </div>
+            </div>
+            <div class="code-card-body">
+<pre style="margin: 0;"><code><span style="color: #2563eb; font-weight: 600;">send</span> [USD 100] (
+  <span style="color: #64748b;">source</span> = <span style="color: #0f172a; font-weight: 600;">@world</span>
+  <span style="color: #64748b;">destination</span> = {
+    <span style="color: #2563eb;">85%</span> <span style="color: #2563eb; font-weight: 600;">to</span> <span style="color: #0f172a; font-weight: 600;">@sellers:acme</span>
+    <span style="color: #2563eb;">15%</span> <span style="color: #2563eb; font-weight: 600;">to</span> <span style="color: #0f172a; font-weight: 600;">@platform:fees</span>
+  }
+)</code></pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2.3: Money, Orchestrated (FLOWS - Alternating Light) -->
+    <section style="padding: calc(var(--gu) * 3) 0; border-bottom: 1px solid var(--color-border-hairline);">
+      <div class="strict-grid-container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--gu-2); align-items: center;">
+          
+          <!-- Code Card on Left -->
+          <div class="code-card">
+            <div class="code-card-header">
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #64748b;">workflow.yaml</span>
+              <div style="display: flex; gap: 4px;">
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: #cbd5e1;"></span>
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: #cbd5e1;"></span>
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--cb-azure-500);"></span>
+              </div>
+            </div>
+            <div class="code-card-body">
+<pre style="margin: 0;"><code><span style="color: #2563eb; font-weight: 600;">name:</span> collect_and_disburse
+<span style="color: #2563eb; font-weight: 600;">stages:</span>
+  - <span style="color: #2563eb; font-weight: 600;">send:</span>
+      <span style="color: #64748b;">destination:</span>
+        <span style="color: #64748b;">account:</span> <span style="color: #0f172a;">orders:1234</span>
+      <span style="color: #64748b;">amount:</span>
+        <span style="color: #64748b;">asset:</span>  <span style="color: #0f172a;">USD/2</span>
+        <span style="color: #64748b;">amount:</span> <span style="color: #2563eb;">599</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Text on Right -->
+          <div>
+            <span class="snap-badge" style="margin-bottom: 12px;">_FLOWS/</span>
+            <h2 class="section-title" style="margin-bottom: 10px;">Money, orchestrated</h2>
+            <p style="font-size: 1.15rem; font-weight: 500; color: #090e1f; margin-bottom: 8px;">Payment workflows, declared as code.</p>
+            <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6;">
+              Compose multi-step flows (splits, fees, holds, payouts) as durable, event-driven programs. Run them reliably across providers with retries and full auditability.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2.4: Every Rail, One Model (CONNECTIVITY - Light) -->
+    <section id="connectivity" style="padding: calc(var(--gu) * 3) 0; border-bottom: 1px solid var(--color-border-hairline);">
+      <div class="strict-grid-container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--gu-2); align-items: center;">
+          
+          <div>
+            <span class="snap-badge" style="margin-bottom: 12px;">_CONNECTIVITY/</span>
+            <h2 class="section-title" style="margin-bottom: 10px;">Every rail, one model</h2>
+            <p style="font-size: 1.15rem; font-weight: 500; color: #090e1f; margin-bottom: 8px;">One unified model across PSPs and banks.</p>
+            <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6;">
+              Connect Stripe, Adyen, Wise and dozens of banks behind a single API. Normalize payments, balances, and payouts into one consistent data model your team can rely on.
+            </p>
+          </div>
+
+          <!-- Diagram: Stripe, Adyen, Wise converging into model -->
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 4px; padding: var(--gu-2); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.03);">
+            <div style="display: flex; align-items: center; width: 100%; max-width: 440px;">
+              <div style="display: flex; flex-direction: column; gap: 12px; flex: 1;">
+                <div style="height: 38px; border: 1px solid #e2e8f0; background: #f8fafc; font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 600; display: flex; align-items: center; justify-content: center; color: #090e1f;">STRIPE</div>
+                <div style="height: 38px; border: 1px solid #e2e8f0; background: #f8fafc; font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 600; display: flex; align-items: center; justify-content: center; color: #090e1f;">ADYEN</div>
+                <div style="height: 38px; border: 1px solid #e2e8f0; background: #f8fafc; font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 600; display: flex; align-items: center; justify-content: center; color: #090e1f;">WISE</div>
+              </div>
+
+              <div style="width: 72px; height: 100px; display: flex; align-items: center; justify-content: center; position: relative;">
+                <svg width="72" height="100" viewBox="0 0 72 100" fill="none">
+                  <path d="M 0 19 L 45 19 L 45 50 L 70 50" stroke="#cbd5e1" stroke-width="1.5"/>
+                  <path d="M 0 50 L 70 50" stroke="#cbd5e1" stroke-width="1.5"/>
+                  <path d="M 0 81 L 45 81 L 45 50 L 70 50" stroke="#cbd5e1" stroke-width="1.5"/>
+                  <path class="circuit-pulse" d="M 0 50 L 70 50" stroke="var(--cb-azure-500)" stroke-width="1.5"/>
+                </svg>
+              </div>
+
+              <div style="flex: 1; height: 64px; border: 1px solid var(--cb-azure-500); background: rgba(50, 135, 255, 0.08); font-family: var(--font-mono); font-size: 0.875rem; font-weight: 700; color: #090e1f; display: flex; align-items: center; justify-content: center; border-radius: 4px;">
+                credit_model
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2.5: Catch Drift Instantly (RECONCILIATION - Light) -->
+    <section style="padding: calc(var(--gu) * 3) 0; border-bottom: 1px solid var(--color-border-hairline);">
+      <div class="strict-grid-container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--gu-2); align-items: center;">
+          
+          <!-- Drift Visualization Bars -->
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 4px; padding: var(--gu-2); box-shadow: 0 4px 16px rgba(0,0,0,0.03);">
+            <div style="display: flex; justify-content: space-around; align-items: flex-end; height: 160px; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px;">
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                <div style="width: 18px; height: 120px; background: #070e24;"></div>
+                <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: #64748b;">D-5</span>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                <div style="width: 18px; height: 135px; background: #070e24;"></div>
+                <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: #64748b;">D-4</span>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                <div style="width: 18px; height: 110px; background: #070e24;"></div>
+                <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: #64748b;">D-3</span>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                <div style="width: 18px; height: 145px; background: var(--cb-azure-500);"></div>
+                <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--cb-azure-500); font-weight: 700;">D-2</span>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                <div style="width: 18px; height: 130px; background: #070e24;"></div>
+                <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: #64748b;">D-1</span>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.725rem; color: #64748b; margin-top: 10px;">
+              <span>■ LEDGER</span>
+              <span>■ EXTERNAL POOL</span>
+              <span style="color: var(--cb-azure-500);">■ DRIFT: 0.00%</span>
+            </div>
+          </div>
+
+          <div>
+            <span class="snap-badge" style="margin-bottom: 12px;">_RECONCILIATION/</span>
+            <h2 class="section-title" style="margin-bottom: 10px;">Catch drift instantly</h2>
+            <p style="font-size: 1.15rem; font-weight: 500; color: #090e1f; margin-bottom: 8px;">Ledger vs Payments pool, side by side.</p>
+            <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6;">
+              Compare your Ledger balances against your Payments pooling balances continuously. The moment a day drifts, the gap is surfaced, not discovered weeks later at close.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2.6: Built for Regulated Money (TRUST & COMPLIANCE - Light) -->
+    <section id="compliance" style="padding: calc(var(--gu) * 3) 0;">
+      <div class="strict-grid-container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--gu-2); flex-wrap: wrap; gap: 12px;">
+          <div>
+            <span class="snap-badge" style="margin-bottom: 10px;">_TRUST/</span>
+            <h2 class="section-title">Built for regulated money.</h2>
+            <p style="color: #64748b; font-size: 0.95rem;">Enterprise controls, the certifications auditors ask for, and an immutable record, out of the box.</p>
+          </div>
+          <a href="#footer-links" class="btn-cta-outline" style="border-color: #cbd5e1; font-size: 0.75rem; height: 36px;">SEE OUR TRUST CENTER →</a>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: #e2e8f0; border: 1px solid #e2e8f0; border-radius: 4px; overflow: hidden;">
+          
+          <div style="background: #fff; padding: var(--gu-1);">
+            <div style="font-family: var(--font-mono); font-size: 0.6875rem; color: #64748b; margin-bottom: 12px;">THE COMPLIANCE STACK</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem; color: #1e293b;">
+              <li>✓ IAM, RBAC & SSO</li>
+              <li>✓ Non-repudiation guarantees</li>
+              <li>✓ Cryptographic audit logs</li>
+              <li>✓ Observability & telemetry</li>
+              <li>✓ Admin compliance console</li>
+            </ul>
+          </div>
+
+          <div style="background: #070e24; padding: var(--gu-1); color: #f8fafc; font-family: var(--font-mono); font-size: 0.75rem; line-height: 1.6;">
+            <div style="color: var(--cb-azure-400); margin-bottom: 8px;">_AUDIT-LOG/ NON-REPUDIATION</div>
+            <div style="color: #64748b;">09:41:07Z AUDIT gateway POST /v2/transactions 200</div>
+            <div style="color: #cbd5e1;">09:41:09Z LOG 1d:4095 NEW_TRANSACTION ledger:main</div>
+            <div style="color: #cbd5e1;">09:41:12Z LOG 1d:4094 SET_METADATA ledger:main</div>
+            <div style="color: var(--cb-emerald-500);">SHA-256 HASH CHAIN: ATTESTED & IMMUTABLE</div>
+          </div>
+
+          <div style="background: #fff; padding: var(--gu-1); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 8px;">
+            <div style="font-family: var(--font-mono); font-weight: 700; font-size: 1rem; color: #090e1f;">AICPA SOC II & ISO 27001</div>
+            <div style="font-size: 0.8125rem; color: #64748b;">DORA Compliant Financial Ledger</div>
+            <span style="display: inline-flex; align-items: center; gap: 4px; color: var(--cb-emerald-500); font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; background: rgba(16,185,129,0.1); padding: 4px 10px; border-radius: 4px;">
+              ✓ CERTIFIED & ATTESTED
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- =========================================================================
+       SECTION 3: DARK BENTO USE CASES & BOTTOM CTA
+       ========================================================================= -->
+  <div id="use-cases" class="theme-cobalt-dark bg-graph-grid-dark section-boundary" style="padding: calc(var(--gu) * 4) 0;">
+    <div class="strict-grid-container">
+      
+      <div style="text-align: center; max-width: 680px; margin: 0 auto calc(var(--gu) * 2);">
+        <span class="snap-badge" style="margin-bottom: 12px;">_USE CASES/</span>
+        <h2 class="section-title" style="color: #f8fafc;">One ledger. Every use case.</h2>
+        <p style="color: #94a3b8; font-size: 1.05rem; margin-top: 8px;">
+          From digital assets to corporate treasury, teams build their money movement on one programmable ledger.
+        </p>
+      </div>
+
+      <!-- 6-Bento Card Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1px; background: rgba(50, 135, 255, 0.14);">
+        
+        <div class="grid-ring" style="padding: var(--gu-1);">
+          <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--cb-azure-400);">_USE CASE/</span>
+          <h3 style="font-size: 1.25rem; font-weight: 600; color: #fff; margin: 6px 0 12px;">Digital assets</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.875rem; color: #94a3b8;">
+            <li>Stablecoin Issuers →</li>
+            <li>Digital Asset Exchanges →</li>
+            <li>Tokenization Platforms →</li>
+            <li>Custody & Wallets →</li>
+          </ul>
+        </div>
+
+        <div class="grid-ring" style="padding: var(--gu-1);">
+          <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--cb-azure-400);">_USE CASE/</span>
+          <h3 style="font-size: 1.25rem; font-weight: 600; color: #fff; margin: 6px 0 12px;">Fintech</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.875rem; color: #94a3b8;">
+            <li>Neobanks →</li>
+            <li>Card Issuing →</li>
+            <li>Lending & Credit Lines →</li>
+            <li>Investing & Wealth →</li>
+          </ul>
+        </div>
+
+        <div class="grid-ring" style="padding: var(--gu-1);">
+          <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--cb-azure-400);">_USE CASE/</span>
+          <h3 style="font-size: 1.25rem; font-weight: 600; color: #fff; margin: 6px 0 12px;">AI & Compute</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.875rem; color: #94a3b8;">
+            <li>GPU & Compute Marketplaces →</li>
+            <li>AI Agent Payments →</li>
+            <li>Token Accounting →</li>
+          </ul>
+        </div>
+
+        <div class="grid-ring" style="padding: var(--gu-1);">
+          <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--cb-azure-400);">_USE CASE/</span>
+          <h3 style="font-size: 1.25rem; font-weight: 600; color: #fff; margin: 6px 0 12px;">Vertical SaaS</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.875rem; color: #94a3b8;">
+            <li>Marketplace & Split Payouts →</li>
+            <li>Hospitality & Travel →</li>
+            <li>Healthcare Billing →</li>
+          </ul>
+        </div>
+
+        <div class="grid-ring" style="padding: var(--gu-1);">
+          <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--cb-azure-400);">_USE CASE/</span>
+          <h3 style="font-size: 1.25rem; font-weight: 600; color: #fff; margin: 6px 0 12px;">Corporate & Treasury</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.875rem; color: #94a3b8;">
+            <li>International Transfers →</li>
+            <li>Accounts Receivable →</li>
+            <li>Ledger Modernization →</li>
+          </ul>
+        </div>
+
+        <div class="grid-ring" style="padding: var(--gu-1);">
+          <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--cb-azure-400);">_USE CASE/</span>
+          <h3 style="font-size: 1.25rem; font-weight: 600; color: #fff; margin: 6px 0 12px;">Teams</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.875rem; color: #94a3b8;">
+            <li>For Engineering →</li>
+            <li>For Product Managers →</li>
+            <li>For Finance & Operations →</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Centered Bottom CTA Banner -->
+      <div id="cta-bottom" style="margin-top: calc(var(--gu) * 3); text-align: center; padding: calc(var(--gu) * 2) var(--gu-1); border: 1px solid rgba(50, 135, 255, 0.2); background: radial-gradient(circle at center, #0c1633 0%, #040816 100%); border-radius: 4px;">
+        <span class="snap-badge" style="margin-bottom: 12px;">_GET STARTED/</span>
+        <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 600; color: #f8fafc; margin-bottom: 8px;">
+          One platform for every money movement
+        </h2>
+        <p style="color: #94a3b8; max-width: 600px; margin: 0 auto 20px; font-size: 0.95rem;">
+          Ledger, connectivity, flows and reconciliation: one programmable foundation your engineers can build on from day one.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+          <a href="#demo" class="btn-cta-primary">BOOK A DEMO</a>
+          <a href="#code-ledger" class="btn-cta-outline" style="border-color: rgba(50,135,255,0.3); color: #fff;">START BUILDING</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       SECTION 4: THE MASSIVE ARCHITECTURAL FOOTER (Exact Match to User Screenshot)
+       Ultra-tall, 4 structured columns, 14 categorized sections, embossed watermark
+       ========================================================================= -->
+  <footer id="footer-links" class="theme-footer">
+    
+    <!-- Giant Subtle Watermark Emblem (Peeking from bottom-right corner) -->
+    <div class="footer-watermark"></div>
+
+    <div class="strict-grid-container" style="padding-top: calc(var(--gu) * 4); padding-bottom: calc(var(--gu) * 3); position: relative; z-index: 2;">
+      
+      <!-- 4 Massive Columns Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--gu-2); margin-bottom: calc(var(--gu) * 3);">
+        
+        <!-- COLUMN 1: PLATFORM -->
+        <div>
+          <div style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: #f8fafc; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 24px;">
+            PLATFORM
+          </div>
+
+          <!-- Modules -->
+          <div style="margin-bottom: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.15em; color: #64748b; text-transform: uppercase; margin-bottom: 12px;">MODULES</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem; color: #94a3b8;">
+              <li><a href="#" style="hover:color: #f8fafc;">Ledger</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Connectivity</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Flows</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Reconciliation</a></li>
+            </ul>
+          </div>
+
+          <!-- Architecture -->
+          <div style="margin-bottom: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.15em; color: #64748b; text-transform: uppercase; margin-bottom: 12px;">ARCHITECTURE</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem; color: #94a3b8;">
+              <li><a href="#" style="hover:color: #f8fafc;">Ledger primitives</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">CreditScript (Numscript)</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Connectors</a></li>
+            </ul>
+          </div>
+
+          <!-- Build -->
+          <div style="margin-bottom: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.15em; color: #64748b; text-transform: uppercase; margin-bottom: 12px;">BUILD</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem; color: #94a3b8;">
+              <li><a href="#" style="hover:color: #f8fafc;">Studio</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Deployment options</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Enterprise stack</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">AI & MCP</a></li>
+            </ul>
+          </div>
+
+          <!-- Trust -->
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.15em; color: #64748b; text-transform: uppercase; margin-bottom: 12px;">TRUST</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem; color: #94a3b8;">
+              <li><a href="#" style="hover:color: #f8fafc;">Security</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Compliance</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Regulatory</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Trust Center</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- COLUMN 2: SOLUTIONS -->
+        <div>
+          <div style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: #f8fafc; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 24px;">
+            SOLUTIONS
+          </div>
+
+          <!-- Corporate & Treasury -->
+          <div style="margin-bottom: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.15em; color: #64748b; text-transform: uppercase; margin-bottom: 12px;">CORPORATE & TREASURY</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem; color: #94a3b8;">
+              <li><a href="#" style="hover:color: #f8fafc;">International Money Transfers</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Accounts Receivable</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Multi-Entity Accounting</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Ledger Modernization</a></li>
+            </ul>
+          </div>
+
+          <!-- Vertical SaaS -->
+          <div style="margin-bottom: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.15em; color: #64748b; text-transform: uppercase; margin-bottom: 12px;">VERTICAL SAAS</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem; color: #94a3b8;">
+              <li><a href="#" style="hover:color: #f8fafc;">Marketplace</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Hospitality</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Healthcare</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">On-Demand</a></li>
+            </ul>
+          </div>
+
+          <!-- AI -->
+          <div style="margin-bottom: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.15em; color: #64748b; text-transform: uppercase; margin-bottom: 12px;">AI</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem; color: #94a3b8;">
+              <li><a href="#" style="hover:color: #f8fafc;">GPU & Compute Marketplaces</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">AI Agent Payments</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Token Accounting</a></li>
+            </ul>
+          </div>
+
+          <!-- Teams -->
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.15em; color: #64748b; text-transform: uppercase; margin-bottom: 12px;">TEAMS</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem; color: #94a3b8;">
+              <li><a href="#" style="hover:color: #f8fafc;">For Engineering</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">For Product</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">For Finance</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">For Operations</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- COLUMN 3: RESOURCES -->
+        <div>
+          <div style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: #f8fafc; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 24px;">
+            RESOURCES
+          </div>
+
+          <!-- Developers -->
+          <div style="margin-bottom: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.15em; color: #64748b; text-transform: uppercase; margin-bottom: 12px;">DEVELOPERS</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem; color: #94a3b8;">
+              <li><a href="#" style="hover:color: #f8fafc;">Documentation</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">CreditBird SDK</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">CreditScript Playground</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Product Releases</a></li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div style="margin-bottom: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.15em; color: #64748b; text-transform: uppercase; margin-bottom: 12px;">COMPANY</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem; color: #94a3b8;">
+              <li><a href="#" style="hover:color: #f8fafc;">About Us</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Careers</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Community</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Newsletter</a></li>
+            </ul>
+          </div>
+
+          <!-- Learn -->
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.15em; color: #64748b; text-transform: uppercase; margin-bottom: 12px;">LEARN</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem; color: #94a3b8;">
+              <li><a href="#" style="hover:color: #f8fafc;">Blog</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Glossary</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Customers</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- COLUMN 4: FINTECH & DIGITAL ASSETS & MORE -->
+        <div>
+          <div style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: #f8fafc; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 24px;">
+            FINTECH & DIGITAL ASSETS & MORE
+          </div>
+
+          <!-- Fintech -->
+          <div style="margin-bottom: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.15em; color: #64748b; text-transform: uppercase; margin-bottom: 12px;">FINTECH</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem; color: #94a3b8;">
+              <li><a href="#" style="hover:color: #f8fafc;">Neobanks</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Card Issuing</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Acquiring</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Lending</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Investing</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Insurance</a></li>
+            </ul>
+          </div>
+
+          <!-- Digital Assets -->
+          <div style="margin-bottom: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.15em; color: #64748b; text-transform: uppercase; margin-bottom: 12px;">DIGITAL ASSETS</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem; color: #94a3b8;">
+              <li><a href="#" style="hover:color: #f8fafc;">Stablecoin Issuers</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Digital Asset Exchanges</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Tokenization Platforms</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Custody & Wallets</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Crypto Payments</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Crypto Neobanks</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Crypto Payroll</a></li>
+            </ul>
+          </div>
+
+          <!-- More & Contact -->
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.15em; color: #64748b; text-transform: uppercase; margin-bottom: 12px;">CONTACT US</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem; color: #94a3b8;">
+              <li><a href="#" style="hover:color: #f8fafc;">Documentation</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Pricing</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Book a Demo</a></li>
+              <li><a href="#" style="hover:color: #f8fafc;">Support & Status</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Legal Bar -->
+      <div style="border-top: 1px solid rgba(50, 135, 255, 0.14); padding-top: var(--gu-1); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-family: var(--font-mono); font-size: 0.75rem; color: #64748b;">
+        <div style="display: flex; gap: 20px;">
+          <a href="#" style="hover:color: #cbd5e1;">Terms of Service</a>
+          <a href="#" style="hover:color: #cbd5e1;">Privacy Policy</a>
+          <a href="#" style="hover:color: #cbd5e1;">Cookie Preferences</a>
+        </div>
+        <div>
+          © 2026 CreditBird Technologies Inc. • Formance Architecture Parity
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
