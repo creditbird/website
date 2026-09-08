@@ -2,41 +2,41 @@
   import { XCircle, CheckCircle2 } from 'lucide-svelte';
 
   const inHousePoints = [
-    { num: '01', title: 'Balances drift silently', desc: 'When ledger writes aren\'t atomic or cross multiple services, balance drifts accumulate untracked.' },
-    { num: '02', title: 'Babysitting reconciliation scripts', desc: 'Brittle cron jobs fire nightly; internal records perpetually disagree with bank provider statements.' },
-    { num: '03', title: 'Endless bespoke integrations', desc: 'Every new payment processor or clearing bank requires a custom schema rewrite and ad-hoc ledger glue.' },
-    { num: '04', title: 'Fragmented siloed numbers', desc: 'Engineering databases, finance spreadsheets, and ops dashboards report three conflicting realities.' },
-    { num: '05', title: 'Audit fire drills', desc: 'Historical states are mutable and hard to verify; answering auditor requests takes weeks of engineering hours.' }
+    { num: '01', title: 'Phần mềm đóng gói, không sở hữu mã nguồn', desc: 'Dùng phần mềm SaaS đóng gói bị phụ thuộc vendor, chi phí bản quyền tăng theo người dùng, không thể tùy biến nghiệp vụ.' },
+    { num: '02', title: 'CRM web chậm chạp, tốn RAM & tán xạ tin nhắn', desc: 'CRM nền web ngốn hàng gigabyte RAM, phân tán chat Zalo/Facebook/WhatsApp khiến nhân viên tư vấn dễ bỏ sót khách hàng.' },
+    { num: '03', title: 'Tự tuyển dụng IT đắt đỏ, rủi ro nghỉ việc', desc: 'Mất nhiều tháng tìm kiếm kỹ sư giỏi, tốn kém chi phí quản lý nội bộ và rủi ro gián đoạn dự án khi nhân sự nghỉ đột ngột.' },
+    { num: '04', title: 'Tự cấu hình ERP kéo dài, sai lệch tồn kho', desc: 'Tự xoay xở ERP hoặc dùng Excel dẫn đến sai định mức BOM sản xuất, tồn kho ảo WMS và báo cáo kế toán phân mảnh.' },
+    { num: '05', title: 'Thiết bị trôi nổi & hương liệu không kiểm định', desc: 'Dùng máy phun giá rẻ mau hỏng, tinh dầu không rõ nguồn gốc thiếu chứng nhận COA làm giảm trải nghiệm khách hàng.' }
   ];
 
   const creditbirdPoints = [
-    { num: '01', title: 'Double-entry, atomic by construction', desc: 'Mathematically strict debits always equal credits; multi-currency balance sheets stay permanently balanced.' },
-    { num: '02', title: 'Continuous real-time reconciliation', desc: 'Discrepancies surface the exact second they happen with granular event metadata and root-cause tracing.' },
-    { num: '03', title: 'Normalized multi-rail connectors', desc: 'One standardized API across Stripe, Adyen, Wise, and clearing networks; add a provider with zero engine refactor.' },
-    { num: '04', title: 'One single source of truth', desc: 'Engineering, risk, finance, and compliance share identical real-time ledger primitives and balance snapshots.' },
-    { num: '05', title: 'Append-only cryptographic log', desc: 'Tamper-evident SHA-256 hash chains; turnkey SOC 2 Type II, ISO 27001, and DORA audit readiness.' }
+    { num: '01', title: 'Viết phần mềm may đo, 100% full source code', desc: 'Kiến trúc Microservices hiện đại, chuyển giao toàn bộ mã nguồn sạch, tài liệu kỹ thuật chuẩn quốc tế và cam kết SLA trọn đời.' },
+    { num: '02', title: 'RustSale CRM Omnichannel Native Rust', desc: 'Desktop native Rust siêu tốc, gom Zalo/WhatsApp/FB vào một hộp thư thống nhất, bảo mật Local-First Keyring.' },
+    { num: '03', title: 'Cung ứng nhân sự IT phái cử trong 48 giờ', desc: 'Kỹ sư Senior (Frontend, Backend, DevOps, QA) onboard tức thì, thử việc 14 ngày, ký cam kết bảo mật NDA chặt chẽ.' },
+    { num: '04', title: 'Kelvot ERP: Sản xuất BOM, Kho WMS & VAS/IFRS', desc: 'Phân hệ ERP chuyên sâu tại kelvot.com, chuẩn hóa sản xuất đa công đoạn, quản trị kho barcode và kế toán Việt Nam.' },
+    { num: '05', title: 'Lemy Finest: Scent HVAC & Tinh dầu COA', desc: 'Máy khuếch tán Nano HVAC công suất lớn tại lemyfinest.com và 100% tinh dầu nguyên chất có kiểm nghiệm an toàn COA / GC-MS.' }
   ];
 </script>
 
 <section id="build-vs-buy" class="py-20 border-b border-[#e2e8f0] bg-[#f8fafc]">
   <div class="strict-grid-container">
     
-    <div class="text-center max-w-2xl mx-auto mb-16">
-      <span class="snap-badge mb-3">_BUILD VS BUY/</span>
-      <h2 class="section-title text-[#090e1f]">Why not build it yourself?</h2>
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="snap-badge mb-3">_SO SÁNH HIỆU QUẢ/</span>
+      <h2 class="section-title text-[#090e1f]">Tự triển khai phân mảnh hay Đồng hành cùng CreditBird?</h2>
       <p class="text-[#475569] text-base sm:text-lg mt-3 leading-relaxed">
-        Every engineering team moving money rebuilds the same core ledger under crunch deadlines — rarely with the mathematical guarantees institutional banking demands.
+        Tự xoay xở giữa nhiều nhà cung cấp phần mềm, công ty tuyển dụng và đại lý thiết bị tiêu tốn ngân sách lớn mà không đem lại sự đồng bộ và hiệu quả lâu dài.
       </p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mb-10">
       
-      <!-- Left Card: Build In-House -->
+      <!-- Left Card: Tự triển khai -->
       <div class="bg-white border border-[#e2e8f0] p-7 sm:p-9 rounded-lg shadow-sm flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between mb-8 pb-4 border-b border-[#e2e8f0]">
-            <span class="snap-badge !bg-[#f1f5f9] !text-[#64748b] !border-[#cbd5e1]">_BUILD IN-HOUSE/</span>
-            <span class="font-mono text-xs text-[#94a3b8] uppercase">The Hidden Cost</span>
+            <span class="snap-badge !bg-[#f1f5f9] !text-[#64748b] !border-[#cbd5e1]">_TỰ TRIỂN KHAI PHÂN MẢNH/</span>
+            <span class="font-mono text-xs text-[#94a3b8] uppercase">Rủi ro & Chi phí ngầm</span>
           </div>
           
           <ul class="flex flex-col gap-6">
@@ -56,17 +56,17 @@
         </div>
       </div>
 
-      <!-- Right Card: With CreditBird -->
+      <!-- Right Card: Với CreditBird -->
       <div class="bg-white border-2 border-[var(--cb-cobalt-500)] p-7 sm:p-9 rounded-lg shadow-[0_8px_30px_rgba(37,99,235,0.08)] flex flex-col justify-between relative overflow-hidden">
         
         <div>
           <div class="flex items-center justify-between mb-8 pb-4 border-b border-[#e2e8f0] relative z-10">
             <span class="snap-badge !bg-[rgba(37,99,235,0.08)] !text-[var(--cb-cobalt-500)] !border-[var(--cb-azure-500)]">
-              _WITH CREDITBIRD/
+              _ĐỒNG HÀNH CÙNG CREDITBIRD/
             </span>
             <span class="font-mono text-xs text-[var(--cb-emerald-500)] font-semibold flex items-center gap-1">
               <span class="w-1.5 h-1.5 rounded-full bg-[var(--cb-emerald-500)]"></span>
-              Institutional Ready
+              Hiệu Quả Cam Kết
             </span>
           </div>
 

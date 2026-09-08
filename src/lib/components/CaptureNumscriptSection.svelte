@@ -1,29 +1,40 @@
 <script lang="ts">
-  import { Check, Copy, Play } from 'lucide-svelte';
+  import { Check, Copy } from 'lucide-svelte';
 
   let copied = $state(false);
-  let grossAmount = $state(1000);
-  let feeRate = 0.029;
-  let reserveRate = 0.05;
 
-  let feeAmount = $derived((grossAmount * feeRate).toFixed(2));
-  let reserveAmount = $derived((grossAmount * reserveRate).toFixed(2));
-  let payableAmount = $derived((grossAmount - Number(feeAmount) - Number(reserveAmount)).toFixed(2));
+  const codeString = `# CreditBird Enterprise Ecosystem Stack
+organization: "CONG TY TNHH CONG NGHE CREDITBIRD"
+tax_id: "0315397327"
+legal_date: "2018-11-19 (So KH&DT TP.HCM)"
 
-  const codeString = `// Split a shopper capture: fees, reserve, payable
-vars {
-  account $merchant
-  monetary $captured
-}
+core_services:
+  custom_software:
+    stack: ["Rust", "Golang", "Python", "SvelteKit"]
+    architecture: "Event-driven Microservices"
+    ownership: "100% Clean Source Code Delivery"
+    sla: "99.9% High-Availability Uptime"
+  it_staff_augmentation:
+    models: ["Onsite Staffing", "Dedicated Remote Squad"]
+    sla_onboarding: "Within 48h with strict B2B NDA"
+    roles: ["Senior Rust/Go", "SvelteKit/React", "DevOps Cloud"]
 
-send $captured (
-  source = @world
-  destination = {
-    2.9% to @platform:fees
-    5% to @reserve:$merchant
-    remaining to @payable:$merchant
-  }
-)`;
+proprietary_products:
+  rustsale_crm_pro:
+    runtime: "Rust Native (Tokio, Tauri v2)"
+    channels: ["Zalo OA & Personal", "WhatsApp B2B", "Facebook Fanpages"]
+    latency: "< 1ms (Microsecond Speed)"
+    security: "Local-First Hardware Keyring Encryption"
+    docs: "https://app.notion.com/p/RustSale-CRM-Outreach-Pro"
+
+ecosystem_brands:
+  kelvot_erp:
+    official_web: "https://kelvot.com"
+    modules: ["MRP Multi-BOM", "Warehouse WMS Barcode", "Accounting VAS/IFRS"]
+  lemy_finest:
+    official_web: "https://www.lemyfinest.com"
+    hardware: "Commercial HVAC Diffusers (500 - 5,000m²)"
+    essential_oils: "100% Pure Natural COA & GC-MS Certified"`;
 
   async function copyCode() {
     try {
@@ -38,7 +49,6 @@ send $captured (
   }
 </script>
 
-<!-- Section Wrapper: Pure SOLID Dark Background -->
 <section 
   id="creditscript-capture" 
   class="relative theme-emerald dark bg-background text-foreground" 
@@ -48,24 +58,30 @@ send $captured (
     <div class="free-flow grid-row [--_cols-md:2] [--_cols-lg:2] [--_col-gap-lg:calc(var(--grid-unit)*2)]">
       
       <!-- Left Column: Header with Eyebrow, Heading, Description, and CTA Button -->
-      <div data-auto-snap="true" class="snap-group-item free-flow flex flex-col grid-ring bg-background text-foreground free-flow px-1gu py-2gu sm:p-2gu">
+      <div data-auto-snap="true" class="snap-group-item free-flow flex flex-col grid-ring bg-background text-foreground free-flow px-1gu py-2gu sm:p-2gu justify-between">
         <div class="flex flex-col gap-3">
-          <span class="snap-badge badge-sm font-mono uppercase tracking-widest flex h-(--grid-unit) items-center shrink-0 max-w-full whitespace-nowrap grid-ring w-(--_badge-mw) md:w-(--_badge-w) justify-center px-3 text-eyebrow-foreground bg-eyebrow-background self-start">
-            _CREDITSCRIPT/
+          <span class="snap-badge badge-sm font-mono uppercase tracking-widest flex h-(--grid-unit) items-center shrink-0 max-w-full whitespace-nowrap grid-ring w-fit justify-center px-3 text-eyebrow-foreground bg-eyebrow-background self-start">
+            _KIẾN TRÚC & TIÊU CHUẨN KỸ THUẬT/
           </span>
-          <h2 class="h3 text-foreground">The split happens at capture</h2>
-          <p class="subheading-md text-foreground">Fees and reserve are accounting, not a nightly job.</p>
+          <h2 class="h3 text-foreground">Làm Chủ Công Nghệ Lõi & Tự Động Hóa Toàn Diện</h2>
+          <p class="subheading-md text-foreground">Lập trình hiện đại, bảo mật Local-First và kiểm soát chất lượng chuẩn ISO 27001.</p>
           <p class="p-md text-muted-foreground">
-            One CreditScript transaction credits the merchant net of the fee schedule and sets aside the rolling reserve; the payout cycle later pays exactly what the ledger holds.
+            CreditBird ứng dụng kiến trúc Microservices hiệu năng cao bằng Rust và Go, phát triển phần mềm độc quyền RustSale CRM tốc độ microsecond, triển khai Kelvot ERP quản trị chuỗi cung ứng khép kín và điều khiển máy phun tinh dầu Lemy Finest Nano HVAC thông minh.
           </p>
+        </div>
 
+        <div class="pt-6 flex flex-wrap items-center gap-3">
           <a
-            href="https://playground.creditbird.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="relative inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 font-mono font-medium bg-[#22439c] text-white hover:bg-[#3287ff] px-8 h-9 uppercase mt-1 self-start shadow-sm transition-colors"
+            href="/solutions/software"
+            class="relative inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-md text-sm font-mono font-medium bg-[#22439c] text-white hover:bg-[#3287ff] px-6 h-9 uppercase shadow-sm transition-colors"
           >
-            Try it in the Playground
+            Khám phá kiến trúc phần mềm
+          </a>
+          <a
+            href="/products/rustsale"
+            class="relative inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-md text-sm font-mono font-medium border border-[#cbd5e1]/30 hover:border-white text-white px-5 h-9 uppercase transition-colors"
+          >
+            RustSale CRM
           </a>
         </div>
       </div>
@@ -75,21 +91,21 @@ send $captured (
         <div class="grid-ring flex h-full w-full flex-col bg-(--shiki-background) dark">
           <!-- Window Top Bar -->
           <div class="flex h-[calc(var(--grid-unit)*2)] items-center justify-between px-(--grid-unit)" style="border-bottom:1px solid color-mix(in srgb, var(--shiki-foreground, #cbd5e1) 14%, transparent)">
-            <span class="badge-sm font-mono lowercase" style="color:color-mix(in srgb, var(--shiki-foreground, #cbd5e1) 50%, transparent)">capture.credit</span>
+            <span class="badge-sm font-mono lowercase" style="color:color-mix(in srgb, var(--shiki-foreground, #cbd5e1) 50%, transparent)">creditbird.ecosystem.yaml</span>
 
             <div class="flex items-center gap-4">
               <button
                 type="button"
                 onclick={copyCode}
-                class="flex items-center gap-1.5 text-[11px] font-mono text-[#8aa5a6] hover:text-white transition-colors cursor-pointer"
+                class="flex items-center gap-1.5 text-[11px] font-mono text-[#94a3b8] hover:text-white transition-colors cursor-pointer"
                 title="Copy snippet"
               >
                 {#if copied}
-                  <Check class="size-3 text-[#34d399]" />
-                  <span class="text-[#34d399]">Copied</span>
+                  <Check class="size-3 text-[#60a5fa]" />
+                  <span class="text-[#60a5fa]">Đã copy</span>
                 {:else}
                   <Copy class="size-3" />
-                  <span>Copy</span>
+                  <span>Copy Config</span>
                 {/if}
               </button>
 
@@ -101,22 +117,37 @@ send $captured (
             </div>
           </div>
 
-          <!-- Code Body with Shiki Parity Colors -->
-          <div class="flex-1 overflow-x-auto overflow-y-hidden p-(--grid-unit) [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            <pre class="shiki font-mono text-sm leading-relaxed m-0 bg-transparent p-0 whitespace-pre"><code><span class="text-[#849a9b]">// Split a shopper capture: fees, reserve, payable</span>
-<span class="text-[#4ade80]">vars</span> &#123;
-  <span class="text-[#4ade80]">account</span> <span class="text-[#a7f3d0]">$merchant</span>
-  <span class="text-[#4ade80]">monetary</span> <span class="text-[#a7f3d0]">$captured</span>
-&#125;
+          <!-- Code Body with Clean Cobalt & Azure Syntax Coloring -->
+          <div class="flex-1 overflow-x-auto p-(--grid-unit) max-h-[440px] overflow-y-auto font-mono text-xs leading-relaxed text-[#cbd5e1]">
+            <pre class="m-0 font-mono text-xs whitespace-pre leading-relaxed"><code><span class="text-[#64748b]"># CreditBird Enterprise Ecosystem Stack</span>
+<span class="text-[#60a5fa] font-bold">organization:</span> <span class="text-[#f8fafc]">"CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD"</span>
+<span class="text-[#60a5fa] font-bold">tax_id:</span> <span class="text-[#93c5fd]">"0315397327"</span>
+<span class="text-[#60a5fa] font-bold">legal_date:</span> <span class="text-[#f8fafc]">"2018-11-19 (Sở KH&ĐT TP.HCM)"</span>
 
-<span class="text-[#4ade80]">send</span> <span class="text-[#a7f3d0]">$captured</span> (
-  <span class="text-[#34d399]">source</span> = <span class="text-[#d8b4fe]">@world</span>
-  <span class="text-[#34d399]">destination</span> = &#123;
-    <span class="text-[#38bdf8]">2.9%</span> <span class="text-[#4ade80]">to</span> <span class="text-[#d8b4fe]">@platform:fees</span>
-    <span class="text-[#38bdf8]">5%</span> <span class="text-[#4ade80]">to</span> <span class="text-[#d8b4fe]">@reserve:$merchant</span>
-    <span class="text-[#4ade80]">remaining</span> <span class="text-[#4ade80]">to</span> <span class="text-[#d8b4fe]">@payable:$merchant</span>
-  &#125;
-)</code></pre>
+<span class="text-[#93c5fd] font-bold">core_services:</span>
+  <span class="text-[#60a5fa]">custom_software:</span>
+    <span class="text-[#64748b]">stack:</span> [<span class="text-[#e2e8f0]">"Rust"</span>, <span class="text-[#e2e8f0]">"Golang"</span>, <span class="text-[#e2e8f0]">"Python"</span>, <span class="text-[#e2e8f0]">"SvelteKit"</span>]
+    <span class="text-[#64748b]">ownership:</span> <span class="text-[#f8fafc]">"100% Clean Source Code Delivery"</span>
+    <span class="text-[#64748b]">sla:</span> <span class="text-[#f8fafc]">"99.9% High-Availability Uptime"</span>
+  <span class="text-[#60a5fa]">it_staffing:</span>
+    <span class="text-[#64748b]">models:</span> [<span class="text-[#e2e8f0]">"Onsite Staffing"</span>, <span class="text-[#e2e8f0]">"Dedicated Remote Squad"</span>]
+    <span class="text-[#64748b]">onboarding_sla:</span> <span class="text-[#f8fafc]">"Within 48h with strict B2B NDA"</span>
+
+<span class="text-[#93c5fd] font-bold">proprietary_products:</span>
+  <span class="text-[#60a5fa]">rustsale_crm_pro:</span>
+    <span class="text-[#64748b]">runtime:</span> <span class="text-[#e2e8f0]">"Rust Native (Tokio, Tauri v2)"</span>
+    <span class="text-[#64748b]">channels:</span> [<span class="text-[#e2e8f0]">"Zalo OA"</span>, <span class="text-[#e2e8f0]">"WhatsApp B2B"</span>, <span class="text-[#e2e8f0]">"Facebook Hub"</span>]
+    <span class="text-[#64748b]">latency:</span> <span class="text-[#60a5fa]">&lt; 1ms (Microsecond Speed)</span>
+    <span class="text-[#64748b]">security:</span> <span class="text-[#f8fafc]">"Local-First Keyring Encryption"</span>
+
+<span class="text-[#93c5fd] font-bold">ecosystem_brands:</span>
+  <span class="text-[#60a5fa]">kelvot_erp:</span>
+    <span class="text-[#64748b]">domain:</span> <span class="text-[#60a5fa]">"https://kelvot.com"</span>
+    <span class="text-[#64748b]">modules:</span> [<span class="text-[#e2e8f0]">"BOM"</span>, <span class="text-[#e2e8f0]">"WMS Barcode"</span>, <span class="text-[#e2e8f0]">"Accounting VAS/IFRS"</span>]
+  <span class="text-[#60a5fa]">lemy_finest:</span>
+    <span class="text-[#64748b]">domain:</span> <span class="text-[#60a5fa]">"https://www.lemyfinest.com"</span>
+    <span class="text-[#64748b]">hardware:</span> <span class="text-[#f8fafc]">"HVAC Diffusers (500 - 5,000m²)"</span>
+    <span class="text-[#64748b]">essential_oils:</span> <span class="text-[#f8fafc]">"100% Pure Natural COA / GC-MS"</span></code></pre>
           </div>
         </div>
       </div>

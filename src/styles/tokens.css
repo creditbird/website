@@ -512,6 +512,20 @@ html {
 .snap-card {
   --_card-h: auto;
   --_card-mh: auto;
+  height: var(--_card-mh, auto);
+}
+@media (min-width: 768px) {
+  .snap-card {
+    height: var(--_card-h, auto);
+  }
+}
+.h-\(--_card-mh\) {
+  height: var(--_card-mh, auto);
+}
+@media (min-width: 768px) {
+  .md\:h-\(--_card-h\) {
+    height: var(--_card-h, auto);
+  }
 }
 .snap-badge {
   --_badge-w: max-content;
@@ -523,30 +537,55 @@ html {
 }
 @supports (height: calc-size(max-content, size)) {
   .snap-card {
-    --_card-h: calc-size(max-content, round(up, size, var(--grid-unit-base)));
-    --_card-mh: calc-size(max-content, round(up, size, var(--grid-unit-base)));
+    --_card-h: calc-size(max-content, round(up, size, var(--grid-unit-base, var(--grid-unit, 32px))));
+    --_card-mh: calc-size(max-content, round(up, size, var(--grid-unit-base, var(--grid-unit, 32px))));
   }
   .snap-group-item {
-    min-height: calc-size(max-content, round(up, size, var(--grid-unit-base)));
+    min-height: calc-size(max-content, round(up, size, var(--grid-unit-base, var(--grid-unit, 32px))));
   }
   .snap-badge {
-    --_badge-w: calc-size(max-content, round(up, size, var(--grid-unit-base)));
-    --_badge-mw: calc-size(max-content, round(up, size, var(--grid-unit-base)));
+    --_badge-w: calc-size(max-content, round(up, size, var(--grid-unit-base, var(--grid-unit, 32px))));
+    --_badge-mw: calc-size(max-content, round(up, size, var(--grid-unit-base, var(--grid-unit, 32px))));
   }
   .snap-btn {
-    --_btn-w: calc-size(max-content, round(up, size, var(--grid-unit-base)));
-    --_btn-mw: calc-size(max-content, round(up, size, var(--grid-unit-base)));
+    --_btn-w: calc-size(max-content, round(up, size, var(--grid-unit-base, var(--grid-unit, 32px))));
+    --_btn-mw: calc-size(max-content, round(up, size, var(--grid-unit-base, var(--grid-unit, 32px))));
   }
   .snap-block {
-    height: calc-size(max-content, round(up, size, var(--grid-unit-base)));
+    height: calc-size(max-content, round(up, size, var(--grid-unit-base, var(--grid-unit, 32px))));
   }
   .snap-block-w {
-    width: calc-size(fit-content, round(up, size, var(--grid-unit-base)));
+    width: calc-size(fit-content, round(up, size, var(--grid-unit-base, var(--grid-unit, 32px))));
   }
   .snap-h-px {
     height: calc-size(auto, round(up, size, 1px));
   }
 }
+
+/* Grid Unit Sizing & Spacing Utilities (1gu = 32px, 2gu = 64px) */
+.p-1gu { padding: var(--grid-unit); }
+.p-2gu { padding: calc(var(--grid-unit) * 2); }
+.py-1gu { padding-top: var(--grid-unit); padding-bottom: var(--grid-unit); }
+.py-2gu { padding-top: calc(var(--grid-unit) * 2); padding-bottom: calc(var(--grid-unit) * 2); }
+.px-1gu { padding-left: var(--grid-unit); padding-right: var(--grid-unit); }
+.px-2gu { padding-left: calc(var(--grid-unit) * 2); padding-right: calc(var(--grid-unit) * 2); }
+.gap-1gu { gap: var(--grid-unit); }
+.gap-2gu { gap: calc(var(--grid-unit) * 2); }
+.gap-x-1gu { column-gap: var(--grid-unit); }
+.gap-x-2gu { column-gap: calc(var(--grid-unit) * 2); }
+.gap-y-1gu { row-gap: var(--grid-unit); }
+.gap-y-2gu { row-gap: calc(var(--grid-unit) * 2); }
+.mb-1gu { margin-bottom: var(--grid-unit); }
+.mb-2gu { margin-bottom: calc(var(--grid-unit) * 2); }
+.mt-1gu { margin-top: var(--grid-unit); }
+.mt-2gu { margin-top: calc(var(--grid-unit) * 2); }
+.h-1gu { height: var(--grid-unit); }
+.h-2gu { height: calc(var(--grid-unit) * 2); }
+.h-3gu { height: calc(var(--grid-unit) * 3); }
+.min-h-1gu { min-height: var(--grid-unit); }
+.min-h-2gu { min-height: calc(var(--grid-unit) * 2); }
+.min-h-3gu { min-height: calc(var(--grid-unit) * 3); }
+.min-h-4gu { min-height: calc(var(--grid-unit) * 4); }
 
 /* Formance Tailwind v4 Compatibility Utility Classes */
 .py-\(--grid-unit\) {

@@ -5,8 +5,8 @@
 </script>
 
 <svelte:head>
-	<title>CreditBird — Programmable Credit & Ledger Infrastructure</title>
-	<meta name="description" content="The open-source programmable ledger for fiat and digital credit. Model any flow of funds, track every cent in real time, and build on the immutable system of record." />
+	<title>CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD — Phần mềm, ERP, Nhân sự IT & Scent Marketing</title>
+	<meta name="description" content="CreditBird (MST: 0315397327) chuyên nghiệp trong: Viết phần mềm may đo, phát triển ERP doanh nghiệp, cho thuê nhân sự IT, hệ thống máy phun tinh dầu thông minh và tinh dầu thiên nhiên nguyên chất." />
 </svelte:head>
 
 {@render children()}

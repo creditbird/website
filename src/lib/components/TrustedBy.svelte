@@ -17,7 +17,7 @@
   <div class="strict-grid relative z-2 py-1gu no-bg-grid">
     <div class="flex flex-col gap-1gu">
       <span class="badge-sm font-mono uppercase tracking-widest md:whitespace-nowrap text-muted-foreground flex h-1gu items-center">
-        _TRUSTED BY TEAMS MOVING MONEY/
+        _ĐỐI TÁC VÀ DOANH NGHIỆP ĐỒNG HÀNH CÙNG CREDITBIRD/
       </span>
 
       <!-- 2-Row x 5-Column Grid with Shared .grid-ring Hairlines -->

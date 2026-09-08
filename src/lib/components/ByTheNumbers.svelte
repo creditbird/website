@@ -1,6 +1,4 @@
 <script lang="ts">
-  // Formance Parity Section 5: _BY THE NUMBERS/
-  // Strict 32px Architectural Grid Matrix Frame matching Formance Acquiring
   type Metric = {
     label: string;
     value: string;
@@ -9,49 +7,48 @@
 
   const metrics: Metric[] = [
     {
-      label: 'merchant positions',
-      value: 'exact',
-      sublabel: 'real-time  ·  per merchant'
+      label: 'năm thành lập',
+      value: '2018',
+      sublabel: 'MST: 0315397327 · TP. Thủ Đức'
     },
     {
-      label: 'fee schedule',
-      value: 'any',
-      sublabel: 'per method  ·  tiered'
+      label: 'dự án phần mềm & erp',
+      value: '100+',
+      sublabel: 'triển khai thành công'
     },
     {
-      label: 'payout cycles',
-      value: 'daily',
-      sublabel: 'derived  ·  not batch-computed'
+      label: 'kỹ sư it phái cử',
+      value: '50+',
+      sublabel: 'onboard nhanh trong 48h'
     },
     {
-      label: 'settlement breaks',
-      value: 'same-day',
-      sublabel: 'continuous matching'
+      label: 'hệ thống máy & scent',
+      value: '500+',
+      sublabel: 'điểm phủ sóng thương hiệu'
     }
   ];
 </script>
 
-<!-- Section Wrapper: Pure SOLID background (NO GRID on the outer margins) -->
+<!-- Section Wrapper: Pure SOLID background -->
 <section 
   id="by-the-numbers" 
   class="relative theme-emerald bg-background text-foreground" 
   style="--section-accent:var(--cobalt-accent, var(--theme-700, #22439c))"
 >
-  <!-- Strict Grid Container: Max 50 Grid Units (1600px), with content-box origin grid -->
   <div class="strict-grid relative z-2 py-1gu">
     <div class="flex flex-col gap-2gu">
       
-      <!-- Header Box: Eyebrow badge + Heading card with .grid-ring border overlap -->
+      <!-- Header Box -->
       <div class="flex flex-col mb-1gu">
         <span 
           class="snap-badge badge-sm font-mono uppercase tracking-widest flex h-1gu items-center shrink-0 max-w-full whitespace-nowrap grid-ring w-(--_badge-mw) md:w-(--_badge-w) px-1gu text-eyebrow-foreground bg-eyebrow-background"
         >
-          _BY THE NUMBERS/
+          _CON SỐ ẤN TƯỢNG/
         </span>
         <p 
           class="h5 font-sans w-full md:w-[calc(var(--grid-unit)*30)] p-1gu h-[calc(var(--grid-unit)*3)] flex items-center bg-card-background text-card-foreground grid-ring" 
         >
-          Settlement-grade, by design
+          Năng lực thực chứng qua từng năm phát triển
         </p>
       </div>
 

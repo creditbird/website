@@ -4,14 +4,15 @@
   let currentStep = $state(2);
 
   const workflowSteps = [
-    { num: 1, name: 'Authorize Card Payment', status: 'COMPLETED', time: '14ms', provider: 'Stripe' },
-    { num: 2, name: 'Deduce Platform Fee (15%)', status: 'IN_PROGRESS', time: '8ms', provider: 'CreditBird Engine' },
-    { num: 3, name: 'Hold Escrow for Delivery', status: 'PENDING', time: 'Scheduled', provider: 'Ledger Vault' },
-    { num: 4, name: 'SEPA Instant Payout to Merchant', status: 'PENDING', time: 'Queued', provider: 'Wise Network' }
+    { num: 1, name: 'Khảo sát Yêu cầu & Ký Hợp đồng NDA', status: 'COMPLETED', time: '24h', provider: 'CreditBird Solution Architects' },
+    { num: 2, name: 'Lập trình May đo & Phái cử IT Squad', status: 'IN_PROGRESS', time: '48h Onboard', provider: 'Engineering Division' },
+    { num: 3, name: 'Triển khai RustSale CRM & Kelvot ERP', status: 'PENDING', time: 'Agile Sprints', provider: 'Product & ERP Specialists' },
+    { num: 4, name: 'Lắp đặt Lemy Finest HVAC & Tinh dầu COA', status: 'PENDING', time: 'Đúng tiến độ', provider: 'Scent Engineering Lab' },
+    { num: 5, name: 'Bàn giao Full Code & Bảo trì SLA 24/7', status: 'PENDING', time: 'Cam kết SLA', provider: 'QA & Support Services' }
   ];
 
   function nextStep() {
-    currentStep = (currentStep % 4) + 1;
+    currentStep = (currentStep % 5) + 1;
   }
 </script>
 
@@ -25,7 +26,7 @@
           <div class="code-card-header bg-[#f1f5f9] border-b border-[#e2e8f0] px-4 py-2 flex items-center justify-between">
             <div class="flex items-center gap-2">
               <GitBranch size={14} class="text-[var(--cb-cobalt-500)]" />
-              <span class="font-mono text-xs text-[#475569] font-medium">workflow_orchestrator.yaml</span>
+              <span class="font-mono text-xs text-[#475569] font-medium">project_workflow.yaml</span>
             </div>
             <div class="flex gap-1.5">
               <span class="w-2.5 h-2.5 rounded-full bg-[#cbd5e1]"></span>
@@ -35,32 +36,36 @@
           </div>
 
           <div class="p-5 font-mono text-[0.8125rem] leading-relaxed bg-[#f8fafc] text-[#1e293b]">
-            <pre class="m-0 font-mono"><code><span class="text-[var(--cb-cobalt-500)] font-bold">name:</span> collect_and_disburse
+            <pre class="m-0 font-mono"><code><span class="text-[var(--cb-cobalt-500)] font-bold">project:</span> creditbird_enterprise_solutions
 <span class="text-[var(--cb-cobalt-500)] font-bold">stages:</span>
-  - <span class="text-[var(--cb-cobalt-500)] font-bold">send:</span>
-      <span class="text-[#64748b]">destination:</span>
-        <span class="text-[#64748b]">account:</span> <span class="text-[#0f172a] font-bold">orders:1234</span>
-      <span class="text-[#64748b]">amount:</span>
-        <span class="text-[#64748b]">asset:</span>  <span class="text-[#0f172a] font-bold">USD/2</span>
-        <span class="text-[#64748b]">amount:</span> <span class="text-[var(--cb-cobalt-500)] font-bold">599</span>
-  - <span class="text-[var(--cb-cobalt-500)] font-bold">wait_event:</span>
-      <span class="text-[#64748b]">event:</span> <span class="text-[#0f172a]">fulfillment.delivered</span>
-  - <span class="text-[var(--cb-cobalt-500)] font-bold">payout:</span>
-      <span class="text-[#64748b]">connector:</span> <span class="text-[#0f172a]">wise</span>
-      <span class="text-[#64748b]">beneficiary:</span> <span class="text-[#0f172a]">vendor_iban_de</span></code></pre>
+  - <span class="text-[var(--cb-cobalt-500)] font-bold">software:</span>
+      <span class="text-[#64748b]">scope:</span> <span class="text-[#0f172a] font-bold">Custom_Microservices_Web_App</span>
+      <span class="text-[#64748b]">deliverable:</span> <span class="text-[var(--cb-cobalt-500)] font-bold">100% Full Source Code</span>
+  - <span class="text-[var(--cb-cobalt-500)] font-bold">rustsale_crm:</span>
+      <span class="text-[#64748b]">engine:</span> <span class="text-[#0f172a]">Rust Native Desktop (Zalo/WA/FB)</span>
+      <span class="text-[#64748b]">latency:</span> <span class="text-[var(--cb-emerald-500)] font-bold">&lt; 15ms Local-First</span>
+  - <span class="text-[var(--cb-cobalt-500)] font-bold">it_staffing:</span>
+      <span class="text-[#64748b]">model:</span> <span class="text-[#0f172a]">Senior Tech Lead + Backend + DevOps</span>
+      <span class="text-[#64748b]">onboarding_sla:</span> <span class="text-[#0f172a]">48_hours (Trial 14 days)</span>
+  - <span class="text-[var(--cb-cobalt-500)] font-bold">kelvot_erp:</span>
+      <span class="text-[#64748b]">portal:</span> <span class="text-[#0f172a]">https://kelvot.com</span>
+      <span class="text-[#64748b]">modules:</span> <span class="text-[#0f172a]">Multi-BOM &amp; WMS Barcode</span>
+  - <span class="text-[var(--cb-cobalt-500)] font-bold">lemyfinest_scent:</span>
+      <span class="text-[#64748b]">portal:</span> <span class="text-[#0f172a]">https://www.lemyfinest.com</span>
+      <span class="text-[#64748b]">hardware:</span> <span class="text-[#0f172a]">HVAC Cold-Air Diffusers &amp; COA Oil</span></code></pre>
           </div>
 
           <!-- Interactive Step Controller Bar -->
           <div class="bg-[#f1f5f9] border-t border-[#e2e8f0] p-4 flex items-center justify-between">
             <div class="font-mono text-xs text-[#64748b]">
-              State Machine Step: <span class="text-[var(--cb-cobalt-500)] font-bold">{currentStep} / 4</span>
+              Tiến độ giai đoạn: <span class="text-[var(--cb-cobalt-500)] font-bold">Bước {currentStep} / 5</span>
             </div>
             <button
               type="button"
               onclick={nextStep}
               class="font-mono text-xs px-3 py-1.5 rounded bg-[var(--cb-cobalt-500)] text-white hover:bg-[var(--cb-azure-600)] transition-colors flex items-center gap-1 cursor-pointer font-medium"
             >
-              <span>Advance Step</span>
+              <span>Chuyển bước kế tiếp</span>
               <Play size={11} />
             </button>
           </div>
@@ -69,11 +74,11 @@
 
       <!-- Text & Interactive Step Progression (Right 6 Cols) -->
       <div class="lg:col-span-6 order-1 lg:order-2">
-        <span class="snap-badge mb-3">_FLOWS/</span>
-        <h2 class="section-title text-[#090e1f] mb-3">Money, orchestrated</h2>
-        <p class="text-xl font-medium text-[#090e1f] mb-3">Payment workflows, declared as code.</p>
+        <span class="snap-badge mb-3">_ĐIỀU PHỐI DỰ ÁN/</span>
+        <h2 class="section-title text-[#090e1f] mb-3">Vận hành Chuẩn mực</h2>
+        <p class="text-xl font-medium text-[#090e1f] mb-3">Quy trình điều phối dự án thông minh và minh bạch.</p>
         <p class="text-[#475569] text-base leading-relaxed mb-6">
-          Compose multi-step financial flows (splits, fees, holds, automated payouts, conditional escrow) as durable, event-driven programs. Run them reliably across providers with automatic idempotency, retries, and comprehensive auditability.
+          Từ các dự án phát triển phần mềm ERP phức tạp, phái cử nhân sự công nghệ chất lượng cao đến triển khai hệ thống máy phun tinh dầu tự động thông minh cho các chuỗi cơ sở — CreditBird luôn đảm bảo tính đồng bộ, báo cáo thời gian thực và cam kết SLA theo hợp đồng.
         </p>
 
         <!-- Dynamic Step Cards -->
@@ -86,12 +91,12 @@
                 </span>
                 <div>
                   <div class="text-sm font-semibold text-[#1e293b]">{step.name}</div>
-                  <div class="font-mono text-[0.6875rem] text-[#64748b]">Rail: {step.provider}</div>
+                  <div class="font-mono text-[0.6875rem] text-[#64748b]">Đơn vị: {step.provider}</div>
                 </div>
               </div>
               <div class="text-right">
                 <span class="font-mono text-xs font-semibold {step.num < currentStep ? 'text-[var(--cb-emerald-500)]' : step.num === currentStep ? 'text-[var(--cb-cobalt-500)]' : 'text-[#94a3b8]'}">
-                  {step.num < currentStep ? 'COMPLETED' : step.num === currentStep ? 'RUNNING' : 'QUEUED'}
+                  {step.num < currentStep ? 'HOÀN TẤT' : step.num === currentStep ? 'ĐANG THỰC HIỆN' : 'CHỜ TRIỂN KHAI'}
                 </span>
                 <div class="font-mono text-[0.6875rem] text-[#94a3b8]">{step.time}</div>
               </div>

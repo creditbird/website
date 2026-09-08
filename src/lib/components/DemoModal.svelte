@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { X, CheckCircle2, ArrowRight, ShieldCheck, Terminal } from 'lucide-svelte';
+  import { X, CheckCircle2, ArrowRight, ShieldCheck, Terminal, PhoneCall } from 'lucide-svelte';
 
   let { isOpen = false, onclose }: { isOpen?: boolean; onclose?: () => void } = $props();
 
   let fullName = $state('');
   let email = $state('');
+  let phone = $state('');
   let company = $state('');
-  let useCase = $state('Fintech / Lending');
-  let volume = $state('$1M - $10M / month');
+  let useCase = $state('Phát triển ERP doanh nghiệp');
   let isSubmitting = $state(false);
   let submitted = $state(false);
 
@@ -38,19 +38,19 @@
 
 {#if isOpen}
   <div 
-    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-in fade-in duration-200"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200"
     role="dialog"
     aria-modal="true"
   >
     <!-- Modal Card -->
-    <div class="relative w-full max-w-lg bg-white border border-[#cbd5e1] rounded-xl shadow-[0_24px_70px_rgba(0,0,0,0.18)] overflow-hidden text-left">
+    <div class="relative w-full max-w-lg bg-white border border-[#cbd5e1] rounded-xl shadow-[0_24px_70px_rgba(0,0,0,0.22)] overflow-hidden text-left">
       
       <!-- Close Button -->
       <button 
         type="button" 
         onclick={handleClose}
         class="absolute top-4 right-4 text-[#64748b] hover:text-[#090e1f] p-1 rounded hover:bg-[#f1f5f9] transition-colors cursor-pointer"
-        aria-label="Close dialog"
+        aria-label="Đóng cửa sổ"
       >
         <X size={20} />
       </button>
@@ -61,14 +61,14 @@
           <div class="flex items-center gap-2 mb-2">
             <span class="w-2 h-2 rounded-full bg-[var(--cb-azure-500)]"></span>
             <span class="font-mono text-xs text-[var(--cb-cobalt-500)] font-semibold tracking-wider uppercase">
-              CREDITBIRD ARCHITECTURE DEMO
+              CREDITBIRD • ĐĂNG KÝ TƯ VẤN DOANH NGHIỆP
             </span>
           </div>
           <h3 class="text-xl sm:text-2xl font-bold text-[#090e1f]">
-            Book a Technical Walkthrough
+            Đặt lịch tư vấn cùng chuyên gia
           </h3>
           <p class="text-xs sm:text-sm text-[#475569] mt-1">
-            Explore CreditScript workflows, multi-rail connectors, and zero-drift ledger mechanics with our engineering team.
+            Khảo sát yêu cầu, tư vấn kiến trúc phần mềm may đo, hệ thống ERP, cung ứng nhân sự IT hoặc giải pháp máy phun tinh dầu thông minh.
           </p>
         </div>
 
@@ -77,60 +77,76 @@
           
           <div>
             <label for="modal-name" class="block font-mono text-xs text-[#475569] mb-1.5 font-medium">
-              FULL NAME <span class="text-[var(--cb-cobalt-500)]">*</span>
+              HỌ VÀ TÊN <span class="text-[var(--cb-cobalt-500)]">*</span>
             </label>
             <input 
               id="modal-name" 
               type="text" 
               bind:value={fullName} 
               required
-              placeholder="Alex Vance" 
-              class="w-full h-10 px-3 rounded bg-[#f8fafc] border border-[#cbd5e1] text-[#090e1f] focus:outline-none focus:border-[var(--cb-cobalt-500)] focus:bg-white text-sm font-sans"
-            />
-          </div>
-
-          <div>
-            <label for="modal-email" class="block font-mono text-xs text-[#475569] mb-1.5 font-medium">
-              WORK EMAIL <span class="text-[var(--cb-cobalt-500)]">*</span>
-            </label>
-            <input 
-              id="modal-email" 
-              type="email" 
-              bind:value={email} 
-              required
-              placeholder="alex@fintech.io" 
+              placeholder="Ví dụ: Nguyễn Văn An" 
               class="w-full h-10 px-3 rounded bg-[#f8fafc] border border-[#cbd5e1] text-[#090e1f] focus:outline-none focus:border-[var(--cb-cobalt-500)] focus:bg-white text-sm font-sans"
             />
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
+              <label for="modal-email" class="block font-mono text-xs text-[#475569] mb-1.5 font-medium">
+                EMAIL CÔNG VIỆC <span class="text-[var(--cb-cobalt-500)]">*</span>
+              </label>
+              <input 
+                id="modal-email" 
+                type="email" 
+                bind:value={email} 
+                required
+                placeholder="an.nguyen@company.vn" 
+                class="w-full h-10 px-3 rounded bg-[#f8fafc] border border-[#cbd5e1] text-[#090e1f] focus:outline-none focus:border-[var(--cb-cobalt-500)] focus:bg-white text-sm font-sans"
+              />
+            </div>
+
+            <div>
+              <label for="modal-phone" class="block font-mono text-xs text-[#475569] mb-1.5 font-medium">
+                SỐ ĐIỆN THOẠI
+              </label>
+              <input 
+                id="modal-phone" 
+                type="tel" 
+                bind:value={phone}
+                placeholder="0932.xxx.xxx" 
+                class="w-full h-10 px-3 rounded bg-[#f8fafc] border border-[#cbd5e1] text-[#090e1f] focus:outline-none focus:border-[var(--cb-cobalt-500)] focus:bg-white text-sm font-sans"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
               <label for="modal-company" class="block font-mono text-xs text-[#475569] mb-1.5 font-medium">
-                COMPANY
+                TÊN DOANH NGHIỆP / TỔ CHỨC
               </label>
               <input 
                 id="modal-company" 
                 type="text" 
                 bind:value={company}
-                placeholder="Acme Financial" 
+                placeholder="Tên công ty của bạn" 
                 class="w-full h-10 px-3 rounded bg-[#f8fafc] border border-[#cbd5e1] text-[#090e1f] focus:outline-none focus:border-[var(--cb-cobalt-500)] focus:bg-white text-sm font-sans"
               />
             </div>
 
             <div>
               <label for="modal-usecase" class="block font-mono text-xs text-[#475569] mb-1.5 font-medium">
-                PRIMARY USE CASE
+                DỊCH VỤ QUAN TÂM
               </label>
               <select 
                 id="modal-usecase" 
                 bind:value={useCase}
                 class="w-full h-10 px-3 rounded bg-[#f8fafc] border border-[#cbd5e1] text-[#090e1f] focus:outline-none focus:border-[var(--cb-cobalt-500)] focus:bg-white text-sm font-sans"
               >
-                <option value="Fintech / Lending">Fintech / Lending</option>
-                <option value="Digital Assets / Stablecoins">Digital Assets / Stablecoins</option>
-                <option value="Marketplace Split Payouts">Marketplace Split Payouts</option>
-                <option value="AI / Compute Metering">AI / Compute Metering</option>
-                <option value="Corporate Treasury">Corporate Treasury</option>
+                <option value="Viết phần mềm may đo (Web, Mobile, Microservices)">Viết phần mềm may đo (Web, Mobile, Microservices)</option>
+                <option value="RustSale CRM Omnichannel (Desktop Native Rust)">RustSale CRM Omnichannel (Desktop Native Rust)</option>
+                <option value="Cho thuê nhân sự IT doanh nghiệp (Onsite/Remote)">Cho thuê nhân sự IT doanh nghiệp (Onsite/Remote)</option>
+                <option value="Kelvot ERP (Sản xuất Multi-BOM, Kho WMS, VAS/IFRS)">Kelvot ERP (Sản xuất Multi-BOM, Kho WMS, VAS/IFRS)</option>
+                <option value="Lemy Finest Scent (Máy phun HVAC & Tinh dầu COA)">Lemy Finest Scent (Máy phun HVAC & Tinh dầu COA)</option>
+                <option value="Tư vấn trọn gói hệ sinh thái CreditBird">Tư vấn trọn gói hệ sinh thái CreditBird</option>
               </select>
             </div>
           </div>
@@ -142,9 +158,9 @@
               class="btn-cta-primary w-full !h-11 text-xs cursor-pointer flex items-center justify-center gap-2"
             >
               {#if isSubmitting}
-                <span>Generating Sandbox Keys...</span>
+                <span>Đang xử lý tiếp nhận...</span>
               {:else}
-                <span>CONFIRM & BOOK DEMO</span>
+                <span>GỬI YÊU CẦU TƯ VẤN MIỄN PHÍ</span>
                 <ArrowRight size={14} />
               {/if}
             </button>
@@ -152,7 +168,7 @@
 
           <div class="flex items-center justify-center gap-2 font-mono text-[0.6875rem] text-[#64748b] mt-1">
             <ShieldCheck size={12} class="text-[var(--cb-emerald-500)]" />
-            <span>SOC 2 Type II Confidential • No Spam Guarantee</span>
+            <span>Cam kết bảo mật thông tin theo NĐ 13/2023/NĐ-CP • Phản hồi trong 2 giờ</span>
           </div>
 
         </form>
@@ -163,22 +179,24 @@
             <CheckCircle2 size={32} />
           </div>
           <h3 class="text-2xl font-bold text-[#090e1f] mb-2">
-            Demo Request Confirmed
+            Tiếp nhận yêu cầu thành công!
           </h3>
           <p class="text-sm text-[#475569] max-w-sm mb-6 leading-relaxed">
-            Thank you, <strong class="text-[#090e1f]">{fullName}</strong>. A CreditBird infrastructure architect will contact <strong class="text-[#090e1f]">{email}</strong> within 2 business hours with private sandbox credentials.
+            Cảm ơn quý khách <strong class="text-[#090e1f]">{fullName}</strong>. Chuyên viên giải pháp của CreditBird sẽ liên hệ tới email <strong class="text-[#090e1f]">{email}</strong> và số điện thoại trong vòng 2 giờ làm việc.
           </p>
-          <div class="p-4 rounded bg-[#f8fafc] border border-[#cbd5e1] font-mono text-xs text-left w-full mb-6 text-[#1e293b]">
-            <div class="text-[var(--cb-cobalt-500)] mb-1 font-bold">PROVISIONED_ENVIRONMENT:</div>
-            <div>cluster: <span class="text-[#090e1f] font-semibold">sandbox-us-east.creditbird.dev</span></div>
-            <div>protocol: <span class="text-[var(--cb-emerald-500)] font-semibold">mTLS + Numscript Engine v2.4</span></div>
+          <div class="p-4 rounded bg-[#f8fafc] border border-[#cbd5e1] font-mono text-xs text-left w-full mb-6 text-[#1e293b] flex flex-col gap-1.5">
+            <div class="text-[var(--cb-cobalt-500)] font-bold mb-0.5">THÔNG TIN TIẾP NHẬN CHÍNH THỨC:</div>
+            <div>Đơn vị: <span class="text-[#090e1f] font-semibold">CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD</span></div>
+            <div>Mã số thuế: <span class="text-[var(--cb-emerald-600)] font-semibold">0315397327</span></div>
+            <div>Dịch vụ đăng ký: <span class="text-[#090e1f] font-semibold">{useCase}</span></div>
+            <div>Hotline hỗ trợ gấp: <span class="text-[var(--cb-cobalt-600)] font-semibold">0932.640.968</span></div>
           </div>
           <button 
             type="button" 
             onclick={handleClose}
             class="btn-cta-primary !h-10 text-xs px-6 cursor-pointer"
           >
-            Done
+            Đóng cửa sổ
           </button>
         </div>
       {/if}

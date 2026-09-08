@@ -14,48 +14,48 @@
   const nodes: AccountNode[] = [
     {
       id: 'world',
-      label: 'world',
+      label: 'Khách hàng / Doanh nghiệp',
       type: 'ASSET',
       x: 20,
       y: 155,
-      description: 'External banking source or fiat settlement rail outside system boundaries.',
-      rule: 'Source for incoming customer deposits and external liquidity injection.'
+      description: 'Doanh nghiệp sản xuất, thương mại, chuỗi bán lẻ, khách sạn & spa.',
+      rule: 'Khởi tạo bài toán chuyển đổi số, nhu cầu nhân sự IT hoặc giải pháp Scent Marketing.'
     },
     {
       id: 'buyer',
-      label: 'buyer',
+      label: 'Phần mềm May đo',
       type: 'LIABILITY',
       x: 190,
       y: 35,
-      description: 'Individual buyer balance or stored wallet credits.',
-      rule: 'Debited when an authorized order transaction is submitted.'
+      description: 'Web app, Mobile app, hệ thống xử lý dữ liệu lớn và cổng kết nối API.',
+      rule: 'Lập trình riêng theo yêu cầu, giao diện UX/UI chuẩn mực, bảo mật cao.'
     },
     {
       id: 'marketplace',
-      label: 'marketplace',
+      label: 'Hệ thống ERP Lõi',
       type: 'CLEARING',
       x: 180,
       y: 155,
-      description: 'Intermediate transit escrow and clearing ledger for order splits.',
-      rule: 'Temporarily holds gross order value before instantaneous atomic disbursement.'
+      description: 'Phân hệ quản trị nguồn lực: Sản xuất (MRP), Kho (WMS), Kế toán (VAS), CRM.',
+      rule: 'Đồng bộ hóa luồng dữ liệu trung tâm, kiểm soát thời gian thực và chống thất thoát.'
     },
     {
       id: 'seller',
-      label: 'sellers/$seller_id',
+      label: 'Nhân sự IT Chuyên trách',
       type: 'LIABILITY',
       x: 395,
       y: 35,
-      description: 'Merchant payout liability account indexed by unique seller ID.',
-      rule: 'Receives 85% net order value, available for immediate automated payout.'
+      description: 'Đội ngũ kỹ sư phần mềm, Solution Architect, DevOps, QA/QC phái cử.',
+      rule: 'Bổ sung năng lực công nghệ tức thì trong 48h, làm việc theo SLA cam kết, thử việc 14 ngày.'
     },
     {
       id: 'fees',
-      label: 'fees',
+      label: 'Máy phun & Tinh dầu',
       type: 'REVENUE',
       x: 430,
       y: 155,
-      description: 'Platform gross margin and processing fee collection account.',
-      rule: 'Accrues 15% platform take-rate with immediate recognition.'
+      description: 'Máy khuếch tán Nano HVAC và bộ sưu tập tinh dầu thiên nhiên 100% COA.',
+      rule: 'Kiến tạo không gian hương thơm đẳng cấp, nâng tầm nhận diện thương hiệu.'
     }
   ];
 
@@ -65,34 +65,32 @@
 
   let selectedNode = $derived(nodes.find(n => n.id === selectedNodeId) || nodes[2]);
 
-  const yamlSchema = `chart_of_accounts:
-  - name: world
-    type: ASSET
-    metadata:
-      rail: external_fiat
-  - name: buyer
-    type: LIABILITY
-  - name: marketplace
-    type: CLEARING
-  - name: sellers/$seller_id
-    type: LIABILITY
-    partition_by: seller_id
-  - name: fees
-    type: REVENUE
-
-transactions:
-  order_checkout:
-    description: "Split marketplace order into merchant payout & platform fee"
-    postings:
-      - source: buyer
-        destination: marketplace
-        amount: {var: total_amount}
-      - source: marketplace
-        destination: sellers/$seller_id
-        amount: {mul: [{var: total_amount}, 0.85]}
-      - source: marketplace
-        destination: fees
-        amount: {mul: [{var: total_amount}, 0.15]}`;
+  const yamlSchema = `creditbird_ecosystem:
+  enterprise: "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD"
+  tax_id: "0315397327"
+  
+  core_verticals:
+    - custom_software:
+        scope: "May đo phần mềm & kiến trúc Microservices"
+        stack: ["TypeScript", "Rust", "Go", "Docker"]
+        ownership: "100% Full Source Code & Bản quyền"
+    - rustsale_crm:
+        name: "RustSale CRM & Outreach Pro"
+        engine: "Rust Native Desktop App"
+        channels: ["Zalo", "WhatsApp", "Facebook Messenger"]
+        storage: "Local-First Keyring (< 15ms latency)"
+        guide: "https://app.notion.com/p/RustSale-CRM-Outreach-Pro"
+    - it_staff_augmentation:
+        model: "Onsite & Dedicated Senior Squad"
+        roles: ["Tech Lead", "Senior Backend", "DevOps", "QA/QC"]
+        turnaround: "48h Onboarding (Thử việc 14 ngày, NDA)"
+    - kelvot_erp:
+        portal: "https://kelvot.com"
+        modules: ["Production_Multi_BOM", "Warehouse_WMS_Barcode", "Accounting_VAS_IFRS"]
+    - lemyfinest_scent_marketing:
+        portal: "https://www.lemyfinest.com"
+        hardware: "Cold-air Nano HVAC Diffusers (lên đến 5.000m³)"
+        oil_compliance: "100% Pure Natural Essential Oils (COA & GC-MS)"`;
 
   function copyYaml() {
     navigator.clipboard?.writeText(yamlSchema);
@@ -105,51 +103,49 @@ transactions:
   <div class="strict-grid-container py-16 md:py-24">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
       
-      <!-- Left Column: Copy & Specs (Formance Parity) -->
+      <!-- Left Column: Copy & Specs -->
       <div class="lg:col-span-6 flex flex-col gap-4">
-        <span class="snap-badge self-start">_SCHEMA BUILDER/</span>
+        <span class="snap-badge self-start">_SƠ ĐỒ HỆ SINH THÁI/</span>
         
-        <h2 class="h3 text-[#090e1f]">Author ledger schemas in YAML.</h2>
+        <h2 class="h3 text-[#090e1f]">Kiến trúc Tích hợp Đa dịch vụ</h2>
         
         <p class="subheading-md text-[#090e1f]">
-          Your chart of accounts, modeled as code.
+          Mô hình hóa toàn diện chuỗi giá trị chuyển đổi số & trải nghiệm.
         </p>
         
         <p class="p-md text-[#475569] leading-relaxed">
-          Write the chart of accounts and named transactions, validate as you type, then export to JSON or copy the API commands to bootstrap your ledger in seconds.
+          CreditBird liên kết mạch lạc giữa hạ tầng công nghệ (Phần mềm & ERP), nguồn nhân lực kỹ thuật (Cho thuê IT chuyên trách) và giải pháp nâng tầm không gian (Máy phun tinh dầu & Tinh dầu thiên nhiên) giúp tối đa hóa hiệu quả cho doanh nghiệp.
         </p>
 
         <div class="flex flex-col gap-3 font-mono text-xs text-[#334155] pt-2">
           <div class="flex items-start gap-2.5">
-            <span class="w-2 h-2 rounded-full bg-[#059669] mt-1 shrink-0"></span>
+            <span class="w-2 h-2 rounded-full bg-[var(--cb-cobalt-500)] mt-1 shrink-0"></span>
             <div>
-              <strong class="text-[#090e1f] font-sans">Compile-Time Validation:</strong> Catch circular accounts, invalid balance types, and unallocated fee remainder bugs in CI/CD before shipping to production.
+              <strong class="text-[#090e1f] font-sans">May đo Theo Đặc thù:</strong> Tùy biến chính xác theo quy mô và mô hình hoạt động của từng khách hàng, không phát sinh chi phí thừa thãi.
             </div>
           </div>
 
           <div class="flex items-start gap-2.5">
-            <span class="w-2 h-2 rounded-full bg-[#059669] mt-1 shrink-0"></span>
+            <span class="w-2 h-2 rounded-full bg-[var(--cb-cobalt-500)] mt-1 shrink-0"></span>
             <div>
-              <strong class="text-[#090e1f] font-sans">Dynamic Path Segments:</strong> Use parameter tokens like <code class="text-[#059669] bg-[#f1f5f9] px-1 py-0.5 rounded font-mono">$seller_id</code> to create multi-tenant account hierarchies on the fly.
+              <strong class="text-[#090e1f] font-sans">Đồng bộ Phần cứng & Phần mềm:</strong> Kết nối dữ liệu ERP với các thiết bị máy phun hương thông minh điều khiển qua IoT tự động.
             </div>
           </div>
 
           <div class="flex items-start gap-2.5">
-            <span class="w-2 h-2 rounded-full bg-[#059669] mt-1 shrink-0"></span>
+            <span class="w-2 h-2 rounded-full bg-[var(--cb-cobalt-500)] mt-1 shrink-0"></span>
             <div>
-              <strong class="text-[#090e1f] font-sans">Instant CLI Bootstrap:</strong> Run <code class="text-[#090e1f] bg-[#f1f5f9] px-1.5 py-0.5 rounded font-mono">creditbird schema apply schema.yaml</code> to instantiate your entire accounting graph.
+              <strong class="text-[#090e1f] font-sans">Bảo chứng Pháp lý & Uy tín:</strong> Pháp nhân minh bạch, đăng ký kinh doanh đầy đủ và cam kết chất lượng theo hợp đồng dịch vụ.
             </div>
           </div>
         </div>
 
         <div class="pt-4 flex items-center gap-4">
           <a 
-            href="https://docs.creditbird.com/schemas" 
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group/link inline-flex items-center gap-1.5 text-sm font-medium text-[#059669] hover:underline"
+            href="#why" 
+            class="group/link inline-flex items-center gap-1.5 text-sm font-medium text-[var(--cb-cobalt-500)] hover:underline font-medium"
           >
-            <span>Read schema documentation</span>
+            <span>Tìm hiểu chi tiết giải pháp</span>
             <span aria-hidden="true" class="transition-transform duration-200 group-hover/link:translate-x-1">→</span>
           </a>
         </div>
@@ -166,7 +162,7 @@ transactions:
               <button
                 type="button"
                 onclick={() => activeTab = 'visual'}
-                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-mono uppercase tracking-wider transition-all {activeTab === 'visual' ? 'bg-[#059669] text-white font-semibold' : 'text-[#94a3b8] hover:text-white bg-[#0f172a]'}"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-mono uppercase tracking-wider transition-all {activeTab === 'visual' ? 'bg-[var(--cb-cobalt-500)] text-white font-semibold' : 'text-[#94a3b8] hover:text-white bg-[#0f172a]'}"
               >
                 <Network size={13} />
                 <span>Flow Diagram</span>
@@ -175,14 +171,14 @@ transactions:
               <button
                 type="button"
                 onclick={() => activeTab = 'yaml'}
-                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-mono uppercase tracking-wider transition-all {activeTab === 'yaml' ? 'bg-[#059669] text-white font-semibold' : 'text-[#94a3b8] hover:text-white bg-[#0f172a]'}"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-mono uppercase tracking-wider transition-all {activeTab === 'yaml' ? 'bg-[var(--cb-cobalt-500)] text-white font-semibold' : 'text-[#94a3b8] hover:text-white bg-[#0f172a]'}"
               >
                 <Code2 size={13} />
                 <span>YAML Schema</span>
               </button>
             </div>
 
-            <span class="badge-sm font-mono uppercase tracking-widest text-[#10b981] bg-[rgba(16,185,129,0.12)] px-2.5 py-1 rounded hidden sm:inline-block">
+            <span class="badge-sm font-mono uppercase tracking-widest text-[#60a5fa] bg-[rgba(50,135,255,0.12)] px-2.5 py-1 rounded hidden sm:inline-block">
               5 nodes · 4 edges
             </span>
           </div>
@@ -195,7 +191,7 @@ transactions:
               <svg class="absolute inset-0 w-full h-full opacity-15 pointer-events-none" width="100%" height="100%">
                 <defs>
                   <pattern id="schema-dots" width="20" height="20" patternUnits="userSpaceOnUse">
-                    <circle cx="2" cy="2" r="1" fill="#38bdf8" />
+                    <circle cx="2" cy="2" r="1" fill="#60a5fa" />
                   </pattern>
                 </defs>
                 <rect width="100%" height="100%" fill="url(#schema-dots)" />
@@ -207,7 +203,7 @@ transactions:
                 <path 
                   d="M 116 177 L 180 177" 
                   fill="none" 
-                  stroke={selectedNodeId === 'world' || selectedNodeId === 'marketplace' ? '#10b981' : '#334155'} 
+                  stroke={selectedNodeId === 'world' || selectedNodeId === 'marketplace' ? '#60a5fa' : '#334155'} 
                   stroke-width="1.5"
                   stroke-dasharray="4 4"
                   class="animate-pulse"
@@ -217,7 +213,7 @@ transactions:
                 <path 
                   d="M 235 79 L 235 155" 
                   fill="none" 
-                  stroke={selectedNodeId === 'buyer' || selectedNodeId === 'marketplace' ? '#10b981' : '#334155'} 
+                  stroke={selectedNodeId === 'buyer' || selectedNodeId === 'marketplace' ? '#60a5fa' : '#334155'} 
                   stroke-width="1.5"
                   stroke-dasharray="4 4"
                   class="animate-pulse"
@@ -227,7 +223,7 @@ transactions:
                 <path 
                   d="M 276 170 C 330 170, 340 57, 395 57" 
                   fill="none" 
-                  stroke={selectedNodeId === 'marketplace' || selectedNodeId === 'seller' ? '#10b981' : '#334155'} 
+                  stroke={selectedNodeId === 'marketplace' || selectedNodeId === 'seller' ? '#60a5fa' : '#334155'} 
                   stroke-width="1.5"
                   stroke-dasharray="4 4"
                   class="animate-pulse"
@@ -237,7 +233,7 @@ transactions:
                 <path 
                   d="M 276 177 L 430 177" 
                   fill="none" 
-                  stroke={selectedNodeId === 'marketplace' || selectedNodeId === 'fees' ? '#10b981' : '#334155'} 
+                  stroke={selectedNodeId === 'marketplace' || selectedNodeId === 'fees' ? '#60a5fa' : '#334155'} 
                   stroke-width="1.5"
                   stroke-dasharray="4 4"
                   class="animate-pulse"
@@ -250,7 +246,7 @@ transactions:
                   <button
                     type="button"
                     onclick={() => selectedNodeId = node.id}
-                    class="absolute rounded px-3 py-2 text-xs font-mono text-center transition-all duration-200 cursor-pointer border focus:outline-none {selectedNodeId === node.id ? 'bg-[#059669] text-white border-[#34d399] ring-2 ring-[#059669]/50 shadow-lg scale-105' : 'bg-[#0b1530] text-[#cbd5e1] border-[#1e293b] hover:border-[#38bdf8] hover:text-white'}"
+                    class="absolute rounded px-3 py-2 text-xs font-mono text-center transition-all duration-200 cursor-pointer border focus:outline-none {selectedNodeId === node.id ? 'bg-[var(--cb-cobalt-500)] text-white border-[var(--cb-azure-400)] ring-2 ring-[var(--cb-cobalt-500)]/50 shadow-lg scale-105' : 'bg-[#0b1530] text-[#cbd5e1] border-[#1e293b] hover:border-[var(--cb-azure-500)] hover:text-white'}"
                     style="left: {node.x}px; top: {node.y}px; min-width: 96px; height: 44px; display: grid; place-items: center;"
                   >
                     <span class="font-medium truncate max-w-[130px]">@{node.label}</span>
@@ -265,12 +261,12 @@ transactions:
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2">
                   <span class="text-[#64748b] uppercase">Selected:</span>
-                  <span class="text-[#38bdf8] font-bold">@{selectedNode.label}</span>
+                  <span class="text-[#60a5fa] font-bold">@{selectedNode.label}</span>
                   <span class="px-1.5 py-0.5 rounded text-[10px] uppercase font-bold bg-[#1e293b] text-[#cbd5e1]">
                     {selectedNode.type}
                   </span>
                 </div>
-                <span class="text-[#10b981] text-[11px]">Validated</span>
+                <span class="text-[#60a5fa] text-[11px] font-semibold">Validated</span>
               </div>
               <div class="text-[11px] text-[#94a3b8] font-sans leading-relaxed">
                 {selectedNode.description}
@@ -289,8 +285,8 @@ transactions:
                 class="absolute top-3 right-3 inline-flex items-center gap-1 text-[11px] bg-[#1e293b] hover:bg-[#334155] text-white px-2 py-1 rounded transition-colors cursor-pointer"
               >
                 {#if copied}
-                  <Check size={12} class="text-[#10b981]" />
-                  <span class="text-[#10b981]">Copied</span>
+                  <Check size={12} class="text-[#60a5fa]" />
+                  <span class="text-[#60a5fa]">Copied</span>
                 {:else}
                   <Copy size={12} />
                   <span>Copy</span>

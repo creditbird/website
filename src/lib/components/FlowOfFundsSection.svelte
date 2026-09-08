@@ -15,36 +15,36 @@
       <div class="snap-card free-flow flex flex-col grid-ring bg-background text-foreground px-1gu py-2gu sm:p-2gu h-[calc(var(--grid-unit)*11)] min-h-[calc(var(--grid-unit)*11)]">
         <div class="flex flex-col gap-3 max-w-40gu">
           <span class="snap-badge badge-sm font-mono uppercase tracking-widest flex h-1gu items-center shrink-0 max-w-full whitespace-nowrap grid-ring w-(--_badge-mw) md:w-(--_badge-w) justify-center px-3 text-eyebrow-foreground bg-eyebrow-background self-start">
-            _FLOW OF FUNDS/
+            _QUY TRÌNH TRIỂN KHAI/
           </span>
-          <h2 class="h3 text-foreground">From shopper capture to merchant payout</h2>
-          <p class="subheading-md text-foreground">Fees, reserve, and payable split at capture: payout is just a query.</p>
-          <p class="p-md text-muted-foreground">Each capture credits the merchant's payable net of fees, sets aside the rolling reserve, and the payout cycle simply pays what the ledger says. Refunds and chargebacks debit the same accounts, so the position is always current.</p>
+          <h2 class="h3 text-foreground">Từ Khảo sát Yêu cầu đến Bàn giao & Vận hành</h2>
+          <p class="subheading-md text-foreground">Tiến độ chuẩn mực, cam kết SLA và bảo mật tuyệt đối theo hợp đồng.</p>
+          <p class="p-md text-muted-foreground">Mọi dự án viết phần mềm, phát triển ERP, cung ứng nhân sự IT hay lắp đặt máy phun tinh dầu công nghiệp đều được thực thi theo quy trình 4 giai đoạn khép kín, minh bạch và đáp ứng tiêu chuẩn kỹ thuật cao nhất.</p>
         </div>
       </div>
 
-      <!-- Bottom Card: Merchant Position Flow Diagram -->
+      <!-- Bottom Card: Operations Flow Diagram -->
       <div class="flex flex-col grid-ring bg-background text-foreground px-1gu py-2gu sm:p-2gu items-center justify-center h-[calc(var(--grid-unit)*11)] min-h-[calc(var(--grid-unit)*11)]">
         <div class="w-full">
-          <!-- Center Top Pill: merchant position -->
+          <!-- Center Top Pill -->
           <div class="mb-1gu flex justify-center">
             <span 
               class="badge-sm font-mono uppercase tracking-widest px-1gu py-gu-0.25" 
               style="color:var(--section-accent);border:1px solid var(--section-accent);background-color:color-mix(in srgb, var(--section-accent) 8%, transparent)"
             >
-              merchant position
+              VÒNG ĐỜI DỰ ÁN CREDITBIRD
             </span>
           </div>
 
           <!-- 4 Process Step Cards Flow with Arrow Dividers -->
           <div class="flex flex-col items-stretch md:flex-row md:items-center">
-            <!-- 1. CAPTURE -->
+            <!-- 1. KHẢO SÁT -->
             <div 
               class="flex flex-1 flex-col items-center justify-center gap-gu-0.5 px-1gu py-1gu text-center transition-colors duration-300" 
               style="border:1px solid color-mix(in srgb, var(--grid-line-color) calc(var(--grid-line-opacity) * 100%), transparent);background-color:transparent"
             >
-              <span class="badge-md font-mono uppercase tracking-widest text-foreground font-semibold">capture</span>
-              <span class="badge-sm font-mono text-muted-foreground">shopper payment</span>
+              <span class="badge-md font-mono uppercase tracking-widest text-foreground font-semibold">1. Khảo sát</span>
+              <span class="badge-sm font-mono text-muted-foreground">tiếp nhận & phân tích</span>
             </div>
 
             <!-- Arrow 1 -->
@@ -54,13 +54,13 @@
               </svg>
             </div>
 
-            <!-- 2. FEE SPLIT -->
+            <!-- 2. MAY ĐO & THIẾT KẾ -->
             <div 
               class="flex flex-1 flex-col items-center justify-center gap-gu-0.5 px-1gu py-1gu text-center transition-colors duration-300" 
               style="border:1px solid var(--section-accent);background-color:color-mix(in srgb, var(--section-accent) 5%, transparent)"
             >
-              <span class="badge-md font-mono uppercase tracking-widest text-foreground font-semibold">fee split</span>
-              <span class="badge-sm font-mono text-muted-foreground">schedule applied</span>
+              <span class="badge-md font-mono uppercase tracking-widest text-foreground font-semibold">2. May đo kiến trúc</span>
+              <span class="badge-sm font-mono text-muted-foreground">phần mềm / ERP / Scent</span>
             </div>
 
             <!-- Arrow 2 -->
@@ -70,13 +70,13 @@
               </svg>
             </div>
 
-            <!-- 3. RESERVE -->
+            <!-- 3. TRIỂN KHAI & TEST -->
             <div 
               class="flex flex-1 flex-col items-center justify-center gap-gu-0.5 px-1gu py-1gu text-center transition-colors duration-300" 
               style="border:1px solid var(--section-accent);background-color:color-mix(in srgb, var(--section-accent) 5%, transparent)"
             >
-              <span class="badge-md font-mono uppercase tracking-widest text-foreground font-semibold">reserve</span>
-              <span class="badge-sm font-mono text-muted-foreground">rolling hold</span>
+              <span class="badge-md font-mono uppercase tracking-widest text-foreground font-semibold">3. Triển khai & QC</span>
+              <span class="badge-sm font-mono text-muted-foreground">lập trình & lắp đặt IoT</span>
             </div>
 
             <!-- Arrow 3 -->
@@ -86,13 +86,13 @@
               </svg>
             </div>
 
-            <!-- 4. PAYOUT -->
+            <!-- 4. BÀN GIAO & VẬN HÀNH -->
             <div 
               class="flex flex-1 flex-col items-center justify-center gap-gu-0.5 px-1gu py-1gu text-center transition-colors duration-300" 
               style="border:1px solid color-mix(in srgb, var(--grid-line-color) calc(var(--grid-line-opacity) * 100%), transparent);background-color:transparent"
             >
-              <span class="badge-md font-mono uppercase tracking-widest text-foreground font-semibold">payout</span>
-              <span class="badge-sm font-mono text-muted-foreground">merchant settled</span>
+              <span class="badge-md font-mono uppercase tracking-widest text-foreground font-semibold">4. Bàn giao & SLA</span>
+              <span class="badge-sm font-mono text-muted-foreground">bảo hành & hỗ trợ 24/7</span>
             </div>
           </div>
         </div>

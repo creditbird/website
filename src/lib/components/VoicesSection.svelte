@@ -23,77 +23,77 @@
       <!-- Card 1: Header (lg:col-span-2) -->
       <div class="snap-card h-(--_card-mh) md:h-(--_card-h) free-flow flex flex-col grid-ring bg-background text-foreground free-flow p-1gu gap-3 lg:col-span-2">
         <span class="snap-badge badge-sm font-mono uppercase tracking-widest flex h-(--grid-unit) items-center shrink-0 max-w-full whitespace-nowrap grid-ring w-(--_badge-mw) md:w-(--_badge-w) justify-center px-3 text-eyebrow-foreground bg-eyebrow-background self-start">
-          _VOICES/
+          _ĐÁNH GIÁ & KHÁCH HÀNG/
         </span>
-        <h2 class="h3 text-foreground">Trusted by builders</h2>
+        <h2 class="h3 text-foreground">Được tin cậy bởi các doanh nghiệp tiên phong</h2>
       </div>
 
-      <!-- Card 2: Featured Hero Quote: Liberis (lg:col-span-2 lg:row-start-2 lg:row-span-2) -->
+      <!-- Card 2: Featured Hero Quote: Chuỗi Bán lẻ & Sản xuất (lg:col-span-2 lg:row-start-2 lg:row-span-2) -->
       <div class="snap-card h-(--_card-mh) md:h-(--_card-h) free-flow flex flex-col grid-ring bg-background text-foreground free-flow p-1gu lg:col-span-2 lg:row-start-2 lg:row-span-2 lg:h-auto lg:justify-center">
         <div class="flex flex-col gap-3">
-          <a href="https://www.liberis.com/?ref=creditbird" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center">
-            <span class="sr-only">Liberis</span>
+          <div class="inline-flex items-center justify-center">
+            <span class="sr-only">Tập đoàn Bán lẻ & Sản xuất Đa ngành</span>
             <img 
-              alt="Liberis" 
+              alt="Đối tác tiêu biểu CreditBird" 
               loading="lazy" 
               width="400" 
               height="160" 
               class="h-24 md:h-32 w-auto max-w-full object-contain" 
               src="https://35g9o342ii9njma6.public.blob.vercel-storage.com/Liberis-light-1.svg"
             />
-          </a>
+          </div>
           <blockquote class="subheading-md font-sans italic text-foreground text-center">
-            “CreditBird enabled us to ship new lending products faster by providing a customizable foundation that let us reliably express the complexities of our flow of funds.”
+            “CreditBird đã tạo bước chuyển mình vượt bậc cho chúng tôi: hệ thống ERP may đo số hóa trọn vẹn chuỗi cung ứng 18 chi nhánh cùng đội ngũ kỹ sư IT tận tụy. Đồng thời, giải pháp máy phun tinh dầu tự động tại showroom đã nâng tầm trải nghiệm khách hàng.”
           </blockquote>
-          <p class="p-sm text-muted-foreground text-center">Embedded finance · reconciliation across 14 countries</p>
+          <p class="p-sm text-muted-foreground text-center">Tập đoàn Bán lẻ & Sản xuất · Triển khai ERP, Nhân sự IT & Scent Marketing</p>
           <a 
-            href="/customers/liberis" 
+            href="#cta" 
             class="relative inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 font-mono font-medium bg-[#22439c] text-white hover:bg-[#3287ff] px-8 h-9 uppercase self-center shadow-sm transition-colors"
           >
-            See customer story
+            Khám phá câu chuyện hợp tác
           </a>
         </div>
       </div>
 
-      <!-- Card 3: Doctolib (lg:col-start-3 lg:row-start-2) -->
+      <!-- Card 3: Khách hàng Phần mềm & Nhân sự IT (lg:col-start-3 lg:row-start-2) -->
       <div class="snap-card h-(--_card-mh) md:h-(--_card-h) free-flow flex flex-col grid-ring bg-background text-foreground free-flow p-1gu lg:h-auto lg:justify-center lg:col-start-3 lg:row-start-2">
         <div class="flex flex-col gap-3">
-          <a href="https://www.doctolib.fr/?ref=creditbird" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center">
-            <span class="sr-only">Doctolib</span>
+          <div class="inline-flex items-center justify-center">
+            <span class="sr-only">Nền tảng Y tế & E-Commerce</span>
             <img 
-              alt="Doctolib" 
+              alt="Đối tác Nền tảng Y tế" 
               loading="lazy" 
               width="400" 
               height="160" 
               class="h-14 md:h-18 w-auto max-w-full object-contain" 
               src="https://35g9o342ii9njma6.public.blob.vercel-storage.com/Doctolib-light.svg"
             />
-          </a>
+          </div>
           <blockquote class="p-md font-sans italic text-foreground">
-            “CreditBird is the foundation of our Financial OS, the open-source approach lets us retain control over this key component.”
+            “CreditBird cung cấp dịch vụ gia công phần mềm chuẩn mực, đội ngũ IT onsite chuyên môn cao giúp chúng tôi rút ngắn 6 tháng phát triển và vận hành hệ thống đạt 99.99% uptime.”
           </blockquote>
-          <p class="p-sm text-muted-foreground">Healthcare · Financial OS</p>
+          <p class="p-sm text-muted-foreground">Nền tảng Y tế & Dịch vụ · Phần mềm May đo & Nhân sự IT</p>
         </div>
       </div>
 
-      <!-- Card 4: Payflip (lg:col-start-3 lg:row-start-3) -->
+      <!-- Card 4: Khách hàng Khách sạn, Resort & Scent Branding (lg:col-start-3 lg:row-start-3) -->
       <div class="snap-card h-(--_card-mh) md:h-(--_card-h) free-flow flex flex-col grid-ring bg-background text-foreground free-flow p-1gu lg:h-auto lg:justify-center lg:col-start-3 lg:row-start-3">
         <div class="flex flex-col gap-3">
-          <a href="https://payflip.be/?ref=creditbird" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center">
-            <span class="sr-only">Payflip</span>
+          <div class="inline-flex items-center justify-center">
+            <span class="sr-only">Hệ thống Khách sạn & Spa Cao cấp</span>
             <img 
-              alt="Payflip" 
+              alt="Hệ thống Khách sạn Cao cấp" 
               loading="lazy" 
               width="400" 
               height="160" 
               class="h-14 md:h-18 w-auto max-w-full object-contain" 
               src="https://35g9o342ii9njma6.public.blob.vercel-storage.com/Payflip-light-1.svg"
             />
-          </a>
+          </div>
           <blockquote class="p-md font-sans italic text-foreground">
-            “CreditBird helped us kick off our move into fintech, with robust infrastructure and intuitive developer tooling.”
+            “Hệ thống máy phun tinh dầu công nghiệp tích hợp HVAC và tinh dầu thiên nhiên nguyên chất từ CreditBird tạo dấu ấn hương thơm độc bản, nâng cao 35% tỷ lệ hài lòng của khách lưu trú.”
           </blockquote>
-          <p class="p-sm text-muted-foreground">Benefits · fintech infrastructure</p>
+          <p class="p-sm text-muted-foreground">Chuỗi Resort & Khách sạn 5 sao · Máy Phun Tinh Dầu HVAC & COA Scent</p>
         </div>
       </div>
 

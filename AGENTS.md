@@ -5,6 +5,7 @@
 > 2. Mọi hoạt động khảo sát mã nguồn, tìm kiếm symbol, truy vết luồng gọi hàm hay phân tích tác động code **BẮT BUỘC ƯU TIÊN** sử dụng **CodeGraph** (`codegraph_explore` MCP hoặc CLI `codegraph`) thay vì grep/find/read file thủ công.
 > 3. **BẮT BUỘC LUÔN DÙNG `bun` VÀ `bunx`** thay thế hoàn toàn cho `node`, `npm`, `npx`, `pnpm` trong mọi tác vụ (chạy script, cài package, khởi tạo, build, dev server).
 > 4. **THƯ MỤC CHÍNH CỦA DỰ ÁN** chính là `/home/arch/Project/creditbird-website`, mọi source code SvelteKit được tổ chức trực tiếp tại đây (`src/`, `static/`, `package.json`, `vite.config.ts`), không tạo thư mục con làm project lồng nhau.
+> 5. **BẮT BUỘC ĐỌC 2 TÀI LIỆU CẨM NANG TRƯỚC KHI IMPLEMENT TASK MỚI**: [`docs/CP.md`](file:///home/arch/Project/creditbird-website/docs/CP.md) (Common Patterns `[CP-01]` đến `[CP-07]`) và [`docs/IB.md`](file:///home/arch/Project/creditbird-website/docs/IB.md) (Interaction Bugs `[IB-01]` đến `[IB-09]`) để ngăn chặn tuyệt đối việc lặp lại bug cũ hoặc triển khai sai quy chuẩn kiến trúc.
 
 ---
 
@@ -12,9 +13,11 @@
 
 Khi nhận bất kỳ yêu cầu nào từ người dùng, Agent phải tuân thủ đúng 4 bước sau:
 
-### Bước 1: Tra cứu Ký ức (Memory Recall)
-- Gọi MCP tool `agentmemory`: `memory_smart_search` hoặc `memory_recall` với từ khóa liên quan đến task (ví dụ: `creditbird`, `website`, `rustsale`, `hyperframes`, `tokens`, `components`, v.v.).
-- Kiểm tra lại các quyết định kiến trúc cũ, sở thích người dùng, quy chuẩn đã thống nhất hoặc lỗi từng gặp để không lặp lại sai lầm.
+### Bước 1: Tra cứu Ký ức & Đọc Sổ tay CP / IB (Memory & Standards Check)
+- Gọi MCP tool `agentmemory`: `memory_smart_search` hoặc `memory_recall` với từ khóa liên quan đến task.
+- **Đọc và rà soát 2 tài liệu tiêu chuẩn bắt buộc**:
+  - [`docs/CP.md`](file:///home/arch/Project/creditbird-website/docs/CP.md): Nắm vững các pattern `[CP-01]` đến `[CP-07]` (snap height 32px, 0px section border, `.grid-ring`, `.no-bg-grid`, v.v.).
+  - [`docs/IB.md`](file:///home/arch/Project/creditbird-website/docs/IB.md): Rà soát danh mục 9 lỗi thường gặp `[IB-01]` đến `[IB-09]` để chủ động phòng ngừa khi viết code.
 
 ### Bước 2: Khảo sát Code & Kiến trúc với CodeGraph
 - Dự án đã được lập chỉ mục tại `.codegraph/`.
@@ -94,9 +97,19 @@ codegraph status
 
 ---
 
-## 4. CHECKLIST DÀNH CHO AGENT TRƯỚC KHI BÁO CÁO HOÀN THÀNH
+## 4. TÀI LIỆU QUY CHUẨN COMMON PATTERNS (DOCS/CP.MD) & SỔ TAY LỖI TƯƠNG TÁC (DOCS/IB.MD)
+
+Mọi thay đổi giao diện, tạo component mới, hoặc căn chỉnh layout BẮT BUỘC phải đọc và tuân thủ hướng dẫn tại:
+- [`docs/CP.md`](file:///home/arch/Project/creditbird-website/docs/CP.md): Hướng dẫn chi tiết Formance Parity & Cyanotype Blueprint Aesthetic, danh mục 7 pattern `[CP-01]` đến `[CP-07]` (snap border 32px pixel-perfect, 0px border trên `<section>`, `.grid-ring`, `.no-bg-grid`, v.v.).
+- [`docs/IB.md`](file:///home/arch/Project/creditbird-website/docs/IB.md): Sổ tay 9 lỗi tương tác & tích hợp thường gặp `[IB-01]` đến `[IB-09]` (cumulative 1px drift, fractional card height, background grid bleed, responsive overflow, modal scroll trap, v.v.).
+
+---
+
+## 5. CHECKLIST DÀNH CHO AGENT TRƯỚC KHI BÁO CÁO HOÀN THÀNH
 
 - [ ] Đã tra cứu `agentmemory` trước khi bắt đầu chưa?
+- [ ] Đã đọc và tuân thủ các pattern trong [`docs/CP.md`](file:///home/arch/Project/creditbird-website/docs/CP.md) (`[CP-01]` - `[CP-07]`) chưa?
+- [ ] Đã rà soát và đối chiếu danh mục lỗi trong [`docs/IB.md`](file:///home/arch/Project/creditbird-website/docs/IB.md) (`[IB-01]` - `[IB-09]`) chưa?
 - [ ] Đã dùng CodeGraph để khảo sát thay vì grep mò mẫm chưa?
 - [ ] Đã chạy `codegraph sync` nếu có thay đổi cấu trúc mã nguồn chưa?
 - [ ] Đã lưu lại quyết định hoặc kinh nghiệm quan trọng vào `agentmemory` chưa?

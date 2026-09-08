@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { Copy, Check, Play, Terminal, Database, Sparkles } from 'lucide-svelte';
+  import { Copy, Check, Play, Terminal, Database, Sparkles, Layers, Users, Wind } from 'lucide-svelte';
 
-  type ScriptTab = 'split' | 'tranche' | 'escrow';
+  type ScriptTab = 'rustsale' | 'kelvot' | 'staffing' | 'lemyfinest';
 
-  let activeTab = $state<ScriptTab>('split');
+  let activeTab = $state<ScriptTab>('rustsale');
   let copied = $state(false);
   let isExecuting = $state(false);
   let executionResult = $state<{
@@ -13,76 +13,113 @@
   } | null>(null);
 
   const scriptExamples = {
-    split: {
-      filename: 'marketplace_split.num',
-      title: 'Marketplace Split Payout',
-      code: `send [USD 1000] (
-  source = @world
-  destination = {
-    85% to @sellers:acme_corp
-    15% to @platform:fees
-  }
-)
-
-// Automatically generates balanced postings:
-// @world                 -1000.00 USD
-// @sellers:acme_corp     +850.00 USD
-// @platform:fees         +150.00 USD`,
+    rustsale: {
+      filename: 'rustsale_omnichannel.rs',
+      title: 'RustSale CRM — Động cơ Hội tụ Đa kênh (Rust Native)',
+      code: `// RustSale CRM & Outreach Pro: Microsecond Event Loop
+pub async fn handle_inbox_event(event: OmnichannelEvent) -> Result<SyncAck, EngineError> {
+    match event {
+        OmnichannelEvent::ZaloMessage { sender, text } => {
+            keyring_vault::verify_signature(&sender)?;
+            crm_pipeline::auto_tag_lead(&sender, "ZALO_INBOUND").await?;
+            desktop_inbox::push_stream(Channel::Zalo, sender, text).await
+        },
+        OmnichannelEvent::WhatsAppB2B { phone, payload } => {
+            crm_pipeline::link_won_contact(&phone, payload).await?;
+            desktop_inbox::push_stream(Channel::WhatsApp, phone, payload).await
+        },
+        OmnichannelEvent::FacebookHub { page_id, comment } => {
+            fanpage_ai::auto_reply(page_id, comment).await
+        }
+    }
+}
+// Độ trễ < 1ms, không rò rỉ bộ nhớ, bảo mật Local-First`,
       postings: [
-        { from: '@world', to: '@sellers:acme_corp', asset: 'USD', amount: '850.00' },
-        { from: '@world', to: '@platform:fees', asset: 'USD', amount: '150.00' }
+        { from: '@zalo:khach_hang_b2b', to: '@rustsale:inbox_hub', asset: 'MSG', amount: '1 tin nhắn mới' },
+        { from: '@whatsapp:doanh_nghiep_fdi', to: '@rustsale:won_contacts', asset: 'PO', amount: 'Đã gắn tag VIP' },
+        { from: '@facebook:fanpage_chinh', to: '@rustsale:kanban_pipeline', asset: 'LEAD', amount: 'Tự động gán Sales' }
       ],
       balances: [
-        { account: '@world', delta: '-1000.00 USD' },
-        { account: '@sellers:acme_corp', delta: '+850.00 USD' },
-        { account: '@platform:fees', delta: '+150.00 USD' }
+        { account: '@rustsale:latency', delta: '0.42 ms (Microsecond)' },
+        { account: '@rustsale:ram_usage', delta: '38.4 MB (Tauri v2)' },
+        { account: '@rustsale:security', delta: 'AES-256 Keyring Valid' }
       ]
     },
-    tranche: {
-      filename: 'credit_facility.num',
-      title: 'Syndicated Credit Tranche',
-      code: `send [USDC 2500000] (
-  source = @lenders:syndicate_pool
-  destination = {
-    70% to @tranche:senior_debt
-    20% to @tranche:mezzanine_debt
-    10% to @tranche:first_loss_reserve
-  }
-)
-
-// Zero fractional drift guaranteed by Numscript rounding engine`,
+    kelvot: {
+      filename: 'kelvot_bom_production.yaml',
+      title: 'Kelvot ERP — Định mức BOM Sản xuất & Kho WMS',
+      code: `kelvot_production_ledger:
+  order_id: "PO-2026-MFG-08"
+  bom_version: "BOM_MOTOR_V3_MULTI_LEVEL"
+  routing:
+    - station_1: "Dập khuôn thép tấm (NVL: Thép lá cán nguội)"
+    - station_2: "Gia công CNC & Quấn dây đồng tự động"
+    - station_3: "Lắp ráp cụm chi tiết & Kiểm định QA/QC"
+  accounting_sync:
+    debit: "TK_154 (Chi phí sản xuất dở dang)"
+    credit: "TK_152 (Nguyên vật liệu xuất kho WMS)"
+    vas_standard: "Thong_tu_200_Bo_Tai_Chinh"`,
       postings: [
-        { from: '@lenders:syndicate_pool', to: '@tranche:senior_debt', asset: 'USDC', amount: '1,750,000.00' },
-        { from: '@lenders:syndicate_pool', to: '@tranche:mezzanine_debt', asset: 'USDC', amount: '500,000.00' },
-        { from: '@lenders:syndicate_pool', to: '@tranche:first_loss_reserve', asset: 'USDC', amount: '250,000.00' }
+        { from: '@kho_nguyen_lieu_wms', to: '@chuyen_san_xuat_1', asset: 'THEP_TAM', amount: '12.5 Tấn' },
+        { from: '@chuyen_san_xuat_1', to: '@kho_thanh_pham_wms', asset: 'DONG_CO_DIESEL', amount: '85 Bộ' },
+        { from: '@tai_chinh:tk_154', to: '@ke_toan:gia_thanh_vas', asset: 'VND', amount: '+450,000,000' }
       ],
       balances: [
-        { account: '@lenders:syndicate_pool', delta: '-2,500,000.00 USDC' },
-        { account: '@tranche:senior_debt', delta: '+1,750,000.00 USDC' },
-        { account: '@tranche:mezzanine_debt', delta: '+500,000.00 USDC' },
-        { account: '@tranche:first_loss_reserve', delta: '+250,000.00 USDC' }
+        { account: '@kelvot:bom_accuracy', delta: '99.8% Không sai sót' },
+        { account: '@kelvot:wms_barcode', delta: 'Real-time FIFO Scan' },
+        { account: '@kelvot:accounting', delta: 'Bút toán VAS tự động' }
       ]
     },
-    escrow: {
-      filename: 'milestone_escrow.num',
-      title: 'Conditional Milestone Escrow',
-      code: `send [EUR 45000] (
-  source = @escrow:contract_9041
-  destination = {
-    90% to @vendor:contractor_payout
-    10% to @compliance:tax_withholding
-  }
-)
-
-// Atomic transaction execution with SHA-256 hash attestation`,
+    staffing: {
+      filename: 'it_staff_allocation.yaml',
+      title: 'Cung Ứng Nhân Sự IT — Senior Onsite & Dedicated Squad',
+      code: `it_staff_augmentation_contract:
+  contract_ref: "CREDITBIRD-HR-2026"
+  tax_id: "0315397327"
+  squad_allocation:
+    - role: "Senior Backend (Rust / Golang)"
+      fte: 2
+      sla_onboarding: "48_hours"
+    - role: "Senior Frontend (SvelteKit / React)"
+      fte: 1
+      sla_onboarding: "48_hours"
+    - role: "DevOps & Cloud Security Architect"
+      fte: 1
+      certifications: ["CKA", "AWS_Solutions_Architect"]
+  legal_nda: "B2B Intellectual Property Non-Disclosure Agreement Signed"`,
       postings: [
-        { from: '@escrow:contract_9041', to: '@vendor:contractor_payout', asset: 'EUR', amount: '40,500.00' },
-        { from: '@escrow:contract_9041', to: '@compliance:tax_withholding', asset: 'EUR', amount: '4,500.00' }
+        { from: '@creditbird:talent_pool', to: '@khach_hang:onsite_office', asset: 'KỸ_SƯ_RUST', amount: '2 Senior Devs' },
+        { from: '@creditbird:talent_pool', to: '@khach_hang:dedicated_team', asset: 'SVELTE_DEV', amount: '1 Senior Dev' },
+        { from: '@creditbird:talent_pool', to: '@khach_hang:cloud_infra', asset: 'DEVOPS_ARCH', amount: '1 Architect' }
       ],
       balances: [
-        { account: '@escrow:contract_9041', delta: '-45,000.00 EUR' },
-        { account: '@vendor:contractor_payout', delta: '+40,500.00 EUR' },
-        { account: '@compliance:tax_withholding', delta: '+4,500.00 EUR' }
+        { account: '@it_staff:onboarding', delta: '48h Bàn giao việc' },
+        { account: '@it_staff:trial_period', delta: '14 Ngày thử việc miễn phí' },
+        { account: '@it_staff:nda_legal', delta: '100% Bảo mật quyền sở hữu' }
+      ]
+    },
+    lemyfinest: {
+      filename: 'lemyfinest_hvac_iot.yaml',
+      title: 'Lemy Finest — Lập Lịch Máy Phun Tinh Dầu HVAC Thông Minh',
+      code: `lemyfinest_scent_marketing:
+  brand: "LEMY FINEST (lemyfinest.com)"
+  hardware: "Diffuser_HVAC_Industrial_Pro_5000"
+  space_coverage: "5,000 m² (Hệ thống ống gió điều hòa trung tâm)"
+  essential_oil:
+    name: "White Tea & Bergamot Luxury Signature"
+    certification: "COA & GC-MS Certified 100% Pure Natural"
+  iot_scheduler:
+    active_days: "Monday - Sunday"
+    operating_hours: "07:30 - 21:30"
+    burst_cycle: "60s Phun / 120s Nghỉ (Mùi hương lan tỏa đồng đều)"`,
+      postings: [
+        { from: '@lemyfinest:kho_tinh_dau', to: '@may_phun_hvac_toa_nha', asset: 'TINH_DAU_COA', amount: '2,500 ml' },
+        { from: '@may_phun_hvac_toa_nha', to: '@khong_gian:sanh_va_van_phong', asset: 'HƯƠNG_THƠM', amount: '5,000 m² phủ đều' }
+      ],
+      balances: [
+        { account: '@lemyfinest:purity', delta: '100% Thiên nhiên COA' },
+        { account: '@lemyfinest:hardware', delta: 'Bảo hành 24 tháng chính hãng' },
+        { account: '@lemyfinest:maintenance', delta: 'Bảo trì & refill định kỳ tận nơi' }
       ]
     }
   };
@@ -101,40 +138,43 @@
     setTimeout(() => {
       isExecuting = false;
       executionResult = {
-        txId: `tx_${Math.random().toString(36).substring(2, 8)}`,
+        txId: `sim_${Math.random().toString(36).substring(2, 8)}`,
         postings: scriptExamples[activeTab].postings,
         balances: scriptExamples[activeTab].balances
       };
-    }, 450);
+    }, 600);
   }
 </script>
 
-<section id="code-ledger" class="py-20 border-b border-[#e2e8f0] bg-white">
+<section id="code-ledger" class="py-20 border-b border-[#e2e8f0] bg-[#f8fafc]">
   <div class="strict-grid-container">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
       <!-- Text Description (Left 5 Cols) -->
       <div class="lg:col-span-5">
-        <span class="snap-badge mb-3">_LEDGER/</span>
-        <h2 class="section-title text-[#090e1f] mb-3">Always balanced</h2>
-        <p class="text-xl font-medium text-[#090e1f] mb-3">A double-entry ledger built for engineers.</p>
+        <span class="snap-badge mb-3">_KIẾN TRÚC MÃ NGUỒN & HỆ THỐNG / SANDBOX</span>
+        <h2 class="section-title text-[#090e1f] mb-4">Trực Quan Hóa Quy Trình Vận Hành Kỹ Thuật</h2>
         <p class="text-[#475569] text-base leading-relaxed mb-6">
-          Model any money movement with CreditScript (Numscript syntax). Every transaction is atomic, immutable, and reconciled by construction, so your books never drift — whether handling millions of micro-transactions or complex syndicated loans.
+          Mỗi phân hệ tại CreditBird được chuẩn hóa bằng mã nguồn tối ưu, cấu hình rõ ràng và tích hợp liên thông: từ động cơ Rust Native của RustSale CRM, định mức sản xuất Kelvot ERP, luồng phái cử nhân sự IT đến cơ chế phun sương Nano HVAC của Lemy Finest.
         </p>
 
         <!-- Script Features List -->
         <div class="flex flex-col gap-3 font-mono text-xs text-[#475569] mb-8">
           <div class="flex items-center gap-2">
             <span class="w-1.5 h-1.5 rounded-full bg-[var(--cb-cobalt-500)]"></span>
-            <span>Multi-currency & multi-asset native (USD, EUR, USDC, BTC)</span>
+            <span><strong>RustSale CRM:</strong> Tốc độ microsecond, đồng bộ Zalo / WhatsApp / FB</span>
           </div>
           <div class="flex items-center gap-2">
             <span class="w-1.5 h-1.5 rounded-full bg-[var(--cb-cobalt-500)]"></span>
-            <span>Zero rounding drift with arbitrary-precision arithmetic</span>
+            <span><strong>Kelvot ERP:</strong> Định mức BOM đa cấp, kho WMS Barcode, chuẩn VAS</span>
           </div>
           <div class="flex items-center gap-2">
             <span class="w-1.5 h-1.5 rounded-full bg-[var(--cb-cobalt-500)]"></span>
-            <span>Deterministic state machine with instantaneous dry-run simulation</span>
+            <span><strong>Nhân sự IT:</strong> Senior Developers onboard trong 48h, cam kết NDA B2B</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--cb-cobalt-500)]"></span>
+            <span><strong>Lemy Finest:</strong> 100% Tinh dầu COA / GC-MS & Máy phun HVAC 5.000m²</span>
           </div>
         </div>
 
@@ -145,7 +185,7 @@
           class="btn-cta-primary !h-11 cursor-pointer flex items-center gap-2"
         >
           <Play size={14} class={isExecuting ? 'animate-spin' : ''} />
-          <span>{isExecuting ? 'Compiling Script...' : 'Simulate in Sandbox'}</span>
+          <span>{isExecuting ? 'Đang kiểm tra luồng...' : 'Chạy mô phỏng hệ thống'}</span>
         </button>
       </div>
 
@@ -157,96 +197,95 @@
           <div class="bg-[#f1f5f9] border-b border-[#e2e8f0] px-4 py-2 flex items-center justify-between flex-wrap gap-2">
             
             <!-- File Tabs -->
-            <div class="flex items-center gap-1">
+            <div class="flex items-center gap-1 flex-wrap">
               <button
                 type="button"
-                onclick={() => { activeTab = 'split'; executionResult = null; }}
-                class="font-mono text-xs px-3 py-1.5 rounded transition-colors {activeTab === 'split' ? 'bg-white text-[#090e1f] font-semibold shadow-sm border border-[#cbd5e1]' : 'text-[#64748b] hover:text-[#090e1f]'}"
+                onclick={() => { activeTab = 'rustsale'; executionResult = null; }}
+                class="font-mono text-xs px-2.5 py-1.5 rounded transition-colors {activeTab === 'rustsale' ? 'bg-white text-[var(--cb-cobalt-600)] font-bold shadow-sm border border-[var(--cb-cobalt-500)]/30' : 'text-[#64748b] hover:text-[#090e1f]'}"
               >
-                marketplace_split.num
+                rustsale_inbox.rs
               </button>
               <button
                 type="button"
-                onclick={() => { activeTab = 'tranche'; executionResult = null; }}
-                class="font-mono text-xs px-3 py-1.5 rounded transition-colors {activeTab === 'tranche' ? 'bg-white text-[#090e1f] font-semibold shadow-sm border border-[#cbd5e1]' : 'text-[#64748b] hover:text-[#090e1f]'}"
+                onclick={() => { activeTab = 'kelvot'; executionResult = null; }}
+                class="font-mono text-xs px-2.5 py-1.5 rounded transition-colors {activeTab === 'kelvot' ? 'bg-white text-[var(--cb-cobalt-600)] font-bold shadow-sm border border-[var(--cb-cobalt-500)]/30' : 'text-[#64748b] hover:text-[#090e1f]'}"
               >
-                credit_facility.num
+                kelvot_bom.yaml
               </button>
               <button
                 type="button"
-                onclick={() => { activeTab = 'escrow'; executionResult = null; }}
-                class="font-mono text-xs px-3 py-1.5 rounded transition-colors {activeTab === 'escrow' ? 'bg-white text-[#090e1f] font-semibold shadow-sm border border-[#cbd5e1]' : 'text-[#64748b] hover:text-[#090e1f]'}"
+                onclick={() => { activeTab = 'staffing'; executionResult = null; }}
+                class="font-mono text-xs px-2.5 py-1.5 rounded transition-colors {activeTab === 'staffing' ? 'bg-white text-[var(--cb-cobalt-600)] font-bold shadow-sm border border-[var(--cb-cobalt-500)]/30' : 'text-[#64748b] hover:text-[#090e1f]'}"
               >
-                milestone_escrow.num
+                it_staffing_sla.yaml
+              </button>
+              <button
+                type="button"
+                onclick={() => { activeTab = 'lemyfinest'; executionResult = null; }}
+                class="font-mono text-xs px-2.5 py-1.5 rounded transition-colors {activeTab === 'lemyfinest' ? 'bg-white text-[var(--cb-cobalt-600)] font-bold shadow-sm border border-[var(--cb-cobalt-500)]/30' : 'text-[#64748b] hover:text-[#090e1f]'}"
+              >
+                lemyfinest_hvac.yaml
               </button>
             </div>
 
-            <!-- Copy Button -->
-            <button
-              type="button"
-              onclick={copyCode}
-              class="font-mono text-xs text-[#64748b] hover:text-[#090e1f] flex items-center gap-1 px-2.5 py-1 rounded hover:bg-[#e2e8f0] transition-colors cursor-pointer"
-              title="Copy code snippet"
-            >
-              {#if copied}
-                <Check size={13} class="text-[var(--cb-emerald-500)]" />
-                <span class="text-[var(--cb-emerald-500)]">Copied!</span>
-              {:else}
-                <Copy size={13} />
-                <span>Copy</span>
-              {/if}
-            </button>
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3">
+              <button 
+                type="button"
+                onclick={copyCode}
+                class="flex items-center gap-1 font-mono text-xs text-[#64748b] hover:text-[#090e1f] transition-colors cursor-pointer"
+                title="Sao chép đoạn mã"
+              >
+                {#if copied}
+                  <Check size={13} class="text-[var(--cb-emerald-500)]" />
+                  <span class="text-[var(--cb-emerald-500)]">Đã copy</span>
+                {:else}
+                  <Copy size={13} />
+                  <span>Copy</span>
+                {/if}
+              </button>
+            </div>
           </div>
 
-          <!-- Code Body -->
-          <div class="p-5 font-mono text-[0.8125rem] leading-relaxed bg-[#f8fafc] text-[#1e293b] overflow-x-auto">
-            <pre class="m-0 font-mono"><code>{@html scriptExamples[activeTab].code
-              .replace(/send/g, '<span class="text-[var(--cb-azure-600)] font-bold">send</span>')
-              .replace(/source/g, '<span class="text-[#64748b]">source</span>')
-              .replace(/destination/g, '<span class="text-[#64748b]">destination</span>')
-              .replace(/to/g, '<span class="text-[var(--cb-azure-600)] font-bold">to</span>')
-              .replace(/(@[a-zA-Z0-9_:]+)/g, '<span class="text-[#0f172a] font-bold">$1</span>')
-              .replace(/(\/\/.+)/g, '<span class="text-[#94a3b8] italic">$1</span>')
-            }</code></pre>
+          <!-- Code Window Body -->
+          <div class="p-5 font-mono text-[0.8125rem] leading-relaxed bg-[#f8fafc] text-[#1e293b] border-b border-[#e2e8f0] overflow-x-auto max-h-[300px] overflow-y-auto">
+            <pre class="m-0 font-mono"><code>{scriptExamples[activeTab].code}</code></pre>
           </div>
 
-          <!-- Live Execution Output Area -->
+          <!-- Interactive Results Container -->
           {#if executionResult}
-            <div class="border-t border-[#e2e8f0] bg-[#070e24] p-5 text-[#f8fafc] font-mono text-xs">
-              <div class="flex items-center justify-between pb-3 mb-3 border-b border-[rgba(50,135,255,0.2)]">
-                <div class="flex items-center gap-2 text-[var(--cb-emerald-500)] font-bold">
-                  <span class="w-2 h-2 rounded-full bg-[var(--cb-emerald-500)]"></span>
-                  <span>ATOMIC COMMIT OK</span>
+            <div class="p-5 bg-white font-mono text-xs">
+              <div class="flex items-center justify-between border-b border-[#e2e8f0] pb-2 mb-3">
+                <div class="flex items-center gap-1.5 text-[var(--cb-emerald-600)] font-semibold">
+                  <Check size={14} />
+                  <span>XỬ LÝ THÀNH CÔNG • {executionResult.txId}</span>
                 </div>
-                <div class="text-[#94a3b8]">TX ID: <span class="text-white">{executionResult.txId}</span></div>
+                <span class="text-[#94a3b8]">Đồng bộ dữ liệu thời gian thực</span>
               </div>
 
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <div class="text-[0.6875rem] text-[#64748b] uppercase tracking-wider mb-2">Atomic Postings</div>
-                  <div class="flex flex-col gap-1.5">
-                    {#each executionResult.postings as p}
-                      <div class="bg-[#0c1633] p-2 rounded border border-[rgba(50,135,255,0.12)] flex justify-between">
-                        <span class="text-[#cbd5e1]">{p.from} → {p.to}</span>
-                        <span class="text-[var(--cb-azure-400)] font-bold">+{p.amount} {p.asset}</span>
-                      </div>
-                    {/each}
+              <!-- Postings Table -->
+              <div class="flex flex-col gap-2 mb-3">
+                {#each executionResult.postings as p}
+                  <div class="flex flex-wrap items-center justify-between text-[#475569] py-1 border-b border-[#f1f5f9] last:border-0">
+                    <div class="flex items-center gap-2">
+                      <span class="text-[var(--cb-cobalt-600)]">{p.from}</span>
+                      <span class="text-[#94a3b8]">→</span>
+                      <span class="text-[#090e1f] font-medium">{p.to}</span>
+                    </div>
+                    <span class="text-[var(--cb-emerald-600)] font-semibold">{p.amount} {p.asset}</span>
                   </div>
-                </div>
-
-                <div>
-                  <div class="text-[0.6875rem] text-[#64748b] uppercase tracking-wider mb-2">Resulting Account Deltas</div>
-                  <div class="flex flex-col gap-1.5">
-                    {#each executionResult.balances as b}
-                      <div class="bg-[#0c1633] p-2 rounded border border-[rgba(50,135,255,0.12)] flex justify-between">
-                        <span class="text-[#cbd5e1]">{b.account}</span>
-                        <span class={b.delta.startsWith('+') ? 'text-[var(--cb-emerald-500)]' : 'text-[#f43f5e]'}>{b.delta}</span>
-                      </div>
-                    {/each}
-                  </div>
-                </div>
+                {/each}
               </div>
 
+              <!-- Delta Balance summary -->
+              <div class="pt-2 border-t border-[#e2e8f0] flex flex-wrap gap-4 text-[#64748b]">
+                {#each executionResult.balances as b}
+                  <div>
+                    <span>{b.account}:</span>
+                    <strong class="text-[#090e1f] ml-1">{b.delta}</strong>
+                  </div>
+                {/each}
+              </div>
             </div>
           {/if}
 
