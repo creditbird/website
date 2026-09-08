@@ -1,30 +1,31 @@
 ---
 name: CreditBird Sovereign Ledger
+aesthetic: Architectural Cyanotype Blueprint
 colors:
-  surface: '#0c1328'
-  surface-dim: '#070b19'
-  surface-bright: '#162347'
-  surface-container-lowest: '#040711'
-  surface-container-low: '#070b19'
-  surface-container: '#0c1328'
-  surface-container-high: '#101a36'
-  surface-container-highest: '#162347'
-  on-surface: '#f8fafc'
-  on-surface-variant: '#94a3b8'
-  outline: '#1e2d5a'
-  outline-variant: 'rgba(50, 135, 255, 0.14)'
+  surface: '#16295c'
+  surface-dim: '#101e44'
+  surface-bright: '#1c3575'
+  surface-container-lowest: '#0a1329'
+  surface-container-low: '#101e44'
+  surface-container: '#16295c'
+  surface-container-high: '#1c3575'
+  surface-container-highest: '#22439c'
+  on-surface: '#ffffff'
+  on-surface-variant: '#cbd5e1'
+  outline: 'rgba(74, 144, 226, 0.35)'
+  outline-variant: 'rgba(50, 135, 255, 0.2)'
   primary: '#22439c'
   on-primary: '#ffffff'
-  primary-container: '#101a36'
+  primary-container: '#16295c'
   on-primary-container: '#93c5fd'
   secondary: '#3287ff'
   on-secondary: '#ffffff'
   secondary-container: '#0c2b5e'
-  tertiary: '#e0e7ff'
-  on-tertiary: '#070b19'
+  tertiary: '#60a5fa'
+  on-tertiary: '#0a1329'
   error: '#f43f5e'
-  background: '#070b19'
-  on-background: '#f8fafc'
+  background: '#16295c'
+  on-background: '#ffffff'
 typography:
   display-lg:
     fontFamily: Geist
@@ -84,25 +85,43 @@ spacing:
 
 CreditBird is a mission-critical financial infrastructure platform — a programmable ledger and credit movement operating system for fintechs, lending networks, and global payment rails. 
 
-To prevent oppressive dark mode fatigue while preserving high-tech institutional authority, CreditBird adheres strictly to Formance's signature **Dual-Tone Sectional Rhythm**:
+To prevent oppressive dark mode fatigue while preserving high-tech institutional authority, CreditBird adheres strictly to Formance's signature **Dual-Tone Sectional Rhythm**, elevated with the **Architectural Cyanotype Blueprint Aesthetic**:
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│ SECTION 1: DARK COBALT TOP ATMOSPHERE (Hero, Nav, Why)                 │
-│ Deep space void (#070e22) + Live volume processed terminal + Wireframe │
+│ SECTION 1: DARK CYANOTYPE COBALT ATMOSPHERE (Acquiring Hero, Cockpit)  │
+│ Deep Cobalt Primary (#16295c) + Canvas particles + Blueprint telemetry  │
 ├────────────────────────────────────────────────────────────────────────┤
-│ SECTION 2: CRISP LIGHT BLUEPRINT GRID (Feature Deep-Dives)             │
-│ Crisp pearl canvas (#f7f9fc) + 32px graph paper grid + Black/White     │
-│ high-contrast code cards + Build vs Buy comparison + Vector schematics │
+│ SECTION 2: CRISP LIGHT BLUEPRINT GRID (Why, By The Numbers, Fund Flows)│
+│ Crisp pearl canvas (#ffffff / #f8fafc) + 32px graph paper grid +       │
+│ Hairline .grid-ring cards + High-contrast code & metrics cards         │
 ├────────────────────────────────────────────────────────────────────────┤
-│ SECTION 3: DARK COBALT USE CASES & PRE-FOOTER CTA                      │
-│ 6-bento modular cards (#070e22) + Radial grid action banner            │
+│ SECTION 3: DARK CYANOTYPE ARCHITECTURAL BLUEPRINT MODULES              │
+│ (The Problem, Capabilities, CreditScript Split, Voices, Resources, CTA)│
+│ Deep Cobalt Primary (#16295c) + 32px strict-grid + Electric Azure glow │
 ├────────────────────────────────────────────────────────────────────────┤
 │ SECTION 4: THE ULTRA-TALL ARCHITECTURAL FOOTER                         │
-│ Deep midnight void (#040816) + 4 massive columns + 14 categorized      │
+│ Deep Sovereign Navy (#0a1329) + 4 massive columns + 14 categorized     │
 │ domains + Giant embossed brand watermark peeking at bottom-right       │
 └────────────────────────────────────────────────────────────────────────┘
 ```
+
+### 1.1 The 4 Core Pillars of Architectural Blueprint Aesthetic
+
+CreditBird's visual language embodies the authentic **Cyanotype Blueprint Aesthetic** (kỹ thuật bản vẽ kiến trúc cyanotype):
+
+1. **📐 Nền lưới toạ độ kỹ thuật (Architectural Grid Matrix — `.strict-grid`):**
+   - Lưới ô vuông 32px (`--grid-unit: round(clamp(22px, 2cqi, 32px), 1px)`) dạng *graph paper / millimeter paper*.
+   - Tạo bằng `conic-gradient` với đường nét mảnh 1px (`--_grid-line`), bắt dính (pixel-snap) mọi module, typography và khoảng cách.
+2. **🔲 Khung viền Hairline mô-đun (`.grid-ring`):**
+   - Các khối mô-đun liền kề nhau như mặt bằng CAD (*floor plan*).
+   - Triệt tiêu hoàn toàn viền đôi (`zero double-borders`), các cạnh chung một đường nét hairline 1px tinh tế.
+3. **🔷 Nền Xanh đậm Cyanotype Blueprint (`#16295c` — Cobalt Primary):**
+   - Kế thừa bản chất in ảnh Cyanotype truyền thống (muối sắt Prussian/Cobalt Blue với nét vẽ trắng sáng).
+   - Thay thế toàn bộ nền đen xì thông thường bằng sắc xanh Cobalt đậm có chiều sâu, tương phản cao với chữ trắng `#ffffff` và đường lưới `rgba(74, 144, 226, 0.35)`.
+4. **🏷️ Ký hiệu học & Typography kỹ thuật (Technical Monospace & Tag Syntax):**
+   - Cú pháp gắn nhãn bản vẽ: Tiền tố gạch dưới và hậu tố gạch chéo: `_THE PROBLEM/`, `_CAPABILITIES/`, `_CREDITSCRIPT/`, `_BY THE NUMBERS/`, `_PROOF/`.
+   - Font Monospace (`JetBrains Mono` / `Geist Mono`) với số thứ tự tabular 2 chữ số (`01`, `02`, `03`, `04`).
 
 ### Aesthetic Dials:
 - **Density:** `Cockpit Technical (7/10)` — High information fidelity, strict hairline grid containment, tabular figures, and visible modular boundaries.
@@ -125,25 +144,24 @@ The palette is directly extracted and mathematically expanded from [`creditbird-
 └──────────────────────────┴──────────────────────────┴──────────────────────────┘
 ```
 
-### 2.1 Dark Mode (Primary "Cobalt-Deep" Engine)
-Inspired by Formance's signature `theme-emerald emerald-deep` structure, translated into CreditBird's sovereign blue domain:
+### 2.1 Dark Mode (Architectural Cyanotype Cobalt Engine)
+Evolved from Formance's signature `theme-emerald` dark structure into CreditBird's sovereign **Cyanotype Blueprint** domain:
 
 | Token Name | Value | Contrast / HSL | Functional Role |
 |---|---|---|---|
-| `--color-canvas-base` | `#070b19` | HSL(224, 57%, 6%) | Root viewport background, deep void |
-| `--color-canvas-surface` | `#0c1328` | HSL(225, 54%, 10%) | Card surfaces, container modules |
-| `--color-canvas-raised` | `#111c38` | HSL(224, 53%, 15%) | Hover states, code headers, elevated trays |
-| `--color-canvas-overlay` | `#162347` | HSL(224, 52%, 18%) | Dropdowns, popovers, modal backdrops |
-| `--color-border-hairline`| `rgba(50,135,255,0.14)` | Hairline stroke | Grid borders, card edges, `.grid-ring` |
-| `--color-border-active`  | `#3287ff` | Electric Azure | Focused rings, active rail nodes, accent borders |
-| `--color-text-primary`   | `#f8fafc` | 17.5:1 on base | Headings, hero statements, primary metrics |
-| `--color-text-secondary` | `#94a3b8` | 7.8:1 on base | Explanations, architectural descriptions |
-| `--color-text-muted`     | `#64748b` | 4.6:1 on base | Metadata, numbered list indexes (`01`, `02`) |
-| `--color-brand-primary`  | `#22439c` | Deep Cobalt | Primary buttons, badge backgrounds, brand accents |
-| `--color-brand-accent`   | `#3287ff` | Electric Azure | Flow indicators, inline links, active terminal tokens |
-| `--color-brand-highlight`| `#60a5fa` | Sky Azure | Secondary wing tint, glow focus rings |
-| `--color-cta-button`     | `#e0e7ff` | High Contrast | High-conversion CTA fill (Lilac/Ice contrast) |
-| `--color-cta-text`       | `#0b132b` | Deep Navy | High-conversion CTA text |
+| `--background` / `--color-canvas-base` | `#16295c` | HSL(224, 61%, 23%) | Root blueprint background, deep cobalt canvas |
+| `--card-background` / `--color-canvas-surface` | `#16295c` | Seamless with base | Card substrate, seamless modular container |
+| `--card-element-background` / `--color-canvas-raised` | `rgba(50, 135, 255, 0.15)` | Luminous tint | Hover states, card sub-elements, elevated pills |
+| `--color-canvas-overlay` | `#1c3575` | HSL(224, 61%, 28%) | Dropdowns, popovers, elevated code headers |
+| `--grid-line-color` / `--color-border-hairline`| `rgba(74, 144, 226, 0.35)` | Blueprint hairline | 32px coordinate grid lines, card edges, `.grid-ring` |
+| `--color-border-active`  | `#60a5fa` | Sky Azure | Focused rings, active rail nodes, accent borders |
+| `--foreground` / `--color-text-primary`   | `#ffffff` | 10.5:1 on base | Headings, hero statements, primary metrics |
+| `--muted-foreground` / `--color-text-secondary` | `#cbd5e1` | 6.8:1 on base | Explanations, architectural descriptions |
+| `--color-text-muted`     | `#94a3b8` | 4.5:1 on base | Metadata, technical labels, telemetry timestamps |
+| `--color-brand-primary`  | `#22439c` | Core Cobalt | Primary buttons, badge backgrounds, brand accents |
+| `--section-accent` / `--color-brand-accent` | `#60a5fa` | Sky Azure Glow | Flow indicators, inline links, active terminal tokens |
+| `--eyebrow-background`   | `rgba(50, 135, 255, 0.2)` | Translucent Blue | Pill container for `_TAG/` badges |
+| `--eyebrow-foreground`   | `#93c5fd` | High Contrast | Label text for `_TAG/` badges |
 
 ### 2.2 Light Mode (Enterprise Day Mode)
 Used for whitepaper exports, enterprise compliance dashboards, and daylight audits:
@@ -190,14 +208,15 @@ Like Formance, CreditBird establishes authority through the contrast between **a
 ## 4. Formance Architectural Grid System (`--grid-unit`)
 
 Formance structures the entire layout using a **Strict Grid** bound to a fundamental atomic unit:
-- **Base Grid Unit:** `--grid-unit: 24px;` (Responsive: `20px` on mobile, `24px` on desktop)
-- **Container Max Width:** `max-w-50gu` (`50 * 24px = 1200px` to `1440px`)
+- **Base Grid Unit:** `--grid-unit: round(clamp(22px, 2cqi, 32px), 1px);` (Desktop base `32px`, responsive `22px` on mobile)
+- **Container Max Width:** `max-w-50gu` (`50 * 32px = 1600px` on desktop)
 - **Spacing Scale:**
-  * `0.5gu` = 12px
-  * `1gu` = 24px
-  * `2gu` = 48px
-  * `3gu` = 72px
-  * `4gu` = 96px
+  * `0.5gu` = 16px
+  * `1gu` = 32px
+  * `2gu` = 64px
+  * `3gu` = 96px
+  * `4gu` = 128px
+  * `50gu` = 1600px (Max Container Width)
 
 ### 4.1 The `.grid-ring` Pattern
 Every card, logo box, and modular container shares hairlines rather than doubled margins.
@@ -351,7 +370,7 @@ As shown in the Formance production reference, the footer is an authoritative ar
 
 To protect CreditBird from generic "AI-slop" design tropes:
 1. **NO Generic AI-Purple/Pink Gradients:** No violet radial glows or candy gradients. Strictly sovereign cobalt (`#22439c`) and luminous electric azure (`#3287ff`).
-2. **NO Pure Black (`#000000`):** Use `--color-canvas-base` (`#070b19`).
+2. **NO Pure Black (`#000000`) or Dead Charcoal (`#070b19`):** Use Cyanotype Cobalt Primary (`#16295c`) for dark architectural blueprint sections to preserve authentic blueprint cyanotype heritage and avoid generic dark-void fatigue.
 3. **NO Floating 3D Orbs / Glassmorphism Blobs:** Strictly architectural grid lines and geometric surfaces.
 4. **NO Generic Inter Font Default:** Use `Geist Sans` + `JetBrains Mono` for distinct technical identity.
 5. **NO Unpadded Grid Cells:** Strict adherence to `--grid-unit` multiples.
