@@ -18,7 +18,7 @@
     {
       badge: '_RUSTSALE CRM & OUTREACH PRO/',
       description: 'Hệ điều hành tăng trưởng All-in-One: Hộp thư hội tụ Omnichannel Zalo, WhatsApp, Facebook Messenger trên desktop viết bằng Rust Native. Xử lý tốc độ microsecond.',
-      tag: 'native rust desktop',
+      tag: 'desktop crm',
       linkText: 'Khám phá RustSale CRM',
       linkUrl: '/products/rustsale'
     },

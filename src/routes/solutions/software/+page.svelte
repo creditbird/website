@@ -16,7 +16,10 @@
     Workflow,
     Cpu,
     Smartphone,
-    Cloud
+    Cloud,
+    Sparkles,
+    Bot,
+    Database
   } from 'lucide-svelte';
 
   let isDemoOpen = $state(false);
@@ -59,51 +62,51 @@
   const pillars = [
     {
       id: '01',
-      code: '_ARCHITECTURE/',
-      title: 'Kiến trúc Microservices & Chịu tải Cao',
+      code: '_ARCHITECTURE & AI/',
+      title: 'Kiến trúc Microservices & AI-Ready',
       icon: Server,
-      desc: 'Phát triển backend bằng Rust, Go và Python tối ưu hiệu năng bộ nhớ, xử lý hàng chục triệu requests đồng thời không độ trễ.',
-      tag: 'high concurrency'
+      desc: 'Phát triển backend bằng Rust, Go và Python tối ưu hiệu năng bộ nhớ, tích hợp sẵn các pipeline AI Inference và Microservices chịu tải hàng triệu requests.',
+      tag: 'high concurrency • ai pipeline'
     },
     {
       id: '02',
       code: '_OWNERSHIP/',
-      title: 'Bàn giao 100% Mã nguồn Sạch & Bản quyền',
+      title: 'Bàn giao 100% Mã nguồn Sạch & Quyền sở hữu AI',
       icon: FileCode2,
-      desc: 'Doanh nghiệp sở hữu trọn vẹn toàn bộ mã nguồn, cơ sở dữ liệu và tài liệu kiến trúc kỹ thuật. Không bị khóa nhà cung cấp (Zero Lock-in).',
-      tag: 'full ownership'
+      desc: 'Doanh nghiệp sở hữu trọn vẹn toàn bộ mã nguồn Git, cơ sở dữ liệu, API specs và trọng số mô hình AI huấn luyện riêng. Không vendor lock-in.',
+      tag: 'full ownership & ai weights'
     },
     {
       id: '03',
-      code: '_SECURITY/',
-      title: 'Bảo mật Cấp Ngân hàng & DevSecOps',
+      code: '_SECURITY & DATA PRIVACY/',
+      title: 'Bảo mật Cấp Ngân hàng & Private AI',
       icon: ShieldCheck,
-      desc: 'Mã hóa dữ liệu tại chỗ (At-Rest) và trên đường truyền (In-Transit). Tuân thủ quy trình kiểm thử an toàn DevSecOps và ISO/IEC 27001.',
-      tag: 'devsecops'
+      desc: 'Mã hóa dữ liệu tại chỗ (At-Rest) và trên đường truyền (In-Transit). Triển khai Private LLM On-Premise bảo mật tuyệt đối dữ liệu nội bộ doanh nghiệp.',
+      tag: 'devsecops • private llm'
     },
     {
       id: '04',
       code: '_FULLSTACK UI/UX/',
-      title: 'Giao diện Web & Mobile App Hiện đại',
+      title: 'Giao diện Web, App & Trợ lý AI Agent',
       icon: Layers,
-      desc: 'Ứng dụng SvelteKit, React và Flutter xây dựng trải nghiệm mượt mà, tối ưu hiệu suất tải trang đạt điểm tối đa trên Google Lighthouse.',
-      tag: 'sveltekit & flutter'
+      desc: 'Ứng dụng SvelteKit, React và Flutter xây dựng trải nghiệm mượt mà, tích hợp giao diện hội thoại và trợ lý AI Agent tương tác thông minh theo ngữ cảnh.',
+      tag: 'sveltekit • flutter • ai agent'
     },
     {
       id: '05',
-      code: '_INTEGRATION/',
-      title: 'Kết nối Cổng Thanh toán & Core Banking',
+      code: '_INTEGRATION & AUTOMATION/',
+      title: 'Kết nối Core Banking & Tự động hóa Agentic',
       icon: Boxes,
-      desc: 'Tích hợp liên thông tài khoản ngân hàng, VietQR, hạch toán đối soát tự động và các hệ sinh thái ERP, CRM của bên thứ ba.',
-      tag: 'banking integration'
+      desc: 'Tích hợp liên thông tài khoản ngân hàng, VietQR, hạch toán đối soát tự động và các quy trình Agentic Workflows tự xử lý nghiệp vụ không cần can thiệp thủ công.',
+      tag: 'banking • agentic workflows'
     },
     {
       id: '06',
       code: '_SLA & LIFECYCLE/',
-      title: 'Cam kết SLA 99.9% & Bảo hành Dài hạn',
+      title: 'Cam kết SLA 99.9% & Tối ưu Mô hình Dài hạn',
       icon: Workflow,
-      desc: 'Chính sách bảo hành kỹ thuật 12 - 24 tháng, cam kết đội ngũ kỹ sư hỗ trợ ứng cứu sự cố 24/7 với thời gian phản hồi dưới 15 phút.',
-      tag: 'continuous sla'
+      desc: 'Chính sách bảo hành kỹ thuật 12 - 24 tháng, cam kết đội ngũ kỹ sư hỗ trợ ứng cứu sự cố 24/7 với thời gian phản hồi dưới 15 phút và liên tục cập nhật công nghệ mới.',
+      tag: 'continuous sla & model updates'
     }
   ];
 
@@ -113,42 +116,58 @@
       code: '_BACKEND STACK/',
       title: 'Hệ Thống Backend Siêu Tốc',
       icon: Cpu,
-      desc: 'Rust, Golang, Python, Node.js kết hợp PostgreSQL, ScyllaDB, Redis và Kafka phân tán.',
-      tag: 'rust • go • kafka'
+      desc: 'Rust, Golang, Python, Node.js kết hợp Microservices hiệu năng cao, tối ưu hóa xử lý đồng thời cực lớn.',
+      tag: 'rust • go • python'
     },
     {
       id: '02',
-      code: '_FRONTEND STACK/',
-      title: 'Frontend Web Ứng Dụng',
-      icon: Layers,
-      desc: 'SvelteKit, React, Tailwind CSS, TypeScript tối ưu hóa SSR/SSG cho trải nghiệm người dùng tức thì.',
-      tag: 'sveltekit • react'
+      code: '_ENTERPRISE AI & RAG/',
+      title: 'Trí Tuệ Nhân Tạo & AI Agents',
+      icon: Sparkles,
+      desc: 'Tích hợp OpenAI/Claude/Llama, Private LLM On-Premise, RAG tra cứu tri thức nội bộ và Agentic Workflows tự động xử lý quy trình nghiệp vụ.',
+      tag: 'rag • private llm • ai agents'
     },
     {
       id: '03',
-      code: '_MOBILE APP STACK/',
-      title: 'Ứng Dụng Di Động Đa Nền Tảng',
-      icon: Smartphone,
-      desc: 'Flutter, React Native, Swift và Kotlin Native cho trải nghiệm giao diện mượt mà 120Hz.',
-      tag: 'flutter • swift'
+      code: '_FRONTEND STACK/',
+      title: 'Frontend Web Ứng Dụng',
+      icon: Layers,
+      desc: 'SvelteKit, React, Tailwind CSS, TypeScript tối ưu hóa SSR/SSG cho trải nghiệm người dùng mượt mà tức thì.',
+      tag: 'sveltekit • react • typescript'
     },
     {
       id: '04',
-      code: '_DEVOPS & CLOUD/',
-      title: 'Hạ Tầng Tự Động Co Giãn',
+      code: '_MOBILE APP STACK/',
+      title: 'Ứng Dụng Di Động Đa Nền Tảng',
+      icon: Smartphone,
+      desc: 'Flutter, React Native, Swift và Kotlin Native cho trải nghiệm giao diện mượt mà 120Hz trên iOS và Android.',
+      tag: 'flutter • react native'
+    },
+    {
+      id: '05',
+      code: '_DATA & VECTOR DB/',
+      title: 'Cơ Sở Dữ Liệu & Vector Search',
+      icon: Database,
+      desc: 'PostgreSQL, ScyllaDB, Redis, Kafka phân tán cùng Qdrant / pgvector cho tìm kiếm ngữ nghĩa và lưu trữ vector embeddings.',
+      tag: 'vector db • postgresql • kafka'
+    },
+    {
+      id: '06',
+      code: '_DEVOPS, MLOPS & CLOUD/',
+      title: 'Hạ Tầng Tự Động & AI Cluster',
       icon: Cloud,
-      desc: 'Docker, Kubernetes, Terraform, AWS, Google Cloud Platform, CI/CD tự động hóa kiểm thử.',
-      tag: 'k8s • terraform'
+      desc: 'Docker, Kubernetes, GPU Inference Clusters, Terraform, AWS, GCP và CI/CD tự động hóa kiểm thử liên tục.',
+      tag: 'k8s • mlops • gpu clusters'
     }
   ];
 
   const steps = [
-    { num: '01', title: 'Khảo sát & Lập Đặc tả (SRS)', desc: 'Phân tích quy trình nghiệp vụ thực tế, xây dựng sơ đồ luồng dữ liệu (Data Flow) và tài liệu kiến trúc kỹ thuật chi tiết.' },
-    { num: '02', title: 'Thiết kế Kiến trúc & Wireframe UI', desc: 'Thiết kế giao diện chuẩn Design System và bản mẫu tương tác, chốt tiêu chuẩn bảo mật và API Schema.' },
-    { num: '03', title: 'Lập trình Agile & CI/CD Sprints', desc: 'Chia nhỏ tính năng theo các sprint 2 tuần, tích hợp CI/CD tự động kiểm thử Unit test và Integration test liên tục.' },
-    { num: '04', title: 'Kiểm thử Chịu tải & Pentest', desc: 'Stress test chịu tải cao, kiểm tra lỗ hổng bảo mật OWASP Top 10 và nghiệm thu an toàn thông tin nội bộ toàn diện.' },
-    { num: '05', title: 'Bàn giao Source Code & Triển khai', desc: 'Bàn giao Git repository, Docker container, kịch bản triển khai Kubernetes và tài liệu chuyển giao vận hành.' },
-    { num: '06', title: 'Bảo hành & Đồng hành Trọn đời', desc: 'Bảo trì hệ thống, giám sát hiệu năng qua Prometheus/Grafana và hỗ trợ nâng cấp tính năng định kỳ trọn đời.' }
+    { num: '01', title: 'Khảo sát, Đặc tả (SRS) & Khả thi AI', desc: 'Phân tích quy trình nghiệp vụ thực tế, đánh giá tính khả thi ứng dụng AI, xây dựng sơ đồ luồng dữ liệu và tài liệu kiến trúc chi tiết.' },
+    { num: '02', title: 'Thiết kế Kiến trúc & UX/UI Bản mẫu', desc: 'Thiết kế giao diện chuẩn Design System, thiết kế luồng tương tác AI Agent, chốt tiêu chuẩn bảo mật và API Schema.' },
+    { num: '03', title: 'Lập trình Agile & Tăng tốc với AI Pair', desc: 'Chia nhỏ tính năng theo các sprint 2 tuần, ứng dụng AI-Augmented Development tăng tốc tiến độ gấp 2x kèm CI/CD kiểm thử liên tục.' },
+    { num: '04', title: 'Kiểm thử Tự động, Pentest & Rà soát AI', desc: 'Stress test chịu tải cao, kiểm tra lỗ hổng OWASP Top 10, đo lường độ chính xác và an toàn của các phân hệ AI/RAG.' },
+    { num: '05', title: 'Bàn giao Source Code & Triển khai Cloud', desc: 'Bàn giao 100% Git repository, Docker container, kịch bản triển khai Kubernetes và tài liệu chuyển giao vận hành.' },
+    { num: '06', title: 'Bảo hành, SLA 24/7 & Nâng cấp AI', desc: 'Bảo trì hệ thống toàn diện, giám sát hiệu năng qua Prometheus/Grafana và đồng hành nâng cấp mô hình AI định kỳ.' }
   ];
 </script>
 
@@ -204,7 +223,7 @@
       title="Lựa Chọn Công Nghệ Tối Ưu Cho Từng Bài Toán"
       subheading="Tập trung vào các ngôn ngữ hiện đại, hiệu năng bộ nhớ tối đa và an toàn kiểu dữ liệu."
       description="Mỗi dự án được thiết kế với sự kết hợp công nghệ phù hợp nhất để tối đa hóa tốc độ phản hồi và giảm thiểu chi phí máy chủ hàng tháng."
-      columns={2}
+      columns={3}
       items={techStacks}
     />
 

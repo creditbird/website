@@ -14,9 +14,9 @@
       external: false
     },
     {
-      code: '_PROPRIETARY SOFTWARE / RUST NATIVE/',
+      code: '_PROPRIETARY SOFTWARE / CRM/',
       title: 'RustSale CRM & Outreach Pro',
-      badge: 'NATIVE RUST',
+      badge: 'BẢN QUYỀN',
       badgeColor: 'bg-[#edf2ff] text-[var(--cb-cobalt-600)] border-[#c2d2fc]',
       desc: 'Hệ điều hành tăng trưởng All-in-One: Hộp thư hội tụ Omnichannel Zalo, WhatsApp, Facebook Messenger trên 1 màn hình. Tốc độ microsecond, cẩm nang Notion.',
       linkText: 'Khám phá RustSale CRM',

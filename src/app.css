@@ -91,7 +91,7 @@ a {
   height: 540px;
   pointer-events: none;
   opacity: 0.05;
-  background-image: url('/creditbird-logo.png');
+  background-image: url('/creditbird-logo.webp');
   background-repeat: no-repeat;
   background-size: contain;
   filter: grayscale(1) invert(1) brightness(2);

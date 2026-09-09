@@ -50,14 +50,14 @@
     />
 
     <!-- 2. Main Content Area (Crisp Light Blueprint Grid) -->
-    <section class="relative theme-light bg-[#f8fafc] text-[#090e1f] py-12 md:py-16 border-b border-[#e2e8f0]">
-      <div class="strict-grid relative z-2 py-1gu">
+    <section class="relative theme-light bg-[#f8fafc] text-[#090e1f]">
+      <div class="strict-grid relative z-2 py-2gu">
         
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="grid-docs-layout">
           
-          <!-- Sticky Sidebar Navigation (Col 1-4) -->
-          <aside class="lg:col-span-4 sticky top-24">
-            <div class="grid-ring bg-white p-6 flex flex-col gap-4">
+          <!-- Sticky Sidebar Navigation (15gu) -->
+          <aside class="sticky top-24">
+            <div class="snap-card free-flow grid-ring bg-white p-1gu flex flex-col gap-1gu">
               <span class="snap-badge badge-sm font-mono uppercase tracking-widest text-[var(--cb-cobalt-600)] bg-[#edf2ff] border border-[#c2d2fc] px-2 py-0.5 w-fit">
                 _MỤC LỤC CHÍNH SÁCH/
               </span>
@@ -69,34 +69,34 @@
                     class="py-2 px-3 text-[#475569] hover:text-[var(--cb-cobalt-600)] hover:bg-[#edf2ff] transition-colors flex items-center justify-between text-xs font-mono font-medium grid-ring"
                   >
                     <span>{sec.title}</span>
-                    <ChevronRight size={13} class="opacity-40" />
+                    <ChevronRight size={13} class="opacity-40 shrink-0" />
                   </a>
                 {/each}
               </nav>
 
               <div class="mt-2 pt-4 border-t border-[#e2e8f0] flex flex-col gap-2.5 font-mono text-xs text-[#64748b]">
                 <div class="flex items-center gap-2">
-                  <ShieldCheck size={14} class="text-[var(--cb-cobalt-600)]" />
+                  <ShieldCheck size={14} class="text-[var(--cb-cobalt-600)] shrink-0" />
                   <span>ISO/IEC 27001 Aligned</span>
                 </div>
                 <div class="flex items-center gap-2">
-                  <Lock size={14} class="text-[var(--cb-cobalt-600)]" />
+                  <Lock size={14} class="text-[var(--cb-cobalt-600)] shrink-0" />
                   <span>DevSecOps & SAST Scanner</span>
                 </div>
                 <div class="flex items-center gap-2">
-                  <Server size={14} class="text-[var(--cb-cobalt-600)]" />
+                  <Server size={14} class="text-[var(--cb-cobalt-600)] shrink-0" />
                   <span>Tier III Data Centers (VN)</span>
                 </div>
                 <div class="flex items-center gap-2 pt-2 border-t border-[#e2e8f0]">
-                  <Phone size={14} class="text-[var(--cb-cobalt-600)]" />
+                  <Phone size={14} class="text-[var(--cb-cobalt-600)] shrink-0" />
                   <a href="tel:0932640968" class="hover:underline font-bold text-[#090e1f]">Hotline: 0932.640.968</a>
                 </div>
               </div>
             </div>
           </aside>
 
-          <!-- Content Body (Col 5-12) -->
-          <article class="lg:col-span-8 flex flex-col gap-10 grid-ring bg-white p-8 md:p-12 leading-relaxed text-[#334155]">
+          <!-- Content Body (32gu) -->
+          <article class="snap-card free-flow flex flex-col gap-2gu grid-ring bg-white p-1gu sm:p-2gu leading-relaxed text-[#334155]">
             
             <!-- Section 1 -->
             <section id="tieu-chuan-iso" class="flex flex-col gap-3 scroll-mt-28">

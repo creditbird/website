@@ -11,14 +11,14 @@
 
   const creditbirdPoints = [
     { num: '01', title: 'Viết phần mềm may đo, 100% full source code', desc: 'Kiến trúc Microservices hiện đại, chuyển giao toàn bộ mã nguồn sạch, tài liệu kỹ thuật chuẩn quốc tế và cam kết SLA trọn đời.' },
-    { num: '02', title: 'RustSale CRM Omnichannel Native Rust', desc: 'Desktop native Rust siêu tốc, gom Zalo/WhatsApp/FB vào một hộp thư thống nhất, bảo mật Local-First Keyring.' },
+    { num: '02', title: 'RustSale CRM Omnichannel', desc: 'Desktop CRM siêu tốc, gom Zalo/WhatsApp/FB vào một hộp thư thống nhất, bảo mật Local-First Keyring.' },
     { num: '03', title: 'Cung ứng nhân sự IT phái cử trong 48 giờ', desc: 'Kỹ sư Senior (Frontend, Backend, DevOps, QA) onboard tức thì, thử việc 14 ngày, ký cam kết bảo mật NDA chặt chẽ.' },
     { num: '04', title: 'Kelvot ERP: Sản xuất BOM, Kho WMS & VAS/IFRS', desc: 'Phân hệ ERP chuyên sâu tại kelvot.com, chuẩn hóa sản xuất đa công đoạn, quản trị kho barcode và kế toán Việt Nam.' },
     { num: '05', title: 'Lemy Finest: Scent HVAC & Tinh dầu COA', desc: 'Máy khuếch tán Nano HVAC công suất lớn tại lemyfinest.com và 100% tinh dầu nguyên chất có kiểm nghiệm an toàn COA / GC-MS.' }
   ];
 </script>
 
-<section id="build-vs-buy" class="py-20 border-b border-[#e2e8f0] bg-[#f8fafc]">
+<section id="build-vs-buy" class="py-20 border-b border-[#e2e8f0] bg-[#f8fafc] scroll-mt-20">
   <div class="strict-grid-container">
     
     <div class="text-center max-w-3xl mx-auto mb-16">
@@ -90,10 +90,10 @@
 
     </div>
 
-    <!-- Bottom Action Link like Formance -->
+    <!-- Bottom Action Link to Sandbox -->
     <div class="pt-2">
-      <a href="#code-ledger" class="font-mono text-xs text-[var(--cb-cobalt-500)] hover:text-[var(--cb-azure-500)] inline-flex items-center gap-1.5 font-medium transition-transform hover:translate-x-1">
-        Read our approach →
+      <a href="#system-sandbox" class="font-mono text-xs text-[var(--cb-cobalt-500)] hover:text-[var(--cb-azure-500)] inline-flex items-center gap-1.5 font-medium transition-transform hover:translate-x-1">
+        Trải nghiệm mô phỏng kiến trúc hệ thống →
       </a>
     </div>
 

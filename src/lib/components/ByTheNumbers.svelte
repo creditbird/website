@@ -9,7 +9,7 @@
     {
       label: 'năm thành lập',
       value: '2018',
-      sublabel: 'MST: 0315397327 · TP. Thủ Đức'
+      sublabel: 'MST: 0315397327 · TP. Hồ Chí Minh'
     },
     {
       label: 'dự án phần mềm & erp',

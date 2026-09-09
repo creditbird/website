@@ -4,11 +4,11 @@
   let currentStep = $state(2);
 
   const workflowSteps = [
-    { num: 1, name: 'Khảo sát Yêu cầu & Ký Hợp đồng NDA', status: 'COMPLETED', time: '24h', provider: 'CreditBird Solution Architects' },
-    { num: 2, name: 'Lập trình May đo & Phái cử IT Squad', status: 'IN_PROGRESS', time: '48h Onboard', provider: 'Engineering Division' },
-    { num: 3, name: 'Triển khai RustSale CRM & Kelvot ERP', status: 'PENDING', time: 'Agile Sprints', provider: 'Product & ERP Specialists' },
-    { num: 4, name: 'Lắp đặt Lemy Finest HVAC & Tinh dầu COA', status: 'PENDING', time: 'Đúng tiến độ', provider: 'Scent Engineering Lab' },
-    { num: 5, name: 'Bàn giao Full Code & Bảo trì SLA 24/7', status: 'PENDING', time: 'Cam kết SLA', provider: 'QA & Support Services' }
+    { num: 1, name: 'Khảo sát Kiến trúc & Đánh giá Khả thi AI', status: 'COMPLETED', time: 'Phản hồi 24h', provider: 'Solution Architecture & AI Lab' },
+    { num: 2, name: 'Lập trình May đo & Tăng tốc với AI Pair', status: 'IN_PROGRESS', time: 'Sprint 2 tuần', provider: 'Senior Engineering Division' },
+    { num: 3, name: 'Tích hợp Phân hệ Nghiệp vụ & AI Agent', status: 'PENDING', time: 'Private Cloud / On-Prem', provider: 'Core Systems & AI Squad' },
+    { num: 4, name: 'Kiểm thử Tự động CI/CD & Quét An ninh AI', status: 'PENDING', time: 'Zero-Downtime Gate', provider: 'DevSecOps & QA Automation' },
+    { num: 5, name: 'Bàn giao 100% Source Code & Bảo hành SLA 24/7', status: 'PENDING', time: 'Bảo hành dài hạn', provider: 'Customer Success & Support Services' }
   ];
 
   function nextStep() {
@@ -16,7 +16,7 @@
   }
 </script>
 
-<section id="flows" class="py-20 border-b border-[#e2e8f0] bg-[#f8fafc]">
+<section id="delivery-pipeline" class="py-20 border-b border-[#e2e8f0] bg-[#f8fafc] scroll-mt-20">
   <div class="strict-grid-container">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
@@ -36,23 +36,23 @@
           </div>
 
           <div class="p-5 font-mono text-[0.8125rem] leading-relaxed bg-[#f8fafc] text-[#1e293b]">
-            <pre class="m-0 font-mono"><code><span class="text-[var(--cb-cobalt-500)] font-bold">project:</span> creditbird_enterprise_solutions
-<span class="text-[var(--cb-cobalt-500)] font-bold">stages:</span>
-  - <span class="text-[var(--cb-cobalt-500)] font-bold">software:</span>
-      <span class="text-[#64748b]">scope:</span> <span class="text-[#0f172a] font-bold">Custom_Microservices_Web_App</span>
-      <span class="text-[#64748b]">deliverable:</span> <span class="text-[var(--cb-cobalt-500)] font-bold">100% Full Source Code</span>
-  - <span class="text-[var(--cb-cobalt-500)] font-bold">rustsale_crm:</span>
-      <span class="text-[#64748b]">engine:</span> <span class="text-[#0f172a]">Rust Native Desktop (Zalo/WA/FB)</span>
-      <span class="text-[#64748b]">latency:</span> <span class="text-[var(--cb-emerald-500)] font-bold">&lt; 15ms Local-First</span>
-  - <span class="text-[var(--cb-cobalt-500)] font-bold">it_staffing:</span>
-      <span class="text-[#64748b]">model:</span> <span class="text-[#0f172a]">Senior Tech Lead + Backend + DevOps</span>
-      <span class="text-[#64748b]">onboarding_sla:</span> <span class="text-[#0f172a]">48_hours (Trial 14 days)</span>
-  - <span class="text-[var(--cb-cobalt-500)] font-bold">kelvot_erp:</span>
-      <span class="text-[#64748b]">portal:</span> <span class="text-[#0f172a]">https://kelvot.com</span>
-      <span class="text-[#64748b]">modules:</span> <span class="text-[#0f172a]">Multi-BOM &amp; WMS Barcode</span>
-  - <span class="text-[var(--cb-cobalt-500)] font-bold">lemyfinest_scent:</span>
-      <span class="text-[#64748b]">portal:</span> <span class="text-[#0f172a]">https://www.lemyfinest.com</span>
-      <span class="text-[#64748b]">hardware:</span> <span class="text-[#0f172a]">HVAC Cold-Air Diffusers &amp; COA Oil</span></code></pre>
+            <pre class="m-0 font-mono"><code><span class="text-[var(--cb-cobalt-500)] font-bold">project:</span> enterprise_ai_and_software_delivery
+<span class="text-[var(--cb-cobalt-500)] font-bold">pipeline:</span>
+  - <span class="text-[var(--cb-cobalt-500)] font-bold">stage_1_architecture:</span>
+      <span class="text-[#64748b]">scope:</span> <span class="text-[#0f172a] font-bold">Domain_Driven_Design &amp; AI_Feasibility</span>
+      <span class="text-[#64748b]">deliverable:</span> <span class="text-[var(--cb-cobalt-500)] font-bold">Architecture_Blueprint &amp; NDA (24h)</span>
+  - <span class="text-[var(--cb-cobalt-500)] font-bold">stage_2_ai_augmented_dev:</span>
+      <span class="text-[#64748b]">methodology:</span> <span class="text-[#0f172a]">AI_Pair_Programming + Agile_Sprints</span>
+      <span class="text-[#64748b]">velocity:</span> <span class="text-[var(--cb-emerald-500)] font-bold">2x_Faster_Delivery_Cycle</span>
+  - <span class="text-[var(--cb-cobalt-500)] font-bold">stage_3_intelligent_modules:</span>
+      <span class="text-[#64748b]">core_engine:</span> <span class="text-[#0f172a]">Custom_Microservices + Enterprise_RAG</span>
+      <span class="text-[#64748b]">security:</span> <span class="text-[#0f172a]">Zero_Trust &amp; Private_Cloud_Ready</span>
+  - <span class="text-[var(--cb-cobalt-500)] font-bold">stage_4_automated_qa:</span>
+      <span class="text-[#64748b]">pipeline:</span> <span class="text-[#0f172a]">CI_CD_Automated_Testing &amp; Pentest</span>
+      <span class="text-[#64748b]">code_coverage:</span> <span class="text-[var(--cb-cobalt-500)] font-bold">&gt; 90% Unit_and_E2E_Test</span>
+  - <span class="text-[var(--cb-cobalt-500)] font-bold">stage_5_handover:</span>
+      <span class="text-[#64748b]">deliverables:</span> <span class="text-[var(--cb-cobalt-500)] font-bold">100% Full Source Code &amp; AI Weights</span>
+      <span class="text-[#64748b]">warranty:</span> <span class="text-[#0f172a]">SLA_24_7 &amp; Continuous_Maintenance</span></code></pre>
           </div>
 
           <!-- Interactive Step Controller Bar -->
@@ -74,11 +74,11 @@
 
       <!-- Text & Interactive Step Progression (Right 6 Cols) -->
       <div class="lg:col-span-6 order-1 lg:order-2">
-        <span class="snap-badge mb-3">_ĐIỀU PHỐI DỰ ÁN/</span>
-        <h2 class="section-title text-[#090e1f] mb-3">Vận hành Chuẩn mực</h2>
-        <p class="text-xl font-medium text-[#090e1f] mb-3">Quy trình điều phối dự án thông minh và minh bạch.</p>
+        <span class="snap-badge mb-3">_QUY TRÌNH KỸ THUẬT &amp; AI/</span>
+        <h2 class="section-title text-[#090e1f] mb-3">Vận hành Chuẩn mực &amp; Tăng tốc với AI</h2>
+        <p class="text-xl font-medium text-[#090e1f] mb-3">Quy trình phát triển phần mềm may đo tăng tốc với AI và kiểm thử tự động.</p>
         <p class="text-[#475569] text-base leading-relaxed mb-6">
-          Từ các dự án phát triển phần mềm ERP phức tạp, phái cử nhân sự công nghệ chất lượng cao đến triển khai hệ thống máy phun tinh dầu tự động thông minh cho các chuỗi cơ sở — CreditBird luôn đảm bảo tính đồng bộ, báo cáo thời gian thực và cam kết SLA theo hợp đồng.
+          Từ khảo sát kiến trúc hệ thống, lập trình tăng tốc với AI Pair-Programming đến tích hợp các phân hệ AI Agent thông minh và bảo mật cấp Enterprise — CreditBird cam kết bàn giao 100% Full Source Code, tài liệu kỹ thuật chuẩn mực và bảo hành SLA 24/7 theo hợp đồng.
         </p>
 
         <!-- Dynamic Step Cards -->

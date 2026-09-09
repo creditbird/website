@@ -13,7 +13,7 @@
   ];
 </script>
 
-<section class="theme-emerald bg-background text-foreground" style="--section-accent:var(--cobalt-accent, var(--theme-700, #22439c))">
+<section id="partners" class="theme-emerald bg-background text-foreground scroll-mt-20" style="--section-accent:var(--cobalt-accent, var(--theme-700, #22439c))">
   <div class="strict-grid relative z-2 py-1gu no-bg-grid">
     <div class="flex flex-col gap-1gu">
       <span class="badge-sm font-mono uppercase tracking-widest md:whitespace-nowrap text-muted-foreground flex h-1gu items-center">

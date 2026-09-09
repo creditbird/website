@@ -29,8 +29,8 @@
 </script>
 
 <section 
-  id="the-problem" 
-  class="relative theme-cobalt-primary dark bg-background text-foreground" 
+  id="challenges" 
+  class="relative theme-cobalt-primary dark bg-background text-foreground scroll-mt-20" 
   style="--section-accent:var(--cobalt-accent, #60a5fa)"
 >
   <div class="strict-grid relative z-2 py-(--grid-unit)">

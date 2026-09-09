@@ -83,7 +83,7 @@
   let selected = $derived(days[selectedDayIndex]);
 </script>
 
-<section id="reconciliation" class="relative bg-[#ffffff] text-[#090e1f] border-b border-[#e2e8f0]">
+<section id="operations-audit" class="relative bg-[#ffffff] text-[#090e1f] border-b border-[#e2e8f0] scroll-mt-20">
   <div class="strict-grid-container py-16 md:py-24">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
       

@@ -34,7 +34,7 @@
     isDemoOpen = false;
   }
 
-  const installCommand = 'curl -fsSL https://rustsale.trantrongtri.com/install-linux.sh | bash';
+  const installCommand = 'curl -fsSL https://rustsale.creditbirdtech.com/install-linux.sh | bash';
 
   const metrics = [
     {
@@ -98,11 +98,11 @@
     },
     {
       id: '05',
-      code: '_OMNICHANNEL INBOX/',
-      title: 'Hộp thư Hội tụ Đa kênh Siêu tốc',
+      code: '_OMNICHANNEL & AI INBOX/',
+      title: 'Hộp Thư Hội Tụ & AI Smart Reply',
       icon: MessageSquare,
-      desc: 'Hợp nhất tin nhắn Zalo, WhatsApp, Facebook Messenger về 1 cửa sổ duy nhất. Phản hồi tức thì, không lo sót khách hàng.',
-      tag: 'realtime inbox'
+      desc: 'Hợp nhất tin nhắn Zalo, WhatsApp, Facebook Messenger về 1 cửa sổ. Tích hợp AI Agent phân tích ý định và gợi ý câu trả lời chốt sales tức thì.',
+      tag: 'realtime inbox • ai reply'
     },
     {
       id: '06',
@@ -114,11 +114,11 @@
     },
     {
       id: '07',
-      code: '_ZALO OUTREACH/',
-      title: 'Tự động hóa Tiếp cận & Chăm sóc Zalo',
+      code: '_AI OUTREACH & AUTOMATION/',
+      title: 'AI Agent Tiếp Cận & Chăm Sóc Đa Kênh',
       icon: Sparkles,
-      desc: 'Tự động gửi lời mời kết bạn và tin nhắn cá nhân hóa theo danh sách số điện thoại mục tiêu, duy trì tương tác khách hàng.',
-      tag: 'zalo automation'
+      desc: 'Tự động gửi kết bạn Zalo, phân loại cảm xúc khách hàng và kích hoạt chuỗi nuôi dưỡng thông minh bằng AI Agent chuyên trách.',
+      tag: 'ai outreach • zalo automation'
     },
     {
       id: '08',
@@ -166,6 +166,10 @@
     {
       title: 'Đồng bộ đa tài khoản Zalo',
       text: 'Quản lý song song Zalo cá nhân và Zalo Doanh nghiệp (OA) trong một giao diện duy nhất.'
+    },
+    {
+      title: 'AI Agent Chốt đơn & Trợ lý thông minh',
+      text: 'Phân tích hội thoại thời gian thực, tự động gợi ý câu trả lời và kịch bản chốt đơn cá nhân hóa.'
     },
     {
       title: 'WhatsApp Cloud & Web Hub',

@@ -32,8 +32,8 @@
 </script>
 
 <section 
-  id="trust" 
-  class="relative theme-emerald bg-background text-foreground" 
+  id="compliance-security" 
+  class="relative theme-emerald bg-background text-foreground scroll-mt-20" 
   style="--section-accent:var(--cobalt-accent, var(--theme-700, #22439c))"
 >
   <div class="strict-grid relative z-2 py-1gu no-bg-grid">
@@ -100,7 +100,7 @@
                 <ShieldCheck class="size-[calc(var(--grid-unit)*1.75)] shrink-0 text-card-foreground md:size-2gu" strokeWidth={1.5} />
                 <div class="flex flex-col gap-1">
                   <span class="badge-md font-mono uppercase tracking-wider text-card-foreground">MST 0315397327</span>
-                  <span class="badge-sm font-mono uppercase tracking-wider text-card-muted-foreground">TP THỦ ĐỨC, TP.HCM</span>
+                  <span class="badge-sm font-mono uppercase tracking-wider text-card-muted-foreground">TP. HỒ CHÍ MINH</span>
                 </div>
               </div>
             </div>

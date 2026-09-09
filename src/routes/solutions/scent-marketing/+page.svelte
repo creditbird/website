@@ -7,6 +7,8 @@
   import BlueprintGridSection from '$lib/components/BlueprintGridSection.svelte';
   import BlueprintSplitShowcase from '$lib/components/BlueprintSplitShowcase.svelte';
   import BlueprintCtaSection from '$lib/components/BlueprintCtaSection.svelte';
+  import LabGlasswareBlueprint from '$lib/components/LabGlasswareBlueprint.svelte';
+  import LabExtractionBlueprintSection from '$lib/components/LabExtractionBlueprintSection.svelte';
   import { 
     Wind, 
     ShieldCheck, 
@@ -185,13 +187,17 @@
       secondaryBtnAction={openDemo}
     />
 
-    <!-- 2. Blueprint Metrics Bar (Crisp Light Hairline Grid) -->
+    <!-- 2. Blueprint Metrics Bar (Crisp Light Hairline Grid with Laboratory Blueprint Graphic) -->
     <BlueprintMetricsBar
       eyebrow="_TIÊU CHUẨN KỸ THUẬT / SCENT TELEMETRY"
       title="Năng lực khuếch tán diện rộng và kiểm định chất lượng quốc tế"
       theme="light"
       {metrics}
-    />
+    >
+      {#snippet graphic()}
+        <LabGlasswareBlueprint />
+      {/snippet}
+    </BlueprintMetricsBar>
 
     <!-- 3. 6 Core Solutions Grid (Dark Cyanotype Architectural Blueprint) -->
     <BlueprintGridSection
@@ -204,6 +210,9 @@
       columns={3}
       items={solutions}
     />
+
+    <!-- 4. Laboratory Extraction & Distillation Process Blueprint (Dark Cyanotype CAD Architecture) -->
+    <LabExtractionBlueprintSection />
 
     <!-- 4. HVAC Deep Dive Split Showcase (Crisp Light Blueprint) -->
     <BlueprintSplitShowcase

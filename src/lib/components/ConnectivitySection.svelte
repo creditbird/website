@@ -52,7 +52,7 @@
   const providers: Provider[] = ['SOFTWARE', 'RUSTSALE', 'IT_STAFF', 'KELVOT_ERP', 'LEMY_FINEST'];
 </script>
 
-<section id="connectivity" class="py-20 border-b border-[#e2e8f0] bg-white">
+<section id="ecosystem-integration" class="py-20 border-b border-[#e2e8f0] bg-white scroll-mt-20">
   <div class="strict-grid-container">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
@@ -79,8 +79,8 @@
         </div>
 
         <div class="p-4 rounded-lg bg-[#f8fafc] border border-[#e2e8f0] font-mono text-xs">
-          <div class="text-[#64748b] mb-1">RAIL TYPE: <span class="text-[#090e1f]">{providerDetails[selectedProvider].rail}</span></div>
-          <div class="text-[#64748b]">SETTLEMENT VELOCITY: <span class="text-[var(--cb-emerald-500)] font-bold">{providerDetails[selectedProvider].speed}</span></div>
+          <div class="text-[#64748b] mb-1">KIẾN TRÚC TÍCH HỢP: <span class="text-[#090e1f]">{providerDetails[selectedProvider].rail}</span></div>
+          <div class="text-[#64748b]">TỐC ĐỘ ĐÁP ỨNG: <span class="text-[var(--cb-emerald-500)] font-bold">{providerDetails[selectedProvider].speed}</span></div>
         </div>
       </div>
 

@@ -502,10 +502,31 @@ html {
   grid-template-columns: minmax(calc(var(--grid-unit) * 12), max-content) repeat(var(--_cols-lg, 1), minmax(0, 1fr));
   column-gap: var(--grid-unit);
 }
-.grid-row-exact {
-  --_track: round(down, calc((100% - (var(--_cols-lg, 1) - 1) * var(--_col-gap-lg, 0px)) / var(--_cols-lg, 1)), var(--grid-unit));
-  grid-template-columns: repeat(var(--_cols-lg, 1), var(--_track));
-  justify-content: space-between;
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .grid-row-exact {
+    --_track-md: round(down, calc((100% - (var(--_cols-md, 1) - 1) * calc(var(--grid-unit) * 2)) / var(--_cols-md, 1)), var(--grid-unit));
+    grid-template-columns: repeat(var(--_cols-md, 1), var(--_track-md));
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1280px) {
+  .grid-row-exact {
+    --_track: round(down, calc((100% - (var(--_cols-lg, 1) - 1) * var(--_col-gap-lg, 0px)) / var(--_cols-lg, 1)), var(--grid-unit));
+    grid-template-columns: repeat(var(--_cols-lg, 1), var(--_track));
+    justify-content: space-between;
+  }
+}
+.grid-docs-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--grid-unit);
+  align-items: start;
+}
+@media (min-width: 1024px) {
+  .grid-docs-layout {
+    grid-template-columns: calc(var(--grid-unit) * 15) calc(var(--grid-unit) * 32);
+    gap: var(--grid-unit);
+  }
 }
 
 /* Snap Layout Primitives */
@@ -803,3 +824,13 @@ header.strict-grid:after,
     background: color-mix(in srgb, var(--grid-line-color) calc(var(--grid-line-opacity, 0.4) * 100%), transparent);
   }
 }
+
+/* No Scrollbar Utility (Hides OS native scrollbars while preserving touch swipe & scrollability) */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
