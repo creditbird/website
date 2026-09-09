@@ -59,6 +59,10 @@
               <span>Kho mã nguồn mở (GitHub)</span>
               <span class="text-xs">↗</span>
             </a></li>
+            <li><a href="https://www.facebook.com/creditbird" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1">
+              <span>Fanpage chính thức (Facebook)</span>
+              <span class="text-xs">↗</span>
+            </a></li>
           </ul>
         </div>
 
@@ -192,7 +196,11 @@
         <span class="w-2 h-2 rounded-full bg-[var(--cb-emerald-500)]"></span>
         <span>© 2018 - 2026 CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD (MST: 0315397327). All rights reserved.</span>
       </div>
-      <div class="flex items-center gap-4 text-[11px] font-mono">
+      <div class="flex items-center gap-4 text-[11px] font-mono flex-wrap">
+        <a href="https://github.com/creditbird" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a>
+        <span>•</span>
+        <a href="https://www.facebook.com/creditbird" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Facebook</a>
+        <span>•</span>
         <a href="/terms" class="hover:text-white transition-colors">Điều khoản</a>
         <span>•</span>
         <a href="/privacy" class="hover:text-white transition-colors">Bảo mật</a>
