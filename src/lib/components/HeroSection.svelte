@@ -83,11 +83,11 @@
             </a>
 
             <a 
-              href="tel:0932640968" 
+              href="tel:+84932640968" 
               class="inline-flex items-center justify-center gap-1.5 px-4 h-10 rounded font-mono text-xs font-semibold bg-[#edf2ff] text-[var(--cb-cobalt-600)] border border-[#c2d2fc] hover:bg-[var(--cb-cobalt-500)] hover:text-white transition-all shadow-xs"
             >
               <PhoneCall size={13} class="shrink-0" />
-              <span>0932.640.968</span>
+              <span>+84 932 640 968</span>
             </a>
           </div>
 

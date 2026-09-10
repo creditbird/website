@@ -47,7 +47,7 @@ const warrantyData = {
     sec4: {
       title: "4. Quy trình tiếp nhận & Xử lý bảo hành",
       steps: [
-        { num: "01", title: "Tiếp nhận yêu cầu:", desc: "Khách hàng liên hệ qua Hotline 0932.640.968 hoặc gửi email tới contact@creditbirdtech.com kèm mã số hợp đồng / serial thiết bị." },
+        { num: "01", title: "Tiếp nhận yêu cầu:", desc: "Khách hàng liên hệ qua Hotline +84 932 640 968 hoặc gửi email tới contact@creditbirdtech.com kèm mã số hợp đồng / serial thiết bị." },
         { num: "02", title: "Chẩn đoán & Hướng dẫn từ xa:", desc: "Kỹ sư phụ trách liên hệ trực tiếp trong 15 - 30 phút để kiểm tra logs telemetry hoặc hướng dẫn xử lý nhanh." },
         { num: "03", title: "Xử lý tại hiện trường hoặc máy chủ:", desc: "Kỹ thuật viên đến tận nơi kiểm tra máy phun hoặc kỹ sư triển khai hotfix mã nguồn bảo mật trên môi trường staging trước khi deploy production." },
         { num: "04", title: "Nghiệm thu & Đánh giá:", desc: "Khách hàng ký biên bản bàn giao hoàn thành bảo hành và đánh giá chất lượng dịch vụ." }
@@ -111,7 +111,7 @@ const warrantyData = {
     sec4: {
       title: "4. Warranty Intake & Incident Resolution Protocol",
       steps: [
-        { num: "01", title: "Incident Intake:", desc: "Submit tickets via Hotline 0932.640.968 or email contact@creditbirdtech.com referencing your contract code and hardware serial number." },
+        { num: "01", title: "Incident Intake:", desc: "Submit tickets via Hotline +84 932 640 968 or email contact@creditbirdtech.com referencing your contract code and hardware serial number." },
         { num: "02", title: "Remote Telemetry & Triage:", desc: "Assigned engineering leads respond within 15 - 30 minutes to review telemetry error logs or initiate remote diagnostics." },
         { num: "03", title: "Onsite Service or Code Hotfix:", desc: "Technicians dispatch onsite for hardware repairs, or engineers deploy security hotfixes to staging prior to zero-downtime production deployment." },
         { num: "04", title: "Client Acceptance & Closure:", desc: "Formal sign-off of the incident handover report and satisfaction review upon resolution." }
@@ -175,7 +175,7 @@ const warrantyData = {
     sec4: {
       title: "4. 售后申报与工单闭环处置流程",
       steps: [
-        { num: "01", title: "工单受理接入：", desc: "拨打热线 0932.640.968 或发送邮件至 contact@creditbirdtech.com，注明合同编号及设备序列号。" },
+        { num: "01", title: "工单受理接入：", desc: "拨打热线 +84 932 640 968 或发送邮件至 contact@creditbirdtech.com，注明合同编号及设备序列号。" },
         { num: "02", title: "远程遥测与技术分流：", desc: "专属工程技术专家在 15-30 分钟内调取系统日志进行远程诊断排查。" },
         { num: "03", title: "现场派工或热修复部署：", desc: "技术专员上门检修扩香硬件，或软件团队在 Staging 环境验证后部署代码 Hotfix。" },
         { num: "04", title: "复核验收与服务归档：", desc: "客户签署售后服务验收单并对技术响应与处置质量进行打分评价。" }
@@ -239,7 +239,7 @@ const warrantyData = {
     sec4: {
       title: "4. サポート受付およびトラブルシューティング手順",
       steps: [
-        { num: "01", title: "サポート受付:", desc: "ホットライン 0932.640.968 またはメール contact@creditbirdtech.com まで契約コードを添えてご連絡ください。" },
+        { num: "01", title: "サポート受付:", desc: "ホットライン +84 932 640 968 またはメール contact@creditbirdtech.com まで契約コードを添えてご連絡ください。" },
         { num: "02", title: "遠隔診断とトリアージ:", desc: "担当エンジニアが15〜30分以内にテレメトリログを確認し初期診断を行います。" },
         { num: "03", title: "現場対応または修正パッチ:", desc: "技術スタッフによる現地訪問点検、またはステージング検証後のコードHotfixを適用します。" },
         { num: "04", title: "完了確認と検収:", desc: "復旧完了報告書をご確認いただき、対応品質の評価をいただきます。" }
@@ -303,7 +303,7 @@ const warrantyData = {
     sec4: {
       title: "4. 장애 접수 및 조치 프로세스",
       steps: [
-        { num: "01", title: "장애 접수:", desc: "핫라인 0932.640.968 또는 이메일 contact@creditbirdtech.com으로 계약 번호와 기기 시리얼을 접수합니다." },
+        { num: "01", title: "장애 접수:", desc: "핫라인 +84 932 640 968 또는 이메일 contact@creditbirdtech.com으로 계약 번호와 기기 시리얼을 접수합니다." },
         { num: "02", title: "원격 진단 및 분석:", desc: "담당 엔지니어가 15~30분 이내에 시스템 로그를 확인하고 원격 진단을 진행합니다." },
         { num: "03", title: "현장 방문 또는 패치 배포:", desc: "현장 엔지니어가 출동하여 기기를 점검하거나 스테이징 환경 검증 후 핫픽스 코드를 배포합니다." },
         { num: "04", title: "최종 검수 및 종료:", desc: "고객 담당자의 복구 확인 서명 및 만족도 평가 후 지원을 완료합니다." }
@@ -367,7 +367,7 @@ const warrantyData = {
     sec4: {
       title: "4. ขั้นตอนการรับแจ้งและแก้ไขปัญหาการรับประกัน",
       steps: [
-        { num: "01", title: "รับแจ้งเรื่อง:", desc: "ติดต่อสายด่วน 0932.640.968 หรือส่งอีเมลมาที่ contact@creditbirdtech.com พร้อมระบุรหัสสัญญา/หมายเลขซีเรียลเครื่อง" },
+        { num: "01", title: "รับแจ้งเรื่อง:", desc: "ติดต่อสายด่วน +84 932 640 968 หรือส่งอีเมลมาที่ contact@creditbirdtech.com พร้อมระบุรหัสสัญญา/หมายเลขซีเรียลเครื่อง" },
         { num: "02", title: "วินิจฉัยจากระยะไกล:", desc: "วิศวกรผู้รับผิดชอบติดต่อกลับภายใน 15 - 30 นาที เพื่อตรวจสอบบันทึกระบบหรือให้คำแนะนำเบื้องต้น" },
         { num: "03", title: "ลงพื้นที่หรือปล่อย Hotfix:", desc: "ส่งช่างเทคนิคลงพื้นที่ตรวจสอบอุปกรณ์ หรือทีมซอฟต์แวร์ปล่อยโค้ดแก้ไขด่วนหลังทดสอบในระบบ Staging" },
         { num: "04", title: "ตรวจรับและปิดงาน:", desc: "ลูกค้าลงนามในเอกสารส่งมอบงานรับประกันและประเมินคุณภาพการให้บริการ" }
@@ -431,7 +431,7 @@ const warrantyData = {
     sec4: {
       title: "4. ຂັ້ນຕອນການຮັບແຈ້ງ & ແກ້ໄຂບັນຫາການຮັບປະກັນ",
       steps: [
-        { num: "01", title: "ຮັບແຈ້ງເຫດການ:", desc: "ຕິດຕໍ່ສາຍດ່ວນ 0932.640.968 ຫຼື ສົ່ງອີເມວຫາ contact@creditbirdtech.com ພ້ອມລະບຸເລກສັນຍາ/ຊີຣຽວອຸປະກອນ." },
+        { num: "01", title: "ຮັບແຈ້ງເຫດການ:", desc: "ຕິດຕໍ່ສາຍດ່ວນ +84 932 640 968 ຫຼື ສົ່ງອີເມວຫາ contact@creditbirdtech.com ພ້ອມລະບຸເລກສັນຍາ/ຊີຣຽວອຸປະກອນ." },
         { num: "02", title: "ວິເຄາະຈາກໄລຍະໄກ:", desc: "ວິສະວະກອນຕິດຕໍ່ກັບພາຍໃນ 15 - 30 ນາທີ ເພື່ອກວດສອບບັນທຶກລະບົບ ຫຼື ແນະນຳເບື້ອງຕົ້ນ." },
         { num: "03", title: "ລົງພື້ນທີ່ ຫຼື ປ່ອຍ Hotfix:", desc: "ຊ່າງເຕັກນິກລົງກວດເຊັກອຸປະກອນ ຫຼື ທີມງານຊອບແວປ່ອຍ Hotfix ຫຼັງທົດສອບໃນ Staging." },
         { num: "04", title: "ກວດຮັບ & ປິດວຽກ:", desc: "ລູກຄ້າລົງນາມໃນໃບມອບຮັບການຮັບປະກັນ ແລະ ປະເມີນຄຸນນະພາບການບໍລິການ." }
@@ -495,7 +495,7 @@ const warrantyData = {
     sec4: {
       title: "4. Protokol Penerimaan & Pengendalian Jaminan",
       steps: [
-        { num: "01", title: "Penerimaan Tiket:", desc: "Hubungi Talian Kecemasan 0932.640.968 atau e-mel contact@creditbirdtech.com dengan kod kontrak dan nombor siri perkakasan." },
+        { num: "01", title: "Penerimaan Tiket:", desc: "Hubungi Talian Kecemasan +84 932 640 968 atau e-mel contact@creditbirdtech.com dengan kod kontrak dan nombor siri perkakasan." },
         { num: "02", title: "Telemetri & Triaj Jauh:", desc: "Jurutera bertugas menghubungi dalam tempoh 15 - 30 minit untuk menyemak log ralat atau panduan diagnostik pantas." },
         { num: "03", title: "Servis Di Tapak atau Hotfix Kod:", desc: "Juruteknik dihantar ke tapak untuk pemeriksaan perkakasan, atau jurutera melancarkan hotfix pada persekitaran staging." },
         { num: "04", title: "Pengesahan & Penilaian:", desc: "Pelanggan menandatangani laporan serah tugas jaminan dan menilai kualiti perkhidmatan yang diberikan." }
@@ -559,7 +559,7 @@ const warrantyData = {
     sec4: {
       title: "4. Protocolo de Gestión de Garantías y Resolución",
       steps: [
-        { num: "01", title: "Apertura de Incidencia:", desc: "Contacte vía teléfono 0932.640.968 o email contact@creditbirdtech.com indicando número de contrato y serie del equipo." },
+        { num: "01", title: "Apertura de Incidencia:", desc: "Contacte vía teléfono +84 932 640 968 o email contact@creditbirdtech.com indicando número de contrato y serie del equipo." },
         { num: "02", title: "Diagnóstico Remoto y Triaje:", desc: "Los ingenieros asignados contactan en 15 - 30 minutos para revisar registros de telemetría y guiar el diagnóstico." },
         { num: "03", title: "Intervención In Situ o Hotfix:", desc: "Desplazamiento técnico para revisión física o despliegue de hotfix de código en staging antes de producción." },
         { num: "04", title: "Cierre y Aceptación:", desc: "Firma del acta de resolución de incidencia y evaluación de la calidad del servicio." }
@@ -623,7 +623,7 @@ const warrantyData = {
     sec4: {
       title: "4. Procédure de Traitement des Demandes de Garantie",
       steps: [
-        { num: "01", title: "Enregistrement du Ticket :", desc: "Contactez le 0932.640.968 ou écrivez à contact@creditbirdtech.com en précisant le contrat et le numéro de série." },
+        { num: "01", title: "Enregistrement du Ticket :", desc: "Contactez le +84 932 640 968 ou écrivez à contact@creditbirdtech.com en précisant le contrat et le numéro de série." },
         { num: "02", title: "Diagnostic & Télémesure :", desc: "Prise en charge par un ingénieur sous 15 à 30 minutes pour analyse des journaux d'erreurs et télédiagnostic." },
         { num: "03", title: "Intervention sur Site ou Patch :", desc: "Dépêchement d'un technicien ou déploiement d'un correctif validé en staging avant mise en production." },
         { num: "04", title: "Recette & Clôture :", desc: "Signature du bon d'intervention et recueil de l'évaluation de satisfaction du client." }
@@ -687,7 +687,7 @@ const warrantyData = {
     sec4: {
       title: "4. वारंटी दावा और समाधान प्रक्रिया",
       steps: [
-        { num: "01", title: "घटना पंजीकरण:", desc: "हॉटलाइन 0932.640.968 पर कॉल करें या अनुबंध संख्या और मशीन सीरियल के साथ contact@creditbirdtech.com पर ईमेल करें।" },
+        { num: "01", title: "घटना पंजीकरण:", desc: "हॉटलाइन +84 932 640 968 पर कॉल करें या अनुबंध संख्या और मशीन सीरियल के साथ contact@creditbirdtech.com पर ईमेल करें।" },
         { num: "02", title: "रिमोट टेलीमेट्री निदान:", desc: "इंजीनियर 15 - 30 मिनट के भीतर सिस्टम लॉग की समीक्षा करने के लिए संपर्क करते हैं।" },
         { num: "03", title: "ऑन-साइट सेवा या कोड हॉटफिक्स:", desc: "तकनीशियन हार्डवेयर निरीक्षण के लिए पहुंचते हैं या सॉफ्टवेयर इंजीनियर स्टेजिंग परीक्षण के बाद हॉटफिक्स तैनात करते हैं।" },
         { num: "04", title: "स्वीकृति और समापन:", desc: "ग्राहक समाधान रिपोर्ट पर हस्ताक्षर करते हैं और सेवा की गुणवत्ता का मूल्यांकन करते हैं।" }

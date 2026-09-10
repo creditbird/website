@@ -2,11 +2,13 @@ import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import fs from 'node:fs';
 import path from 'node:path';
+import { sendLeadNotificationEmail, type LeadSubmission } from '$lib/server/email';
+import { verifyTurnstileToken } from '$lib/server/turnstile';
 
-export const POST: RequestHandler = async ({ request }) => {
+export const POST: RequestHandler = async ({ request, getClientAddress }) => {
   try {
     const data = await request.json();
-    const { fullName, email, phone, company, useCase, notes } = data;
+    const { fullName, email, phone, company, useCase, notes, turnstileToken } = data;
 
     if (!fullName || !email || !phone) {
       return json(
@@ -15,20 +17,42 @@ export const POST: RequestHandler = async ({ request }) => {
       );
     }
 
-    const submission = {
+    // 1. Xác thực bảo mật Cloudflare Turnstile
+    let clientIp: string | undefined;
+    try {
+      clientIp =
+        request.headers.get('cf-connecting-ip') ||
+        request.headers.get('x-forwarded-for')?.split(',')[0].trim() ||
+        getClientAddress();
+    } catch {
+      clientIp = undefined;
+    }
+
+    const turnstileResult = await verifyTurnstileToken(turnstileToken, clientIp);
+    if (!turnstileResult.success) {
+      return json(
+        {
+          success: false,
+          error: turnstileResult.error || 'Xác thực bảo mật Turnstile không thành công. Vui lòng thử lại.'
+        },
+        { status: 400 }
+      );
+    }
+
+    const submission: LeadSubmission = {
       id: 'REQ-' + Date.now(),
       timestamp: new Date().toISOString(),
       fullName: String(fullName).trim(),
       email: String(email).trim(),
       phone: String(phone).trim(),
       company: company ? String(company).trim() : 'Cá nhân / Chưa cung cấp',
-      useCase: useCase || 'Phát triển Phần mềm theo yêu cầu & RustSale CRM',
+      useCase: useCase || 'software',
       notes: notes ? String(notes).trim() : ''
     };
 
     console.log('[CreditBird Lead Received]:', JSON.stringify(submission, null, 2));
 
-    // Bắt buộc lưu trữ thành công vào file jsonl mới trả về kết quả thành công
+    // Bắt buộc lưu trữ thành công vào file jsonl
     try {
       const dataDir = path.resolve(process.cwd(), '.data');
       if (!fs.existsSync(dataDir)) {
@@ -41,21 +65,30 @@ export const POST: RequestHandler = async ({ request }) => {
       return json(
         {
           success: false,
-          error: 'Hệ thống tiếp nhận đang gặp sự cố khi lưu trữ dữ liệu. Quý khách vui lòng gọi trực tiếp hotline 0932.640.968 hoặc chat Zalo để được hỗ trợ ngay.'
+          error: 'Hệ thống tiếp nhận đang gặp sự cố khi lưu trữ dữ liệu. Quý khách vui lòng gọi trực tiếp hotline +84 932 640 968 hoặc chat Zalo để được hỗ trợ ngay.'
         },
         { status: 500 }
       );
     }
 
+    // Gửi email thông báo qua Resend tới tymon3568@gmail.com
+    const emailResult = await sendLeadNotificationEmail(submission);
+    if (!emailResult.success) {
+      console.warn('[CreditBird Lead] Warning: Resend email dispatch failed:', emailResult.error);
+    } else {
+      console.log('[CreditBird Lead] Resend notification delivered, id:', emailResult.id);
+    }
+
     return json({
       success: true,
       message: 'Yêu cầu tư vấn của quý khách đã được lưu trữ thành công. Chuyên viên của CreditBird sẽ liên hệ lại trong ngày làm việc.',
-      leadId: submission.id
+      leadId: submission.id,
+      emailSent: emailResult.success
     });
   } catch (error) {
     console.error('[CreditBird Lead API Error]:', error);
     return json(
-      { success: false, error: 'Có lỗi xảy ra khi tiếp nhận thông tin. Quý khách vui lòng gọi trực tiếp hotline 0932.640.968.' },
+      { success: false, error: 'Có lỗi xảy ra khi tiếp nhận thông tin. Quý khách vui lòng gọi trực tiếp hotline +84 932 640 968.' },
       { status: 500 }
     );
   }

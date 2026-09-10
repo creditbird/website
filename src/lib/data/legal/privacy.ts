@@ -76,7 +76,7 @@ export const privacyContent: Record<SupportedLocale, PrivacyContent> = {
         "addrLabel": "Địa chỉ",
         "addrVal": "100/20 Đường 79, Phường Phước Long, TP Hồ Chí Minh, Việt Nam",
         "hotlineLabel": "Hotline tiếp nhận",
-        "hotlineVal": "0932.640.968",
+        "hotlineVal": "+84 932 640 968",
         "emailLabel": "Email chuyên trách bảo mật",
         "emailVal": "contact@creditbirdtech.com"
       }
@@ -157,7 +157,7 @@ export const privacyContent: Record<SupportedLocale, PrivacyContent> = {
         "addrLabel": "Headquarters",
         "addrVal": "100/20 Street 79, Phuoc Long Ward, Ho Chi Minh City, Vietnam",
         "hotlineLabel": "DPO Hotline",
-        "hotlineVal": "0932.640.968",
+        "hotlineVal": "+84 932 640 968",
         "emailLabel": "Dedicated Privacy Email",
         "emailVal": "contact@creditbirdtech.com"
       }
@@ -238,7 +238,7 @@ export const privacyContent: Record<SupportedLocale, PrivacyContent> = {
         "addrLabel": "公司地址",
         "addrVal": "100/20 Đường 79, Phường Phước Long, TP Hồ Chí Minh, Việt Nam",
         "hotlineLabel": "应急服务热线",
-        "hotlineVal": "0932.640.968",
+        "hotlineVal": "+84 932 640 968",
         "emailLabel": "专职安全邮箱",
         "emailVal": "contact@creditbirdtech.com"
       }
@@ -319,7 +319,7 @@ export const privacyContent: Record<SupportedLocale, PrivacyContent> = {
         "addrLabel": "本社所在地",
         "addrVal": "100/20 Đường 79, Phường Phước Long, TP Hồ Chí Minh, Việt Nam",
         "hotlineLabel": "受付窓口電話",
-        "hotlineVal": "0932.640.968",
+        "hotlineVal": "+84 932 640 968",
         "emailLabel": "セキュリティ専用メール",
         "emailVal": "contact@creditbirdtech.com"
       }
@@ -400,7 +400,7 @@ export const privacyContent: Record<SupportedLocale, PrivacyContent> = {
         "addrLabel": "소재지 주소",
         "addrVal": "100/20 Đường 79, Phường Phước Long, TP Hồ Chí Minh, Việt Nam",
         "hotlineLabel": "고객 접수 핫라인",
-        "hotlineVal": "0932.640.968",
+        "hotlineVal": "+84 932 640 968",
         "emailLabel": "보안 전용 이메일",
         "emailVal": "contact@creditbirdtech.com"
       }
@@ -481,7 +481,7 @@ export const privacyContent: Record<SupportedLocale, PrivacyContent> = {
         "addrLabel": "ที่อยู่สำนักงาน",
         "addrVal": "100/20 Đường 79, Phường Phước Long, TP Hồ Chí Minh, Việt Nam",
         "hotlineLabel": "สายด่วนติดต่อ",
-        "hotlineVal": "0932.640.968",
+        "hotlineVal": "+84 932 640 968",
         "emailLabel": "อีเมลด้านความปลอดภัย",
         "emailVal": "contact@creditbirdtech.com"
       }
@@ -562,7 +562,7 @@ export const privacyContent: Record<SupportedLocale, PrivacyContent> = {
         "addrLabel": "ທີ່ຢູ່ສຳນັກງານ",
         "addrVal": "100/20 Đường 79, Phường Phước Long, TP Hồ Chí Minh, Việt Nam",
         "hotlineLabel": "ສາຍດ່ວນຕິດຕໍ່",
-        "hotlineVal": "0932.640.968",
+        "hotlineVal": "+84 932 640 968",
         "emailLabel": "ອີເມວຄວາມປອດໄພ",
         "emailVal": "contact@creditbirdtech.com"
       }
@@ -643,7 +643,7 @@ export const privacyContent: Record<SupportedLocale, PrivacyContent> = {
         "addrLabel": "Alamat Berdaftar",
         "addrVal": "100/20 Đường 79, Phường Phước Long, TP Hồ Chí Minh, Việt Nam",
         "hotlineLabel": "Talian Khidmat Pelanggan",
-        "hotlineVal": "0932.640.968",
+        "hotlineVal": "+84 932 640 968",
         "emailLabel": "E-mel Keselamatan Khas",
         "emailVal": "contact@creditbirdtech.com"
       }
@@ -724,7 +724,7 @@ export const privacyContent: Record<SupportedLocale, PrivacyContent> = {
         "addrLabel": "Domicilio Social",
         "addrVal": "100/20 Đường 79, Phường Phước Long, TP Hồ Chí Minh, Việt Nam",
         "hotlineLabel": "Línea de Atención",
-        "hotlineVal": "0932.640.968",
+        "hotlineVal": "+84 932 640 968",
         "emailLabel": "Correo Electrónico de Seguridad",
         "emailVal": "contact@creditbirdtech.com"
       }
@@ -805,7 +805,7 @@ export const privacyContent: Record<SupportedLocale, PrivacyContent> = {
         "addrLabel": "Siège Social",
         "addrVal": "100/20 Đường 79, Phường Phước Long, TP Hồ Chí Minh, Việt Nam",
         "hotlineLabel": "Ligne Téléphonique",
-        "hotlineVal": "0932.640.968",
+        "hotlineVal": "+84 932 640 968",
         "emailLabel": "Email Dédié Sécurité",
         "emailVal": "contact@creditbirdtech.com"
       }
@@ -886,7 +886,7 @@ export const privacyContent: Record<SupportedLocale, PrivacyContent> = {
         "addrLabel": "पंजीकृत कार्यालय पता",
         "addrVal": "100/20 Đường 79, Phường Phước Long, TP Hồ Chí Minh, Việt Nam",
         "hotlineLabel": "हेल्पलाइन नंबर",
-        "hotlineVal": "0932.640.968",
+        "hotlineVal": "+84 932 640 968",
         "emailLabel": "सुरक्षा ईमेल",
         "emailVal": "contact@creditbirdtech.com"
       }
@@ -967,7 +967,7 @@ export const privacyContent: Record<SupportedLocale, PrivacyContent> = {
         "addrLabel": "Hauptquartier",
         "addrVal": "100/20 Street 79, Phuoc Long Ward, Ho-Chi-Minh-Stadt, Vietnam",
         "hotlineLabel": "DPO-Hotline",
-        "hotlineVal": "0932.640.968",
+        "hotlineVal": "+84 932 640 968",
         "emailLabel": "Spezielle Datenschutz-E-Mail",
         "emailVal": "contact@creditbirdtech.com"
       }
@@ -1048,7 +1048,7 @@ export const privacyContent: Record<SupportedLocale, PrivacyContent> = {
         "addrLabel": "Sede",
         "addrVal": "100/20 Street 79, Phuoc Long Ward, Ho Chi Minh City, Vietnam",
         "hotlineLabel": "Linea diretta dell'RPD",
-        "hotlineVal": "0932.640.968",
+        "hotlineVal": "+84 932 640 968",
         "emailLabel": "E-mail dedicata alla privacy",
         "emailVal": "contact@creditbirdtech.com"
       }
@@ -1129,7 +1129,7 @@ export const privacyContent: Record<SupportedLocale, PrivacyContent> = {
         "addrLabel": "Sede",
         "addrVal": "100/20 Street 79, Phuoc Long Ward, Cidade de Ho Chi Minh, Vietnã",
         "hotlineLabel": "Linha direta do DPO",
-        "hotlineVal": "0932.640.968",
+        "hotlineVal": "+84 932 640 968",
         "emailLabel": "E-mail de privacidade dedicado",
         "emailVal": "contact@creditbirdtech.com"
       }
@@ -1210,7 +1210,7 @@ export const privacyContent: Record<SupportedLocale, PrivacyContent> = {
         "addrLabel": "Hoofdkwartier",
         "addrVal": "100/20 Street 79, Phuoc Long Ward, Ho Chi Minh-stad, Vietnam",
         "hotlineLabel": "DPO-hotline",
-        "hotlineVal": "0932.640.968",
+        "hotlineVal": "+84 932 640 968",
         "emailLabel": "Speciale privacy-e-mail",
         "emailVal": "contact@creditbirdtech.com"
       }
@@ -1291,7 +1291,7 @@ export const privacyContent: Record<SupportedLocale, PrivacyContent> = {
         "addrLabel": "Markas Besar",
         "addrVal": "100/20 Street 79, Bangsal Phuoc Long, Kota Ho Chi Minh, Vietnam",
         "hotlineLabel": "Saluran Siaga DPO",
-        "hotlineVal": "0932.640.968",
+        "hotlineVal": "+84 932 640 968",
         "emailLabel": "Email Privasi Khusus",
         "emailVal": "contact@creditbirdtech.com"
       }
@@ -1372,7 +1372,7 @@ export const privacyContent: Record<SupportedLocale, PrivacyContent> = {
         "addrLabel": "المقر الرئيسي",
         "addrVal": "100/20 شارع 79، فوك لونج وارد، مدينة هوشي منه، فيتنام",
         "hotlineLabel": "الخط الساخن DPO",
-        "hotlineVal": "0932.640.968",
+        "hotlineVal": "+84 932 640 968",
         "emailLabel": "بريد إلكتروني مخصص للخصوصية",
         "emailVal": "contact@creditbirdtech.com"
       }

@@ -53,8 +53,8 @@
       description={m.privacy_hero_desc()}
       primaryBtnText={m.legal_btn_consult()}
       primaryBtnAction={openDemo}
-      secondaryBtnText="Hotline: 0932 640 968"
-      secondaryBtnHref="tel:0932640968"
+      secondaryBtnText="Hotline: +84 932 640 968"
+      secondaryBtnHref="tel:+84932640968"
     />
 
     <!-- 2. Main Content Area (Crisp Light Blueprint Grid) -->
@@ -97,7 +97,7 @@
                 </div>
                 <div class="flex items-center gap-2 pt-2 border-t border-[#e2e8f0]">
                   <Phone size={14} class="text-[var(--cb-cobalt-600)] shrink-0" />
-                  <a href="tel:0932640968" class="hover:underline font-bold text-[#090e1f]">Hotline: 0932.640.968</a>
+                  <a href="tel:+84932640968" class="hover:underline font-bold text-[#090e1f]">Hotline: +84 932 640 968</a>
                 </div>
               </div>
             </div>

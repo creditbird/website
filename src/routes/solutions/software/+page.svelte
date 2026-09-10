@@ -289,8 +289,8 @@
       description={m.sw_cta_desc()}
       primaryText={m.sw_cta_btn()}
       primaryAction={openDemo}
-      secondaryText="Hotline: 0932 640 968"
-      secondaryHref="tel:0932640968"
+      secondaryText="Hotline: +84 932 640 968"
+      secondaryHref="tel:+84932640968"
       theme="dark"
     />
 

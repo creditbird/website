@@ -1,7 +1,6 @@
 <script lang="ts">
   import { localizeHref } from '$lib/paraglide/runtime';
   import * as m from '$lib/paraglide/messages';
-  import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
 
   let { onOpenDemo }: { onOpenDemo?: () => void } = $props();
 </script>
@@ -36,10 +35,10 @@
           {m.footer_btn_consultation()}
         </button>
         <a 
-          href="tel:0932640968" 
+          href="tel:+84932640968" 
           class="relative inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded text-xs font-mono font-medium border border-[rgba(255,255,255,0.2)] bg-transparent hover:bg-white/10 text-white px-5 h-9"
         >
-          Hotline: 0932.640.968
+          Hotline: +84 932 640 968
         </a>
       </div>
     </div>
@@ -174,13 +173,13 @@
           <div class="font-mono text-xs tracking-widest text-[#64748b] uppercase mb-2.5">{m.footer_hotline_title()}</div>
           <ul class="flex flex-col gap-2 text-sm text-[#94a3b8]">
             <li>
-              <a href="tel:0932640968" class="text-white font-semibold hover:text-[var(--cb-azure-400)] transition-colors">
-                Hotline: 0932 640 968
+              <a href="tel:+84932640968" class="text-white font-semibold hover:text-[var(--cb-azure-400)] transition-colors">
+                Hotline: +84 932 640 968
               </a>
             </li>
             <li>
               <a href="https://zalo.me/0932640968" target="_blank" rel="noopener noreferrer" class="text-[var(--cb-azure-400)] hover:underline">
-                Zalo: 0932 640 968
+                Zalo: +84 932 640 968
               </a>
             </li>
             <li>
@@ -194,13 +193,8 @@
 
     </div>
 
-    <!-- Global Language Switcher Row in Footer -->
-    <div class="pt-6 pb-6 border-t border-[rgba(255,255,255,0.08)] flex items-center justify-between flex-wrap gap-4">
-      <LanguageSwitcher variant="footer" />
-    </div>
-
     <!-- Bottom Copyright Hairline -->
-    <div class="pt-6 border-t border-[rgba(255,255,255,0.08)] flex flex-col sm:flex-row items-center justify-between text-xs text-[#64748b] gap-4">
+    <div class="pt-8 border-t border-[rgba(255,255,255,0.08)] flex flex-col sm:flex-row items-center justify-between text-xs text-[#64748b] gap-4">
       <div class="flex items-center gap-2">
         <span class="w-2 h-2 rounded-full bg-[var(--cb-emerald-500)] shrink-0"></span>
         <span>{m.footer_copyright()}</span>

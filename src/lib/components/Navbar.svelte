@@ -104,8 +104,8 @@
       <span class="truncate">{m.navbar_announcement_company()}</span>
     </div>
     <div class="hidden sm:flex items-center gap-4 text-xs font-mono shrink-0">
-      <a href="tel:0932640968" class="text-[var(--cb-azure-400)] hover:text-white transition-colors flex items-center gap-1">
-        <span>Hotline: 0932 640 968</span>
+      <a href="tel:+84932640968" class="text-[var(--cb-azure-400)] hover:text-white transition-colors flex items-center gap-1">
+        <span>Hotline: +84 932 640 968</span>
       </a>
       <span class="text-[#334155]">|</span>
       <a
@@ -148,7 +148,7 @@
       />
       <div class="flex flex-col text-left">
         <span class="text-xl font-bold tracking-tight text-[var(--cb-cobalt-500)] leading-none">
-          CreditBird<span class="text-[var(--cb-azure-500)]">.</span>
+          CreditBird
         </span>
         <span class="font-mono text-[9px] text-[#64748b] tracking-wider uppercase">{m.navbar_tagline()}</span>
       </div>
@@ -312,11 +312,11 @@
       <LanguageSwitcher variant="navbar" />
 
       <a
-        href="tel:0932640968"
+        href="tel:+84932640968"
         class="grid-ring inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[var(--radius-sm)] font-mono text-xs text-[#090e1f] hover:text-[var(--cb-cobalt-500)] transition-colors bg-[#f8fafc] border border-[#cbd5e1]"
       >
         <Phone size={13} class="text-[var(--cb-cobalt-600)] shrink-0" />
-        <span>0932 640 968</span>
+        <span>+84 932 640 968</span>
       </a>
       <button
         type="button"
@@ -433,11 +433,11 @@
           {m.nav_get_consultation()}
         </button>
         <a
-          href="tel:0932640968"
+          href="tel:+84932640968"
           class="btn-cta-outline w-full !h-10 text-xs justify-center flex items-center gap-2"
         >
           <Phone size={14} class="shrink-0" />
-          <span>Hotline: 0932 640 968</span>
+          <span>Hotline: +84 932 640 968</span>
         </a>
 
         <!-- Mobile Social Links -->

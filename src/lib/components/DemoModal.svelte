@@ -1,6 +1,7 @@
 <script lang="ts">
   import { X, CheckCircle2, ArrowRight, ShieldCheck, PhoneCall, MessageCircle, AlertCircle } from 'lucide-svelte';
   import * as m from '$lib/paraglide/messages';
+  import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
 
   let { isOpen = false, onclose }: { isOpen?: boolean; onclose?: () => void } = $props();
 
@@ -14,6 +15,83 @@
   let submitted = $state(false);
   let errorMessage = $state('');
   let leadReference = $state('');
+
+  // Cloudflare Turnstile verification state
+  let turnstileToken = $state('');
+  let turnstileWidgetId = $state<string | null>(null);
+
+  const TURNSTILE_SITE_KEY = PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAAEupJJ86ZezMI0Nf';
+
+  function resetTurnstile() {
+    turnstileToken = '';
+    if (typeof window !== 'undefined' && (window as any).turnstile && turnstileWidgetId) {
+      try {
+        (window as any).turnstile.reset(turnstileWidgetId);
+      } catch (err) {
+        console.debug('Turnstile reset error:', err);
+      }
+    }
+  }
+
+  function turnstileAction(node: HTMLElement) {
+    let isDestroyed = false;
+
+    const renderWidget = () => {
+      if (isDestroyed) return;
+      const turnstile = (window as any).turnstile;
+      if (!turnstile) return;
+
+      try {
+        widgetId = turnstile.render(node, {
+          sitekey: TURNSTILE_SITE_KEY,
+          theme: 'light',
+          size: 'normal',
+          callback: (token: string) => {
+            turnstileToken = token;
+            errorMessage = '';
+          },
+          'error-callback': (code: string) => {
+            console.warn('[Turnstile Error Callback]:', code);
+            turnstileToken = '';
+          },
+          'expired-callback': () => {
+            turnstileToken = '';
+            errorMessage = 'Phiên xác minh bảo mật đã hết hạn. Vui lòng xác minh lại.';
+          }
+        });
+        turnstileWidgetId = widgetId;
+      } catch (e) {
+        console.error('[Turnstile Render Error]:', e);
+      }
+    };
+
+    let widgetId: string | null = null;
+    if (typeof window !== 'undefined') {
+      if ((window as any).turnstile) {
+        renderWidget();
+      } else {
+        const interval = setInterval(() => {
+          if ((window as any).turnstile) {
+            clearInterval(interval);
+            renderWidget();
+          }
+        }, 100);
+        setTimeout(() => clearInterval(interval), 5000);
+      }
+    }
+
+    return {
+      destroy() {
+        isDestroyed = true;
+        turnstileToken = '';
+        if (widgetId && typeof window !== 'undefined' && (window as any).turnstile) {
+          try {
+            (window as any).turnstile.remove(widgetId);
+          } catch {}
+        }
+      }
+    };
+  }
 
   $effect(() => {
     if (isOpen) {
@@ -33,6 +111,11 @@
       return;
     }
 
+    if (!turnstileToken) {
+      errorMessage = 'Vui lòng hoàn thành xác minh bảo mật Cloudflare Turnstile trước khi gửi.';
+      return;
+    }
+
     isSubmitting = true;
     errorMessage = '';
 
@@ -46,7 +129,8 @@
           phone,
           company,
           useCase,
-          notes
+          notes,
+          turnstileToken
         })
       });
 
@@ -54,8 +138,10 @@
       if (res.ok && data.success) {
         submitted = true;
         leadReference = data.leadId || 'REQ-' + Date.now();
+        turnstileToken = '';
       } else {
-        errorMessage = m.modal_err_generic();
+        errorMessage = data.error || m.modal_err_generic();
+        resetTurnstile();
       }
     } catch (err) {
       console.error('Contact submission error:', err);
@@ -215,7 +301,12 @@
             ></textarea>
           </div>
 
-          <div class="mt-2">
+          <!-- Cloudflare Turnstile Verification -->
+          <div class="flex items-center justify-center py-1 min-h-[65px]">
+            <div use:turnstileAction></div>
+          </div>
+
+          <div class="mt-1">
             <button
               type="submit"
               disabled={isSubmitting}
@@ -235,9 +326,9 @@
               <ShieldCheck size={13} class="text-[var(--cb-emerald-500)] shrink-0" />
               <span>{m.nav_security()}</span>
             </div>
-            <a href="tel:0932640968" class="font-mono text-[0.6875rem] text-[var(--cb-cobalt-600)] hover:underline flex items-center gap-1">
+            <a href="tel:+84932640968" class="font-mono text-[0.6875rem] text-[var(--cb-cobalt-600)] hover:underline flex items-center gap-1">
               <PhoneCall size={12} class="shrink-0" />
-              <span>Hotline: 0932.640.968</span>
+              <span>Hotline: +84 932 640 968</span>
             </a>
           </div>
 
@@ -265,11 +356,11 @@
 
           <div class="flex flex-col sm:flex-row items-center gap-3 w-full justify-center">
             <a
-              href="tel:0932640968"
+              href="tel:+84932640968"
               class="btn-cta-primary !h-10 text-xs px-5 flex items-center justify-center gap-1.5 w-full sm:w-auto"
             >
               <PhoneCall size={14} class="shrink-0" />
-              <span>Hotline 0932.640.968</span>
+              <span>Hotline: +84 932 640 968</span>
             </a>
             <button
               type="button"

@@ -78,7 +78,7 @@ export const warrantyContent: Record<SupportedLocale, WarrantyContent> = {
         {
           "num": "01",
           "title": "Tiếp nhận yêu cầu:",
-          "desc": "Khách hàng liên hệ qua Hotline 0932.640.968 hoặc gửi email tới contact@creditbirdtech.com kèm mã số hợp đồng / serial thiết bị."
+          "desc": "Khách hàng liên hệ qua Hotline +84 932 640 968 hoặc gửi email tới contact@creditbirdtech.com kèm mã số hợp đồng / serial thiết bị."
         },
         {
           "num": "02",
@@ -186,7 +186,7 @@ export const warrantyContent: Record<SupportedLocale, WarrantyContent> = {
         {
           "num": "01",
           "title": "Incident Intake:",
-          "desc": "Submit tickets via Hotline 0932.640.968 or email contact@creditbirdtech.com referencing your contract code and hardware serial number."
+          "desc": "Submit tickets via Hotline +84 932 640 968 or email contact@creditbirdtech.com referencing your contract code and hardware serial number."
         },
         {
           "num": "02",
@@ -294,7 +294,7 @@ export const warrantyContent: Record<SupportedLocale, WarrantyContent> = {
         {
           "num": "01",
           "title": "工单受理接入：",
-          "desc": "拨打热线 0932.640.968 或发送邮件至 contact@creditbirdtech.com，注明合同编号及设备序列号。"
+          "desc": "拨打热线 +84 932 640 968 或发送邮件至 contact@creditbirdtech.com，注明合同编号及设备序列号。"
         },
         {
           "num": "02",
@@ -402,7 +402,7 @@ export const warrantyContent: Record<SupportedLocale, WarrantyContent> = {
         {
           "num": "01",
           "title": "サポート受付:",
-          "desc": "ホットライン 0932.640.968 またはメール contact@creditbirdtech.com まで契約コードを添えてご連絡ください。"
+          "desc": "ホットライン +84 932 640 968 またはメール contact@creditbirdtech.com まで契約コードを添えてご連絡ください。"
         },
         {
           "num": "02",
@@ -510,7 +510,7 @@ export const warrantyContent: Record<SupportedLocale, WarrantyContent> = {
         {
           "num": "01",
           "title": "장애 접수:",
-          "desc": "핫라인 0932.640.968 또는 이메일 contact@creditbirdtech.com으로 계약 번호와 기기 시리얼을 접수합니다."
+          "desc": "핫라인 +84 932 640 968 또는 이메일 contact@creditbirdtech.com으로 계약 번호와 기기 시리얼을 접수합니다."
         },
         {
           "num": "02",
@@ -618,7 +618,7 @@ export const warrantyContent: Record<SupportedLocale, WarrantyContent> = {
         {
           "num": "01",
           "title": "รับแจ้งเรื่อง:",
-          "desc": "ติดต่อสายด่วน 0932.640.968 หรือส่งอีเมลมาที่ contact@creditbirdtech.com พร้อมระบุรหัสสัญญา/หมายเลขซีเรียลเครื่อง"
+          "desc": "ติดต่อสายด่วน +84 932 640 968 หรือส่งอีเมลมาที่ contact@creditbirdtech.com พร้อมระบุรหัสสัญญา/หมายเลขซีเรียลเครื่อง"
         },
         {
           "num": "02",
@@ -726,7 +726,7 @@ export const warrantyContent: Record<SupportedLocale, WarrantyContent> = {
         {
           "num": "01",
           "title": "ຮັບແຈ້ງເຫດການ:",
-          "desc": "ຕິດຕໍ່ສາຍດ່ວນ 0932.640.968 ຫຼື ສົ່ງອີເມວຫາ contact@creditbirdtech.com ພ້ອມລະບຸເລກສັນຍາ/ຊີຣຽວອຸປະກອນ."
+          "desc": "ຕິດຕໍ່ສາຍດ່ວນ +84 932 640 968 ຫຼື ສົ່ງອີເມວຫາ contact@creditbirdtech.com ພ້ອມລະບຸເລກສັນຍາ/ຊີຣຽວອຸປະກອນ."
         },
         {
           "num": "02",
@@ -834,7 +834,7 @@ export const warrantyContent: Record<SupportedLocale, WarrantyContent> = {
         {
           "num": "01",
           "title": "Penerimaan Tiket:",
-          "desc": "Hubungi Talian Kecemasan 0932.640.968 atau e-mel contact@creditbirdtech.com dengan kod kontrak dan nombor siri perkakasan."
+          "desc": "Hubungi Talian Kecemasan +84 932 640 968 atau e-mel contact@creditbirdtech.com dengan kod kontrak dan nombor siri perkakasan."
         },
         {
           "num": "02",
@@ -942,7 +942,7 @@ export const warrantyContent: Record<SupportedLocale, WarrantyContent> = {
         {
           "num": "01",
           "title": "Apertura de Incidencia:",
-          "desc": "Contacte vía teléfono 0932.640.968 o email contact@creditbirdtech.com indicando número de contrato y serie del equipo."
+          "desc": "Contacte vía teléfono +84 932 640 968 o email contact@creditbirdtech.com indicando número de contrato y serie del equipo."
         },
         {
           "num": "02",
@@ -1050,7 +1050,7 @@ export const warrantyContent: Record<SupportedLocale, WarrantyContent> = {
         {
           "num": "01",
           "title": "Enregistrement du Ticket :",
-          "desc": "Contactez le 0932.640.968 ou écrivez à contact@creditbirdtech.com en précisant le contrat et le numéro de série."
+          "desc": "Contactez le +84 932 640 968 ou écrivez à contact@creditbirdtech.com en précisant le contrat et le numéro de série."
         },
         {
           "num": "02",
@@ -1158,7 +1158,7 @@ export const warrantyContent: Record<SupportedLocale, WarrantyContent> = {
         {
           "num": "01",
           "title": "घटना पंजीकरण:",
-          "desc": "हॉटलाइन 0932.640.968 पर कॉल करें या अनुबंध संख्या और मशीन सीरियल के साथ contact@creditbirdtech.com पर ईमेल करें।"
+          "desc": "हॉटलाइन +84 932 640 968 पर कॉल करें या अनुबंध संख्या और मशीन सीरियल के साथ contact@creditbirdtech.com पर ईमेल करें।"
         },
         {
           "num": "02",
@@ -1266,7 +1266,7 @@ export const warrantyContent: Record<SupportedLocale, WarrantyContent> = {
         {
           "num": "01",
           "title": "Aufnahme von Vorfällen:",
-          "desc": "Senden Sie Tickets über die Hotline 0932.640.968 oder senden Sie eine E-Mail an contact@creditbirdtech.com unter Angabe Ihres Vertragscodes und Ihrer Hardware-Seriennummer."
+          "desc": "Senden Sie Tickets über die Hotline +84 932 640 968 oder senden Sie eine E-Mail an contact@creditbirdtech.com unter Angabe Ihres Vertragscodes und Ihrer Hardware-Seriennummer."
         },
         {
           "num": "02",
@@ -1374,7 +1374,7 @@ export const warrantyContent: Record<SupportedLocale, WarrantyContent> = {
         {
           "num": "01",
           "title": "Assunzione dell'incidente:",
-          "desc": "Invia i ticket tramite la hotline 0932.640.968 o tramite e-mail contact@creditbirdtech.com facendo riferimento al codice contratto e al numero di serie dell'hardware."
+          "desc": "Invia i ticket tramite la hotline +84 932 640 968 o tramite e-mail contact@creditbirdtech.com facendo riferimento al codice contratto e al numero di serie dell'hardware."
         },
         {
           "num": "02",
@@ -1482,7 +1482,7 @@ export const warrantyContent: Record<SupportedLocale, WarrantyContent> = {
         {
           "num": "01",
           "title": "Entrada de Incidentes:",
-          "desc": "Envie tickets via Hotline 0932.640.968 ou e-mail contact@creditbirdtech.com referenciando seu código de contrato e número de série de hardware."
+          "desc": "Envie tickets via Hotline +84 932 640 968 ou e-mail contact@creditbirdtech.com referenciando seu código de contrato e número de série de hardware."
         },
         {
           "num": "02",
@@ -1590,7 +1590,7 @@ export const warrantyContent: Record<SupportedLocale, WarrantyContent> = {
         {
           "num": "01",
           "title": "Incidentintake:",
-          "desc": "Dien tickets in via Hotline 0932.640.968 of e-mail contact@creditbirdtech.com met vermelding van uw contractcode en hardwareserienummer."
+          "desc": "Dien tickets in via Hotline +84 932 640 968 of e-mail contact@creditbirdtech.com met vermelding van uw contractcode en hardwareserienummer."
         },
         {
           "num": "02",
@@ -1698,7 +1698,7 @@ export const warrantyContent: Record<SupportedLocale, WarrantyContent> = {
         {
           "num": "01",
           "title": "Pengambilan Insiden:",
-          "desc": "Kirimkan tiket melalui Hotline 0932.640.968 atau email contact@creditbirdtech.com dengan merujuk pada kode kontrak dan nomor seri perangkat keras Anda."
+          "desc": "Kirimkan tiket melalui Hotline +84 932 640 968 atau email contact@creditbirdtech.com dengan merujuk pada kode kontrak dan nomor seri perangkat keras Anda."
         },
         {
           "num": "02",
@@ -1806,7 +1806,7 @@ export const warrantyContent: Record<SupportedLocale, WarrantyContent> = {
         {
           "num": "01",
           "title": "كمية الحادث:",
-          "desc": "أرسل التذاكر عبر الخط الساخن 0932.640.968 أو أرسل بريدًا إلكترونيًا إلى contact@creditbirdtech.com مع الإشارة إلى رمز العقد والرقم التسلسلي للجهاز."
+          "desc": "أرسل التذاكر عبر الخط الساخن +84 932 640 968 أو أرسل بريدًا إلكترونيًا إلى contact@creditbirdtech.com مع الإشارة إلى رمز العقد والرقم التسلسلي للجهاز."
         },
         {
           "num": "02",

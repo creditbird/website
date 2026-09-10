@@ -16,7 +16,7 @@ const viNew: Record<string, string> = {
   "navbar_announcement_company": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD • Phần mềm, Kelvot ERP & Lemy Finest Tinh dầu",
   "navbar_tagline": "Kiến tạo giá trị cho bạn",
   "navbar_select_language": "Ngôn ngữ / Language",
-  "navbar_call_hotline": "Hotline: 0932 640 968",
+  "navbar_call_hotline": "Hotline: +84 932 640 968",
 
   // Hero Section
   "hero_option_label": "LỰA CHỌN",
@@ -203,7 +203,7 @@ const viNew: Record<string, string> = {
 
   // Demo Modal
   "modal_err_required": "Vui lòng điền đầy đủ họ tên, số điện thoại và email.",
-  "modal_err_generic": "Có lỗi xảy ra khi gửi thông tin. Quý khách vui lòng gọi Hotline 0932.640.968.",
+  "modal_err_generic": "Có lỗi xảy ra khi gửi thông tin. Quý khách vui lòng gọi Hotline +84 932 640 968.",
   "modal_err_network": "Không thể kết nối máy chủ. Quý khách vui lòng gọi điện thoại trực tiếp hoặc chat Zalo.",
 
   // Subpage: Software
@@ -569,7 +569,7 @@ const enNew: Record<string, string> = {
   "navbar_announcement_company": "CREDITBIRD TECHNOLOGY CO., LTD • Custom Software, Kelvot ERP & Lemy Finest Scent",
   "navbar_tagline": "Creating Value For You",
   "navbar_select_language": "Language / Ngôn ngữ",
-  "navbar_call_hotline": "Hotline: (+84) 932 640 968",
+  "navbar_call_hotline": "Hotline: +84 932 640 968",
 
   // Hero Section
   "hero_option_label": "OPTION",
@@ -756,7 +756,7 @@ const enNew: Record<string, string> = {
 
   // Demo Modal
   "modal_err_required": "Please fill in your full name, phone number, and corporate email.",
-  "modal_err_generic": "An error occurred while submitting. Please call our hotline (+84) 932 640 968.",
+  "modal_err_generic": "An error occurred while submitting. Please call our hotline +84 932 640 968.",
   "modal_err_network": "Unable to connect to server. Please call us directly or message via Zalo.",
 
   // Subpage: Software

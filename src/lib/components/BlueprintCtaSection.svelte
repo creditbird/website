@@ -8,8 +8,8 @@
     description,
     primaryText = m.cta_btn_contact(),
     primaryAction,
-    secondaryText = 'HOTLINE: 0932.640.968',
-    secondaryHref = 'tel:0932640968',
+    secondaryText = 'HOTLINE: +84 932 640 968',
+    secondaryHref = 'tel:+84932640968',
     theme = 'dark'
   }: {
     eyebrow?: string;

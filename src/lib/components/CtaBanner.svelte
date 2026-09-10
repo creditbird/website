@@ -50,11 +50,11 @@
           </button>
 
           <a
-            href="tel:0932640968"
+            href="tel:+84932640968"
             class="btn-cta-outline !h-11 !px-6 text-center flex items-center justify-center gap-2 font-mono text-xs font-semibold"
           >
             <PhoneCall size={14} class="text-[var(--cb-cobalt-600)] shrink-0" />
-            <span>Hotline: 0932.640.968</span>
+            <span>Hotline: +84 932 640 968</span>
           </a>
 
           <a
