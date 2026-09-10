@@ -52,23 +52,18 @@ export const POST: RequestHandler = async ({ request, getClientAddress }) => {
 
     console.log('[CreditBird Lead Received]:', JSON.stringify(submission, null, 2));
 
-    // Bắt buộc lưu trữ thành công vào file jsonl
+    // Lưu trữ dự phòng vào file jsonl (khả dụng trong môi trường có local filesystem)
     try {
-      const dataDir = path.resolve(process.cwd(), '.data');
-      if (!fs.existsSync(dataDir)) {
-        fs.mkdirSync(dataDir, { recursive: true });
+      if (typeof process !== 'undefined' && process.cwd && typeof fs.appendFileSync === 'function') {
+        const dataDir = path.resolve(process.cwd(), '.data');
+        if (!fs.existsSync(dataDir)) {
+          fs.mkdirSync(dataDir, { recursive: true });
+        }
+        const filePath = path.join(dataDir, 'inquiries.jsonl');
+        fs.appendFileSync(filePath, JSON.stringify(submission) + '\n', 'utf-8');
       }
-      const filePath = path.join(dataDir, 'inquiries.jsonl');
-      fs.appendFileSync(filePath, JSON.stringify(submission) + '\n', 'utf-8');
     } catch (storageErr) {
-      console.error('[CreditBird Lead Storage Error]:', storageErr);
-      return json(
-        {
-          success: false,
-          error: 'Hệ thống tiếp nhận đang gặp sự cố khi lưu trữ dữ liệu. Quý khách vui lòng gọi trực tiếp hotline +84 932 640 968 hoặc chat Zalo để được hỗ trợ ngay.'
-        },
-        { status: 500 }
-      );
+      console.warn('[CreditBird Lead Storage Notice]: Filesystem write skipped (serverless/edge runtime):', storageErr);
     }
 
     // Gửi email thông báo qua Resend tới tymon3568@gmail.com

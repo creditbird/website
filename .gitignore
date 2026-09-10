@@ -10,3 +10,4 @@ preview/*.png
 # Paraglide
 src/lib/paraglide
 project.inlang/cache/
+.wrangler
