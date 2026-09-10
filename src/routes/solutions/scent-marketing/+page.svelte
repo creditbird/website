@@ -287,6 +287,8 @@
   </main>
 
   <Footer onOpenDemo={openDemo} />
-  <DemoModal isOpen={isDemoOpen} onclose={closeDemo} />
+  {#if isDemoOpen}
+    <DemoModal isOpen={isDemoOpen} onclose={closeDemo} />
+  {/if}
 
 </div>

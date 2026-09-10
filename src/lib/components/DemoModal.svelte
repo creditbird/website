@@ -33,8 +33,30 @@
     }
   }
 
+  function loadTurnstile(): Promise<void> {
+    if (typeof window === 'undefined') return Promise.resolve();
+    if ((window as any).turnstile) return Promise.resolve();
+    return new Promise((resolve, reject) => {
+      const existing = document.querySelector('script[src*="turnstile/v0/api.js"]');
+      if (existing) {
+        if ((window as any).turnstile) return resolve();
+        existing.addEventListener('load', () => resolve());
+        existing.addEventListener('error', reject);
+        return;
+      }
+      const s = document.createElement('script');
+      s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      s.async = true;
+      s.defer = true;
+      s.onload = () => resolve();
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+  }
+
   function turnstileAction(node: HTMLElement) {
     let isDestroyed = false;
+    let widgetId: string | null = null;
 
     const renderWidget = () => {
       if (isDestroyed) return;
@@ -65,19 +87,14 @@
       }
     };
 
-    let widgetId: string | null = null;
     if (typeof window !== 'undefined') {
-      if ((window as any).turnstile) {
-        renderWidget();
-      } else {
-        const interval = setInterval(() => {
-          if ((window as any).turnstile) {
-            clearInterval(interval);
-            renderWidget();
-          }
-        }, 100);
-        setTimeout(() => clearInterval(interval), 5000);
-      }
+      loadTurnstile()
+        .then(() => {
+          if (!isDestroyed) renderWidget();
+        })
+        .catch((err) => {
+          console.error('[Turnstile Script Load Error]:', err);
+        });
     }
 
     return {

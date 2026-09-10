@@ -87,7 +87,7 @@ module.exports = {
         '50gu': 'calc(var(--grid-unit) * 50)',
       },
       fontFamily: {
-        sans: ['Geist Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        sans: ['Geist', 'Geist Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
         mono: ['JetBrains Mono', 'Geist Mono', 'SF Mono', 'Menlo', 'Consolas', 'monospace'],
       },
       maxWidth: {

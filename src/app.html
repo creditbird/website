@@ -14,7 +14,7 @@
 		<link
 			rel="icon"
 			type="image/webp"
-			href="/creditbird-logo.webp"
+			href="/creditbird-logo-sm.webp"
 		/>
 
 		<link
@@ -28,13 +28,26 @@
 			crossorigin
 		/>
 
+		<!-- Non-render-blocking font loading -->
+		<link
+			rel="preload"
+			as="style"
+			href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+		/>
+
 		<link
 			href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
 			rel="stylesheet"
+			media="print"
+			onload="this.media='all'"
 		/>
 
-		<!-- Cloudflare Turnstile Explicit API -->
-		<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+		<noscript>
+			<link
+				href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+				rel="stylesheet"
+			/>
+		</noscript>
 
 		%sveltekit.head%
 	</head>

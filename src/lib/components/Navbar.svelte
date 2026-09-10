@@ -142,8 +142,12 @@
     <!-- Logo + Brand Wordmark -->
     <a href={localizeHref('/')} onclick={handleNavClick} class="flex items-center gap-3.5 group shrink-0">
       <img
-        src="/creditbird-logo.webp"
+        src="/creditbird-logo-sm.webp"
         alt="CreditBird Logo"
+        width="38"
+        height="38"
+        fetchpriority="high"
+        loading="eager"
         class="w-[38px] h-[38px] object-contain rounded-full border border-[#cbd5e1] shadow-xs group-hover:border-[var(--cb-azure-500)] transition-colors"
       />
       <div class="flex flex-col text-left">

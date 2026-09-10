@@ -55,7 +55,9 @@
   <!-- Institutional Footer: Tập trung đầy đủ pháp nhân và liên kết -->
   <Footer onOpenDemo={openDemo} />
 
-  <!-- Real Lead Contact Modal -->
-  <DemoModal isOpen={isDemoOpen} onclose={closeDemo} />
+  <!-- Real Lead Contact Modal (rendered on-demand) -->
+  {#if isDemoOpen}
+    <DemoModal isOpen={isDemoOpen} onclose={closeDemo} />
+  {/if}
 
 </div>
