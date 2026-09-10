@@ -1,12 +1,19 @@
 <script lang="ts">
+	import type { Pathname } from '$app/types';
+	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
+	import { locales, localizeHref } from '$lib/paraglide/runtime';
 	import '../app.css';
 
 	let { children } = $props();
 </script>
 
-<svelte:head>
-	<title>CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD — Phần mềm, ERP, Nhân sự IT & Scent Marketing</title>
-	<meta name="description" content="CreditBird (MST: 0315397327) chuyên nghiệp trong: Viết phần mềm may đo, phát triển ERP doanh nghiệp, cho thuê nhân sự IT, hệ thống máy phun tinh dầu thông minh và tinh dầu thiên nhiên nguyên chất." />
-</svelte:head>
-
 {@render children()}
+
+<div style="display:none">
+	{#each locales as locale (locale)}
+		<a
+			href={resolve(localizeHref(page.url.pathname, { locale }) as Pathname)}
+		>{locale}</a>
+	{/each}
+</div>

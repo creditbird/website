@@ -7,3 +7,6 @@ build
 .DS_Store
 preview/*.png
 .data
+# Paraglide
+src/lib/paraglide
+project.inlang/cache/

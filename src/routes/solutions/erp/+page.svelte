@@ -7,14 +7,16 @@
   import BlueprintGridSection from '$lib/components/BlueprintGridSection.svelte';
   import BlueprintSplitShowcase from '$lib/components/BlueprintSplitShowcase.svelte';
   import BlueprintCtaSection from '$lib/components/BlueprintCtaSection.svelte';
-  import { 
-    Layers, 
-    Boxes, 
-    Factory, 
-    Warehouse, 
-    Calculator, 
-    Truck, 
-    Receipt, 
+  import SeoHead from '$lib/components/SeoHead.svelte';
+  import * as m from '$lib/paraglide/messages';
+  import {
+    Layers,
+    Boxes,
+    Factory,
+    Warehouse,
+    Calculator,
+    Truck,
+    Receipt,
     ExternalLink
   } from 'lucide-svelte';
 
@@ -28,141 +30,141 @@
     isDemoOpen = false;
   }
 
-  const metrics = [
+  const metrics = $derived([
     {
-      label: 'ĐỊNH MỨC SẢN XUẤT',
-      value: 'Multi-BOM',
-      sublabel: 'Kiểm soát chi tiết định mức hao hụt nguyên phụ liệu đa cấp',
+      label: m.erp_metric1_label(),
+      value: m.erp_metric1_val(),
+      sublabel: m.erp_metric1_sub(),
       color: '#22439c'
     },
     {
-      label: 'ĐỘ CHÍNH XÁC KHO',
-      value: '99.8%',
-      sublabel: 'Nhận diện quét mã Barcode/QR vị trí ô kệ không sai sót',
+      label: m.erp_metric2_label(),
+      value: m.erp_metric2_val(),
+      sublabel: m.erp_metric2_sub(),
       color: '#10b981'
     },
     {
-      label: 'BÁO CÁO TÀI CHÍNH',
-      value: 'Realtime',
-      sublabel: 'Tự động kết chuyển chi phí và hạch toán dòng tiền cuối kỳ',
+      label: m.erp_metric3_label(),
+      value: m.erp_metric3_val(),
+      sublabel: m.erp_metric3_sub(),
       color: '#22439c'
     },
     {
-      label: 'CHUẨN MỰC HẠCH TOÁN',
-      value: 'VAS & IFRS',
-      sublabel: 'Tuân thủ nghiêm Thông tư 200/133 và chuẩn mực quốc tế',
+      label: m.erp_metric4_label(),
+      value: m.erp_metric4_val(),
+      sublabel: m.erp_metric4_sub(),
       color: '#22439c'
     }
-  ];
+  ]);
 
-  const modules = [
+  const modules = $derived([
     {
       id: '01',
       code: '_MANUFACTURING & BOM/',
-      title: 'Quản Trị Sản Xuất & Định Mức BOM Đa Cấp',
+      title: m.erp_mod1_title(),
       icon: Factory,
-      desc: 'Thiết lập cây định mức nguyên vật liệu (Multi-level Bill of Materials), tính toán nhu cầu nguyên vật liệu (MRP) và phân bổ chi phí sản xuất theo từng công đoạn chuyền.',
+      desc: m.erp_mod1_desc(),
       tag: 'mrp manufacturing'
     },
     {
       id: '02',
       code: '_WAREHOUSE WMS/',
-      title: 'Quản Lý Kho Bãi Thông Minh (WMS)',
+      title: m.erp_mod2_title(),
       icon: Warehouse,
-      desc: 'Quản lý theo vị trí ô kệ (Bin location), kiểm soát hạn sử dụng (FIFO/FEFO), quản lý theo số Lô (Batch number) và kiểm đếm bằng Barcode/QR code.',
+      desc: m.erp_mod2_desc(),
       tag: 'warehouse wms'
     },
     {
       id: '03',
       code: '_ACCOUNTING & FINANCE/',
-      title: 'Kế Toán Quản Trị Chuẩn VAS & IFRS',
+      title: m.erp_mod3_title(),
       icon: Calculator,
-      desc: 'Tuân thủ nghiêm ngặt Thông tư 200/133 của Bộ Tài chính và chuẩn mực quốc tế IFRS. Tự động sinh bút toán kép từ các nghiệp vụ kho, mua sắm và bán hàng.',
+      desc: m.erp_mod3_desc(),
       tag: 'financial ledger'
     },
     {
       id: '04',
       code: '_SUPPLY CHAIN (SCM)/',
-      title: 'Chuỗi Cung Ứng & Mua Hàng Tập Trung',
+      title: m.erp_mod4_title(),
       icon: Truck,
-      desc: 'Quy trình phê duyệt báo giá đa cấp bậc, theo dõi trạng thái đơn mua hàng (PO), đánh giá năng lực nhà cung cấp và quản lý thời hạn công nợ chi tiết.',
+      desc: m.erp_mod4_desc(),
       tag: 'procurement scm'
     },
     {
       id: '05',
       code: '_DISTRIBUTION & SALES/',
-      title: 'Quản Trị Kênh Phân Phối & Bán Hàng',
+      title: m.erp_mod5_title(),
       icon: Boxes,
-      desc: 'Thiết lập ma trận chính sách giá linh hoạt theo cấp đại lý, khu vực địa lý, hạn mức tín dụng và tự động tính chiết khấu thương mại theo doanh số.',
+      desc: m.erp_mod5_desc(),
       tag: 'sales distribution'
     },
     {
       id: '06',
       code: '_FINANCIAL RECONCILIATION/',
-      title: 'Đối Soát Tự Động & Hóa Đơn Điện Tử',
+      title: m.erp_mod6_title(),
       icon: Receipt,
-      desc: 'Kết nối liên thông ngân hàng (Bank Hub), tự động đối soát sổ phụ với số dư thực tế, tích hợp trực tiếp các nhà cấp hóa đơn điện tử hợp chuẩn.',
+      desc: m.erp_mod6_desc(),
       tag: 'bank reconciliation'
     }
-  ];
+  ]);
 
-  const mrpBullets = [
+  const mrpBullets = $derived([
     {
-      title: 'Định mức hao hụt động',
-      text: 'Tự động tính toán tỷ lệ hao hụt nguyên vật liệu theo từng lô máy móc và tay nghề nhân công.'
+      title: m.erp_bullet1_title(),
+      text: m.erp_bullet1_text()
     },
     {
-      title: 'Lập kế hoạch mua hàng MRP tự động',
-      text: 'Đối chiếu tồn kho khả dụng để tự sinh đơn mua hàng PO trước khi chuyền sản xuất bị gián đoạn.'
+      title: m.erp_bullet2_title(),
+      text: m.erp_bullet2_text()
     },
     {
-      title: 'Tính giá thành đích danh thời gian thực',
-      text: 'Phân bổ chính xác 3 yếu tố giá thành: Chi phí NVL trực tiếp, chi phí nhân công và chi phí sản xuất chung.'
+      title: m.erp_bullet3_title(),
+      text: m.erp_bullet3_text()
     }
-  ];
+  ]);
 </script>
 
-<svelte:head>
-  <title>Kelvot ERP — Hệ Thống ERP Sản Xuất, Kho Bãi & Kế Toán Quản Trị | CreditBird</title>
-  <meta name="description" content="Kelvot ERP (kelvot.com) — Hệ thống ERP may đo chuyên sâu cho sản xuất định mức BOM, quản lý kho WMS và kế toán tài chính VAS/IFRS. Phát triển bởi CreditBird." />
-</svelte:head>
+<SeoHead
+  title={m.erp_page_title()}
+  description={m.erp_page_desc()}
+/>
 
 <div class="min-h-screen flex flex-col bg-white text-[#090e1f] font-sans selection:bg-[var(--cb-azure-500)]/20 selection:text-[#090e1f]">
-  
+
   <Navbar onOpenDemo={openDemo} />
 
   <main class="flex-1">
-    
+
     <!-- 1. Blueprint Subpage Hero (Cyanotype Cobalt Substrate) -->
     <BlueprintSubpageHero
-      eyebrow="_THƯƠNG HIỆU ERP ĐỘC LẬP / KELVOT.COM"
+      eyebrow={m.erp_hero_eyebrow()}
       eyebrowIcon={Layers}
-      specBadge="Định Mức BOM • Kho WMS • Kế Toán VAS/IFRS"
-      title="Kelvot ERP — Quản Trị Toàn Diện Sản Xuất, Kho & Tài Chính"
-      description="Thương hiệu phần mềm ERP chuyên sâu trực thuộc hệ sinh thái CreditBird. Được kiến trúc may đo dành riêng cho các nhà máy sản xuất, chuỗi bán lẻ và tập đoàn phân phối cần kiểm soát dòng tiền và chi phí sản xuất theo thời gian thực."
-      primaryBtnText="Truy Cập Website Kelvot.com"
+      specBadge={m.erp_hero_spec()}
+      title={m.erp_hero_title()}
+      description={m.erp_hero_desc()}
+      primaryBtnText={m.erp_hero_btn_primary()}
       primaryBtnHref="https://kelvot.com"
       primaryBtnIcon={ExternalLink}
-      secondaryBtnText="Đăng Ký Khảo Sát & Demo ERP"
+      secondaryBtnText={m.erp_hero_btn_secondary()}
       secondaryBtnAction={openDemo}
     />
 
     <!-- 2. Blueprint Metrics Bar (Crisp Light Hairline Grid) -->
     <BlueprintMetricsBar
-      eyebrow="_CHỈ SỐ THỰC CHỨNG / PRODUCTION METRICS"
-      title="Tiêu chuẩn kiểm soát chất lượng và tối ưu hóa chi phí vận hành"
+      eyebrow={m.erp_metrics_eyebrow()}
+      title={m.erp_metrics_title()}
       theme="light"
-      {metrics}
+      metrics={metrics}
     />
 
     <!-- 3. 6 Core Modules Grid (Dark Cyanotype Architectural Blueprint) -->
     <BlueprintGridSection
       id="modules"
       theme="dark"
-      eyebrow="_PHÂN HỆ TRỌNG YẾU / CORE MODULES/"
-      title="Kiến Trúc ERP Khép Kín Cho Doanh Nghiệp Sản Xuất & Thương Mại"
-      subheading="Khả năng module hóa cao độ, triển khai độc lập hoặc đồng bộ liên thông toàn diện."
-      description="Mỗi phân hệ của Kelvot ERP được thiết kế theo chuẩn microservices độc lập, đảm bảo dữ liệu kế toán tài chính, kho vận và kế hoạch sản xuất đồng bộ tức thì."
+      eyebrow={m.erp_modules_eyebrow()}
+      title={m.erp_modules_title()}
+      subheading={m.erp_modules_sub()}
+      description={m.erp_modules_desc()}
       columns={3}
       items={modules}
     />
@@ -171,11 +173,11 @@
     <BlueprintSplitShowcase
       id="production-deep-dive"
       theme="light"
-      eyebrow="_SẢN XUẤT THỰC CHIẾN / BOM & MRP"
-      title="Kiểm Soát Từng Gram Nguyên Liệu & Giây Máy Chạy"
-      description="Khắc phục triệt để tình trạng thiếu hụt nguyên vật liệu làm đình trệ đơn hàng hoặc tồn kho nguyên phụ liệu quá mức gây đọng vốn lưu động."
+      eyebrow={m.erp_split_eyebrow()}
+      title={m.erp_split_title()}
+      description={m.erp_split_desc()}
       bullets={mrpBullets}
-      linkText="Tìm hiểu thêm tài liệu kỹ thuật tại Kelvot.com"
+      linkText={m.erp_split_link()}
       linkUrl="https://kelvot.com"
       external={true}
     >
@@ -191,34 +193,34 @@
 
         <div class="space-y-2.5 text-[#cbd5e1]">
           <div class="p-2.5 bg-[#070e22] grid-ring flex items-center justify-between">
-            <span class="font-semibold">[BOM-102] Thành phẩm Động cơ Diesel</span>
-            <span class="text-[#60a5fa] tabular-nums">12 Cụm chi tiết</span>
+            <span class="font-semibold">{m.erp_telemetry_bom_title()}</span>
+            <span class="text-[#60a5fa] tabular-nums">{m.erp_telemetry_bom_val()}</span>
           </div>
           <div class="p-2.5 bg-[#070e22] grid-ring flex items-center justify-between">
-            <span class="font-semibold">[WMS-BIN] Kho NVL Thép Tấm - Dãy B04</span>
-            <span class="text-emerald-400 tabular-nums">Tồn: 42.5 Tấn</span>
+            <span class="font-semibold">{m.erp_telemetry_wms_title()}</span>
+            <span class="text-emerald-400 tabular-nums">{m.erp_telemetry_wms_val()}</span>
           </div>
           <div class="p-2.5 bg-[#070e22] grid-ring flex items-center justify-between">
-            <span class="font-semibold">[ACCT-TK154] Chi phí SX Dở dang</span>
+            <span class="font-semibold">{m.erp_telemetry_acct_title()}</span>
             <span class="text-[#facc15] tabular-nums">1,420,500,000 ₫</span>
           </div>
         </div>
 
         <div class="pt-3 border-t border-[rgba(74,144,226,0.25)] flex items-center justify-between text-[#64748b]">
-          <span>Audit Hash: SHA-256 Valid</span>
-          <span class="text-white">DB: PostgreSQL ACID Double-Entry</span>
+          <span>{m.erp_telemetry_audit()}</span>
+          <span class="text-white">{m.erp_telemetry_db()}</span>
         </div>
       </div>
     </BlueprintSplitShowcase>
 
     <!-- 5. Bottom Blueprint CTA Banner (Dark Cyanotype Cobalt) -->
     <BlueprintCtaSection
-      eyebrow="_TƯ VẤN TRIỂN KHAI KELVOT ERP/"
-      title="Chuẩn Hóa Toàn Bộ Quy Trình Vận Hành Doanh Nghiệp"
-      description="Đội ngũ chuyên gia ERP của Kelvot và CreditBird sẵn sàng đến tận nhà máy của bạn để khảo sát quy trình, tư vấn giải pháp và xây dựng lộ trình số hóa chi tiết."
-      primaryText="Đăng Ký Khảo Sát Nhà Máy & Báo Giá"
+      eyebrow={m.erp_cta_eyebrow()}
+      title={m.erp_cta_title()}
+      description={m.erp_cta_desc()}
+      primaryText={m.erp_cta_btn_primary()}
       primaryAction={openDemo}
-      secondaryText="Khám Phá Website Kelvot.com"
+      secondaryText={m.erp_cta_btn_secondary()}
       secondaryHref="https://kelvot.com"
       theme="dark"
     />

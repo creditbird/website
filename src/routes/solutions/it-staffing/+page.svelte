@@ -6,17 +6,17 @@
   import BlueprintMetricsBar from '$lib/components/BlueprintMetricsBar.svelte';
   import BlueprintGridSection from '$lib/components/BlueprintGridSection.svelte';
   import BlueprintCtaSection from '$lib/components/BlueprintCtaSection.svelte';
-  import { 
-    Users, 
-    Shield, 
-    Building2, 
-    Cpu, 
-    Terminal, 
+  import SeoHead from '$lib/components/SeoHead.svelte';
+  import * as m from '$lib/paraglide/messages';
+  import {
+    Users,
+    Shield,
+    Building2,
+    Cpu,
+    Terminal,
     Layers,
-    CheckCircle2,
     Clock,
-    FileText,
-    ArrowRight
+    FileText
   } from 'lucide-svelte';
 
   let isDemoOpen = $state(false);
@@ -29,151 +29,151 @@
     isDemoOpen = false;
   }
 
-  const metrics = [
+  const metrics = $derived([
     {
-      label: 'THỜI GIAN SÀNG LỌC',
-      value: '48 Giờ',
-      sublabel: 'Nhận danh sách CV ứng viên phù hợp với bài toán kỹ thuật',
+      label: m.it_metric1_label(),
+      value: m.it_metric1_val(),
+      sublabel: m.it_metric1_sub(),
       color: '#22439c'
     },
     {
-      label: 'THỬ VIỆC THỰC TẾ',
-      value: '14 Ngày',
-      sublabel: 'Đánh giá năng lực trực tiếp trong sprint, đổi người 100% miễn phí',
+      label: m.it_metric2_label(),
+      value: m.it_metric2_val(),
+      sublabel: m.it_metric2_sub(),
       color: '#10b981'
     },
     {
-      label: 'KINH NGHIỆM KỸ SƯ',
-      value: '4 - 8 Năm',
-      sublabel: 'Kỹ sư Senior có năng lực giải quyết sự cố và tối ưu kiến trúc',
+      label: m.it_metric3_label(),
+      value: m.it_metric3_val(),
+      sublabel: m.it_metric3_sub(),
       color: '#22439c'
     },
     {
-      label: 'PHÁP LÝ & HÓA ĐƠN',
-      value: 'Hợp Đồng B2B',
-      sublabel: 'Xuất hóa đơn VAT đầy đủ (MST: 0315397327) và bảo mật NDA',
+      label: m.it_metric4_label(),
+      value: m.it_metric4_val(),
+      sublabel: m.it_metric4_sub(),
       color: '#22439c'
     }
-  ];
+  ]);
 
-  const models = [
+  const models = $derived([
     {
       id: '01',
       code: '_ONSITE STAFFING/',
-      title: 'Kỹ sư IT Làm việc Onsite tại Doanh nghiệp',
+      title: m.it_model1_title(),
       icon: Building2,
-      desc: 'Nhân sự làm việc trực tiếp tại trụ sở văn phòng khách hàng. Doanh nghiệp trực tiếp quản lý, giao việc và điều phối theo văn hóa nội bộ.',
+      desc: m.it_model1_desc(),
       tag: 'onsite model'
     },
     {
       id: '02',
       code: '_DEDICATED SQUAD/',
-      title: 'Biệt đội Kỹ thuật Chuyên trách Từ xa',
+      title: m.it_model2_title(),
       icon: Users,
-      desc: 'Đội ngũ kỹ sư làm việc full-time độc quyền cho dự án của bạn, có kèm Tech Lead và Scrum Master hỗ trợ quản trị chất lượng mã nguồn.',
+      desc: m.it_model2_desc(),
       tag: 'dedicated team'
     },
     {
       id: '03',
       code: '_PROJECT SPRINT/',
-      title: 'Tăng cường Kỹ sư Ngắn hạn theo Dự án',
+      title: m.it_model3_title(),
       icon: Clock,
-      desc: 'Bổ sung nhanh chóng các vị trí kỹ thuật cấp thiết trong các đợt chạy tiến độ (Go-Live, phát hành sản phẩm mới, kiểm toán hệ thống).',
+      desc: m.it_model3_desc(),
       tag: 'sprint augmentation'
     },
     {
       id: '04',
       code: '_LEGAL COMPLIANCE/',
-      title: 'Hợp đồng B2B & Ký kết NDA Chặt chẽ',
+      title: m.it_model4_title(),
       icon: Shield,
-      desc: 'Xuất hóa đơn VAT đầy đủ (MST: 0315397327), cam kết pháp lý bảo mật quyền sở hữu trí tuệ và không có bất kỳ tranh chấp lao động nào.',
+      desc: m.it_model4_desc(),
       tag: 'enterprise nda'
     }
-  ];
+  ]);
 
-  const roles = [
+  const roles = $derived([
     {
       id: '01',
       code: '_BACKEND DEV/',
-      title: 'Senior Backend Engineers',
+      title: m.it_role1_title(),
       icon: Terminal,
-      desc: 'Chuyên sâu về kiến trúc phân tán, xử lý giao dịch cao tải, tối ưu truy vấn cơ sở dữ liệu và tích hợp API hệ thống ngân hàng (Rust, Go, Python, Node.js).',
+      desc: m.it_role1_desc(),
       tag: 'rust • go • python'
     },
     {
       id: '02',
       code: '_FRONTEND & MOBILE/',
-      title: 'Senior Frontend & Mobile Engineers',
+      title: m.it_role2_title(),
       icon: Layers,
-      desc: 'Xây dựng giao diện ứng dụng phức tạp, mượt mà chuẩn 60fps, tối ưu hóa tốc độ hiển thị và trải nghiệm người dùng đa thiết bị (SvelteKit, React, Flutter).',
+      desc: m.it_role2_desc(),
       tag: 'sveltekit • flutter'
     },
     {
       id: '03',
       code: '_DEVOPS & CLOUD/',
-      title: 'DevOps & Cloud Infrastructure',
+      title: m.it_role3_title(),
       icon: Cpu,
-      desc: 'Thiết lập hạ tầng điện toán đám mây tự động co giãn, xây dựng luồng CI/CD không gián đoạn và giám sát an toàn thông tin 24/7 (Docker, K8s, AWS, Terraform).',
+      desc: m.it_role3_desc(),
       tag: 'k8s • aws • ci/cd'
     },
     {
       id: '04',
       code: '_QA & AUTOMATION/',
-      title: 'QA / Automation Test Engineers',
+      title: m.it_role4_title(),
       icon: FileText,
-      desc: 'Viết kịch bản kiểm thử tự động toàn diện từ Unit test, API test đến E2E test, kiểm tra khả năng chịu tải và dò quét lỗ hổng (Playwright, Cypress, K6).',
+      desc: m.it_role4_desc(),
       tag: 'playwright • k6'
     }
-  ];
+  ]);
 
-  const steps = [
-    { num: '48h', title: 'Tiếp nhận Yêu cầu & Sàng lọc CV', desc: 'CreditBird phân tích bài toán kỹ thuật của bạn và gửi danh sách hồ sơ ứng viên đạt tiêu chuẩn trong vòng 48 giờ.' },
-    { num: '02', title: 'Phỏng vấn Trực tiếp 1:1', desc: 'Khách hàng trực tiếp phỏng vấn kỹ thuật và kiểm tra năng lực thực chiến của kỹ sư để đảm bảo phù hợp văn hóa.' },
-    { num: '14d', title: 'Thử việc Đánh giá Thực tế 2 Tuần', desc: 'Kỹ sư bắt đầu tham gia dự án với thời gian dùng thử 2 tuần. Nếu không đạt yêu cầu, đổi nhân sự hoàn toàn miễn phí.' },
-    { num: '04', title: 'Ký Hợp đồng Dịch vụ & Onboarding', desc: 'Ký hợp đồng dịch vụ chính thức giữa hai pháp nhân. CreditBird chịu trách nhiệm toàn bộ bảo hiểm, phúc lợi và hành chính.' }
-  ];
+  const steps = $derived([
+    { num: '48h', title: m.it_step1_title(), desc: m.it_step1_desc() },
+    { num: '02', title: m.it_step2_title(), desc: m.it_step2_desc() },
+    { num: '14d', title: m.it_step3_title(), desc: m.it_step3_desc() },
+    { num: '04', title: m.it_step4_title(), desc: m.it_step4_desc() }
+  ]);
 </script>
 
-<svelte:head>
-  <title>Cho Thuê Nhân Sự IT Cho Doanh Nghiệp — CreditBird (MST: 0315397327)</title>
-  <meta name="description" content="Dịch vụ cho thuê kỹ sư CNTT chất lượng cao Onsite & Dedicated Team. Senior Devs (Rust, Go, Python, SvelteKit, DevOps). Onboarding trong 48h, cam kết NDA bảo mật tuyệt đối." />
-</svelte:head>
+<SeoHead
+  title={m.it_page_title()}
+  description={m.it_page_desc()}
+/>
 
 <div class="min-h-screen flex flex-col bg-white text-[#090e1f] font-sans selection:bg-[var(--cb-azure-500)]/20 selection:text-[#090e1f]">
-  
+
   <Navbar onOpenDemo={openDemo} />
 
   <main class="flex-1">
-    
+
     <!-- 1. Blueprint Subpage Hero (Cyanotype Cobalt Substrate) -->
     <BlueprintSubpageHero
-      eyebrow="_NGÀNH NGHỀ KINH DOANH CHÍNH / MST: 0315397327"
+      eyebrow={m.it_hero_eyebrow()}
       eyebrowIcon={Users}
-      specBadge="Onsite & Dedicated Squad • Onboarding 48h • Cam kết NDA"
-      title="Cho Thuê Nhân Sự IT Chất Lượng Cao Cho Doanh Nghiệp"
-      description="Giải quyết triệt để bài toán khan hiếm nhân lực kỹ thuật cấp cao. Cung cấp kỹ sư Senior phần mềm, DevOps và kiến trúc sư hệ thống làm việc Onsite tại văn phòng hoặc Dedicated Remote Team với chi phí tối ưu và pháp lý minh bạch."
-      primaryBtnText="Yêu Cầu Hồ Sơ & Báo Giá Kỹ Sư"
+      specBadge={m.it_hero_spec()}
+      title={m.it_hero_title()}
+      description={m.it_hero_desc()}
+      primaryBtnText={m.it_hero_btn_primary()}
       primaryBtnAction={openDemo}
-      secondaryBtnText="Xem Quy Trình Onboard 48H"
+      secondaryBtnText={m.it_hero_btn_secondary()}
       secondaryBtnHref="#onboarding-process"
     />
 
     <!-- 2. Blueprint Metrics Bar (Crisp Light Hairline Grid) -->
     <BlueprintMetricsBar
-      eyebrow="_CHỈ SỐ CAM KẾT DỊCH VỤ / SLA METRICS"
-      title="Tiêu chuẩn tuyển chọn khắt khe và bảo đảm tiến độ dự án"
+      eyebrow={m.it_metrics_eyebrow()}
+      title={m.it_metrics_title()}
       theme="light"
-      {metrics}
+      metrics={metrics}
     />
 
     <!-- 3. 4 Cooperation Models (Dark Cyanotype Architectural Blueprint) -->
     <BlueprintGridSection
       id="models"
       theme="dark"
-      eyebrow="_MÔ HÌNH HỢP TÁC LINH HOẠT / COOPERATION MODELS/"
-      title="Phương Thức Cung Ứng Nhân Sự Theo Nhu Cầu Doanh Nghiệp"
-      subheading="Linh hoạt mở rộng hoặc thu hẹp quy mô đội ngũ theo từng giai đoạn phát triển dự án."
-      description="Từ việc bổ sung kỹ sư làm việc tại văn phòng của bạn đến việc thiết lập một trung tâm công nghệ chuyên trách từ xa (Offshore Development Center - ODC)."
+      eyebrow={m.it_models_eyebrow()}
+      title={m.it_models_title()}
+      subheading={m.it_models_sub()}
+      description={m.it_models_desc()}
       columns={2}
       items={models}
     />
@@ -182,33 +182,33 @@
     <BlueprintGridSection
       id="roles"
       theme="light"
-      eyebrow="_VỊ TRÍ KỸ THUẬT TRỌNG YẾU / ROLES & SKILLS/"
-      title="Đội Ngũ Kỹ Sư Senior Sẵn Sàng Nhận Việc Ngay"
-      subheading="Đã trải qua quy trình đánh giá năng lực thuật toán, kiến trúc hệ thống và kỹ năng giao tiếp."
-      description="Chúng tôi tập trung cung cấp các vị trí kỹ thuật cấp cao, có khả năng độc lập giải quyết bài toán khó và hướng dẫn các thành viên khác trong team."
+      eyebrow={m.it_roles_eyebrow()}
+      title={m.it_roles_title()}
+      subheading={m.it_roles_sub()}
+      description={m.it_roles_desc()}
       columns={2}
       items={roles}
     />
 
     <!-- 5. 4-Step Onboarding Process (Dark Cyanotype Blueprint) -->
-    <section 
+    <section
       id="onboarding-process"
       class="relative theme-cobalt-primary dark bg-background text-foreground"
       style="--section-accent:var(--cobalt-accent, #60a5fa)"
     >
       <div class="strict-grid relative z-2 py-(--grid-unit)">
         <div class="flex flex-col gap-2gu">
-          
+
           <div class="snap-card free-flow flex flex-col grid-ring bg-background text-foreground px-1gu py-2gu sm:p-2gu">
             <div class="flex flex-col gap-3 max-w-40gu">
               <span class="snap-badge badge-sm font-mono uppercase tracking-widest flex h-(--grid-unit) items-center shrink-0 max-w-full whitespace-nowrap grid-ring w-fit px-3 text-eyebrow-foreground bg-eyebrow-background self-start">
-                _QUY TRÌNH ONBOARDING THẦN TỐC/
+                _{m.it_steps_badge()}/
               </span>
               <h2 class="h3 font-bold text-foreground">
-                4 Bước Bổ Sung Kỹ Sư IT Vào Dự Án Trong 48 Giờ
+                {m.it_steps_title()}
               </h2>
               <p class="p-md text-muted-foreground leading-relaxed">
-                Quy trình tinh gọn, bảo đảm khách hàng nắm toàn quyền kiểm tra năng lực và thử việc an toàn không rủi ro tài chính.
+                {m.it_steps_desc()}
               </p>
             </div>
           </div>
@@ -216,7 +216,7 @@
           <!-- 4 Steps Abutting Grid -->
           <div class="free-flow grid-row [--_cols-md:2] [--_cols-lg:4]">
             {#each steps as step}
-              <div 
+              <div
                 data-auto-snap="true"
                 class="snap-group-item flex flex-col grid-ring bg-background text-foreground p-1gu justify-between"
               >
@@ -246,10 +246,10 @@
 
     <!-- 6. Bottom Blueprint CTA Banner (Dark Cyanotype Cobalt) -->
     <BlueprintCtaSection
-      eyebrow="_BỔ SUNG KỸ SƯ NGAY HÔM NAY/"
-      title="Bổ Sung Ngay Kỹ Sư IT Trình Độ Cao Cho Dự Án Của Bạn"
-      description="CreditBird cam kết cung cấp nhân sự đúng năng lực chuyên môn, thích ứng nhanh với văn hóa doanh nghiệp và sẵn sàng bắt tay vào việc ngay trong 48 giờ."
-      primaryText="Nhận Báo Giá & Hồ Sơ Kỹ Sư Trong 48H"
+      eyebrow={m.it_cta_eyebrow()}
+      title={m.it_cta_title()}
+      description={m.it_cta_desc()}
+      primaryText={m.it_cta_btn_primary()}
       primaryAction={openDemo}
       secondaryText="Hotline: 0932 640 968"
       secondaryHref="tel:0932640968"

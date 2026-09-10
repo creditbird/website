@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
+  import * as m from '$lib/paraglide/messages';
 
   type MetricItem = {
     label: string;
@@ -9,7 +10,7 @@
   };
 
   let {
-    eyebrow = '_CHỈ SỐ HIỆU NĂNG/',
+    eyebrow = `_${m.metrics_bar_eyebrow()}/`,
     title,
     theme = 'light',
     metrics,

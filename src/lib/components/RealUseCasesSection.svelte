@@ -1,40 +1,42 @@
 <script lang="ts">
   import { Factory, ShoppingBag, Hotel, Building2, ArrowRight } from 'lucide-svelte';
+  import { localizeHref } from '$lib/paraglide/runtime';
+  import * as m from '$lib/paraglide/messages';
 
-  const cases = [
+  const cases = $derived([
     {
       icon: Factory,
-      title: 'Nhà máy sản xuất & xưởng gia công',
-      problem: 'Khó kiểm soát định mức tiêu hao nguyên phụ liệu, sai lệch tồn kho giữa kế toán và thực tế.',
-      solution: 'Ứng dụng Kelvot ERP quản lý định mức BOM đa cấp, xuất nhập kho quét mã Barcode và tự động hạch toán chi phí theo chuẩn VAS.',
-      linkUrl: '/solutions/erp',
-      linkText: 'Chi tiết giải pháp ERP sản xuất'
+      title: m.usecase_1_title(),
+      problem: m.usecase_1_problem(),
+      solution: m.usecase_1_solution(),
+      linkUrl: localizeHref('/solutions/erp'),
+      linkText: m.usecase_1_link()
     },
     {
       icon: ShoppingBag,
-      title: 'Doanh nghiệp thương mại & bán lẻ',
-      problem: 'Tin nhắn tư vấn phân tán trên nhiều tài khoản Zalo và Fanpage khiến nhân viên dễ bỏ sót khách hàng.',
-      solution: 'Trang bị phần mềm RustSale CRM gom Zalo, WhatsApp, Messenger về một màn hình máy tính tập trung, hỗ trợ gắn thẻ phân loại Lead, lưu lịch sử giao dịch và phân công nhân viên tư vấn kịp thời.',
-      linkUrl: '/products/rustsale',
-      linkText: 'Tìm hiểu RustSale CRM'
+      title: m.usecase_2_title(),
+      problem: m.usecase_2_problem(),
+      solution: m.usecase_2_solution(),
+      linkUrl: localizeHref('/products/rustsale'),
+      linkText: m.usecase_2_link()
     },
     {
       icon: Hotel,
-      title: 'Khách sạn, resort, spa & showroom',
-      problem: 'Không gian sảnh và phòng dịch vụ thiếu điểm nhấn trải nghiệm, mùi ẩm mốc hoặc mùi điều hòa.',
-      solution: 'Lắp đặt máy khuếch tán nano Lemy Finest kết nối hệ thống điều hòa HVAC cùng các dòng tinh dầu thiên nhiên có kiểm định COA theo hồ sơ sản phẩm.',
-      linkUrl: '/solutions/scent-marketing',
-      linkText: 'Xem giải pháp hương thơm HVAC'
+      title: m.usecase_3_title(),
+      problem: m.usecase_3_problem(),
+      solution: m.usecase_3_solution(),
+      linkUrl: localizeHref('/solutions/scent-marketing'),
+      linkText: m.usecase_3_link()
     },
     {
       icon: Building2,
-      title: 'Doanh nghiệp cần phần mềm nội bộ may đo',
-      problem: 'Phần mềm hiện có chưa đáp ứng đầy đủ quy trình riêng của doanh nghiệp.',
-      solution: 'CreditBird may đo ứng dụng Web/App theo đúng bài toán đặc thù, bàn giao 100% source code sạch và cung ứng nhân sự IT Senior hỗ trợ vận hành theo hợp đồng.',
-      linkUrl: '/solutions/software',
-      linkText: 'Dịch vụ may đo phần mềm'
+      title: m.usecase_4_title(),
+      problem: m.usecase_4_problem(),
+      solution: m.usecase_4_solution(),
+      linkUrl: localizeHref('/solutions/software'),
+      linkText: m.usecase_4_link()
     }
-  ];
+  ]);
 </script>
 
 <section id="use-cases" class="relative theme-light bg-[#f8fafc] text-[#090e1f] scroll-mt-16">
@@ -45,13 +47,13 @@
       <div class="snap-card free-flow flex flex-col grid-ring bg-white text-[#090e1f] p-1gu sm:p-2gu">
         <div class="flex flex-col gap-3 max-w-40gu">
           <span class="snap-badge badge-sm font-mono uppercase tracking-widest flex h-1gu items-center shrink-0 max-w-full whitespace-nowrap grid-ring px-3 text-[var(--cb-cobalt-600)] bg-[#edf2ff] border-[#c2d2fc] self-start">
-            _LĨNH VỰC ỨNG DỤNG THỰC TẾ/
+            _{m.usecases_badge()}/
           </span>
           <h2 class="h3 text-[#090e1f]">
-            Giải quyết đúng bài toán cho từng mô hình kinh doanh
+            {m.usecases_title()}
           </h2>
           <p class="subheading-md text-[#475569]">
-            Chúng tôi tập trung vào những bài toán thực tế mà doanh nghiệp tại Việt Nam thường xuyên đối mặt trong vận hành và bán hàng.
+            {m.usecases_subtitle()}
           </p>
         </div>
       </div>
@@ -70,10 +72,10 @@
 
               <div class="flex flex-col gap-3 text-xs leading-relaxed mb-1gu">
                 <div class="p-2.5 bg-[#fef2f2] border border-[#fecaca] text-[#991b1b]">
-                  <strong>Vấn đề thường gặp:</strong> {item.problem}
+                  <strong>{m.usecases_label_problem()}</strong> {item.problem}
                 </div>
                 <div class="p-2.5 bg-[#f0fdf4] border border-[#bbf7d0] text-[#166534]">
-                  <strong>Giải pháp của CreditBird:</strong> {item.solution}
+                  <strong>{m.usecases_label_solution()}</strong> {item.solution}
                 </div>
               </div>
             </div>

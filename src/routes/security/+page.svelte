@@ -3,7 +3,11 @@
   import Footer from '$lib/components/Footer.svelte';
   import DemoModal from '$lib/components/DemoModal.svelte';
   import BlueprintSubpageHero from '$lib/components/BlueprintSubpageHero.svelte';
-  import { ShieldCheck, Lock, Server, ChevronRight, Phone } from 'lucide-svelte';
+  import SeoHead from '$lib/components/SeoHead.svelte';
+  import { ShieldCheck, Lock, Server, ChevronRight, Phone, AlertCircle } from 'lucide-svelte';
+  import * as m from '$lib/paraglide/messages';
+  import { getLocale } from '$lib/paraglide/runtime';
+  import { getSecurityContent } from '$lib/data/legal/security';
 
   let isDemoOpen = $state(false);
 
@@ -15,35 +19,38 @@
     isDemoOpen = false;
   }
 
-  const sections = [
-    { id: 'tieu-chuan-iso', title: '1. Khung an toàn thông tin ISO/IEC 27001' },
-    { id: 'bao-mat-ma-nguon', title: '2. Bảo mật mã nguồn & Quy trình DevSecOps' },
-    { id: 'sao-luu-du-lieu', title: '3. An toàn dữ liệu ERP & Sao lưu khôi phục' },
-    { id: 'nhan-su-it-sec', title: '4. Chuẩn an toàn cho nhân sự IT Onsite/Remote' },
-    { id: 'an-toan-iot', title: '5. An ninh thiết bị máy phun IoT & HVAC' },
-    { id: 'bao-cao-lo-hong', title: '6. Quy trình tiếp nhận & Xử lý lỗ hổng bảo mật' }
-  ];
+  const currentLocale = $derived(getLocale());
+  const c = $derived(getSecurityContent(currentLocale));
+
+  const sections = $derived([
+    { id: 'tieu-chuan-iso', title: m.security_sec1() },
+    { id: 'bao-mat-ma-nguon', title: m.security_sec2() },
+    { id: 'sao-luu-du-lieu', title: m.security_sec3() },
+    { id: 'nhan-su-it-sec', title: m.security_sec4() },
+    { id: 'an-toan-iot', title: m.security_sec5() },
+    { id: 'bao-cao-lo-hong', title: m.security_sec6() }
+  ]);
 </script>
 
-<svelte:head>
-  <title>Chính sách An toàn Thông tin & Bảo mật — CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD</title>
-  <meta name="description" content="Chính sách an toàn thông tin, bảo mật mã nguồn DevSecOps và tuân thủ ISO/IEC 27001 của CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD (MST: 0315397327)." />
-</svelte:head>
+<SeoHead
+  title={m.security_meta_title()}
+  description={m.security_meta_desc()}
+/>
 
 <div class="min-h-screen flex flex-col bg-white text-[#090e1f] font-sans selection:bg-[var(--cb-azure-500)]/20 selection:text-[#090e1f]">
-  
+
   <Navbar onOpenDemo={openDemo} />
 
   <main class="flex-1">
-    
+
     <!-- 1. Blueprint Subpage Hero (Cyanotype Cobalt Substrate) -->
     <BlueprintSubpageHero
-      eyebrow="_AN TOÀN THÔNG TIN & ISO 27001/"
+      eyebrow={m.security_hero_eyebrow()}
       eyebrowIcon={ShieldCheck}
-      specBadge="Chuẩn bảo vệ cấp doanh nghiệp"
-      title="Chính sách An toàn Thông tin & Bảo mật"
-      description="Các nguyên tắc, quy trình và biện pháp bảo vệ mã nguồn, an toàn dữ liệu ERP và hạ tầng số tại CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD (MST: 0315397327)."
-      primaryBtnText="Đăng Ký Tư Vấn An Toàn Hệ Thống"
+      specBadge={m.security_spec()}
+      title={m.security_hero_title()}
+      description={m.security_hero_desc()}
+      primaryBtnText={m.legal_btn_consult()}
       primaryBtnAction={openDemo}
       secondaryBtnText="Hotline: 0932 640 968"
       secondaryBtnHref="tel:0932640968"
@@ -52,20 +59,20 @@
     <!-- 2. Main Content Area (Crisp Light Blueprint Grid) -->
     <section class="relative theme-light bg-[#f8fafc] text-[#090e1f]">
       <div class="strict-grid relative z-2 py-2gu">
-        
+
         <div class="grid-docs-layout">
-          
+
           <!-- Sticky Sidebar Navigation (15gu) -->
           <aside class="sticky top-24">
             <div class="snap-card free-flow grid-ring bg-white p-1gu flex flex-col gap-1gu">
               <span class="snap-badge badge-sm font-mono uppercase tracking-widest text-[var(--cb-cobalt-600)] bg-[#edf2ff] border border-[#c2d2fc] px-2 py-0.5 w-fit">
-                _MỤC LỤC CHÍNH SÁCH/
+                _{m.legal_toc_title()}/
               </span>
-              
+
               <nav class="flex flex-col gap-1">
-                {#each sections as sec}
-                  <a 
-                    href="#{sec.id}" 
+                {#each sections as sec (sec.id)}
+                  <a
+                    href="#{sec.id}"
                     class="py-2 px-3 text-[#475569] hover:text-[var(--cb-cobalt-600)] hover:bg-[#edf2ff] transition-colors flex items-center justify-between text-xs font-mono font-medium grid-ring"
                   >
                     <span>{sec.title}</span>
@@ -77,15 +84,15 @@
               <div class="mt-2 pt-4 border-t border-[#e2e8f0] flex flex-col gap-2.5 font-mono text-xs text-[#64748b]">
                 <div class="flex items-center gap-2">
                   <ShieldCheck size={14} class="text-[var(--cb-cobalt-600)] shrink-0" />
-                  <span>ISO/IEC 27001 Aligned</span>
+                  <span>{m.security_badge_iso()}</span>
                 </div>
                 <div class="flex items-center gap-2">
                   <Lock size={14} class="text-[var(--cb-cobalt-600)] shrink-0" />
-                  <span>DevSecOps & SAST Scanner</span>
+                  <span>{m.security_badge_devsecops()}</span>
                 </div>
                 <div class="flex items-center gap-2">
                   <Server size={14} class="text-[var(--cb-cobalt-600)] shrink-0" />
-                  <span>Tier III Data Centers (VN)</span>
+                  <span>{m.security_badge_drp()}</span>
                 </div>
                 <div class="flex items-center gap-2 pt-2 border-t border-[#e2e8f0]">
                   <Phone size={14} class="text-[var(--cb-cobalt-600)] shrink-0" />
@@ -97,36 +104,43 @@
 
           <!-- Content Body (32gu) -->
           <article class="snap-card free-flow flex flex-col gap-2gu grid-ring bg-white p-1gu sm:p-2gu leading-relaxed text-[#334155]">
-            
+
+            {#if currentLocale !== 'vi'}
+              <!-- Bilingual Reference Disclaimer -->
+              <div class="p-4 bg-[#eff6ff] border border-[#bfdbfe] text-xs font-sans text-[#1e40af] flex items-start gap-3">
+                <AlertCircle size={18} class="text-[#3b82f6] shrink-0 mt-0.5" />
+                <div class="flex flex-col gap-1">
+                  <strong class="font-semibold">{m.legal_disclaimer_title()}</strong>
+                  <p class="leading-relaxed text-[#1e3a8a]">{m.legal_disclaimer_desc()}</p>
+                </div>
+              </div>
+            {/if}
+
             <!-- Section 1 -->
             <section id="tieu-chuan-iso" class="flex flex-col gap-3 scroll-mt-28">
               <span class="font-mono text-xs text-[var(--cb-cobalt-600)] uppercase font-semibold">_SECTION 01/</span>
               <h2 class="text-xl md:text-2xl font-bold text-[#090e1f] border-b border-[#e2e8f0] pb-2">
-                1. Khung an toàn thông tin ISO/IEC 27001
+                {c.sec1.title}
               </h2>
-              <p>
-                CreditBird thiết lập và duy trì Hệ thống quản lý an toàn thông tin (ISMS) phù hợp với chuẩn mực quốc tế <strong>ISO/IEC 27001</strong> và quy định của <strong>Luật An ninh mạng Việt Nam</strong>.
-              </p>
-              <p>
-                Toàn bộ quy trình từ tuyển dụng nhân sự IT, tiếp nhận yêu cầu phần mềm, cấu hình máy chủ đến bàn giao mã nguồn đều tuân thủ các chính sách kiểm soát an toàn nghiêm ngặt nhằm đảm bảo 3 trụ cột cơ bản:
-              </p>
+              <p>{@html c.sec1.p1}</p>
+              <p>{c.sec1.p2}</p>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 my-2 text-center">
                 <div class="p-3.5 bg-[#f8fafc] grid-ring flex flex-col items-center gap-1">
-                  <span class="font-mono font-bold text-xs text-[var(--cb-cobalt-700)]">TÍNH BẢO MẬT</span>
-                  <span class="text-xs text-[#64748b]">Confidentiality</span>
-                  <p class="text-xs mt-1">Chỉ những cá nhân được ủy quyền mới được truy cập dữ liệu.</p>
+                  <span class="font-mono font-bold text-xs text-[var(--cb-cobalt-700)]">{c.sec1.pillars.confidentiality.title}</span>
+                  <span class="text-xs text-[#64748b]">{c.sec1.pillars.confidentiality.subtitle}</span>
+                  <p class="text-xs mt-1">{c.sec1.pillars.confidentiality.desc}</p>
                 </div>
 
                 <div class="p-3.5 bg-[#f8fafc] grid-ring flex flex-col items-center gap-1">
-                  <span class="font-mono font-bold text-xs text-[var(--cb-cobalt-700)]">TÍNH TOÀN VẸN</span>
-                  <span class="text-xs text-[#64748b]">Integrity</span>
-                  <p class="text-xs mt-1">Dữ liệu kế toán ERP và mã nguồn không bị sửa đổi trái phép.</p>
+                  <span class="font-mono font-bold text-xs text-[var(--cb-cobalt-700)]">{c.sec1.pillars.integrity.title}</span>
+                  <span class="text-xs text-[#64748b]">{c.sec1.pillars.integrity.subtitle}</span>
+                  <p class="text-xs mt-1">{c.sec1.pillars.integrity.desc}</p>
                 </div>
 
                 <div class="p-3.5 bg-[#f8fafc] grid-ring flex flex-col items-center gap-1">
-                  <span class="font-mono font-bold text-xs text-[var(--cb-cobalt-700)]">TÍNH KHẢ DỤNG</span>
-                  <span class="text-xs text-[#64748b]">Availability</span>
-                  <p class="text-xs mt-1">Hệ thống sẵn sàng phục vụ 99.9% thời gian theo cam kết SLA.</p>
+                  <span class="font-mono font-bold text-xs text-[var(--cb-cobalt-700)]">{c.sec1.pillars.availability.title}</span>
+                  <span class="text-xs text-[#64748b]">{c.sec1.pillars.availability.subtitle}</span>
+                  <p class="text-xs mt-1">{c.sec1.pillars.availability.desc}</p>
                 </div>
               </div>
             </section>
@@ -135,16 +149,13 @@
             <section id="bao-mat-ma-nguon" class="flex flex-col gap-3 scroll-mt-28">
               <span class="font-mono text-xs text-[var(--cb-cobalt-600)] uppercase font-semibold">_SECTION 02/</span>
               <h2 class="text-xl md:text-2xl font-bold text-[#090e1f] border-b border-[#e2e8f0] pb-2">
-                2. Bảo mật mã nguồn & Quy trình DevSecOps
+                {c.sec2.title}
               </h2>
-              <p>
-                Đối với các dự án viết phần mềm may đo và tùy biến ERP, CreditBird áp dụng quy trình phát triển phần mềm an toàn (Secure Software Development Lifecycle - SSDLC):
-              </p>
+              <p>{c.sec2.desc}</p>
               <ul class="list-disc list-inside flex flex-col gap-1.5 pl-2 text-sm">
-                <li><strong>Quản lý kho mã nguồn cô lập:</strong> Mỗi dự án của khách hàng được phân bổ một Repository riêng biệt với chính sách phân quyền chi nhánh (Branch Protection Rules), yêu cầu tối thiểu 02 Senior Tech Lead phê duyệt Pull Request trước khi hợp nhất.</li>
-                <li><strong>Kiểm thử bảo mật tự động:</strong> Tích hợp công cụ quét mã tĩnh (SAST) phát hiện lỗi OWASP Top 10, quét thư viện phụ thuộc (SCA) để ngăn chặn lỗ hổng zero-day trong các gói mã nguồn mở.</li>
-                <li><strong>Chống rò rỉ khóa bí mật:</strong> Tự động chặn commit chứa API keys, database credentials hoặc secret tokens.</li>
-                <li><strong>Bàn giao sạch 100%:</strong> Khi bàn giao mã nguồn cho khách hàng, hệ thống được nghiệm thu với báo cáo quét bảo mật sạch hoàn toàn (Zero High/Critical Vulnerabilities).</li>
+                {#each c.sec2.items as item (item.label)}
+                  <li><strong>{item.label}:</strong> {item.text}</li>
+                {/each}
               </ul>
             </section>
 
@@ -152,16 +163,13 @@
             <section id="sao-luu-du-lieu" class="flex flex-col gap-3 scroll-mt-28">
               <span class="font-mono text-xs text-[var(--cb-cobalt-600)] uppercase font-semibold">_SECTION 03/</span>
               <h2 class="text-xl md:text-2xl font-bold text-[#090e1f] border-b border-[#e2e8f0] pb-2">
-                3. An toàn dữ liệu ERP & Sao lưu khôi phục
+                {c.sec3.title}
               </h2>
-              <p>
-                Dữ liệu ERP (đơn hàng, tồn kho, kế toán VAS, nhân sự) là tài sản tối quan trọng của doanh nghiệp. Cơ chế bảo vệ dữ liệu bao gồm:
-              </p>
+              <p>{c.sec3.desc}</p>
               <ul class="list-disc list-inside flex flex-col gap-1.5 pl-2 text-sm">
-                <li><strong>Sao lưu tự động hàng ngày:</strong> Dữ liệu được sao lưu định kỳ vào khung giờ thấp điểm và lưu giữ lịch sử khôi phục theo điểm thời gian (Point-in-time Recovery - PITR).</li>
-                <li><strong>Chiến lược sao lưu 3-2-1:</strong> Tối thiểu 03 bản sao lưu, lưu trên 02 loại phương tiện độc lập và có ít nhất 01 bản lưu trữ Off-site tại trung tâm dữ liệu thứ hai.</li>
-                <li><strong>Mã hóa đầu cuối:</strong> Toàn bộ các bản snapshot cơ sở dữ liệu được mã hóa bằng thuật toán AES-256 trước khi đẩy sang kho lưu trữ đám mây an toàn.</li>
-                <li><strong>Nhật ký kiểm toán bất biến (Immutable Audit Trail):</strong> Mọi thao tác sửa đổi chứng từ kế toán, xuất nhập kho hoặc phân quyền người dùng đều được ghi nhận vào sổ nhật ký không thể xóa sửa.</li>
+                {#each c.sec3.items as item (item.label)}
+                  <li><strong>{item.label}:</strong> {item.text}</li>
+                {/each}
               </ul>
             </section>
 
@@ -169,15 +177,13 @@
             <section id="nhan-su-it-sec" class="flex flex-col gap-3 scroll-mt-28">
               <span class="font-mono text-xs text-[var(--cb-cobalt-600)] uppercase font-semibold">_SECTION 04/</span>
               <h2 class="text-xl md:text-2xl font-bold text-[#090e1f] border-b border-[#e2e8f0] pb-2">
-                4. Chuẩn an toàn cho nhân sự IT Onsite/Remote
+                {c.sec4.title}
               </h2>
-              <p>
-                Nhằm bảo vệ tuyệt đối bí mật kinh doanh khi doanh nghiệp sử dụng dịch vụ cho thuê nhân sự IT:
-              </p>
+              <p>{c.sec4.desc}</p>
               <ul class="list-disc list-inside flex flex-col gap-1.5 pl-2 text-sm">
-                <li><strong>Thỏa thuận bảo mật cá nhân (Individual NDA):</strong> 100% kỹ sư IT trước khi bàn giao sang phía khách hàng đều phải ký cam kết bảo mật thông tin có giá trị pháp lý ràng buộc cá nhân.</li>
-                <li><strong>Thiết bị làm việc chuẩn hóa:</strong> Kỹ sư tuân thủ quy chế sử dụng máy tính của doanh nghiệp khách hàng hoặc máy tính do CreditBird cấp phát đã cài đặt phần mềm bảo mật mã hóa ổ đĩa (BitLocker/FileVault).</li>
-                <li><strong>Tuyệt đối không lưu trữ dữ liệu cá nhân:</strong> Kỹ sư không được phép sao chép mã nguồn hoặc cơ sở dữ liệu của khách hàng sang thiết bị cá nhân hoặc USB ngoài phạm vi cấp phép.</li>
+                {#each c.sec4.items as item (item.label)}
+                  <li><strong>{item.label}:</strong> {item.text}</li>
+                {/each}
               </ul>
             </section>
 
@@ -185,15 +191,13 @@
             <section id="an-toan-iot" class="flex flex-col gap-3 scroll-mt-28">
               <span class="font-mono text-xs text-[var(--cb-cobalt-600)] uppercase font-semibold">_SECTION 05/</span>
               <h2 class="text-xl md:text-2xl font-bold text-[#090e1f] border-b border-[#e2e8f0] pb-2">
-                5. An ninh thiết bị máy phun IoT & HVAC
+                {c.sec5.title}
               </h2>
-              <p>
-                Các dòng máy phun tinh dầu thông minh có kết nối WiFi/App điều khiển từ xa được thiết kế an toàn:
-              </p>
+              <p>{c.sec5.desc}</p>
               <ul class="list-disc list-inside flex flex-col gap-1.5 pl-2 text-sm">
-                <li>Giao thức truyền thông mã hóa an toàn qua giao thức TLS/MQTT có chứng thực máy chủ.</li>
-                <li>Cách ly thiết bị khỏi mạng nội bộ nhạy cảm của doanh nghiệp thông qua phân vùng mạng VLAN chuyên biệt.</li>
-                <li>Firmware được ký số chính thức từ CreditBird, chống chèn mã độc hoặc chiếm quyền điều khiển trái phép.</li>
+                {#each c.sec5.items as item, idx (idx)}
+                  <li>{item}</li>
+                {/each}
               </ul>
             </section>
 
@@ -201,17 +205,15 @@
             <section id="bao-cao-lo-hong" class="flex flex-col gap-3 scroll-mt-28">
               <span class="font-mono text-xs text-[var(--cb-cobalt-600)] uppercase font-semibold">_SECTION 06/</span>
               <h2 class="text-xl md:text-2xl font-bold text-[#090e1f] border-b border-[#e2e8f0] pb-2">
-                6. Quy trình tiếp nhận & Xử lý lỗ hổng bảo mật
+                {c.sec6.title}
               </h2>
-              <p>
-                CreditBird hoan nghênh và đánh giá cao sự đóng góp của các chuyên gia bảo mật và cộng đồng trong việc phát hiện các nguy cơ an toàn thông tin. Nếu phát hiện lỗ hổng nghi vấn, Quý khách vui lòng gửi thông tin tới:
-              </p>
+              <p>{c.sec6.desc}</p>
               <div class="p-4 bg-[#f8fafc] grid-ring text-xs flex flex-col gap-1.5 font-mono">
-                <div><strong>Bộ phận An ninh Thông tin:</strong> CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD</div>
-                <div><strong>Mã số thuế:</strong> 0315397327</div>
-                <div><strong>Hotline khẩn cấp:</strong> 0932.640.968</div>
-                <div><strong>Email tiếp nhận:</strong> contact@creditbirdtech.com</div>
-                <div><strong>Thời gian phản hồi bước đầu:</strong> Trong vòng 24 giờ làm việc</div>
+                <div><strong>{c.sec6.contact.deptLabel}:</strong> {c.sec6.contact.deptVal}</div>
+                <div><strong>{c.sec6.contact.taxLabel}:</strong> {c.sec6.contact.taxVal}</div>
+                <div><strong>{c.sec6.contact.hotlineLabel}:</strong> {c.sec6.contact.hotlineVal}</div>
+                <div><strong>{c.sec6.contact.emailLabel}:</strong> {c.sec6.contact.emailVal}</div>
+                <div><strong>{c.sec6.contact.slaLabel}:</strong> {c.sec6.contact.slaVal}</div>
               </div>
             </section>
 

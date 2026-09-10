@@ -1,20 +1,23 @@
 <script lang="ts">
-  import { 
-    Menu, 
-    X, 
-    ChevronDown, 
-    ChevronRight, 
-    Code, 
-    Sparkles, 
-    Users, 
-    Layers, 
-    Wind, 
-    ShieldCheck, 
-    FileText, 
-    ExternalLink, 
+  import {
+    Menu,
+    X,
+    ChevronDown,
+    ChevronRight,
+    Code,
+    Sparkles,
+    Users,
+    Layers,
+    Wind,
+    ShieldCheck,
+    FileText,
+    ExternalLink,
     Phone,
     ArrowUpRight
   } from 'lucide-svelte';
+  import { localizeHref } from '$lib/paraglide/runtime';
+  import * as m from '$lib/paraglide/messages';
+  import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
 
   let { onOpenDemo }: { onOpenDemo?: () => void } = $props();
 
@@ -98,17 +101,17 @@
   <div class="strict-grid-container flex items-center justify-between h-full w-full">
     <div class="flex items-center gap-2 truncate">
       <span class="bg-[var(--cb-azure-500)] text-white font-mono text-[0.6875rem] px-2 py-0.5 font-bold rounded-sm shrink-0">MST: 0315397327</span>
-      <span class="truncate">CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD • Phần mềm, Kelvot ERP & Lemy Finest Tinh dầu</span>
+      <span class="truncate">{m.navbar_announcement_company()}</span>
     </div>
     <div class="hidden sm:flex items-center gap-4 text-xs font-mono shrink-0">
       <a href="tel:0932640968" class="text-[var(--cb-azure-400)] hover:text-white transition-colors flex items-center gap-1">
         <span>Hotline: 0932 640 968</span>
       </a>
       <span class="text-[#334155]">|</span>
-      <a 
-        href="https://github.com/creditbird" 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      <a
+        href="https://github.com/creditbird"
+        target="_blank"
+        rel="noopener noreferrer"
         class="text-[#94a3b8] hover:text-white transition-colors inline-flex items-center gap-1.5"
       >
         <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -117,10 +120,10 @@
         <span>GitHub</span>
       </a>
       <span class="text-[#334155]">|</span>
-      <a 
-        href="https://www.facebook.com/creditbird" 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      <a
+        href="https://www.facebook.com/creditbird"
+        target="_blank"
+        rel="noopener noreferrer"
         class="text-[#94a3b8] hover:text-white transition-colors inline-flex items-center gap-1.5"
       >
         <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -135,104 +138,104 @@
 <!-- Header Navigation -->
 <header class="h-[72px] border-b border-[#e2e8f0] bg-white/95 backdrop-blur-md sticky top-0 z-50 transition-transform duration-300 ease-in-out {isHeaderVisible ? 'translate-y-0' : '-translate-y-[calc(100%+1px)]'} {isScrolledPastTop ? 'shadow-xs' : ''}">
   <div class="strict-grid-container flex items-center justify-between h-full relative">
-    
+
     <!-- Logo + Brand Wordmark -->
-    <a href="/" onclick={handleNavClick} class="flex items-center gap-3.5 group shrink-0">
-      <img 
-        src="/creditbird-logo.webp" 
-        alt="CreditBird Logo" 
-        class="w-[38px] h-[38px] object-contain rounded-full border border-[#cbd5e1] shadow-xs group-hover:border-[var(--cb-azure-500)] transition-colors" 
+    <a href={localizeHref('/')} onclick={handleNavClick} class="flex items-center gap-3.5 group shrink-0">
+      <img
+        src="/creditbird-logo.webp"
+        alt="CreditBird Logo"
+        class="w-[38px] h-[38px] object-contain rounded-full border border-[#cbd5e1] shadow-xs group-hover:border-[var(--cb-azure-500)] transition-colors"
       />
       <div class="flex flex-col text-left">
         <span class="text-xl font-bold tracking-tight text-[var(--cb-cobalt-500)] leading-none">
           CreditBird<span class="text-[var(--cb-azure-500)]">.</span>
         </span>
-        <span class="font-mono text-[9px] text-[#64748b] tracking-wider uppercase">Creating Value For You</span>
+        <span class="font-mono text-[9px] text-[#64748b] tracking-wider uppercase">{m.navbar_tagline()}</span>
       </div>
     </a>
 
     <!-- Desktop Navigation Links (Clean 5-Item Structure) -->
     <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-medium">
-      
+
       <!-- 1. Về CreditBird -->
-      <a 
-        href="/#about" 
+      <a
+        href={localizeHref('/#about')}
         onclick={handleNavClick}
         class="px-3 py-2 rounded-md text-[#475569] hover:text-[#090e1f] hover:bg-[#f8fafc] transition-colors"
       >
-        Về CreditBird
+        {m.nav_about()}
       </a>
 
       <!-- 2. Dropdown: Phần mềm -->
-      <div 
+      <div
         class="relative"
         role="none"
         onmouseenter={() => setDropdown('software')}
         onmouseleave={() => setDropdown(null)}
       >
-        <button 
-          type="button" 
+        <button
+          type="button"
           onclick={() => setDropdown(activeDropdown === 'software' ? null : 'software')}
           class="flex items-center gap-1 px-3 py-2 rounded-md text-[#475569] hover:text-[#090e1f] hover:bg-[#f8fafc] transition-colors {activeDropdown === 'software' ? 'text-[#090e1f] bg-[#f1f5f9]' : ''}"
         >
-          <span>Phần mềm</span>
+          <span>{m.nav_software_title()}</span>
           <ChevronDown size={15} class="transition-transform duration-200 {activeDropdown === 'software' ? 'rotate-180 text-[var(--cb-azure-600)]' : ''}" />
         </button>
 
         {#if activeDropdown === 'software'}
-          <div 
+          <div
             class="absolute top-[calc(100%+12px)] left-0 w-[420px] bg-white border border-[#e2e8f0] rounded-lg shadow-xl p-4 z-50 flex flex-col gap-2 before:content-[''] before:absolute before:-top-3 before:left-0 before:w-full before:h-3"
           >
-            <a 
-              href="/solutions/software" 
+            <a
+              href={localizeHref('/solutions/software')}
               onclick={handleNavClick}
               class="group p-2.5 rounded-lg hover:bg-[#f8fafc] border border-transparent hover:border-[#e2e8f0] transition-all flex items-start gap-3"
             >
               <div class="w-8 h-8 rounded-md bg-[#edf2ff] text-[var(--cb-cobalt-600)] border border-[#c2d2fc] flex items-center justify-center shrink-0 group-hover:bg-[var(--cb-cobalt-600)] group-hover:text-white transition-colors">
-                <Code size={16} />
+                <Code size={16} class="shrink-0" />
               </div>
               <div class="flex flex-col">
                 <span class="font-semibold text-sm text-[#090e1f] group-hover:text-[var(--cb-cobalt-600)] transition-colors">
-                  Phát triển Phần mềm may đo
+                  {m.nav_custom_software()}
                 </span>
                 <span class="text-xs text-[#64748b] leading-tight mt-0.5">
-                  Web/App doanh nghiệp, Microservices, bàn giao 100% source code.
+                  {m.nav_custom_software_desc()}
                 </span>
               </div>
             </a>
 
-            <a 
-              href="/products/rustsale" 
+            <a
+              href={localizeHref('/products/rustsale')}
               onclick={handleNavClick}
               class="group p-2.5 rounded-lg hover:bg-[#f8fafc] border border-transparent hover:border-[#e2e8f0] transition-all flex items-start gap-3"
             >
               <div class="w-8 h-8 rounded-md bg-[#edf2ff] text-[var(--cb-cobalt-600)] border border-[#c2d2fc] flex items-center justify-center shrink-0 group-hover:bg-[var(--cb-cobalt-600)] group-hover:text-white transition-colors">
-                <Sparkles size={16} />
+                <Sparkles size={16} class="shrink-0" />
               </div>
               <div class="flex flex-col">
                 <span class="font-semibold text-sm text-[#090e1f] group-hover:text-[var(--cb-cobalt-600)] transition-colors">
-                  RustSale CRM & Outreach
+                  {m.nav_rustsale()}
                 </span>
                 <span class="text-xs text-[#64748b] leading-tight mt-0.5">
-                  Hộp thư hội tụ Omnichannel Zalo, WhatsApp, Messenger trên desktop.
+                  {m.nav_rustsale_desc()}
                 </span>
               </div>
             </a>
 
-            <a 
-              href="/solutions/it-staffing" 
+            <a
+              href={localizeHref('/solutions/it-staffing')}
               onclick={handleNavClick}
               class="group p-2.5 rounded-lg hover:bg-[#f8fafc] border border-transparent hover:border-[#e2e8f0] transition-all flex items-start gap-3"
             >
               <div class="w-8 h-8 rounded-md bg-[#edf2ff] text-[var(--cb-cobalt-600)] border border-[#c2d2fc] flex items-center justify-center shrink-0 group-hover:bg-[var(--cb-cobalt-600)] group-hover:text-white transition-colors">
-                <Users size={16} />
+                <Users size={16} class="shrink-0" />
               </div>
               <div class="flex flex-col">
                 <span class="font-semibold text-sm text-[#090e1f] group-hover:text-[var(--cb-cobalt-600)] transition-colors">
-                  Cho thuê nhân sự IT
+                  {m.nav_it_staffing()}
                 </span>
                 <span class="text-xs text-[#64748b] leading-tight mt-0.5">
-                  Kỹ sư Senior Onsite & Dedicated Squad, ký kết hợp đồng NDA B2B.
+                  {m.nav_it_staffing_desc()}
                 </span>
               </div>
             </a>
@@ -241,67 +244,62 @@
       </div>
 
       <!-- 3. Kelvot ERP -->
-      <a 
-        href="/solutions/erp" 
+      <a
+        href={localizeHref('/solutions/erp')}
         onclick={handleNavClick}
         class="px-3 py-2 rounded-md text-[#475569] hover:text-[#090e1f] hover:bg-[#f8fafc] transition-colors"
       >
-        Kelvot ERP
+        {m.nav_erp()}
       </a>
 
       <!-- 4. Tinh dầu & Máy phun -->
-      <a 
-        href="/solutions/scent-marketing" 
+      <a
+        href={localizeHref('/solutions/scent-marketing')}
         onclick={handleNavClick}
         class="px-3 py-2 rounded-md text-[#475569] hover:text-[#090e1f] hover:bg-[#f8fafc] transition-colors"
       >
-        Tinh dầu & Máy phun
+        {m.nav_scent()}
       </a>
 
-      <!-- 5. Quy trình -->
-      <a 
-        href="/#workflow" 
-        onclick={handleNavClick}
-        class="px-3 py-2 rounded-md text-[#475569] hover:text-[#090e1f] hover:bg-[#f8fafc] transition-colors"
-      >
-        Quy trình
-      </a>
-
-      <!-- 6. Dropdown: Hồ sơ & Pháp lý -->
-      <div 
+      <!-- 5. Dropdown: Hồ sơ & Pháp lý -->
+      <div
         class="relative"
         role="none"
         onmouseenter={() => setDropdown('legal')}
         onmouseleave={() => setDropdown(null)}
       >
-        <button 
-          type="button" 
+        <button
+          type="button"
           onclick={() => setDropdown(activeDropdown === 'legal' ? null : 'legal')}
           class="flex items-center gap-1 px-3 py-2 rounded-md text-[#475569] hover:text-[#090e1f] hover:bg-[#f8fafc] transition-colors {activeDropdown === 'legal' ? 'text-[#090e1f] bg-[#f1f5f9]' : ''}"
         >
-          <span>Pháp lý</span>
+          <span>{m.nav_legal_title()}</span>
           <ChevronDown size={15} class="transition-transform duration-200 {activeDropdown === 'legal' ? 'rotate-180 text-[var(--cb-azure-600)]' : ''}" />
         </button>
 
         {#if activeDropdown === 'legal'}
-          <div 
+          <div
             class="absolute top-[calc(100%+12px)] right-0 w-[300px] bg-white border border-[#e2e8f0] rounded-lg shadow-xl p-4 z-50 flex flex-col gap-1.5 before:content-[''] before:absolute before:-top-3 before:left-0 before:w-full before:h-3"
           >
-            <a href="/terms" onclick={handleNavClick} class="p-2 rounded hover:bg-[#f8fafc] text-xs font-medium text-[#090e1f] flex items-center justify-between">
-              <span>Điều khoản dịch vụ</span>
-              <ChevronRight size={14} class="text-[#94a3b8]" />
+            <a href={localizeHref('/#about')} onclick={handleNavClick} class="p-2 rounded hover:bg-[#f8fafc] text-xs font-medium text-[#090e1f] flex items-center justify-between">
+              <span>{m.nav_about()}</span>
+              <ChevronRight size={14} class="text-[#94a3b8] shrink-0" />
             </a>
-            <a href="/privacy" onclick={handleNavClick} class="p-2 rounded hover:bg-[#f8fafc] text-xs font-medium text-[#090e1f] flex items-center justify-between">
-              <span>Chính sách bảo mật (NĐ 13/2023)</span>
-              <ChevronRight size={14} class="text-[#94a3b8]" />
+            <a href={localizeHref('/terms')} onclick={handleNavClick} class="p-2 rounded hover:bg-[#f8fafc] text-xs font-medium text-[#090e1f] flex items-center justify-between">
+              <span>{m.nav_terms()}</span>
+              <ChevronRight size={14} class="text-[#94a3b8] shrink-0" />
             </a>
-            <a href="/warranty" onclick={handleNavClick} class="p-2 rounded hover:bg-[#f8fafc] text-xs font-medium text-[#090e1f] flex items-center justify-between">
-              <span>Chính sách bảo hành kỹ thuật</span>
-              <ChevronRight size={14} class="text-[#94a3b8]" />
+            <a href={localizeHref('/privacy')} onclick={handleNavClick} class="p-2 rounded hover:bg-[#f8fafc] text-xs font-medium text-[#090e1f] flex items-center justify-between">
+              <span>{m.nav_privacy()}</span>
+              <ChevronRight size={14} class="text-[#94a3b8] shrink-0" />
             </a>
-            <a href="/security" onclick={handleNavClick} class="p-2 rounded hover:bg-[#f8fafc] text-xs font-medium text-[#090e1f] flex items-center justify-between">
-              <span>Tiêu chuẩn an toàn thông tin</span>
-              <ChevronRight size={14} class="text-[#94a3b8]" />
+            <a href={localizeHref('/warranty')} onclick={handleNavClick} class="p-2 rounded hover:bg-[#f8fafc] text-xs font-medium text-[#090e1f] flex items-center justify-between">
+              <span>{m.nav_warranty()}</span>
+              <ChevronRight size={14} class="text-[#94a3b8] shrink-0" />
+            </a>
+            <a href={localizeHref('/security')} onclick={handleNavClick} class="p-2 rounded hover:bg-[#f8fafc] text-xs font-medium text-[#090e1f] flex items-center justify-between">
+              <span>{m.nav_security()}</span>
+              <ChevronRight size={14} class="text-[#94a3b8] shrink-0" />
             </a>
           </div>
         {/if}
@@ -311,25 +309,27 @@
 
     <!-- Right Action CTAs -->
     <div class="hidden sm:flex items-center gap-3">
-      <a 
-        href="tel:0932640968" 
+      <LanguageSwitcher variant="navbar" />
+
+      <a
+        href="tel:0932640968"
         class="grid-ring inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[var(--radius-sm)] font-mono text-xs text-[#090e1f] hover:text-[var(--cb-cobalt-500)] transition-colors bg-[#f8fafc] border border-[#cbd5e1]"
       >
-        <Phone size={13} class="text-[var(--cb-cobalt-600)]" />
+        <Phone size={13} class="text-[var(--cb-cobalt-600)] shrink-0" />
         <span>0932 640 968</span>
       </a>
-      <button 
-        type="button" 
+      <button
+        type="button"
         onclick={onOpenDemo}
         class="btn-cta-primary !h-9 !px-4 text-xs cursor-pointer"
       >
-        Nhận tư vấn ngay
+        {m.nav_get_consultation()}
       </button>
     </div>
 
     <!-- Mobile Hamburger Toggle -->
-    <button 
-      type="button" 
+    <button
+      type="button"
       class="lg:hidden text-[#475569] hover:text-[#090e1f] p-2"
       onclick={toggleMobileMenu}
       aria-label="Toggle navigation menu"
@@ -345,55 +345,58 @@
   <!-- Mobile Drawer Menu -->
   {#if mobileMenuOpen}
     <div class="lg:hidden bg-white border-b border-[#e2e8f0] px-5 py-4 flex flex-col gap-4 shadow-xl {isScrolledPastTop ? 'max-h-[calc(100vh-72px)]' : 'max-h-[calc(100vh-110px)]'} overflow-y-auto">
-      
+
+      <!-- Mobile Language Switcher -->
+      <LanguageSwitcher variant="mobile" />
+
       <div class="flex flex-col gap-1 border-b border-[#f1f5f9] pb-2">
-        <a 
-          href="/#about" 
+        <a
+          href={localizeHref('/#about')}
           onclick={handleNavClick}
           class="py-2 text-[#090e1f] font-semibold text-sm hover:text-[var(--cb-cobalt-600)]"
         >
-          Về CreditBird
+          {m.nav_about()}
         </a>
       </div>
 
       <!-- Section: Software Accordion -->
       <div class="flex flex-col gap-1">
-        <button 
+        <button
           type="button"
           onclick={() => mobileSoftwareOpen = !mobileSoftwareOpen}
           class="flex items-center justify-between text-xs font-mono font-bold uppercase tracking-wider text-[#64748b] py-2 border-b border-[#f1f5f9]"
         >
-          <span>_PHẦN MỀM THEO YÊU CẦU</span>
+          <span>_{m.nav_software_title()}</span>
           <ChevronDown size={14} class="transition-transform duration-200 {mobileSoftwareOpen ? 'rotate-180' : ''}" />
         </button>
 
         {#if mobileSoftwareOpen}
           <div class="flex flex-col gap-1 pt-1.5 pl-2">
-            <a 
-              href="/solutions/software" 
-              onclick={handleNavClick} 
+            <a
+              href={localizeHref('/solutions/software')}
+              onclick={handleNavClick}
               class="py-2 flex items-center gap-2.5 text-[#090e1f] font-medium text-sm hover:text-[var(--cb-cobalt-600)]"
             >
               <Code size={16} class="text-[var(--cb-cobalt-500)] shrink-0" />
-              <span>Phát triển phần mềm may đo</span>
+              <span>{m.nav_custom_software()}</span>
             </a>
-            
-            <a 
-              href="/products/rustsale" 
-              onclick={handleNavClick} 
+
+            <a
+              href={localizeHref('/products/rustsale')}
+              onclick={handleNavClick}
               class="py-2 flex items-center gap-2.5 text-[#090e1f] font-medium text-sm hover:text-[var(--cb-cobalt-600)]"
             >
               <Sparkles size={16} class="text-[var(--cb-cobalt-500)] shrink-0" />
-              <span>RustSale CRM Omnichannel</span>
+              <span>{m.nav_rustsale()}</span>
             </a>
 
-            <a 
-              href="/solutions/it-staffing" 
-              onclick={handleNavClick} 
+            <a
+              href={localizeHref('/solutions/it-staffing')}
+              onclick={handleNavClick}
               class="py-2 flex items-center gap-2.5 text-[#090e1f] font-medium text-sm hover:text-[var(--cb-cobalt-600)]"
             >
               <Users size={16} class="text-[var(--cb-cobalt-500)] shrink-0" />
-              <span>Cho thuê nhân sự IT</span>
+              <span>{m.nav_it_staffing()}</span>
             </a>
           </div>
         {/if}
@@ -401,56 +404,48 @@
 
       <!-- Section: Direct Links -->
       <div class="flex flex-col gap-1 border-b border-[#f1f5f9] pb-2">
-        <a 
-          href="/solutions/erp" 
+        <a
+          href={localizeHref('/solutions/erp')}
           onclick={handleNavClick}
           class="py-2 text-[#090e1f] font-semibold text-sm hover:text-[var(--cb-cobalt-600)] flex items-center gap-2"
         >
-          <Layers size={16} class="text-[var(--cb-cobalt-500)]" />
-          <span>Giải pháp Kelvot ERP</span>
+          <Layers size={16} class="text-[var(--cb-cobalt-500)] shrink-0" />
+          <span>{m.nav_erp()}</span>
         </a>
 
-        <a 
-          href="/solutions/scent-marketing" 
+        <a
+          href={localizeHref('/solutions/scent-marketing')}
           onclick={handleNavClick}
           class="py-2 text-[#090e1f] font-semibold text-sm hover:text-[var(--cb-cobalt-600)] flex items-center gap-2"
         >
-          <Wind size={16} class="text-[var(--cb-cobalt-500)]" />
-          <span>Tinh dầu & máy phun Lemy Finest</span>
-        </a>
-
-        <a 
-          href="/#workflow" 
-          onclick={handleNavClick}
-          class="py-2 text-[#090e1f] font-semibold text-sm hover:text-[var(--cb-cobalt-600)]"
-        >
-          Quy trình làm việc
+          <Wind size={16} class="text-[var(--cb-cobalt-500)] shrink-0" />
+          <span>{m.nav_scent()}</span>
         </a>
       </div>
 
       <!-- Mobile CTAs -->
       <div class="flex flex-col gap-2 pt-2">
-        <button 
-          type="button" 
+        <button
+          type="button"
           onclick={() => { handleNavClick(); onOpenDemo?.(); }}
           class="btn-cta-primary w-full !h-10 text-xs justify-center cursor-pointer"
         >
-          Nhận tư vấn
+          {m.nav_get_consultation()}
         </button>
-        <a 
-          href="tel:0932640968" 
+        <a
+          href="tel:0932640968"
           class="btn-cta-outline w-full !h-10 text-xs justify-center flex items-center gap-2"
         >
-          <Phone size={14} />
+          <Phone size={14} class="shrink-0" />
           <span>Hotline: 0932 640 968</span>
         </a>
 
         <!-- Mobile Social Links -->
         <div class="flex items-center justify-center gap-4 pt-3 border-t border-[#f1f5f9] text-xs font-mono text-[#64748b]">
-          <a 
-            href="https://github.com/creditbird" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href="https://github.com/creditbird"
+            target="_blank"
+            rel="noopener noreferrer"
             class="hover:text-[var(--cb-cobalt-600)] transition-colors inline-flex items-center gap-1.5"
           >
             <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -459,10 +454,10 @@
             <span>GitHub</span>
           </a>
           <span class="text-[#cbd5e1]">•</span>
-          <a 
-            href="https://www.facebook.com/creditbird" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href="https://www.facebook.com/creditbird"
+            target="_blank"
+            rel="noopener noreferrer"
             class="hover:text-[var(--cb-cobalt-600)] transition-colors inline-flex items-center gap-1.5"
           >
             <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">

@@ -1,11 +1,12 @@
 <script lang="ts">
   import { ArrowRight, Phone } from 'lucide-svelte';
+  import * as m from '$lib/paraglide/messages';
 
   let {
-    eyebrow = '_SẴN SÀNG TRIỂN KHAI/',
+    eyebrow = `_${m.cta_badge()}/`,
     title,
     description,
-    primaryText = 'ĐĂNG KÝ BUỔI TƯ VẤN & DEMO 1:1',
+    primaryText = m.cta_btn_contact(),
     primaryAction,
     secondaryText = 'HOTLINE: 0932.640.968',
     secondaryHref = 'tel:0932640968',

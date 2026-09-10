@@ -1,67 +1,69 @@
 <script lang="ts">
   import { Code, Layers, Wind, ArrowRight, ExternalLink, Sparkles } from 'lucide-svelte';
+  import { localizeHref } from '$lib/paraglide/runtime';
+  import * as m from '$lib/paraglide/messages';
 
-  const domains = [
+  const domains = $derived([
     {
       id: 'software',
-      code: '_NHÓM 01 / CÔNG NGHỆ PHẦN MỀM',
-      title: 'Phát triển phần mềm theo yêu cầu & RustSale CRM',
-      desc: 'Thiết kế và lập trình Web, Mobile App, hệ thống quản trị chuyên biệt theo quy trình nghiệp vụ nội bộ của doanh nghiệp. Đi kèm sản phẩm phần mềm độc quyền RustSale CRM hội tụ đa kênh.',
+      code: m.domain_software_code(),
+      title: m.domain_1_title(),
+      desc: m.domain_1_desc(),
       icon: Code,
-      badge: 'PHẦN MỀM MAY ĐO',
+      badge: 'SOFTWARE',
       badgeColor: 'bg-[#edf2ff] text-[var(--cb-cobalt-600)] border-[#c2d2fc]',
       features: [
-        'May đo phần mềm theo quy trình nghiệp vụ riêng, không rập khuôn',
-        'Bàn giao 100% source code sạch, tài liệu kỹ thuật theo hợp đồng',
-        'RustSale CRM: Gom Zalo, WhatsApp, FB Messenger vào 1 màn hình máy tính',
-        'Cung ứng kỹ sư Senior Onsite hoặc Dedicated Squad khi cần bổ sung nhân sự'
+        m.announcement_text(),
+        m.nav_custom_software_desc(),
+        m.nav_rustsale_desc(),
+        m.nav_it_staffing_desc()
       ],
-      primaryLink: '/solutions/software',
-      primaryText: 'Xem dịch vụ phần mềm',
-      secondaryLink: '/products/rustsale',
-      secondaryText: 'Khám phá RustSale CRM'
+      primaryLink: localizeHref('/solutions/software'),
+      primaryText: m.nav_custom_software(),
+      secondaryLink: localizeHref('/products/rustsale'),
+      secondaryText: m.nav_rustsale()
     },
     {
       id: 'erp',
-      code: '_NHÓM 02 / QUẢN TRỊ DOANH NGHIỆP',
-      title: 'Giải pháp quản trị Kelvot ERP cho nhà máy & kho bãi',
-      desc: 'Nền tảng ERP chuyên sâu do CreditBird phát triển và triển khai cho các đơn vị sản xuất, chuỗi cung ứng và doanh nghiệp thương mại để số hóa toàn diện quy trình vận hành.',
+      code: m.domain_erp_code(),
+      title: m.domain_2_title(),
+      desc: m.domain_2_desc(),
       icon: Layers,
       badge: 'KELVOT.COM',
       badgeColor: 'bg-[#f1f5f9] text-[#334155] border-[#cbd5e1]',
       features: [
-        'Định mức nguyên vật liệu BOM đa cấp & hoạch định lệnh sản xuất (MO)',
-        'Quản lý kho WMS Barcode/QR định vị chính xác vị trí ô kệ pallet',
-        'Kế toán quản trị, sổ cái tổng hợp tuân thủ VAS (TT 200/133) và IFRS',
-        'Kiểm soát giá thành sản phẩm và đối soát tồn kho thời gian thực'
+        m.domain_erp_feat_1(),
+        m.domain_erp_feat_2(),
+        m.domain_erp_feat_3(),
+        m.domain_erp_feat_4()
       ],
-      primaryLink: '/solutions/erp',
-      primaryText: 'Xem giải pháp Kelvot ERP',
+      primaryLink: localizeHref('/solutions/erp'),
+      primaryText: m.nav_erp(),
       secondaryLink: 'https://kelvot.com',
-      secondaryText: 'Website Kelvot.com',
+      secondaryText: m.domain_erp_website(),
       isExternal: true
     },
     {
       id: 'scent',
-      code: '_NHÓM 03 / HƯƠNG THƠM DOANH NGHIỆP',
-      title: 'Tinh dầu thiên nhiên & máy phun khuếch tán Lemy Finest',
-      desc: 'CreditBird cung cấp các dòng máy phun khuếch tán hương thơm cùng tinh dầu thiên nhiên có hồ sơ kiểm nghiệm COA/GC-MS theo từng mã sản phẩm qua thương hiệu Lemy Finest.',
+      code: m.domain_scent_code(),
+      title: m.domain_3_title(),
+      desc: m.domain_3_desc(),
       icon: Wind,
       badge: 'LEMYFINEST.COM',
       badgeColor: 'bg-[#f1f5f9] text-[#334155] border-[#cbd5e1]',
       features: [
-        'Máy khuếch tán để bàn cho văn phòng, phòng họp, spa và gia đình',
-        'Hệ thống máy phun công nghiệp kết nối ống gió điều hòa trung tâm HVAC',
-        'Tinh dầu có hồ sơ kiểm định COA và phân tích thành phần theo từng mã',
-        'Chính sách linh hoạt: Mua đứt thiết bị, thuê máy hoặc dịch vụ nạp dầu định kỳ'
+        m.domain_scent_feat_1(),
+        m.domain_scent_feat_2(),
+        m.domain_scent_feat_3(),
+        m.domain_scent_feat_4()
       ],
-      primaryLink: '/solutions/scent-marketing',
-      primaryText: 'Khám phá tinh dầu & máy phun',
+      primaryLink: localizeHref('/solutions/scent-marketing'),
+      primaryText: m.nav_scent(),
       secondaryLink: 'https://www.lemyfinest.com',
-      secondaryText: 'Website LemyFinest.com',
+      secondaryText: m.domain_scent_website(),
       isExternal: true
     }
-  ];
+  ]);
 </script>
 
 <section id="domains" class="relative theme-light bg-white text-[#090e1f] scroll-mt-16">
@@ -72,13 +74,13 @@
       <div class="snap-card free-flow flex flex-col grid-ring bg-white text-[#090e1f] p-1gu sm:p-2gu">
         <div class="flex flex-col gap-3 max-w-40gu">
           <span class="snap-badge badge-sm font-mono uppercase tracking-widest flex h-1gu items-center shrink-0 max-w-full whitespace-nowrap grid-ring px-3 text-[var(--cb-cobalt-600)] bg-[#edf2ff] border border-[#c2d2fc] self-start">
-            _3 LĨNH VỰC HOẠT ĐỘNG CHÍNH/
+            _{m.domains_badge()}/
           </span>
           <h2 class="h3 text-[#090e1f]">
-            Tập trung vào 3 nhu cầu cốt lõi của doanh nghiệp
+            {m.domains_title()}
           </h2>
           <p class="subheading-md text-[#475569]">
-            Mỗi nhóm giải pháp đều có đội ngũ chuyên trách, quy trình thực thi rõ ràng và phương án bàn giao minh bạch.
+            {m.domains_subtitle()}
           </p>
         </div>
       </div>

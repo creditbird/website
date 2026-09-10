@@ -7,19 +7,21 @@
   import BlueprintGridSection from '$lib/components/BlueprintGridSection.svelte';
   import BlueprintSplitShowcase from '$lib/components/BlueprintSplitShowcase.svelte';
   import BlueprintCtaSection from '$lib/components/BlueprintCtaSection.svelte';
-  import { 
-    Sparkles, 
-    Zap, 
-    BookOpen, 
-    MessageSquare, 
-    MapPin, 
-    Users, 
-    FolderTree, 
-    Share2, 
-    Mail, 
-    Kanban, 
-    Award, 
-    KeyRound, 
+  import SeoHead from '$lib/components/SeoHead.svelte';
+  import * as m from '$lib/paraglide/messages';
+  import {
+    Sparkles,
+    Zap,
+    BookOpen,
+    MessageSquare,
+    MapPin,
+    Users,
+    FolderTree,
+    Share2,
+    Mail,
+    Kanban,
+    Award,
+    KeyRound,
     ExternalLink,
     Code
   } from 'lucide-svelte';
@@ -36,198 +38,198 @@
 
   const installCommand = 'curl -fsSL https://rustsale.creditbirdtech.com/install-linux.sh | bash';
 
-  const metrics = [
+  const metrics = $derived([
     {
-      label: 'TỐC ĐỘ XỬ LÝ',
-      value: '< 1 ms',
-      sublabel: 'Microsecond latency do Rust native biên dịch máy',
+      label: m.rs_metric1_label(),
+      value: m.rs_metric1_val(),
+      sublabel: m.rs_metric1_sub(),
       color: '#22439c'
     },
     {
-      label: 'TIÊU THỤ RAM',
-      value: '< 45 MB',
-      sublabel: 'Tiết kiệm 90% RAM so với ứng dụng nền Electron',
+      label: m.rs_metric2_label(),
+      value: m.rs_metric2_val(),
+      sublabel: m.rs_metric2_sub(),
       color: '#10b981'
     },
     {
-      label: 'BẢO MẬT DỮ LIỆU',
-      value: 'Local-First',
-      sublabel: 'Mã hóa SQLite & Keyring cấp hệ điều hành máy tính',
+      label: m.rs_metric3_label(),
+      value: m.rs_metric3_val(),
+      sublabel: m.rs_metric3_sub(),
       color: '#22439c'
     },
     {
-      label: 'PHÂN HỆ TÍCH HỢP',
-      value: '12 Phân hệ',
-      sublabel: 'Từ trích xuất Google Maps đến Hộp thư hội tụ đa kênh',
+      label: m.rs_metric4_label(),
+      value: m.rs_metric4_val(),
+      sublabel: m.rs_metric4_sub(),
       color: '#22439c'
     }
-  ];
+  ]);
 
-  const modules = [
+  const modules = $derived([
     {
       id: '01',
       code: '_DASHBOARD/',
-      title: 'Trung tâm Chỉ huy & Phân tích Pipeline',
+      title: m.rs_mod1_title(),
       icon: Zap,
-      desc: 'Giám sát chỉ số outreach, số lead mới phát sinh, tỷ lệ phản hồi tin nhắn và giá trị phễu chuyển đổi thời gian thực.',
+      desc: m.rs_mod1_desc(),
       tag: 'pipeline analytics'
     },
     {
       id: '02',
       code: '_GOOGLE MAPS SCRAPER/',
-      title: 'Khai thác Khách hàng Địa phương',
+      title: m.rs_mod2_title(),
       icon: MapPin,
-      desc: 'Quét tự động thông tin doanh nghiệp theo khu vực địa lý, trích xuất chính xác số điện thoại, website, địa chỉ kinh doanh.',
+      desc: m.rs_mod2_desc(),
       tag: 'lead generation'
     },
     {
       id: '03',
       code: '_LEADS ENGINE/',
-      title: 'Động cơ Quản lý & Lọc trùng Khách hàng',
+      title: m.rs_mod3_title(),
       icon: Users,
-      desc: 'Phân nhóm khách hàng tiềm năng, khử trùng lặp dữ liệu thông minh, tự động chuẩn hóa định dạng số điện thoại và email.',
+      desc: m.rs_mod3_desc(),
       tag: 'deduplication'
     },
     {
       id: '04',
       code: '_CATEGORIES & TAGS/',
-      title: 'Định danh Đa tầng & Phân khúc Mục tiêu',
+      title: m.rs_mod4_title(),
       icon: FolderTree,
-      desc: 'Hệ thống nhãn dán tùy biến, phân loại khách hàng theo nhóm ngành nghề, quy mô doanh nghiệp và giai đoạn tiếp cận.',
+      desc: m.rs_mod4_desc(),
       tag: 'segmentation'
     },
     {
       id: '05',
       code: '_OMNICHANNEL & AI INBOX/',
-      title: 'Hộp Thư Hội Tụ & AI Smart Reply',
+      title: m.rs_mod5_title(),
       icon: MessageSquare,
-      desc: 'Hợp nhất tin nhắn Zalo, WhatsApp, Facebook Messenger về 1 cửa sổ. Tích hợp AI Agent phân tích ý định và gợi ý câu trả lời chốt sales tức thì.',
+      desc: m.rs_mod5_desc(),
       tag: 'realtime inbox • ai reply'
     },
     {
       id: '06',
       code: '_FACEBOOK HUB/',
-      title: 'Quản trị Tập trung Đa Fanpage',
+      title: m.rs_mod6_title(),
       icon: Share2,
-      desc: 'Kết nối và điều hành nhiều Fanpage Facebook cùng lúc, tự động hóa kịch bản trả lời inbox, bình luận bài viết theo từ khóa.',
+      desc: m.rs_mod6_desc(),
       tag: 'fanpage automation'
     },
     {
       id: '07',
       code: '_AI OUTREACH & AUTOMATION/',
-      title: 'AI Agent Tiếp Cận & Chăm Sóc Đa Kênh',
+      title: m.rs_mod7_title(),
       icon: Sparkles,
-      desc: 'Tự động gửi kết bạn Zalo, phân loại cảm xúc khách hàng và kích hoạt chuỗi nuôi dưỡng thông minh bằng AI Agent chuyên trách.',
+      desc: m.rs_mod7_desc(),
       tag: 'ai outreach • zalo automation'
     },
     {
       id: '08',
       code: '_WHATSAPP MARKETING/',
-      title: 'Chiến dịch Tin nhắn WhatsApp B2B',
+      title: m.rs_mod8_title(),
       icon: Share2,
-      desc: 'Gửi thông báo chăm sóc đơn hàng, cập nhật hợp đồng và chăm sóc khách hàng quốc tế với tỷ lệ mở tin nhắn trên 95%.',
+      desc: m.rs_mod8_desc(),
       tag: 'b2b messaging'
     },
     {
       id: '09',
       code: '_COLD EMAIL ENGINE/',
-      title: 'Chuỗi Email Nuôi dưỡng Khách hàng B2B',
+      title: m.rs_mod9_title(),
       icon: Mail,
-      desc: 'Thiết lập chiến dịch email marketing tự động hóa theo kịch bản, theo dõi tỷ lệ mở email, tỷ lệ click link chi tiết.',
+      desc: m.rs_mod9_desc(),
       tag: 'email drip'
     },
     {
       id: '10',
       code: '_KANBAN PIPELINE/',
-      title: 'Bảng Điều hướng Bán hàng Kéo thả',
+      title: m.rs_mod10_title(),
       icon: Kanban,
-      desc: 'Quản trị quy trình đàm phán trực quan từ Tiềm năng -> Báo giá -> Thương thảo -> Ký HĐ với thao tác kéo thả mượt mà.',
+      desc: m.rs_mod10_desc(),
       tag: 'sales pipeline'
     },
     {
       id: '11',
       code: '_WON CONTACTS/',
-      title: 'Quản trị Khách hàng Chốt Thành công',
+      title: m.rs_mod11_title(),
       icon: Award,
-      desc: 'Lưu trữ hồ sơ khách hàng đã ký hợp đồng, lịch sử giao dịch và kế hoạch chăm sóc gia hạn dịch vụ định kỳ trọn đời.',
+      desc: m.rs_mod11_desc(),
       tag: 'customer retention'
     },
     {
       id: '12',
       code: '_KEYRING VAULT/',
-      title: 'Kho Mật mã Mã hóa Cấp Phần cứng',
+      title: m.rs_mod12_title(),
       icon: KeyRound,
-      desc: 'Toàn bộ API Keys và cơ sở dữ liệu được mã hóa lưu trữ Local-First trên thiết bị người dùng, bảo vệ quyền riêng tư tuyệt đối.',
+      desc: m.rs_mod12_desc(),
       tag: 'hardware keyring'
     }
-  ];
+  ]);
 
-  const omnichannelBullets = [
+  const omnichannelBullets = $derived([
     {
-      title: 'Đồng bộ đa tài khoản Zalo',
-      text: 'Quản lý song song Zalo cá nhân và Zalo Doanh nghiệp (OA) trong một giao diện duy nhất.'
+      title: m.rs_bullet1_title(),
+      text: m.rs_bullet1_text()
     },
     {
-      title: 'AI Agent Chốt đơn & Trợ lý thông minh',
-      text: 'Phân tích hội thoại thời gian thực, tự động gợi ý câu trả lời và kịch bản chốt đơn cá nhân hóa.'
+      title: m.rs_bullet2_title(),
+      text: m.rs_bullet2_text()
     },
     {
-      title: 'WhatsApp Cloud & Web Hub',
-      text: 'Gửi thông báo tự động, chăm sóc khách hàng xuất nhập khẩu và khách quốc tế mượt mà.'
+      title: m.rs_bullet3_title(),
+      text: m.rs_bullet3_text()
     },
     {
-      title: 'Quản trị Facebook Fanpage',
-      text: 'Gom toàn bộ tin nhắn inbox và bình luận đa page về trung tâm chỉ huy.'
+      title: m.rs_bullet4_title(),
+      text: m.rs_bullet4_text()
     },
     {
-      title: 'Kịch bản phản hồi nhanh (Quick Replies)',
-      text: 'Tạo sẵn mẫu tin nhắn chuyên nghiệp theo từng phân khúc ngành nghề cho nhân viên tư vấn.'
+      title: m.rs_bullet5_title(),
+      text: m.rs_bullet5_text()
     }
-  ];
+  ]);
 </script>
 
-<svelte:head>
-  <title>RustSale CRM & Outreach Pro — Growth Operating System All-in-One | CreditBird</title>
-  <meta name="description" content="Phần mềm Desktop CRM Chat Omnichannel (Zalo, WhatsApp, Facebook) viết bằng Rust Native. Xử lý microsecond, bảo mật Local-First, cẩm nang toàn tập trên Notion." />
-</svelte:head>
+<SeoHead
+  title={m.rs_page_title()}
+  description={m.rs_page_desc()}
+/>
 
 <div class="min-h-screen flex flex-col bg-white text-[#090e1f] font-sans selection:bg-[var(--cb-azure-500)]/20 selection:text-[#090e1f]">
-  
+
   <Navbar onOpenDemo={openDemo} />
 
   <main class="flex-1">
-    
+
     <!-- 1. Blueprint Subpage Hero (Cyanotype Cobalt Substrate) -->
     <BlueprintSubpageHero
-      eyebrow="_PROPRIETARY SOFTWARE / RUST NATIVE"
+      eyebrow={m.rs_hero_eyebrow()}
       eyebrowIcon={Sparkles}
-      specBadge="Tauri v2 • Microsecond Latency • Local-First"
-      title="RustSale CRM & Outreach Pro"
-      description="Hệ điều hành tăng trưởng doanh số All-in-One. Hợp nhất Zalo, WhatsApp, Facebook Messenger trên một giao diện Desktop duy nhất. Viết bằng ngôn ngữ Rust thuần túy cho tốc độ phản hồi tính bằng microsecond và độ ổn định tuyệt đối."
-      primaryBtnText="Xem Cẩm nang Toàn tập (Notion)"
+      specBadge={m.rs_hero_spec()}
+      title={m.rs_hero_title()}
+      description={m.rs_hero_desc()}
+      primaryBtnText={m.rs_hero_btn_primary()}
       primaryBtnHref="https://app.notion.com/p/RustSale-CRM-Outreach-Pro-C-m-Nang-S-D-ng-To-n-T-p-3d2344ba47fa8114a415e5618ad83e39"
       primaryBtnIcon={BookOpen}
-      secondaryBtnText="Đăng ký Demo Trải nghiệm"
+      secondaryBtnText={m.rs_hero_btn_secondary()}
       secondaryBtnAction={openDemo}
       terminalCommand={installCommand}
     />
 
     <!-- 2. Blueprint Metrics Ribbon (Crisp Light Hairline Grid) -->
     <BlueprintMetricsBar
-      eyebrow="_HIỆU NĂNG VẬN HÀNH / SYSTEM TELEMETRY"
-      title="Khác biệt vượt trội từ nền tảng công nghệ Rust Native"
+      eyebrow={m.rs_metrics_eyebrow()}
+      title={m.rs_metrics_title()}
       theme="light"
-      {metrics}
+      metrics={metrics}
     />
 
     <!-- 3. 12 Core Modules Grid (Dark Cyanotype Architectural Blueprint) -->
     <BlueprintGridSection
       id="modules"
       theme="dark"
-      eyebrow="_12 PHÂN HỆ CHUYÊN SÂU KHÉP KÍN/"
-      title="Bộ Công Cụ Tăng Trưởng Toàn Diện Cho Sales & Marketing B2B"
-      subheading="Từ quét dữ liệu Google Maps đến quản lý hợp đồng và chăm sóc khách hàng trọn đời."
-      description="RustSale CRM & Outreach Pro được cấu trúc module hóa độc lập, chạy trực tiếp trên nền hệ điều hành (Windows/macOS/Linux) với khả năng mở rộng không giới hạn."
+      eyebrow={m.rs_modules_eyebrow()}
+      title={m.rs_modules_title()}
+      subheading={m.rs_modules_sub()}
+      description={m.rs_modules_desc()}
       columns={3}
       items={modules}
     />
@@ -236,11 +238,11 @@
     <BlueprintSplitShowcase
       id="omnichannel"
       theme="light"
-      eyebrow="_HỘP THƯ HỘI TỤ / OMNICHANNEL INBOX"
-      title="Tất Cả Tin Nhắn Khách Hàng Trên 1 Màn Hình Duy Nhất"
-      description="Không còn tình trạng nhân viên kinh doanh phải chuyển đổi qua lại giữa hàng loạt ứng dụng Zalo, trình duyệt web WhatsApp và Fanpage Facebook gây chậm trễ và sót khách hàng."
+      eyebrow={m.rs_split_eyebrow()}
+      title={m.rs_split_title()}
+      description={m.rs_split_desc()}
       bullets={omnichannelBullets}
-      linkText="Đọc hướng dẫn thiết lập Omnichannel trên Notion"
+      linkText={m.rs_split_link()}
       linkUrl="https://app.notion.com/p/RustSale-CRM-Outreach-Pro-C-m-Nang-S-D-ng-To-n-T-p-3d2344ba47fa8114a415e5618ad83e39"
       external={true}
     >
@@ -260,27 +262,27 @@
         </div>
 
         <div class="space-y-2.5 text-[#cbd5e1]">
-          <p class="text-[#64748b]">// Đồng bộ tin nhắn thời gian thực qua Local WebSocket Rail</p>
+          <p class="text-[#64748b]">{m.rs_sync_note()}</p>
           <div class="p-2.5 bg-[#070d1e] grid-ring flex items-center justify-between">
             <span class="text-[#38bdf8] font-semibold">[Zalo OA] 0932.640.xxx</span>
-            <span class="text-[#94a3b8]">Khách hỏi báo giá phần mềm ERP</span>
+            <span class="text-[#94a3b8]">{m.showcase_tab1_mockup_chat1_preview()}</span>
             <span class="text-[#22c55e] tabular-nums">1s ago</span>
           </div>
           <div class="p-2.5 bg-[#070d1e] grid-ring flex items-center justify-between">
             <span class="text-[#4ade80] font-semibold">[WhatsApp] +84 908.123.xxx</span>
-            <span class="text-[#94a3b8]">Xác nhận lịch demo Onsite thứ Hai</span>
-            <span class="text-[#22c55e] tabular-nums">3s ago</span>
+            <span class="text-[#94a3b8]">{m.showcase_tab1_mockup_chat2_preview()}</span>
+            <span class="text-[#22c55e] tabular-nums">{m.rs_telemetry_time_3s()}</span>
           </div>
           <div class="p-2.5 bg-[#070d1e] grid-ring flex items-center justify-between">
-            <span class="text-[#818cf8] font-semibold">[Facebook] Cty TNHH Cơ Khí</span>
-            <span class="text-[#94a3b8]">Cần thuê 3 Senior Rust Developer</span>
-            <span class="text-[#22c55e] tabular-nums">12s ago</span>
+            <span class="text-[#818cf8] font-semibold">{m.showcase_tab1_mockup_chat3_name()}</span>
+            <span class="text-[#94a3b8]">{m.showcase_tab1_mockup_chat3_preview()}</span>
+            <span class="text-[#22c55e] tabular-nums">{m.rs_telemetry_time_12s()}</span>
           </div>
         </div>
 
         <div class="pt-3 border-t border-[rgba(74,144,226,0.25)] flex items-center justify-between text-[#64748b]">
           <span class="tabular-nums">RAM: 38.4 MB / CPU: 0.2%</span>
-          <span class="text-[#cbd5e1]">Vault: AES-256 GCM Keyring</span>
+          <span class="text-[#cbd5e1]">{m.rs_telemetry_vault()}</span>
         </div>
       </div>
     </BlueprintSplitShowcase>
@@ -292,36 +294,36 @@
           <div class="snap-card free-flow flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 grid-ring bg-[#f8fafc] text-[#090e1f] p-1gu sm:p-2gu">
             <div class="flex flex-col gap-2 max-w-32gu">
               <span class="snap-badge badge-sm font-mono uppercase tracking-widest text-[var(--cb-cobalt-600)] bg-[#edf2ff] border border-[#c2d2fc] px-2.5 py-0.5 w-fit">
-                _HƯỚNG DẪN KỸ THUẬT CHÍNH THỨC/
+                _{m.rs_doc_eyebrow()}/
               </span>
               <h3 class="h4 font-bold text-[#090e1f]">
-                Cẩm Nang Sử Dụng Toàn Tập Trên Notion
+                {m.rs_doc_title()}
               </h3>
               <p class="p-sm text-[#64748b] leading-relaxed">
-                Toàn bộ quy trình cài đặt trên Linux/Windows/macOS, thiết lập khóa bảo mật Keyring, cấu hình Zalo Outreach và kịch bản tin nhắn bán hàng đã được số hóa chi tiết và cập nhật liên tục.
+                {m.rs_doc_desc()}
               </p>
             </div>
 
             <div class="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
-              <a 
-                href="https://app.notion.com/p/RustSale-CRM-Outreach-Pro-C-m-Nang-S-D-ng-To-n-T-p-3d2344ba47fa8114a415e5618ad83e39" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://app.notion.com/p/RustSale-CRM-Outreach-Pro-C-m-Nang-S-D-ng-To-n-T-p-3d2344ba47fa8114a415e5618ad83e39"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="btn-cta-primary !h-10 !px-5 text-xs flex items-center justify-center gap-2 w-full sm:w-auto"
               >
                 <BookOpen size={14} />
-                <span>Mở Notion Cẩm Nang</span>
+                <span>{m.rs_doc_btn_notion()}</span>
                 <ExternalLink size={13} />
               </a>
 
-              <a 
-                href="https://github.com/creditbird" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://github.com/creditbird"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="btn-cta-outline !h-10 !px-5 text-xs flex items-center justify-center gap-2 w-full sm:w-auto text-[#090e1f]"
               >
                 <Code size={14} />
-                <span>GitHub CreditBird</span>
+                <span>{m.rs_doc_btn_github()}</span>
                 <ExternalLink size={13} />
               </a>
             </div>
@@ -332,10 +334,10 @@
 
     <!-- 6. Bottom Blueprint CTA Banner (Dark Cyanotype Cobalt) -->
     <BlueprintCtaSection
-      eyebrow="_SẴN SÀNG TRIỂN KHAI/"
-      title="Trải Nghiệm Sức Mạnh Tốc Độ Microsecond Của RustSale CRM"
-      description="Được phát triển và bảo chứng kỹ thuật bởi CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD (MST: 0315397327). Đội ngũ kỹ sư sẵn sàng hỗ trợ cài đặt và chuyển giao quy trình cho doanh nghiệp của bạn."
-      primaryText="Đăng Ký Buổi Tư Vấn & Demo 1:1"
+      eyebrow={m.rs_cta_eyebrow()}
+      title={m.rs_cta_title()}
+      description={m.rs_cta_desc()}
+      primaryText={m.rs_cta_btn_primary()}
       primaryAction={openDemo}
       secondaryText="Hotline: 0932 640 968"
       secondaryHref="tel:0932640968"

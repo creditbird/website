@@ -1,15 +1,80 @@
 <script lang="ts">
   import { FlaskConical, Sparkles, Activity, FileCheck } from 'lucide-svelte';
+  import { getLocale } from '$lib/paraglide/runtime';
 
   let activeItem = $state<string | null>(null);
 
-  const items = [
-    { id: 'flask', name: 'Bình tam giác Erlenmeyer (250mL)', code: 'BOROSILICATE 3.3 // ISO 4797', desc: 'Bình chứa dung dịch nguyên liệu thực vật gia nhiệt, chịu nhiệt sốc 150°C' },
-    { id: 'condenser', name: 'Ống sinh hàn Liebig làm lạnh', code: 'CW IN 18°C // CW OUT 24°C', desc: 'Hệ thống ngưng tụ hơi tinh dầu hai lớp nước tuần hoàn đối lưu khép kín' },
-    { id: 'separator', name: 'Bộ tách pha Clevenger & Van PTFE', code: 'PHASE: OIL (ρ<1.0) / HYDROSOL', desc: 'Phân tách lớp tinh dầu nhẹ nổi lên trên và nước cất hồi lưu về nồi cất' },
-    { id: 'gcms', name: 'Phổ sắc ký khí GC-MS & Phân tử Terpene', code: 'RT 14.28m // LINALOOL 99.8%', desc: 'Định danh định lượng từng pic hợp chất thơm, kiểm định chuẩn COA quốc tế' },
-    { id: 'nano', name: 'Béc phun sương Nano lạnh', code: 'DROPLET < 0.1 µm // HVAC READY', desc: 'Khuếch tán hạt sương nano siêu mịn lơ lửng, không ngưng tụ bề mặt' }
-  ];
+  const currentLocale = $derived(getLocale());
+
+  const items = $derived(
+    currentLocale === 'vi' ? [
+      { id: 'flask', name: 'Bình tam giác Erlenmeyer (250mL)', code: 'BOROSILICATE 3.3 // ISO 4797', desc: 'Bình chứa dung dịch nguyên liệu thực vật gia nhiệt, chịu nhiệt sốc 150°C' },
+      { id: 'condenser', name: 'Ống sinh hàn Liebig làm lạnh', code: 'CW IN 18°C // CW OUT 24°C', desc: 'Hệ thống ngưng tụ hơi tinh dầu hai lớp nước tuần hoàn đối lưu khép kín' },
+      { id: 'separator', name: 'Bộ tách pha Clevenger & Van PTFE', code: 'PHASE: OIL (ρ<1.0) / HYDROSOL', desc: 'Phân tách lớp tinh dầu nhẹ nổi lên trên và nước cất hồi lưu về nồi cất' },
+      { id: 'gcms', name: 'Phổ sắc ký khí GC-MS & Phân tử Terpene', code: 'RT 14.28m // LINALOOL 99.8%', desc: 'Định danh định lượng từng pic hợp chất thơm, kiểm định chuẩn COA quốc tế' },
+      { id: 'nano', name: 'Béc phun sương Nano lạnh', code: 'DROPLET < 0.1 µm // HVAC READY', desc: 'Khuếch tán hạt sương nano siêu mịn lơ lửng, không ngưng tụ bề mặt' }
+    ] : currentLocale === 'ja' ? [
+      { id: 'flask', name: 'エルレンマイヤーフラスコ (250mL)', code: 'BOROSILICATE 3.3 // ISO 4797', desc: '植物原料加熱用耐熱容器、耐熱衝撃150°C' },
+      { id: 'condenser', name: 'リービッヒ冷却器', code: 'CW IN 18°C // CW OUT 24°C', desc: '向流循環冷却水による密閉型蒸気凝縮カラム' },
+      { id: 'separator', name: 'クレベンジャー油水分離器 & PTFEバルブ', code: 'PHASE: OIL (ρ<1.0) / HYDROSOL', desc: '比重差による精油層の分離と芳香蒸留水の自動還流' },
+      { id: 'gcms', name: 'GC-MSガスクロマトグラフィー分析', code: 'RT 14.28m // LINALOOL 99.8%', desc: '国際COA基準に準拠した芳香成分の定性・定量分析' },
+      { id: 'nano', name: 'コールドベンチュリナノ微粒子ノズル', code: 'DROPLET < 0.1 µm // HVAC READY', desc: '気中に浮遊し表面に結露しないサブミクロン微粒子拡散' }
+    ] : currentLocale === 'zh' ? [
+      { id: 'flask', name: '具塞锥形瓶 (250mL)', code: 'BOROSILICATE 3.3 // ISO 4797', desc: '植物萃取原料加热容器，耐受150°C热冲击' },
+      { id: 'condenser', name: '李比希直形冷凝管', code: 'CW IN 18°C // CW OUT 24°C', desc: '闭环逆流循环冷却水精油蒸气冷凝装置' },
+      { id: 'separator', name: '克氏提取分离器 & PTFE聚四氟阀', code: 'PHASE: OIL (ρ<1.0) / HYDROSOL', desc: '油水重力相分离，纯露芳香水回流循环' },
+      { id: 'gcms', name: 'GC-MS气相色谱质谱联用仪', code: 'RT 14.28m // LINALOOL 99.8%', desc: '符合国际COA标准的芳香分子定性定量检测' },
+      { id: 'nano', name: '冷气文丘里超微米雾化喷嘴', code: 'DROPLET < 0.1 µm // HVAC READY', desc: '超微米干雾悬浮扩散，不产生表面沉淀' }
+    ] : currentLocale === 'ko' ? [
+      { id: 'flask', name: '삼각 플라스크 (250mL)', code: 'BOROSILICATE 3.3 // ISO 4797', desc: '식물 원료 가열용 내열 용기, 150°C 열충격 내성' },
+      { id: 'condenser', name: '리비히 냉각기 (Liebig)', code: 'CW IN 18°C // CW OUT 24°C', desc: '밀폐 순환 냉각수를 이용한 2중관 증기 응축 장치' },
+      { id: 'separator', name: '클레벤저 유수 분리기 & PTFE 밸브', code: 'PHASE: OIL (ρ<1.0) / HYDROSOL', desc: '비중차를 이용한 에센셜 오일 분리 및 증류수 자동 환류' },
+      { id: 'gcms', name: 'GC-MS 가스 크로마토그래피 질량분석', code: 'RT 14.28m // LINALOOL 99.8%', desc: '국제 COA 기준에 부합하는 방향족 분자 정성·정량 분석' },
+      { id: 'nano', name: '콜드 벤투리 나노 미세 노즐', code: 'DROPLET < 0.1 µm // HVAC READY', desc: '공기 중에 잔여물 없이 부유하는 서브마이크론 건식 미스트 분사' }
+    ] : currentLocale === 'es' ? [
+      { id: 'flask', name: 'Matraz Erlenmeyer (250 mL)', code: 'BOROSILICATE 3.3 // ISO 4797', desc: 'Recipiente de calentamiento botánico con tolerancia a choque térmico de 150 °C' },
+      { id: 'condenser', name: 'Condensador Liebig con refrigeración', code: 'CW IN 18°C // CW OUT 24°C', desc: 'Columna de condensación de vapor por circuito cerrado de agua a contracorriente' },
+      { id: 'separator', name: 'Separador Clevenger y válvula de PTFE', code: 'PHASE: OIL (ρ<1.0) / HYDROSOL', desc: 'Separación gravimétrica de fase de aceite esencial y reflujo automático de hidrolato' },
+      { id: 'gcms', name: 'Espectrometría de masas GC-MS Agilent', code: 'RT 14.28m // LINALOOL 99.8%', desc: 'Identificación cuantitativa de picos aromáticos conforme a normas internacionales COA' },
+      { id: 'nano', name: 'Boquilla atomizadora nano Venturi en frío', code: 'DROPLET < 0.1 µm // HVAC READY', desc: 'Difusión en aerosol submicrónico suspendido en el aire sin residuos superficiales' }
+    ] : currentLocale === 'fr' ? [
+      { id: 'flask', name: "Fiole Erlenmeyer (250 mL)", code: "BOROSILICATE 3.3 // ISO 4797", desc: "Récipient de chauffage de matière végétale résistant aux chocs thermiques de 150 °C" },
+      { id: 'condenser', name: "Réfrigérant droit de Liebig", code: "CW IN 18°C // CW OUT 24°C", desc: "Colonne de condensation de vapeur à circulation d'eau à contre-courant en boucle fermée" },
+      { id: 'separator', name: "Séparateur de Clevenger & vanne PTFE", code: "PHASE: OIL (ρ<1.0) / HYDROSOL", desc: "Séparation gravimétrique des phases d'huile essentielle et reflux automatique de l'hydrolat" },
+      { id: 'gcms', name: "Spectrométrie de masse GC-MS Agilent", code: "RT 14.28m // LINALOOL 99.8%", desc: "Identification et quantification moléculaire conforme aux normes internationales COA" },
+      { id: 'nano', name: "Buse de brumisation nano Venturi à froid", code: "DROPLET < 0.1 µm // HVAC READY", desc: "Diffusion en aérosol submicronique restant en suspension dans l'air sans dépôt" }
+    ] : currentLocale === 'th' ? [
+      { id: 'flask', name: 'ขวดรูปชมพู่เออร์เลนเมเยอร์ (250 mL)', code: 'BOROSILICATE 3.3 // ISO 4797', desc: 'ภาชนะต้มสกัดวัตถุดิบพืช ทนการเปลี่ยนแปลงอุณหภูมิเฉียบพลัน 150°C' },
+      { id: 'condenser', name: 'ท่อควบแน่นลีบิก (Liebig Condenser)', code: 'CW IN 18°C // CW OUT 24°C', desc: 'ระบบหล่อเย็นควบแน่นไอระเหยน้ำมันหอมระเหยแบบวนลูปปิด' },
+      { id: 'separator', name: 'อุปกรณ์แยกน้ำมันหอมระเหย Clevenger & วาล์ว PTFE', code: 'PHASE: OIL (ρ<1.0) / HYDROSOL', desc: 'แยกชั้นน้ำมันหอมระเหยด้วยแรงโน้มถ่วงและหมุนเวียนน้ำกลั่นกลับสู่หม้อต้ม' },
+      { id: 'gcms', name: 'เครื่องแก๊สโครมาโทกราฟี-แมสสเปกโทรเมตรี GC-MS', code: 'RT 14.28m // LINALOOL 99.8%', desc: 'ระบุอัตลักษณ์โมเลกุลสารหอมอย่างแม่นยำตามมาตรฐาน COA สากล' },
+      { id: 'nano', name: 'หัวพ่นละอองแห้งนาโนเวนทูรีแบบเย็น', code: 'DROPLET < 0.1 µm // HVAC READY', desc: 'กระจายอนุภาคระดับไมครอนลอยตัวในอากาศ ไม่ทิ้งคราบชื้นบนพื้นผิว' }
+    ] : currentLocale === 'lo' ? [
+      { id: 'flask', name: 'ກວຍແກ້ວ Erlenmeyer (250mL)', code: 'BOROSILICATE 3.3 // ISO 4797', desc: 'ພາຊະນະຕົ້ມສະກັດວັດຖຸດິບພືດ ທົນຄວາມຮ້ອນສູງ 150°C' },
+      { id: 'condenser', name: 'ທໍ່ຄວບແໜ້ນ Liebig ລະບາຍຄວາມເຢັນ', code: 'CW IN 18°C // CW OUT 24°C', desc: 'ລະບົບນ້ຳຫຼໍ່ເຢັນຄວບແໜ້ນອາຍລະເຫີຍນ້ຳມັນຫອມລະເຫີຍແບບວົງຈອນປິດ' },
+      { id: 'separator', name: 'ອຸປະກອນແຍກ Clevenger & ວາວ PTFE', code: 'PHASE: OIL (ρ<1.0) / HYDROSOL', desc: 'ແຍກຊັ້ນນ້ຳມັນຫອມລະເຫີຍດ້ວຍແຮງໂນ້ມຖ່ວງ ແລະ ໝູນວຽນນ້ຳກັ່ນກັບຄືນ' },
+      { id: 'gcms', name: 'ເຄື່ອງວິເຄາະໂຄຣມາໂຕກຣາຟີ GC-MS', code: 'RT 14.28m // LINALOOL 99.8%', desc: 'ກວດສອບໂຄງສ້າງໂມເລກຸນກິ່ນຫອມຢ່າງຖືກຕ້ອງຕາມມາດຕະຖານ COA ສາກົນ' },
+      { id: 'nano', name: 'ຫົວພົ່ນລະອອງລະອຽດ Nano Venturi ແບບເຢັນ', code: 'DROPLET < 0.1 µm // HVAC READY', desc: 'ກະຈາຍອະນຸພາກລະດັບໄມຄຣອນລອຍຕົວໃນອາກາດ ບໍ່ເຮັດໃຫ້ພື້ນຜິວປຽກຊຸ່ມ' }
+    ] : currentLocale === 'ms' ? [
+      { id: 'flask', name: 'Kelalang Kon Erlenmeyer (250mL)', code: 'BOROSILICATE 3.3 // ISO 4797', desc: 'Bekas pemanasan ekstrak botani dengan rintangan kejutan terma 150°C' },
+      { id: 'condenser', name: 'Kondenser Liebig Penyejuk Air', code: 'CW IN 18°C // CW OUT 24°C', desc: 'Turus pemeluwapan wap minyak pati menggunakan kitaran air penyejuk aliran berlawanan' },
+      { id: 'separator', name: 'Pemisah Fasa Clevenger & Injap PTFE', code: 'PHASE: OIL (ρ<1.0) / HYDROSOL', desc: 'Pemisahan graviti fasa minyak pati dan kitaran refluks hidrosol automatik ke dandang' },
+      { id: 'gcms', name: 'Kromatografi Gas-Spektrometri Jisim GC-MS', code: 'RT 14.28m // LINALOOL 99.8%', desc: 'Pengenalpastian molekul aromatik secara kuantitatif mematuhi piawaian antarabangsa COA' },
+      { id: 'nano', name: 'Muncung Pengabusan Nano Venturi Sejuk', code: 'DROPLET < 0.1 µm // HVAC READY', desc: 'Penyebaran aerosol sub-mikron terapung di udara tanpa mendapan sisa basah' }
+    ] : currentLocale === 'hi' ? [
+      { id: 'flask', name: 'शंक्वाकार अर्लेनमेयर फ्लास्क (250mL)', code: 'BOROSILICATE 3.3 // ISO 4797', desc: '150°C थर्मल शॉक सहनशीलता के साथ वनस्पति आसवन पात्र' },
+      { id: 'condenser', name: 'लीबिग वाटर कंडेनसर (शीतलक)', code: 'CW IN 18°C // CW OUT 24°C', desc: 'बंद-लूप वाष्प संघनन प्रणाली द्वारा आवश्यक तेल का संघनन' },
+      { id: 'separator', name: 'क्लेवेंजर विभाजक और पीटीएफई वाल्व', code: 'PHASE: OIL (ρ<1.0) / HYDROSOL', desc: 'गुरुत्वाकर्षण आधारित तेल-जल पृथक्करण और हाइड्रोसोल पुनर्चक्रण' },
+      { id: 'gcms', name: 'जीसी-एमएस गैस क्रोमैटोग्राफी विश्लेषण', code: 'RT 14.28m // LINALOOL 99.8%', desc: 'अंतरराष्ट्रीय सीओए मानकों के अनुसार सुगंधित अणुओं की मात्रात्मक पहचान' },
+      { id: 'nano', name: 'कोल्ड वेंचुरी नैनो एटमाइज़र नोजल', code: 'DROPLET < 0.1 µm // HVAC READY', desc: 'हवा में निलंबित रहने वाला सब-माइक्रोन एरोसोल फैलाव बिना किसी सतह अवशेष के' }
+    ] : [
+      { id: 'flask', name: 'Erlenmeyer Flask (250mL)', code: 'BOROSILICATE 3.3 // ISO 4797', desc: 'Botanical slurry heating vessel with 150°C thermal shock tolerance' },
+      { id: 'condenser', name: 'Liebig Water Condenser', code: 'CW IN 18°C // CW OUT 24°C', desc: 'Closed-loop counter-current cooling water vapor condensation column' },
+      { id: 'separator', name: 'Clevenger Separator & PTFE Valve', code: 'PHASE: OIL (ρ<1.0) / HYDROSOL', desc: 'Gravitational phase separation with closed hydrosol reflux to still' },
+      { id: 'gcms', name: 'GC-MS Gas Chromatography & Terpene Profiling', code: 'RT 14.28m // LINALOOL 99.8%', desc: 'Quantitative compound identification conforming to international COA standards' },
+      { id: 'nano', name: 'Cold Venturi Nano Atomizer', code: 'DROPLET < 0.1 µm // HVAC READY', desc: 'Sub-micron aerosol diffusion suspended in air without surface residue' }
+    ]
+  );
 </script>
 
 <div class="flex flex-col w-full h-full select-none">

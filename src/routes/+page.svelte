@@ -9,6 +9,7 @@
   import CtaBanner from '$lib/components/CtaBanner.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import DemoModal from '$lib/components/DemoModal.svelte';
+  import SeoHead from '$lib/components/SeoHead.svelte';
 
   let isDemoOpen = $state(false);
 
@@ -21,8 +22,10 @@
   }
 </script>
 
+<SeoHead />
+
 <div class="min-h-screen flex flex-col bg-white text-[#090e1f] font-sans selection:bg-[var(--cb-azure-500)]/20 selection:text-[#090e1f]">
-  
+
   <!-- Navigation Header & Announcement Bar -->
   <Navbar onOpenDemo={openDemo} />
 
