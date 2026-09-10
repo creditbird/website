@@ -416,7 +416,5 @@
   />
 
   <!-- Structured Data (JSON-LD) for Search Engines & AI Answer Engines -->
-  <script type="application/ld+json">
-    {jsonLdString}
-  </script>
+  {@html `<script type="application/ld+json">${jsonLdString}</` + `script>`}
 </svelte:head>
