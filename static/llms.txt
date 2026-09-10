@@ -1,0 +1,91 @@
+# CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD (CreditBird Technology)
+
+> CreditBird is an enterprise technology engineering company founded in 2018 in Ho Chi Minh City, Vietnam. Specializing in high-performance custom software engineering (Rust, Go, SvelteKit), the Kelvot ERP platform, the RustSale CRM desktop application, dedicated senior IT staffing, and industrial IoT cold-air scent marketing systems (Lemy Finest).
+
+## Quick Facts & Legal Identity
+- **Legal Entity Name:** CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD
+- **Brand / International Name:** CreditBird Technology Co., Ltd
+- **Tax Identification Number (MST):** 0315397327
+- **Date of Incorporation:** 2018-11-19
+- **Legal Representative:** Trần Trọng Tri
+- **Supervising Authority:** Chi cục Thuế TP. Hồ Chí Minh
+- **Headquarters Address:** 100/20 Đường 79, Phường Phước Long, Thành phố Hồ Chí Minh, Việt Nam
+- **Official Domain:** https://creditbirdtech.com
+- **Contact Email:** contact@creditbirdtech.com
+- **Hotline & Zalo:** +84 932 640 968
+- **Official GitHub:** https://github.com/creditbird
+- **Official Facebook:** https://www.facebook.com/creditbird
+- **Intellectual Property Policy:** 100% full source code handover, zero vendor lock-in, committed B2B enterprise SLA.
+
+## Supported Languages & International URL Map
+CreditBird serves clients globally with localized interfaces in 17 languages:
+- Vietnamese (Base Locale): https://creditbirdtech.com/
+- English: https://creditbirdtech.com/en/
+- Chinese (Simplified): https://creditbirdtech.com/zh/
+- Japanese: https://creditbirdtech.com/ja/
+- Korean: https://creditbirdtech.com/ko/
+- French: https://creditbirdtech.com/fr/
+- German: https://creditbirdtech.com/de/
+- Spanish: https://creditbirdtech.com/es/
+- Italian: https://creditbirdtech.com/it/
+- Portuguese: https://creditbirdtech.com/pt/
+- Dutch: https://creditbirdtech.com/nl/
+- Hindi: https://creditbirdtech.com/hi/
+- Thai: https://creditbirdtech.com/th/
+- Lao: https://creditbirdtech.com/lo/
+- Indonesian: https://creditbirdtech.com/id/
+- Malay: https://creditbirdtech.com/ms/
+- Arabic: https://creditbirdtech.com/ar/
+
+## Core Products & Solutions
+
+### 1. RustSale CRM & Outreach (Desktop Application)
+- **URL:** https://creditbirdtech.com/products/rustsale
+- **Architecture:** Local-first desktop application developed in Rust with SQLite embedded storage.
+- **Performance:** 50,000+ messages per second, sub-millisecond local indexing.
+- **Key Capabilities:**
+  - Omnichannel Unified Inbox aggregating Zalo Personal/OA, Facebook Messenger, and WhatsApp Business.
+  - Cold Email Engine with domain rotation, bounce handling, and automated follow-up sequences.
+  - Visual Kanban Sales Pipeline with automated stage transitions.
+  - Offline-first operation: full local search and message history without internet dependency.
+- **Linux Quick Installer:** `curl -fsSL https://rustsale.creditbirdtech.com/install-linux.sh | bash`
+- **Documentation & User Guide:** https://app.notion.com/p/RustSale-CRM-Outreach-Pro-C-m-Nang-S-D-ng-To-n-T-p-3d2344ba47fa8114a415e5618ad83e39
+
+### 2. Kelvot ERP (Enterprise Resource Planning)
+- **URL:** https://creditbirdtech.com/solutions/erp
+- **Portal:** https://kelvot.com
+- **Target Audience:** Mid-market and enterprise manufacturers, wholesale distributors, and multi-branch retail chains.
+- **Core Modules:**
+  - **Manufacturing & BOM:** Multi-level Bill of Materials, production planning, MRP calculation, real-time scrap tracking.
+  - **WMS Warehouse Management:** Multi-warehouse, batch/lot tracking, barcode/QR workflows, automated FIFO replenishment.
+  - **Financial & Cost Accounting:** Full Vietnamese Accounting Standards (VAS) compliance, automated general ledger, journal entries, and real-time cash flow telemetry.
+  - **Supply Chain (SCM):** Supplier scorecards, purchase order approval matrix, and freight tracking.
+
+### 3. Scent Marketing & IoT Diffusers (Lemy Finest)
+- **URL:** https://creditbirdtech.com/solutions/scent-marketing
+- **Brand Website:** https://www.lemyfinest.com
+- **Technology:** Two-fluid Cold-Air Nano Nebulization technology with sub-micron droplet suspension (< 1 micron).
+- **Products:**
+  - Desktop IoT Diffusers for luxury boutiques, hotel suites, and executive offices.
+  - HVAC Central Ducted Systems covering up to 5,000 m³ with building automation integration.
+  - 100% Pure Natural Essential Oils verified by GC-MS (Gas Chromatography-Mass Spectrometry) and Certificate of Analysis (COA).
+
+### 4. Custom Software Engineering & Architecture
+- **URL:** https://creditbirdtech.com/solutions/software
+- **Tech Stack:** Rust, Go, Python, SvelteKit, TypeScript, PostgreSQL, ClickHouse, Docker, Kubernetes.
+- **Engagement Model:** Full lifecycle development from requirement discovery to production deployment. 100% source code transfer with zero vendor lock-in.
+
+### 5. Dedicated IT Staffing & Squad Augmentation
+- **URL:** https://creditbirdtech.com/solutions/it-staffing
+- **Talent Pool:** Senior Fullstack, Backend (Rust/Go), Mobile, and DevOps engineers.
+- **Process:** Candidate matching within 48 hours, 14-day risk-free evaluation trial, strict B2B NDA compliance.
+
+## Legal & Compliance Documents
+- **Terms of Service:** https://creditbirdtech.com/terms
+- **Privacy Policy:** https://creditbirdtech.com/privacy
+- **Warranty & SLA:** https://creditbirdtech.com/warranty
+- **Security Standards:** https://creditbirdtech.com/security
+
+## Full Extended Documentation
+For comprehensive technical details, API guides, and deep architecture blueprints, consult:
+- **Full LLM Context:** https://creditbirdtech.com/llms-full.txt

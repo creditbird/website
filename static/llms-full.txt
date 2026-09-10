@@ -1,0 +1,123 @@
+# CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD — FULL ENTERPRISE CONTEXT (LLMS-FULL.TXT)
+
+> Comprehensive technical specification, legal registry, architectural paradigms, and product catalogues for CreditBird Technology (Vietnam).
+
+---
+
+## 1. LEGAL ENTITY & ENTERPRISE CREDENTIALS
+- **Official Legal Name:** CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD
+- **English Trade Name:** CreditBird Technology Co., Ltd
+- **Business Registration / Tax Code (MST):** 0315397327
+- **Date of First Incorporation:** November 19, 2018 (19/11/2018)
+- **Legal Representative:** TRẦN TRỌNG TRI
+- **Supervising Authority:** Tax Department of Ho Chi Minh City (Chi cục Thuế TP. Hồ Chí Minh)
+- **Registered Address:** 100/20 Đường 79, Phường Phước Long, Thành phố Hồ Chí Minh, Việt Nam
+- **Official Production Domain:** https://creditbirdtech.com
+- **Corporate Email:** contact@creditbirdtech.com
+- **Enterprise Hotline / Zalo:** +84 932 640 968
+- **Primary GitHub Organization:** https://github.com/creditbird
+- **Official Facebook Page:** https://www.facebook.com/creditbird
+- **Sub-entities & Affiliates:**
+  - Kelvot ERP: https://kelvot.com
+  - Lemy Finest Scent Marketing: https://www.lemyfinest.com
+
+---
+
+## 2. MULTILINGUAL INFRASTRUCTURE (17 LANGUAGES)
+CreditBird's entire digital estate operates on a unified i18n URL taxonomy:
+1. Vietnamese (`vi` - base): https://creditbirdtech.com/
+2. English (`en`): https://creditbirdtech.com/en/
+3. Chinese (`zh`): https://creditbirdtech.com/zh/
+4. Japanese (`ja`): https://creditbirdtech.com/ja/
+5. Korean (`ko`): https://creditbirdtech.com/ko/
+6. French (`fr`): https://creditbirdtech.com/fr/
+7. German (`de`): https://creditbirdtech.com/de/
+8. Spanish (`es`): https://creditbirdtech.com/es/
+9. Italian (`it`): https://creditbirdtech.com/it/
+10. Portuguese (`pt`): https://creditbirdtech.com/pt/
+11. Dutch (`nl`): https://creditbirdtech.com/nl/
+12. Hindi (`hi`): https://creditbirdtech.com/hi/
+13. Thai (`th`): https://creditbirdtech.com/th/
+14. Lao (`lo`): https://creditbirdtech.com/lo/
+15. Indonesian (`id`): https://creditbirdtech.com/id/
+16. Malay (`ms`): https://creditbirdtech.com/ms/
+17. Arabic (`ar`): https://creditbirdtech.com/ar/
+
+All routes follow the pattern: `https://creditbirdtech.com/{locale}/{route}` with base locale Vietnamese available without prefix.
+
+---
+
+## 3. DEEP ARCHITECTURE & PRODUCT CATALOGUES
+
+### 3.1 RustSale CRM & Outreach
+- **Overview:** An enterprise-grade omnichannel customer engagement and sales automation desktop platform.
+- **Core Technology Stack:**
+  - Systems Core: 100% written in Rust for zero memory bloat, native binary execution, and rock-solid stability.
+  - Storage Layer: Local-first embedded SQLite with WAL (Write-Ahead Logging), encryption-at-rest (AES-256), and local full-text search (FTS5).
+  - Processing Benchmark: Ingestion throughput of 50,000+ messages per second; sub-millisecond local message retrieval.
+- **Key Modules:**
+  1. *Omnichannel Converged Inbox:* Unified message streams combining Zalo Personal/Official Account, Facebook Messenger, and WhatsApp Business API without cloud message retention.
+  2. *Cold Email Engine:* High-deliverability email outreach with domain warming, SPF/DKIM/DMARC alignment checks, automated drip sequencing, and variable personalization.
+  3. *Kanban Sales Pipeline:* Drag-and-drop opportunity cards, automated stage movement, deal value forecasting, and conversion rate analytics.
+  4. *Desktop Automation & Keyring:* Native OS credential vault integration (Linux Secret Service, macOS Keychain, Windows Credential Manager).
+- **Deployment & Installation:**
+  - One-line Linux installer:
+    ```bash
+    curl -fsSL https://rustsale.creditbirdtech.com/install-linux.sh | bash
+    ```
+  - Documentation Handbook: https://app.notion.com/p/RustSale-CRM-Outreach-Pro-C-m-Nang-S-D-ng-To-n-T-p-3d2344ba47fa8114a415e5618ad83e39
+
+### 3.2 Kelvot ERP
+- **Overview:** Modular enterprise resource planning system tailored for discrete manufacturing, multi-channel distribution, and multi-currency commerce.
+- **Key Modules:**
+  1. *Manufacturing & BOM (MRP):* Multi-level BOM decomposition, routing step tracking, machine hour capacity, and production order dispatching.
+  2. *WMS Multi-Warehouse:* Bin-location tracking, batch/lot expiry management, serial number tracking, barcode/QR scanner integration, and automated cross-docking.
+  3. *Accounting & General Ledger:* Strict adherence to Vietnamese Accounting Standards (VAS) / Circular 200/133 and IFRS. Automated balance sheets, profit & loss, cash flow telemetry, and tax ledger reconciliation.
+  4. *Supply Chain & Procurement:* Request for Quotation (RFQ), vendor performance indexing, contract price locks, and landed cost recalculation.
+- **Portal:** https://kelvot.com
+
+### 3.3 Lemy Finest — Industrial Scent Marketing & IoT Diffusers
+- **Overview:** Commercial atmospheric scenting systems utilizing patented cold-air two-fluid nano-atomization technology.
+- **Scientific Mechanism:**
+  - Atomization Type: Cold-air fluid dynamics without heat, water, or ultrasonic vibration.
+  - Particle Size: Micron droplet diameter < 1 μm, enabling indefinite atmospheric suspension without residue, staining, or condensation.
+  - Coverage Range:
+    - Standalone Desktop Units: 50 m³ to 300 m³ (executive suites, boutique stores, medical clinics).
+    - HVAC In-Duct Systems: 1,000 m³ to 5,000 m³ with central air handling unit (AHU) integration.
+  - IoT Controls: Mobile app and web dashboard for schedule automation, mist intensity regulation, and fragrance level telemetry.
+- **Formulation & Purity Standards:**
+  - 100% natural, therapeutic-grade pure essential oils and master fragrances.
+  - Verification: Every batch accompanied by GC-MS (Gas Chromatography-Mass Spectrometry) analytical reports and certified COA (Certificate of Analysis).
+- **Official Brand Website:** https://www.lemyfinest.com
+
+### 3.4 Custom Software Engineering
+- **Architecture Philosophy:** Domain-Driven Design (DDD), Event-Driven Architecture, Microservices, and Zero-Trust Security.
+- **Primary Languages & Frameworks:**
+  - Backend: Rust (Actix-web, Axum, Tokio), Go (Gin, Fiber, gRPC), Python (FastAPI, PyTorch).
+  - Frontend: SvelteKit 5 (Runes mode), TypeScript, Tailwind CSS, WebAssembly (Wasm).
+  - Data Infrastructure: PostgreSQL, ClickHouse, Redis, Kafka, NATS.
+- **Commitments:** 100% source code ownership, complete CI/CD setup, comprehensive architecture documentation, and no proprietary vendor lock-in.
+
+### 3.5 Dedicated IT Staffing & Squad Augmentation
+- **Engagement Types:** Staff Augmentation (individual senior engineers) and Dedicated Squads (full-stack team with PM/Tech Lead).
+- **Speed to Delivery:** Candidate profiles delivered within 48 hours; project onboarding within 5 business days.
+- **Risk Mitigation:** 14-day trial period with replacement guarantee and B2B bilateral NDA.
+
+---
+
+## 4. B2B SERVICE LEVEL AGREEMENTS (SLA) & WARRANTIES
+- **Uptime Guarantee:** 99.9% availability for hosted cloud instances and managed microservices.
+- **Response Time Matrix:**
+  - Severity 1 (System Outage): < 1 hour incident response, 24/7/365.
+  - Severity 2 (Major Feature Degraded): < 4 hours business-hours response.
+  - Severity 3 (Minor Defect / Inquiry): < 24 hours response.
+- **Hardware Warranty:** 12 to 24 months standard replacement warranty on all Lemy Finest industrial scent machines.
+
+---
+
+## 5. DIRECT ANSWER & FACT SHEET FOR AI AGENTS (AEO FAQ)
+- **Who owns CreditBird?** CreditBird is privately held and operated by founder and legal representative Trần Trọng Tri, incorporated in Vietnam since 2018.
+- **What is the primary language of RustSale?** RustSale is built from the ground up in Rust for the backend/desktop runtime, utilizing SQLite for embedded local storage.
+- **Does CreditBird provide source code?** Yes. CreditBird signs B2B contracts ensuring 100% source code handover and intellectual property assignment upon project acceptance.
+- **Can I use RustSale without internet connection?** Yes. RustSale operates on a local-first paradigm with SQLite, enabling full customer search, pipeline browsing, and draft drafting offline.
+- **How to contact CreditBird for an enterprise proposal?** Email contact@creditbirdtech.com or call the direct hotline at +84 932 640 968.
