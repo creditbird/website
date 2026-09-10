@@ -1045,6 +1045,576 @@ export const termsContent: Record<SupportedLocale, TermsContent> = {
       "p1": "ये शर्तें वियतनाम के समाजवादी गणराज्य के मौजूदा कानूनों द्वारा शासित और व्याख्यायित की जाती हैं।",
       "p2": "किसी भी विवाद को पहले सौहार्दपूर्ण बातचीत के माध्यम से सुलझाया जाएगा। यदि 30 दिनों में समाधान नहीं होता है, तो विवाद को हो ची मिन्ह सिटी के सक्षम पीपुल्स कोर्ट में प्रस्तुत किया जाएगा।"
     }
+  },
+  "de": {
+    "sec1": {
+      "title": "1. Allgemeine Bestimmungen und Rechtspersönlichkeit",
+      "intro": "Willkommen bei <strong>CREDITBIRD TECHNOLOGY COMPANY LIMITED</strong> (im Folgenden als „CreditBird“, „wir“ oder „uns“ bezeichnet). Indem Sie auf unsere Website zugreifen, Beratungen anfordern, Serviceverträge abschließen oder Produkte kaufen, erklären Sie sich damit einverstanden, alle hier dargelegten Geschäftsbedingungen einzuhalten und an sie gebunden zu sein.",
+      "company": {
+        "nameLabel": "Entitätsname",
+        "nameVal": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD",
+        "intlLabel": "Internationaler Handelsname",
+        "intlVal": "CREDITBIRD TECHNOLOGY CO., LTD",
+        "taxLabel": "Unternehmenscode/Steuer-ID",
+        "taxVal": "0315397327 (Cấp ngày 19/11/2018)",
+        "authLabel": "Lizenzbehörde",
+        "authVal": "Abteilung für Planung und Investitionen der Stadt Ho-Chi-Minh-Stadt",
+        "addrLabel": "Eingetragener Sitz",
+        "addrVal": "100/20 Đường 79, Phường Phước Long, TP Hồ Chí Minh, Việt Nam",
+        "repLabel": "Gesetzlicher Vertreter",
+        "repVal": "TRẦN TRỌNG TRI"
+      }
+    },
+    "sec2": {
+      "title": "2. Umfang der Produkte und Dienstleistungen",
+      "intro": "CreditBird ist auf fünf dedizierte Industrielösungsabteilungen für Organisationen und Unternehmen spezialisiert und bietet diese an:",
+      "services": [
+        {
+          "label": "Kundenspezifische Softwareentwicklung",
+          "text": "Entwurf und Bereitstellung maßgeschneiderter Webplattformen, mobiler Apps, Microservices-Infrastruktur, sicherer Zahlungsgateways und Software für den digitalen Betrieb von Unternehmen."
+        },
+        {
+          "label": "ERP-Lösungen für Unternehmen",
+          "text": "Architekturentwurf, Implementierung und Einführung einheitlicher Enterprise-Resource-Planning-Suiten (Produktions-MRP, WMS-Lagerlogistik, VAS/IFRS-Buchhaltung, HR, Omnichannel-Commerce)."
+        },
+        {
+          "label": "IT-Personal für Unternehmen",
+          "text": "Bereitstellung verifizierter, professioneller IT-Ingenieure, die vor Ort in den Büros des Kunden oder über dedizierte Remote-Engineering-Pods arbeiten."
+        },
+        {
+          "label": "Intelligente kommerzielle Duftdiffusoren",
+          "text": "Vertrieb, Installation und vorbeugende Wartung von kommerziellen HVAC-integrierten Aromadiffusoren und intelligenten, über WLAN/App steuerbaren Geräten."
+        },
+        {
+          "label": "100 % reine natürliche ätherische Öle",
+          "text": "Lieferung reiner natürlicher ätherischer Öle, begleitet von internationalen Analysezertifikaten (COA) und GC-MS-Chromatographieprofilen für die kommerzielle Duftvermarktung."
+        }
+      ]
+    },
+    "sec3": {
+      "title": "3. Rechte und Pflichten der Parteien",
+      "creditbirdTitle": "3.1. Rechte und Pflichten von CreditBird:",
+      "creditbirdItems": [
+        "Stellen Sie Softwarelösungen, ERP-Systeme und Hardware unter Einhaltung strenger Qualitätsmaßstäbe, Architekturspezifikationen und vereinbarter Zeitrahmenmeilensteine bereit.",
+        "Bieten Sie 12 bis 24 Monate Hardware-Garantie auf Diffusoreinheiten und garantieren Sie 100 % botanische Authentizität gemäß COA-Standards.",
+        "Qualifiziertes IT-Personal aufrechterhalten, das definierte Kompetenzprofile erfüllt; Ersetzen Sie leistungsschwache Mitarbeiter innerhalb von 5 Werktagen nach bestätigter Mitteilung.",
+        "Schützen Sie Geschäftsgeheimnisse, Finanzunterlagen und technologische Vermögenswerte Ihrer Kunden im Rahmen der Geheimhaltungspflicht."
+      ],
+      "customerTitle": "3.2. Rechte und Pflichten des Kunden:",
+      "customerItems": [
+        "Sorgen Sie für genaue Betriebsabläufe, Datenbestände und eine zeitnahe Zusammenarbeit bei Test- und Abnahmemeilensteinen.",
+        "Erfüllen Sie die finanzielle Entschädigung in voller Übereinstimmung mit den vertraglichen Zahlungsplänen.",
+        "Betreiben Sie Diffusormaschinen und ätherische Öle unter strikter Einhaltung der technischen Betriebsanweisungen, um die Langlebigkeit und Sicherheit der Geräte zu gewährleisten."
+      ]
+    },
+    "sec4": {
+      "title": "4. Eigentum am Quellcode und geistiges Eigentum",
+      "p1": "Nach vollständiger Erfüllung aller vertraglichen finanziellen Verpflichtungen für maßgeschneiderte Softwareentwicklung oder kundenspezifische ERP-Implementierung überträgt CreditBird 100 % des Eigentums am Quellcode, der Datenbankschemata und der proprietären technischen Dokumentation an den Kunden.</strong>",
+      "p2": "Der Kunde behält sich die uneingeschränkte Befugnis vor, Änderungen, Erweiterungen, interne Bereitstellungen oder die Vergabe der Wartung an Drittanbieter vorzunehmen, ohne dass hierfür Lizenzgebühren anfallen."
+    },
+    "sec5": {
+      "title": "5. Zahlungsbedingungen und Übergabemeilensteine",
+      "intro": "Zahlungspläne und Abnahmedokumentation werden in entsprechenden Handelsverträgen oder Bestellungen formalisiert:",
+      "items": [
+        {
+          "label": "Software- und ERP-Engineering",
+          "text": "Strukturierte Meilensteinabrechnung: Anzahlung für die Implementierung (30 %), Prototyp- und Alpha-Lieferung (30 %), UAT und Schulung (30 %), Abnahme der endgültigen Übergabe (10 %)."
+        },
+        {
+          "label": "IT-Personaldienstleistungen",
+          "text": "Die Abrechnung und Rechnungsstellung erfolgt in einem wiederkehrenden monatlichen Zyklus basierend auf validierten Stundenzetteln des Kunden."
+        },
+        {
+          "label": "Hardware und ätherische Öle",
+          "text": "Wird pro Bestellung oder regelmäßigen Beschaffungsverträgen abgerechnet, zusammen mit gültigen elektronischen Rechnungen mit Mehrwertsteuer (MwSt.)."
+        }
+      ]
+    },
+    "sec6": {
+      "title": "6. Geheimhaltungsvereinbarung (NDA)",
+      "p1": "Alle technischen Schemata, ERP-Datenspeicher, Finanzprognosen und proprietäres technisches Know-how, das während der Beratungen und Projektabwicklung ausgetauscht wird, unterliegen strengen NDA-Vereinbarungen.",
+      "p2": "Die Geheimhaltungsverpflichtungen bleiben auch nach Vertragsablauf oder formeller Liquidation bestehen."
+    },
+    "sec7": {
+      "title": "7. Anwendbares Recht und Streitbeilegung",
+      "p1": "Diese Bedingungen unterliegen den gesetzlichen Gesetzen der Sozialistischen Republik Vietnam und werden in Übereinstimmung mit diesen ausgelegt.",
+      "p2": "Alle Streitigkeiten, die sich aus oder im Zusammenhang mit dieser Vereinbarung ergeben, werden zunächst durch nach Treu und Glauben freundschaftliche Verhandlungen beigelegt. Sollte die Streitbeilegung nach 30 Tagen noch ungelöst bleiben, wird die Angelegenheit dem zuständigen Volksgericht in Ho-Chi-Minh-Stadt vorgelegt."
+    }
+  },
+  "it": {
+    "sec1": {
+      "title": "1. Disposizioni generali e personalità giuridica",
+      "intro": "Benvenuti in <strong>CREDITBIRD TECHNOLOGY COMPANY LIMITED</strong> (di seguito denominato \"CreditBird\", \"noi\" o \"ci\"). Accedendo al nostro sito Web, richiedendo consulenze, stipulando contratti di servizio o acquistando prodotti, l'utente accetta di rispettare e di essere vincolato da tutti i termini e le condizioni qui delineati.",
+      "company": {
+        "nameLabel": "Nome dell'entità",
+        "nameVal": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD",
+        "intlLabel": "Nome commerciale internazionale",
+        "intlVal": "CREDITBIRD TECHNOLOGY CO., LTD",
+        "taxLabel": "Codice Azienda/Codice Fiscale",
+        "taxVal": "0315397327 (Cấp ngày 19/11/2018)",
+        "authLabel": "Autorità per il rilascio delle licenze",
+        "authVal": "Dipartimento di pianificazione e investimenti della città di Ho Chi Minh",
+        "addrLabel": "Sede legale",
+        "addrVal": "100/20 Đường 79, Phường Phước Long, TP Hồ Chí Minh, Việt Nam",
+        "repLabel": "Rappresentante Legale",
+        "repVal": "TRẦN TRỌNG TRI"
+      }
+    },
+    "sec2": {
+      "title": "2. Ambito di prodotti e servizi",
+      "intro": "CreditBird è specializzato e fornisce cinque divisioni di soluzioni industriali dedicate per organizzazioni e imprese:",
+      "services": [
+        {
+          "label": "Ingegneria del software personalizzato",
+          "text": "Progettazione e implementazione di piattaforme web su misura, app mobili, infrastrutture di microservizi, gateway di pagamento sicuri e software per operazioni digitali aziendali."
+        },
+        {
+          "label": "Soluzioni ERP aziendali",
+          "text": "Progettazione architetturale, implementazione e lancio di suite unificate di Enterprise Resource Planning (MRP di produzione, logistica di magazzino WMS, contabilità VAS/IFRS, risorse umane, commercio omnicanale)."
+        },
+        {
+          "label": "Personale IT aziendale",
+          "text": "Fornitura di ingegneri IT professionisti verificati che lavorano in loco presso gli uffici dei clienti o tramite pod di ingegneria remota dedicati."
+        },
+        {
+          "label": "Diffusori di profumo commerciali intelligenti",
+          "text": "Distribuzione, installazione e manutenzione preventiva di diffusori di aromi commerciali integrati HVAC e dispositivi intelligenti controllabili tramite WiFi/app."
+        },
+        {
+          "label": "Oli essenziali naturali puri al 100%.",
+          "text": "Fornitura di oli essenziali naturali puri accompagnati da certificati internazionali di analisi (COA) e profili cromatografici GC-MS per la commercializzazione di profumi commerciali."
+        }
+      ]
+    },
+    "sec3": {
+      "title": "3. Diritti e obblighi delle parti",
+      "creditbirdTitle": "3.1. Diritti e responsabilità di CreditBird:",
+      "creditbirdItems": [
+        "Fornire soluzioni software, sistemi ERP e hardware che rispettino rigorosi benchmark di qualità, specifiche architettoniche e scadenze concordate.",
+        "Fornire garanzie hardware da 12 a 24 mesi sulle unità diffusori e garantire l'autenticità botanica al 100% secondo gli standard COA.",
+        "Mantenere personale IT qualificato che soddisfi i profili di competenza definiti; sostituire il personale con prestazioni inadeguate entro 5 giorni lavorativi previo avviso verificato.",
+        "Salvaguardare i segreti commerciali, i registri finanziari e le risorse tecnologiche dei clienti con obblighi di non divulgazione."
+      ],
+      "customerTitle": "3.2. Diritti e responsabilità del cliente:",
+      "customerItems": [
+        "Fornisci flussi di lavoro operativi, risorse di dati accurati e una collaborazione tempestiva durante le tappe fondamentali di test e accettazione.",
+        "Adempiere alla compensazione finanziaria nel pieno rispetto dei piani di pagamento contrattuali.",
+        "Utilizzare i macchinari per la diffusione e gli oli essenziali nel rigoroso rispetto delle istruzioni operative tecniche per garantire la longevità e la sicurezza dell'apparecchiatura."
+      ]
+    },
+    "sec4": {
+      "title": "4. Proprietà del codice sorgente e proprietà intellettuale",
+      "p1": "Dopo il completo adempimento di tutti gli obblighi finanziari contrattuali per l'ingegneria del software su misura o l'implementazione ERP personalizzata, <strong>CreditBird trasferisce al cliente il 100% della proprietà del codice sorgente, degli schemi di database e della documentazione tecnica proprietaria</strong>.",
+      "p2": "Il cliente mantiene l'autorità illimitata per modificare, migliorare, implementare internamente o riassegnare la manutenzione a fornitori di terze parti senza incorrere in royalty di licenza."
+    },
+    "sec5": {
+      "title": "5. Termini di pagamento e tappe fondamentali della consegna",
+      "intro": "I tempi di pagamento e la documentazione di accettazione sono formalizzati nei corrispondenti contratti commerciali o ordini di acquisto:",
+      "items": [
+        {
+          "label": "Ingegneria software ed ERP",
+          "text": "Fatturazione strutturata per tappe: deposito per l'implementazione (30%), consegna del prototipo e dell'alpha (30%), UAT e formazione (30%), accettazione della consegna finale (10%)."
+        },
+        {
+          "label": "Servizi di personale IT",
+          "text": "Saldato e fatturato su un ciclo mensile ricorrente basato sulle schede attività dei clienti convalidate."
+        },
+        {
+          "label": "Hardware e oli essenziali",
+          "text": "Saldato per ordine o contratti di approvvigionamento periodici, accompagnati da fatture elettroniche valide relative all'imposta sul valore aggiunto (IVA)."
+        }
+      ]
+    },
+    "sec6": {
+      "title": "6. Accordo di non divulgazione (NDA)",
+      "p1": "Tutti gli schemi tecnici, i repository di dati ERP, le proiezioni finanziarie e il know-how ingegneristico proprietario scambiato durante le consultazioni e l'esecuzione del progetto sono regolati da rigorosi accordi NDA.",
+      "p2": "Gli obblighi di riservatezza restano in vigore perpetui dopo la scadenza del contratto o la liquidazione formale."
+    },
+    "sec7": {
+      "title": "7. Legge applicabile e risoluzione delle controversie",
+      "p1": "I presenti termini sono regolati e interpretati in conformità con le leggi statutarie della Repubblica socialista del Vietnam.",
+      "p2": "Eventuali controversie derivanti da o connesse al presente accordo dovranno essere risolte preventivamente mediante negoziazione amichevole in buona fede. Se la risoluzione della controversia dovesse rimanere irrisolta dopo 30 giorni, la questione sarà sottoposta al Tribunale popolare competente di Ho Chi Minh City."
+    }
+  },
+  "pt": {
+    "sec1": {
+      "title": "1. Disposições Gerais e Pessoa Jurídica",
+      "intro": "Bem-vindo à <strong>CREDITBIRD TECHNOLOGY COMPANY LIMITED</strong> (doravante denominada \"CreditBird\", \"nós\" ou \"nos\"). Ao acessar nosso site, solicitar consultas, celebrar contratos de serviços ou adquirir produtos, você concorda em cumprir e ficar vinculado a todos os termos e condições aqui descritos.",
+      "company": {
+        "nameLabel": "Nome da Entidade",
+        "nameVal": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD",
+        "intlLabel": "Nome comercial internacional",
+        "intlVal": "CREDITBIRD TECHNOLOGY CO., LTD",
+        "taxLabel": "Código Empresarial/ID Fiscal",
+        "taxVal": "0315397327 (Cấp ngày 19/11/2018)",
+        "authLabel": "Autoridade de licenciamento",
+        "authVal": "Departamento de Planejamento e Investimento da Cidade de Ho Chi Minh",
+        "addrLabel": "Sede Registrada",
+        "addrVal": "100/20 Đường 79, Phường Phước Long, TP Hồ Chí Minh, Việt Nam",
+        "repLabel": "Representante Legal",
+        "repVal": "TRẦN TRỌNG TRI"
+      }
+    },
+    "sec2": {
+      "title": "2. Escopo de Produtos e Serviços",
+      "intro": "CreditBird é especializado e fornece cinco divisões de soluções industriais dedicadas para organizações e empresas:",
+      "services": [
+        {
+          "label": "Engenharia de software personalizada",
+          "text": "Projeto e implantação de plataformas web sob medida, aplicativos móveis, infraestrutura de microsserviços, gateways de pagamento seguros e software de operações digitais empresariais."
+        },
+        {
+          "label": "Soluções ERP Empresariais",
+          "text": "Projeto arquitetônico, implementação e implementação de suítes unificadas de Enterprise Resource Planning (MRP de produção, logística de armazém WMS, contabilidade VAS/IFRS, RH, comércio omnicanal)."
+        },
+        {
+          "label": "Pessoal de TI empresarial",
+          "text": "Fornecimento de engenheiros de TI profissionais verificados trabalhando no local, nos escritórios dos clientes ou por meio de pods de engenharia remotos dedicados."
+        },
+        {
+          "label": "Difusores de aromas comerciais inteligentes",
+          "text": "Distribuição, instalação e manutenção preventiva de difusores de aroma comerciais integrados em HVAC e dispositivos inteligentes controláveis por WiFi/App."
+        },
+        {
+          "label": "Óleos essenciais naturais 100% puros",
+          "text": "Fornecimento de óleos essenciais naturais puros acompanhados de Certificados de Análise (COA) internacionais e perfis de cromatografia GC-MS para comercialização de aromas comerciais."
+        }
+      ]
+    },
+    "sec3": {
+      "title": "3. Direitos e Obrigações das Partes",
+      "creditbirdTitle": "3.1. Direitos e responsabilidades do CreditBird:",
+      "creditbirdItems": [
+        "Forneça soluções de software, sistemas ERP e hardware aderindo a rigorosos padrões de qualidade, especificações arquitetônicas e marcos de cronograma acordados.",
+        "Fornece garantias de hardware de 12 a 24 meses em unidades difusoras e garante 100% de autenticidade botânica de acordo com os padrões COA.",
+        "Manter pessoal de TI qualificado atendendo aos perfis de competência definidos; substituir o pessoal com baixo desempenho dentro de 5 dias úteis após notificação verificada.",
+        "Proteja os segredos comerciais, registros financeiros e ativos tecnológicos dos clientes sob obrigações de não divulgação."
+      ],
+      "customerTitle": "3.2. Direitos e responsabilidades do cliente:",
+      "customerItems": [
+        "Forneça fluxos de trabalho operacionais precisos, ativos de dados e colaboração oportuna durante testes e marcos de aceitação.",
+        "Cumprir a compensação financeira em total conformidade com os cronogramas de pagamento contratuais.",
+        "Operar máquinas difusoras e óleos essenciais em estrita conformidade com as instruções técnicas de operação para garantir a longevidade e segurança do equipamento."
+      ]
+    },
+    "sec4": {
+      "title": "4. Propriedade do código-fonte e propriedade intelectual",
+      "p1": "Após a liquidação total de todas as obrigações financeiras contratuais para engenharia de software sob medida ou implementação de ERP personalizado, o <strong>CreditBird transfere 100% da propriedade do código-fonte, esquemas de banco de dados e documentação técnica proprietária para o cliente</strong>.",
+      "p2": "O cliente retém autoridade irrestrita para modificar, aprimorar, implantar internamente ou reatribuir manutenção a fornecedores terceirizados sem incorrer em royalties de licenciamento."
+    },
+    "sec5": {
+      "title": "5. Condições de pagamento e marcos de transferência",
+      "intro": "Os cronogramas de pagamento e a documentação de aceitação são formalizados nos respectivos contratos comerciais ou pedidos de compra:",
+      "items": [
+        {
+          "label": "Engenharia de Software e ERP",
+          "text": "Faturamento de marco estruturado: Depósito de implementação (30%), Entrega de protótipo e alfa (30%), UAT e treinamento (30%), Aceitação de entrega final (10%)."
+        },
+        {
+          "label": "Serviços de pessoal de TI",
+          "text": "Liquidado e faturado em um ciclo mensal recorrente com base em planilhas de horas validadas do cliente."
+        },
+        {
+          "label": "Hardware e óleos essenciais",
+          "text": "Liquidados por encomenda ou contratos de aquisição periódicos, acompanhados de faturas eletrónicas de Imposto sobre o Valor Acrescentado (IVA) válidas."
+        }
+      ]
+    },
+    "sec6": {
+      "title": "6. Acordo de Não Divulgação (NDA)",
+      "p1": "Todos os esquemas técnicos, repositórios de dados de ERP, projeções financeiras e know-how de engenharia proprietário trocados durante consultas e execução de projetos são regidos por acordos rígidos de NDA.",
+      "p2": "As obrigações de confidencialidade permanecem em vigor perpétuo após o término do contrato ou liquidação formal."
+    },
+    "sec7": {
+      "title": "7. Legislação Aplicável e Resolução de Disputas",
+      "p1": "Estes termos são regidos e interpretados de acordo com as leis estatutárias da República Socialista do Vietname.",
+      "p2": "Quaisquer disputas decorrentes ou relacionadas a este acordo serão primeiramente resolvidas por meio de negociação amigável de boa-fé. Caso a resolução da disputa permaneça sem solução após 30 dias, a questão será submetida ao Tribunal Popular competente na cidade de Ho Chi Minh."
+    }
+  },
+  "nl": {
+    "sec1": {
+      "title": "1. Algemene Bepalingen & Rechtspersoon",
+      "intro": "Welkom bij <strong>CREDITBIRD TECHNOLOGY COMPANY LIMITED</strong> (hierna \"CreditBird\", \"wij\" of \"ons\" genoemd). Door onze website te bezoeken, advies aan te vragen, servicecontracten uit te voeren of producten te kopen, gaat u ermee akkoord te voldoen aan en gebonden te zijn aan alle hierin beschreven voorwaarden.",
+      "company": {
+        "nameLabel": "Entiteitsnaam",
+        "nameVal": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD",
+        "intlLabel": "Internationale handelsnaam",
+        "intlVal": "CREDITBIRD TECHNOLOGY CO., LTD",
+        "taxLabel": "Ondernemingscode/belastingnummer",
+        "taxVal": "0315397327 (Cấp ngày 19/11/2018)",
+        "authLabel": "Vergunningverlenende autoriteit",
+        "authVal": "Afdeling Planning en Investeringen van Ho Chi Minh-stad",
+        "addrLabel": "Geregistreerd kantoor",
+        "addrVal": "100/20 Đường 79, Phường Phước Long, TP Hồ Chí Minh, Việt Nam",
+        "repLabel": "Juridisch vertegenwoordiger",
+        "repVal": "TRẦN TRỌNG TRI"
+      }
+    },
+    "sec2": {
+      "title": "2. Omvang van producten en diensten",
+      "intro": "CreditBird is gespecialiseerd in en levert vijf specifieke divisies voor industriële oplossingen voor organisaties en ondernemingen:",
+      "services": [
+        {
+          "label": "Aangepaste software-engineering",
+          "text": "Ontwerp en implementatie van op maat gemaakte webplatforms, mobiele apps, microservices-infrastructuur, veilige betalingsgateways en bedrijfssoftware voor digitale bedrijfsvoering."
+        },
+        {
+          "label": "Enterprise ERP-oplossingen",
+          "text": "Architectonisch ontwerp, implementatie en uitrol van uniforme Enterprise Resource Planning-suites (productie MRP, WMS-magazijnlogistiek, VAS/IFRS-boekhouding, HR, omnichannel-commerce)."
+        },
+        {
+          "label": "Enterprise IT-personeel",
+          "text": "Levering van geverifieerde professionele IT-ingenieurs die op locatie bij klanten werken of via speciale externe engineeringpods."
+        },
+        {
+          "label": "Slimme commerciële geurverspreiders",
+          "text": "Distributie, installatie en preventief onderhoud van commerciële HVAC-geïntegreerde geurverspreiders en slimme WiFi/App-bestuurbare apparaten."
+        },
+        {
+          "label": "100% puur natuurlijke essentiële oliën",
+          "text": "Levering van puur natuurlijke essentiële oliën vergezeld van internationale analysecertificaten (COA) en GC-MS-chromatografieprofielen voor commerciële geurmarketing."
+        }
+      ]
+    },
+    "sec3": {
+      "title": "3. Rechten en verplichtingen van partijen",
+      "creditbirdTitle": "3.1. CreditBird's rechten en verantwoordelijkheden:",
+      "creditbirdItems": [
+        "Lever softwareoplossingen, ERP-systemen en hardware die voldoen aan strikte kwaliteitsbenchmarks, architectonische specificaties en overeengekomen tijdlijnmijlpalen.",
+        "Bied 12 tot 24 maanden hardwaregarantie op diffusoreenheden en garandeer 100% botanische authenticiteit volgens COA-normen.",
+        "Zorg voor gekwalificeerd IT-personeel dat voldoet aan gedefinieerde competentieprofielen; vervang slecht presterend personeel binnen 5 werkdagen na geverifieerde kennisgeving.",
+        "Bescherm bedrijfsgeheimen, financiële gegevens en technologische activa van klanten onder geheimhoudingsverplichtingen."
+      ],
+      "customerTitle": "3.2. Rechten en verantwoordelijkheden van de klant:",
+      "customerItems": [
+        "Zorg voor nauwkeurige operationele workflows, gegevensmiddelen en tijdige samenwerking tijdens test- en acceptatiemijlpalen.",
+        "Voldoen aan financiële compensatie in volledige overeenstemming met contractuele betalingsschema's.",
+        "Bedien diffusermachines en essentiële oliën in strikte overeenstemming met de technische bedieningsinstructies om de levensduur en veiligheid van de apparatuur te garanderen."
+      ]
+    },
+    "sec4": {
+      "title": "4. Eigendom van broncode en intellectueel eigendom",
+      "p1": "Na volledige vereffening van alle contractuele financiële verplichtingen voor op maat gemaakte software-engineering of aangepaste ERP-implementatie, draagt <strong>CreditBird 100% van het eigendom van de broncode, databaseschema's en bedrijfseigen technische documentatie over aan de klant</strong>.",
+      "p2": "De klant behoudt de onbeperkte bevoegdheid om het onderhoud aan te passen, uit te breiden, intern uit te rollen of het onderhoud over te dragen aan externe leveranciers, zonder dat daarvoor licentierechten verschuldigd zijn."
+    },
+    "sec5": {
+      "title": "5. Betalingsvoorwaarden en overdrachtsmijlpalen",
+      "intro": "Betalingsschema's en acceptatiedocumentatie worden geformaliseerd in overeenkomstige commerciële contracten of inkooporders:",
+      "items": [
+        {
+          "label": "Software- en ERP-engineering",
+          "text": "Gestructureerde facturering van mijlpalen: implementatieaanbetaling (30%), levering van prototype en alfa (30%), UAT en training (30%), acceptatie van definitieve overdracht (10%)."
+        },
+        {
+          "label": "IT-personeelsdiensten",
+          "text": "Verrekend en gefactureerd volgens een terugkerende maandelijkse cyclus op basis van gevalideerde urenstaten van de klant."
+        },
+        {
+          "label": "Hardware en essentiële oliën",
+          "text": "Afgerekend per order of periodieke inkoopcontracten, vergezeld van geldige elektronische BTW-facturen."
+        }
+      ]
+    },
+    "sec6": {
+      "title": "6. Geheimhoudingsovereenkomst (NDA)",
+      "p1": "Alle technische schema's, ERP-gegevensopslagplaatsen, financiële projecties en eigen technische kennis die tijdens overleg en projectuitvoering worden uitgewisseld, vallen onder strikte NDA-convenanten.",
+      "p2": "Geheimhoudingsverplichtingen blijven eeuwigdurend van kracht na afloop van het contract of formele liquidatie."
+    },
+    "sec7": {
+      "title": "7. Toepasselijk recht en geschillenbeslechting",
+      "p1": "Deze voorwaarden worden beheerst door en geïnterpreteerd in overeenstemming met de wettelijke wetten van de Socialistische Republiek Vietnam.",
+      "p2": "Alle geschillen die voortvloeien uit of verband houden met deze overeenkomst zullen eerst in goed vertrouwen in minnelijke onderhandelingen worden opgelost. Indien de oplossing van het geschil na 30 dagen onopgelost blijft, wordt de zaak voorgelegd aan de bevoegde Volksrechtbank in Ho Chi Minh-stad."
+    }
+  },
+  "id": {
+    "sec1": {
+      "title": "1. Ketentuan Umum & Badan Hukum",
+      "intro": "Selamat datang di <strong>CREDITBIRD TECHNOLOGY COMPANY LIMITED</strong> (selanjutnya disebut sebagai \"CreditBird\", \"kami\", atau \"kami\"). Dengan mengakses situs web kami, meminta konsultasi, melaksanakan kontrak layanan, atau membeli produk, Anda setuju untuk mematuhi dan terikat oleh semua syarat dan ketentuan yang diuraikan di sini.",
+      "company": {
+        "nameLabel": "Nama Entitas",
+        "nameVal": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD",
+        "intlLabel": "Nama Dagang Internasional",
+        "intlVal": "CREDITBIRD TECHNOLOGY CO., LTD",
+        "taxLabel": "Kode Perusahaan / Nomor Pajak",
+        "taxVal": "0315397327 (Cấp ngày 19/11/2018)",
+        "authLabel": "Otoritas Perizinan",
+        "authVal": "Departemen Perencanaan dan Investasi Kota Ho Chi Minh",
+        "addrLabel": "Kantor Terdaftar",
+        "addrVal": "100/20 Đường 79, Phường Phước Long, TP Hồ Chí Minh, Việt Nam",
+        "repLabel": "Perwakilan Hukum",
+        "repVal": "TRẦN TRỌNG TRI"
+      }
+    },
+    "sec2": {
+      "title": "2. Ruang Lingkup Produk & Layanan",
+      "intro": "CreditBird mengkhususkan diri dan menyediakan lima divisi solusi industri khusus untuk organisasi dan perusahaan:",
+      "services": [
+        {
+          "label": "Rekayasa Perangkat Lunak Kustom",
+          "text": "Desain dan penerapan platform web, aplikasi seluler, infrastruktur layanan mikro, gateway pembayaran yang aman, dan perangkat lunak operasi digital perusahaan yang dapat dipesan lebih dahulu."
+        },
+        {
+          "label": "Solusi ERP Perusahaan",
+          "text": "Desain arsitektur, implementasi, dan peluncuran rangkaian Perencanaan Sumber Daya Perusahaan terpadu (MRP produksi, logistik gudang WMS, akuntansi VAS/IFRS, SDM, perdagangan omnichannel)."
+        },
+        {
+          "label": "Staf TI Perusahaan",
+          "text": "Penyediaan insinyur TI profesional terverifikasi yang bekerja di lokasi di kantor klien atau melalui pod teknik jarak jauh khusus."
+        },
+        {
+          "label": "Diffuser Aroma Komersial Cerdas",
+          "text": "Distribusi, pemasangan, dan pemeliharaan preventif penyebar aroma komersial yang terintegrasi dengan HVAC dan perangkat pintar yang dapat dikontrol WiFi/Aplikasi."
+        },
+        {
+          "label": "100% Minyak Esensial Alami Murni",
+          "text": "Pasokan minyak atsiri alami murni disertai Sertifikat Analisis (COA) internasional dan profil kromatografi GC-MS untuk pemasaran aroma komersial."
+        }
+      ]
+    },
+    "sec3": {
+      "title": "3. Hak dan Kewajiban Para Pihak",
+      "creditbirdTitle": "3.1. Hak & Tanggung Jawab CreditBird:",
+      "creditbirdItems": [
+        "Memberikan solusi perangkat lunak, sistem ERP, dan perangkat keras yang mengikuti tolok ukur kualitas yang ketat, spesifikasi arsitektur, dan pencapaian garis waktu yang disepakati.",
+        "Memberikan garansi perangkat keras selama 12 hingga 24 bulan pada unit diffuser dan menjamin 100% keaslian tumbuhan berdasarkan standar COA.",
+        "Mempertahankan personel TI yang memenuhi syarat untuk memenuhi profil kompetensi yang ditentukan; mengganti personel yang berkinerja buruk dalam waktu 5 hari kerja setelah pemberitahuan terverifikasi.",
+        "Lindungi rahasia dagang klien, catatan keuangan, dan aset teknologi berdasarkan kewajiban kerahasiaan."
+      ],
+      "customerTitle": "3.2. Hak & Tanggung Jawab Pelanggan:",
+      "customerItems": [
+        "Menyediakan alur kerja operasional yang akurat, aset data, dan kolaborasi tepat waktu selama tahap pengujian dan penerimaan.",
+        "Memenuhi kompensasi finansial secara penuh sesuai dengan jadwal pembayaran kontrak.",
+        "Operasikan mesin diffuser dan minyak atsiri dengan kepatuhan ketat terhadap petunjuk pengoperasian teknis untuk memastikan umur panjang dan keamanan peralatan."
+      ]
+    },
+    "sec4": {
+      "title": "4. Kepemilikan Kode Sumber & Kekayaan Intelektual",
+      "p1": "Setelah penyelesaian penuh seluruh kewajiban keuangan kontrak untuk rekayasa perangkat lunak yang dipesan lebih dahulu atau penerapan ERP khusus, <strong>CreditBird mentransfer 100% kepemilikan kode sumber, skema basis data, dan dokumentasi teknis kepemilikan kepada pelanggan</strong>.",
+      "p2": "Pelanggan memiliki wewenang tidak terbatas untuk memodifikasi, meningkatkan, menerapkan secara internal, atau menetapkan ulang pemeliharaan kepada penyedia pihak ketiga tanpa menimbulkan royalti lisensi."
+    },
+    "sec5": {
+      "title": "5. Syarat Pembayaran & Tonggak Penyerahan",
+      "intro": "Jadwal pembayaran dan dokumentasi penerimaan diformalkan dalam kontrak komersial atau pesanan pembelian yang relevan:",
+      "items": [
+        {
+          "label": "Perangkat Lunak & Rekayasa ERP",
+          "text": "Penagihan pencapaian terstruktur: Setoran implementasi (30%), Pengiriman Prototipe & Alfa (30%), UAT & Pelatihan (30%), Penerimaan serah terima akhir (10%)."
+        },
+        {
+          "label": "Layanan Kepegawaian TI",
+          "text": "Diselesaikan dan ditagih pada siklus bulanan berulang berdasarkan lembar waktu klien yang divalidasi."
+        },
+        {
+          "label": "Perangkat Keras & Minyak Esensial",
+          "text": "Diselesaikan per pesanan atau kontrak pengadaan berkala, disertai dengan faktur Pajak Pertambahan Nilai (PPN) elektronik yang sah."
+        }
+      ]
+    },
+    "sec6": {
+      "title": "6. Perjanjian Kerahasiaan (NDA)",
+      "p1": "Semua skema teknis, penyimpanan data ERP, proyeksi keuangan, dan pengetahuan teknik kepemilikan yang dipertukarkan selama konsultasi dan pelaksanaan proyek diatur oleh perjanjian NDA yang ketat.",
+      "p2": "Kewajiban kerahasiaan tetap berlaku selamanya setelah berakhirnya kontrak atau likuidasi formal."
+    },
+    "sec7": {
+      "title": "7. Hukum yang Mengatur & Penyelesaian Sengketa",
+      "p1": "Ketentuan-ketentuan ini diatur dan ditafsirkan sesuai dengan undang-undang Republik Sosialis Vietnam.",
+      "p2": "Setiap perselisihan yang timbul dari atau terkait dengan perjanjian ini pertama-tama harus diselesaikan melalui perundingan damai dengan itikad baik. Jika penyelesaian sengketa masih belum terselesaikan setelah 30 hari, permasalahan tersebut akan diserahkan ke Pengadilan Rakyat yang berwenang di Kota Ho Chi Minh."
+    }
+  },
+  "ar": {
+    "sec1": {
+      "title": "1. الأحكام العامة والشخصية القانونية",
+      "intro": "مرحبًا بك في <strong>شركة CREDITBIRD TECHNOLOGY COMPANY LIMITED</strong> (المشار إليها فيما يلي باسم \"CreditBird\" أو \"نحن\" أو \"نا\"). من خلال الدخول إلى موقعنا الإلكتروني، أو طلب الاستشارات، أو تنفيذ عقود الخدمة، أو شراء المنتجات، فإنك توافق على الالتزام بجميع الشروط والأحكام الموضحة هنا والالتزام بها.",
+      "company": {
+        "nameLabel": "اسم الكيان",
+        "nameVal": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD",
+        "intlLabel": "الاسم التجاري الدولي",
+        "intlVal": "CREDITBIRD TECHNOLOGY CO., LTD",
+        "taxLabel": "رمز المؤسسة/المعرف الضريبي",
+        "taxVal": "0315397327 (Cấp ngày 19/11/2018)",
+        "authLabel": "سلطة الترخيص",
+        "authVal": "إدارة التخطيط والاستثمار بمدينة هوشي منه",
+        "addrLabel": "مكتب مسجل",
+        "addrVal": "100/20 Đường 79, Phường Phước Long, TP Hồ Chí Minh, Việt Nam",
+        "repLabel": "الممثل القانوني",
+        "repVal": "TRẦN TRỌNG TRI"
+      }
+    },
+    "sec2": {
+      "title": "2. نطاق المنتجات والخدمات",
+      "intro": "يتخصص CreditBird في خمسة أقسام مخصصة للحلول الصناعية للمؤسسات والشركات:",
+      "services": [
+        {
+          "label": "هندسة البرمجيات المخصصة",
+          "text": "تصميم ونشر منصات الويب المخصصة وتطبيقات الهاتف المحمول والبنية التحتية للخدمات الصغيرة وبوابات الدفع الآمنة وبرامج العمليات الرقمية للمؤسسات."
+        },
+        {
+          "label": "حلول تخطيط موارد المؤسسات للمؤسسات",
+          "text": "التصميم المعماري والتنفيذ والنشر لمجموعات تخطيط موارد المؤسسات الموحدة (MRP للإنتاج ولوجستيات مستودعات WMS ومحاسبة VAS/IFRS والموارد البشرية والتجارة متعددة القنوات)."
+        },
+        {
+          "label": "توظيف تكنولوجيا المعلومات في المؤسسات",
+          "text": "توفير مهندسي تكنولوجيا المعلومات المحترفين المعتمدين الذين يعملون في الموقع في مكاتب العملاء أو عبر حجرات هندسية مخصصة عن بعد."
+        },
+        {
+          "label": "ناشرات الروائح التجارية الذكية",
+          "text": "التوزيع والتركيب والصيانة الوقائية لأجهزة نشر الروائح التجارية المدمجة بنظام التدفئة والتهوية وتكييف الهواء (HVAC) والأجهزة الذكية التي يمكن التحكم فيها عبر WiFi/التطبيقات."
+        },
+        {
+          "label": "زيوت عطرية طبيعية نقية 100%",
+          "text": "توريد الزيوت العطرية الطبيعية النقية مصحوبة بشهادات التحليل الدولية (COA) وملفات التحليل اللوني GC-MS لتسويق الروائح التجارية."
+        }
+      ]
+    },
+    "sec3": {
+      "title": "3. حقوق والتزامات الأطراف",
+      "creditbirdTitle": "3.1. حقوق ومسؤوليات CreditBird:",
+      "creditbirdItems": [
+        "تقديم حلول برمجية وأنظمة تخطيط موارد المؤسسات (ERP) والأجهزة التي تلتزم بمعايير الجودة الصارمة والمواصفات المعمارية والمعالم الزمنية المتفق عليها.",
+        "توفير ضمانات الأجهزة لمدة تتراوح من 12 إلى 24 شهرًا على وحدات الناشر وضمان الأصالة النباتية بنسبة 100% بموجب معايير شهادة توثيق البرامج.",
+        "الحفاظ على موظفي تكنولوجيا المعلومات المؤهلين الذين يستوفون ملفات تعريف الكفاءة المحددة؛ استبدال الموظفين ذوي الأداء الضعيف خلال 5 أيام عمل بناءً على إشعار تم التحقق منه.",
+        "حماية الأسرار التجارية للعميل والسجلات المالية والأصول التكنولوجية بموجب التزامات عدم الإفصاح."
+      ],
+      "customerTitle": "3.2. حقوق ومسؤوليات العميل:",
+      "customerItems": [
+        "توفير سير عمل تشغيلي دقيق وأصول البيانات والتعاون في الوقت المناسب أثناء مراحل الاختبار والقبول.",
+        "استيفاء التعويض المالي بالكامل بما يتوافق مع جداول الدفع التعاقدية.",
+        "قم بتشغيل آلات الناشر والزيوت الأساسية مع الالتزام الصارم بتعليمات التشغيل الفنية لضمان طول عمر المعدات وسلامتها."
+      ]
+    },
+    "sec4": {
+      "title": "4. ملكية كود المصدر والملكية الفكرية",
+      "p1": "عند التسوية الكاملة لجميع الالتزامات المالية التعاقدية الخاصة بهندسة البرمجيات المخصصة أو تنفيذ تخطيط موارد المؤسسات (ERP) المخصص، <strong>يقوم CreditBird بنقل 100% من ملكية كود المصدر ومخططات قاعدة البيانات والوثائق الفنية الخاصة إلى العميل</strong>.",
+      "p2": "يحتفظ العميل بسلطة غير مقيدة لتعديل أو تحسين أو نشر داخليًا أو إعادة تعيين الصيانة لمقدمي خدمات خارجيين دون تكبد إتاوات الترخيص."
+    },
+    "sec5": {
+      "title": "5. شروط الدفع ومراحل التسليم",
+      "intro": "يتم إضفاء الطابع الرسمي على جداول الدفع ووثائق القبول في العقود التجارية أو أوامر الشراء المقابلة:",
+      "items": [
+        {
+          "label": "هندسة البرمجيات وتخطيط موارد المؤسسات",
+          "text": "فواتير الإنجازات المنظمة: إيداع التنفيذ (30%)، تسليم النموذج الأولي والألفا (30%)، اختبار القبول الشامل والتدريب (30%)، قبول التسليم النهائي (10%)."
+        },
+        {
+          "label": "خدمات توظيف تكنولوجيا المعلومات",
+          "text": "تتم التسوية والفوترة على أساس دورة شهرية متكررة بناءً على الجداول الزمنية للعميل التي تم التحقق من صحتها."
+        },
+        {
+          "label": "الأجهزة والزيوت الأساسية",
+          "text": "تتم التسوية حسب الطلب أو عقود الشراء الدورية، مصحوبة بفواتير ضريبة القيمة المضافة الإلكترونية الصالحة."
+        }
+      ]
+    },
+    "sec6": {
+      "title": "6. اتفاقية عدم الإفصاح (NDA)",
+      "p1": "تخضع جميع المخططات الفنية ومستودعات بيانات ERP والتوقعات المالية والمعرفة الهندسية الخاصة التي يتم تبادلها أثناء المشاورات وتنفيذ المشروع لمواثيق NDA الصارمة.",
+      "p2": "تظل التزامات السرية سارية المفعول بشكل دائم بعد انتهاء العقد أو التصفية الرسمية."
+    },
+    "sec7": {
+      "title": "7. القانون الحاكم وحل النزاعات",
+      "p1": "تخضع هذه الشروط وتفسر وفقًا للقوانين القانونية لجمهورية فيتنام الاشتراكية.",
+      "p2": "يجب أولاً حل أي نزاعات تنشأ عن هذه الاتفاقية أو ترتبط بها من خلال المفاوضات الودية بحسن نية. إذا ظل حل النزاع دون حل بعد 30 يومًا، فسيتم تقديم الأمر إلى محكمة الشعب المختصة في مدينة هوشي منه."
+    }
   }
 };
 

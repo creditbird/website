@@ -26,7 +26,13 @@
     ko: { name: 'Korean', native: '한국어', flag: '🇰🇷' },
     lo: { name: 'Lao', native: 'ພາສາລາວ', flag: '🇱🇦' },
     th: { name: 'Thai', native: 'ภาษาไทย', flag: '🇹🇭' },
-    ms: { name: 'Malay', native: 'Bahasa Melayu', flag: '🇲🇾' }
+    ms: { name: 'Malay', native: 'Bahasa Melayu', flag: '🇲🇾' },
+    de: { name: 'German', native: 'Deutsch', flag: '🇩🇪' },
+    it: { name: 'Italian', native: 'Italiano', flag: '🇮🇹' },
+    pt: { name: 'Portuguese', native: 'Português', flag: '🇧🇷' },
+    nl: { name: 'Dutch', native: 'Nederlands', flag: '🇳🇱' },
+    id: { name: 'Indonesian', native: 'Bahasa Indonesia', flag: '🇮🇩' },
+    ar: { name: 'Arabic', native: 'العربية', flag: '🇦🇪' },
   };
 
   const currentInfo = $derived(languageMap[currentLocale] || { name: 'Language', native: currentLocale.toUpperCase(), flag: '🌐' });

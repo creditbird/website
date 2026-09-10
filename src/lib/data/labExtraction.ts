@@ -1264,5 +1264,653 @@ export const labExtractionData: Record<SupportedLocale, LabExtractionData> = {
       "nanoMist": "सूखी नैनो धुंध < 0.1 µm",
       "hvacNote": "एचवीएसी एयरफ्लो के साथ प्रसार • शून्य अवशेष"
     }
+  },
+  "de": {
+    "header": {
+      "eyebrow": "_LABOR-DESTILLATIONS- UND EXTRAKTIONSARCHITEKTUR/",
+      "title": "CAD-Entwurf für die Extraktion und Verfeinerung ätherischer Öle nach Arzneibuch",
+      "desc": "Die ätherischen Öle von Lemy Finest werden nach strengen Laborprotokollen destilliert und qualitätskontrolliert: Von Niederdruck-Dampfdestillierapparaten über Clevenger-Separatoren bis hin zur Agilent GC-MS-Spektrometrie, die 100 % botanische Authentizität verifiziert."
+    },
+    "tabs": [
+      {
+        "id": "distillation",
+        "num": "01",
+        "code": "_STUFE 01 / EXTRAKTION",
+        "title": "Wasserdampfdestillation und Destillierapparat",
+        "sub": "Clevenger-Apparat und Dampfdestillierapparat"
+      },
+      {
+        "id": "separation",
+        "num": "02",
+        "code": "_STUFE 02 / TRENNUNG",
+        "title": "Scheidetrichter und Dekantierung",
+        "sub": "Phasentrennung und lösungsmittelfrei"
+      },
+      {
+        "id": "gcms",
+        "num": "03",
+        "code": "_STUFE 03 / CHROMATOGRAPHIE",
+        "title": "GC-MS-Spektrometrie-Fingerabdruck",
+        "sub": "Gaschromatographie und 100 % COA"
+      },
+      {
+        "id": "blending",
+        "num": "04",
+        "code": "_STUFE 04 / NANO-DIFFUSION",
+        "title": "Maßgeschneiderte Formulierung und Verbreitung",
+        "sub": "Kaltzerstäubung und HVAC-Integration"
+      }
+    ],
+    "techLabels": {
+      "specsHeader": "AUSRÜSTUNGSSTANDARDS",
+      "certHeader": "ZERTIFIZIERUNGEN & LABORBERICHTE",
+      "certStandard": "Standard",
+      "certPurity": "Reinheit",
+      "certPurityVal": "100 % rein botanisch",
+      "certAlcohol": "Alkoholgehalt",
+      "certCoa": "COA-Analyse",
+      "certCoaVal": "Jede Importcharge",
+      "guaranteeNote": "Lemy Finest verpflichtet sich, für jedes Unternehmensprojekt sowohl digitale als auch physische COA-/GC-MS-Labortestberichte bereitzustellen."
+    },
+    "techSpecs": {
+      "distillation": {
+        "title": "SUS 316L Edelstahl und Borosilikatglas 3.3",
+        "desc": "Hält Thermoschocks bis zu 150 °C stand und bewahrt Ester- und Terpen-Molekülbindungen ohne thermischen Abbau."
+      },
+      "separation": {
+        "title": "Abgestufter birnenförmiger Trichter und PTFE-Ventil",
+        "desc": "Trennt physikalische Partikel und überschüssige Feuchtigkeit vollständig durch natürliche Schwerkraft."
+      },
+      "gcms": {
+        "title": "Agilent 7890B GC-MS mit MSD 5977A Massendetektor",
+        "desc": "Erfasst einzelne aromatische Noten präzise und eliminiert so synthetische Duftstoffe oder industrielle Alkoholverfälschungen."
+      },
+      "blending": {
+        "title": "Eloxierte, korrosionsbeständige Dual-Fluid-Düse",
+        "desc": "Zerstäubt den Duft in einem schwebenden Trockennebel im Submikrometerbereich, ohne dass es zu Feuchtigkeit im Innenraum kommt."
+      }
+    },
+    "svgLabels": {
+      "plantChamber": "BOTANISCHE MATERIALKAMMER",
+      "plantChamberSub": "Kammer für botanisches Pflanzenmaterial",
+      "heatingWater": "DAMPF-HEIZWASSER [100°C]",
+      "vaporDuct": "SCHWANENHALS-DAMPFKANAL [Ø38mm]",
+      "oilLayer": "ÄTHERISCHE ÖLSCHICHT (ρ < 1,0)",
+      "pureOilSub": "100 % reines ätherisches Öl",
+      "hydrosolLayer": "HYDROSOL-WASSERSCHICHT",
+      "hydrosolSub": "Geschlossene Rückflussrückführung zum Kessel",
+      "refluxWater": "GESCHLOSSENER KONDENSAT-RÜCKFLUSS",
+      "glassStopper": "SCHLIFF-GLASSTOPFEN 24/40",
+      "oilPhase": "ORGANISCHE PHASE: REINES ÄTHERISCHES ÖL",
+      "oilPhaseSub": "Dichte: 0,88 - 0,92 g/cm³ // Unlöslich in Wasser",
+      "hydrosolPhase": "WÄSSRIGE PHASE: NATÜRLICHES HYDROSOL",
+      "hydrosolPhaseSub": "Dichte: ~1,00 g/cm³ // Wasserlösliche Aromastoffe",
+      "meniscus": "PHASENGRENZE (MENISKUS)",
+      "meniscusSub": "100 % physikalische Schwerkrafttrennung ohne chemische Lösungsmittel",
+      "ptfeValve": "PRÄZISIONS-PTFE-SPERRHAHN",
+      "membraneFilter": "0,22 µm MIKROMEMBRANFILTER",
+      "pureDrop": "100 % REINER ÄTHERISCHER ÖLTROPFEN",
+      "gcmsTitle": "GASCHROMATOGRAPHIE-MASSENSPEKTROMETRIE GC-MS (AGILENT)",
+      "coaResult": "ERGEBNIS: 100 % COA-KONFORM",
+      "retentionTimeAxis": "RETENTIONSZEIT (MINUTEN)",
+      "dominantPeak": "HAUPTPEAK: LINALOOL (99,8 %)",
+      "nistMatch": "NIST-Bibliothek Spektrenübereinstimmung 99,4 %",
+      "molStructure": "Molekulare Struktur",
+      "terpeneBenefits": "Antibakteriell • Natürlich beruhigend",
+      "scentPyramid": "MASSGESCHNEIDERTE DUFTPYRAMIDE",
+      "topNotes": "KOPFNOTEN (TOP NOTES)",
+      "topNotesList": "Bergamotte, Grapefruit, Eukalyptus",
+      "heartNotes": "HERZNOTEN (HEART NOTES)",
+      "heartNotesList": "Französischer Lavendel, weißer Tee, Jasmin",
+      "baseNotes": "BASISNOTEN (BASE NOTES)",
+      "baseNotesList": "Zedernholz, warmer Bernstein, weißer Moschus",
+      "longevityNote": "Duftverweildauer 24 bis 48 Stunden im Raum",
+      "venturiTitle": "VENTURI-ULTRASCHALLDÜSE MIT ZWEI FLÜSSIGKEITEN",
+      "compressedAir": "DRUCKLUFTSTROM [2,5 BAR]",
+      "oilSuction": "NATÜRLICHE ÄTHERISCHE ÖLANSAUGUNG",
+      "bernoulliSub": "Bernoulli-Vakuum-Saugeffekt",
+      "nanoMist": "Submikron-Trockennebel < 0,1 µm",
+      "hvacNote": "Verteilung über HLK-Luftstrom • Keine Rückstände"
+    }
+  },
+  "it": {
+    "header": {
+      "eyebrow": "_ARCHITETTURA DI DISTILLAZIONE ED ESTRAZIONE DI LABORATORIO/",
+      "title": "Progetto CAD per l'estrazione e la raffinazione di oli essenziali farmacopea",
+      "desc": "Gli oli essenziali Lemy Finest sono distillati e sottoposti a controlli di qualità secondo rigorosi protocolli di laboratorio: dagli alambicchi a vapore a bassa pressione, dai separatori Clevenger alla spettrometria GC-MS Agilent che verifica l'autenticità botanica al 100%."
+    },
+    "tabs": [
+      {
+        "id": "distillation",
+        "num": "01",
+        "code": "_FASE 01/ESTRAZIONE",
+        "title": "Distillazione a vapore e alambicco",
+        "sub": "Apparato Clevenger e distillatore a vapore"
+      },
+      {
+        "id": "separation",
+        "num": "02",
+        "code": "_FASE 02 / SEPARAZIONE",
+        "title": "Imbuto separatore e decantazione",
+        "sub": "Separazione di fase e zero solventi"
+      },
+      {
+        "id": "gcms",
+        "num": "03",
+        "code": "_FASE 03 / CROMATOGRAFIA",
+        "title": "Impronta digitale spettrometrica GC-MS",
+        "sub": "Gascromatografia e COA al 100%."
+      },
+      {
+        "id": "blending",
+        "num": "04",
+        "code": "_STAGE 04 / NANO DIFFUSIONE",
+        "title": "Formulazione e diffusione su misura",
+        "sub": "Atomizzazione a freddo e integrazione HVAC"
+      }
+    ],
+    "techLabels": {
+      "specsHeader": "STANDARD DELLE ATTREZZATURE",
+      "certHeader": "CERTIFICAZIONI E RAPPORTI DI LABORATORIO",
+      "certStandard": "Standard",
+      "certPurity": "Purezza",
+      "certPurityVal": "Botanico puro al 100%.",
+      "certAlcohol": "Contenuto di alcol",
+      "certCoa": "Analisi COA",
+      "certCoaVal": "Ogni batch di importazione",
+      "guaranteeNote": "Lemy Finest si impegna a fornire rapporti sui test di laboratorio COA/GC-MS sia digitali che fisici per ogni progetto aziendale."
+    },
+    "techSpecs": {
+      "distillation": {
+        "title": "Acciaio inossidabile SUS 316L e vetro borosilicato 3.3",
+        "desc": "Resiste a shock termici fino a 150°C, preservando i legami molecolari di esteri e terpeni senza degradazione termica."
+      },
+      "separation": {
+        "title": "Imbuto graduato a forma di pera e valvola in PTFE",
+        "desc": "Separa completamente i particolati fisici e l'umidità in eccesso tramite la gravità naturale."
+      },
+      "gcms": {
+        "title": "GC-MS Agilent 7890B con rilevatore di massa MSD 5977A",
+        "desc": "Impronta con precisione le singole note aromatiche, eliminando fragranze sintetiche o adulterazioni di alcol industriali."
+      },
+      "blending": {
+        "title": "Ugello a doppio fluido anodizzato resistente alla corrosione",
+        "desc": "Aerosolizza il profumo in nebbia secca sospesa di dimensioni inferiori al micron senza causare umidità interna."
+      }
+    },
+    "svgLabels": {
+      "plantChamber": "CAMERA DEL MATERIALE BOTANICO",
+      "plantChamberSub": "Camera del materiale vegetale botanico",
+      "heatingWater": "ACQUA DI RISCALDAMENTO A VAPORE [100°C]",
+      "vaporDuct": "CONDOTTO VAPORE A COLLO D'OCA [Ø38mm]",
+      "oilLayer": "STRATO DI OLIO ESSENZIALE (ρ < 1,0)",
+      "pureOilSub": "Olio essenziale puro al 100%.",
+      "hydrosolLayer": "STRATO D'ACQUA IDROSOL",
+      "hydrosolSub": "Riciclo di riflusso chiuso alla caldaia",
+      "refluxWater": "RIFLUSSO DI CONDENSA CHIUSO",
+      "glassStopper": "TAPPO VETRO SMERIGLIATO 24/40",
+      "oilPhase": "FASE BIOLOGICA: OLIO ESSENZIALE PURO",
+      "oilPhaseSub": "Densità: 0,88 - 0,92 g/cm³ // Insolubile in acqua",
+      "hydrosolPhase": "FASE ACQUA: IDROSOL NATURALE",
+      "hydrosolPhaseSub": "Densità: ~1,00 g/cm³ // Aromatici solubili in acqua",
+      "meniscus": "CONFINE DI FASE (MENISCO)",
+      "meniscusSub": "Separazione per gravità fisica al 100% senza solventi chimici",
+      "ptfeValve": "VALVOLA DI ARRESTO DI PRECISIONE IN PTFE",
+      "membraneFilter": "FILTRO A MICROMEMBRANA DA 0,22 µm",
+      "pureDrop": "GOCCIA DI OLIO ESSENZIALE PURO AL 100%.",
+      "gcmsTitle": "GASCRATOGRAFIA SPETTROMETRIA DI MASSA (AGILENT 7890B)",
+      "coaResult": "STATO: 100% CONFORME AL COA",
+      "retentionTimeAxis": "TEMPO DI RITENZIONE (MINUTI)",
+      "dominantPeak": "PICCO DOMINANTE: LINALOOL (99,8%)",
+      "nistMatch": "Tasso di corrispondenza della libreria NIST per specifiche di massa 99,4%",
+      "molStructure": "STRUTTURA MOLECOLARE",
+      "terpeneBenefits": "Antibatterico • Calmante naturale",
+      "scentPyramid": "PIRAMIDE OLFATTIVA SU MISURA",
+      "topNotes": "NOTE DI TESTA",
+      "topNotesList": "Bergamotto, Pompelmo, Eucalipto",
+      "heartNotes": "NOTE DI CUORE",
+      "heartNotesList": "Lavanda francese, Tè bianco, Gelsomino",
+      "baseNotes": "NOTE DI FONDO",
+      "baseNotesList": "Legno di cedro, ambra calda, muschio bianco",
+      "longevityNote": "Longevità di diffusione 24h - 48h nello spazio",
+      "venturiTitle": "UGELLO ULTRASUONI A DUE FLUIDI VENTURI",
+      "compressedAir": "FLUSSO DI ARIA COMPRESSA [2,5 BAR]",
+      "oilSuction": "ASPIRAZIONE DI OLI ESSENZIALI NATURALI",
+      "bernoulliSub": "Effetto di aspirazione del vuoto Bernoulli",
+      "nanoMist": "NEBBIA SECCA SUB-MICRONICA < 0,1 µm",
+      "hvacNote": "Si disperde tramite flussi d'aria HVAC • Residuo zero"
+    }
+  },
+  "pt": {
+    "header": {
+      "eyebrow": "_ARQUITETURA DE DESTILAÇÃO E EXTRAÇÃO DE LABORATÓRIO/",
+      "title": "Projeto CAD de extração e refino de óleo essencial farmacopéico",
+      "desc": "Os óleos essenciais Lemy Finest são destilados e com qualidade controlada sob rigorosos protocolos laboratoriais: desde alambiques de vapor de baixa pressão, separadores Clevenger até espectrometria GC-MS Agilent, verificando 100% de autenticidade botânica."
+    },
+    "tabs": [
+      {
+        "id": "distillation",
+        "num": "01",
+        "code": "_ETAPA 01 / EXTRAÇÃO",
+        "title": "Destilação a vapor e destilação",
+        "sub": "Aparelho Clevenger e destilador de vapor"
+      },
+      {
+        "id": "separation",
+        "num": "02",
+        "code": "_ESTÁGIO 02 / SEPARAÇÃO",
+        "title": "Funil Separador e Decantação",
+        "sub": "Separação de fases e solvente zero"
+      },
+      {
+        "id": "gcms",
+        "num": "03",
+        "code": "_ESTÁGIO 03 / CROMATOGRAFIA",
+        "title": "Impressão digital de espectrometria GC-MS",
+        "sub": "Cromatografia Gasosa e 100% COA"
+      },
+      {
+        "id": "blending",
+        "num": "04",
+        "code": "_ESTÁGIO 04 / NANO DIFUSÃO",
+        "title": "Formulação e difusão sob medida",
+        "sub": "Atomização a frio e integração HVAC"
+      }
+    ],
+    "techLabels": {
+      "specsHeader": "PADRÕES DE EQUIPAMENTO",
+      "certHeader": "CERTIFICAÇÕES E RELATÓRIOS DE LABORATÓRIO",
+      "certStandard": "Padrão",
+      "certPurity": "Pureza",
+      "certPurityVal": "100% Botânico Puro",
+      "certAlcohol": "Teor de álcool",
+      "certCoa": "Análise COA",
+      "certCoaVal": "Cada lote de importação",
+      "guaranteeNote": "A Lemy Finest se compromete a fornecer relatórios de testes de laboratório COA/GC-MS digitais e físicos para cada projeto empresarial."
+    },
+    "techSpecs": {
+      "distillation": {
+        "title": "SUS 316L inoxidável e vidro borossilicato 3.3",
+        "desc": "Suporta choques térmicos de até 150°C, preservando as ligações moleculares de ésteres e terpenos sem degradação térmica."
+      },
+      "separation": {
+        "title": "Funil graduado em forma de pêra e válvula de PTFE",
+        "desc": "Separa completamente as partículas físicas e o excesso de umidade por meio da gravidade natural."
+      },
+      "gcms": {
+        "title": "GC-MS Agilent 7890B com detector de massa MSD 5977A",
+        "desc": "Imprime com precisão notas aromáticas individuais, eliminando fragrâncias sintéticas ou adulteração de álcool industrial."
+      },
+      "blending": {
+        "title": "Bico de fluido duplo anodizado resistente à corrosão",
+        "desc": "Aerossoliza o perfume em névoa seca submícron suspensa sem causar umidade interna."
+      }
+    },
+    "svgLabels": {
+      "plantChamber": "CÂMARA DE MATERIAL BOTÂNICO",
+      "plantChamberSub": "Câmara de Material Vegetal Botânico",
+      "heatingWater": "ÁGUA PARA AQUECIMENTO A VAPOR [100°C]",
+      "vaporDuct": "DUTO DE VAPOR GOOSENEKK [Ø38mm]",
+      "oilLayer": "CAMADA DE ÓLEO ESSENCIAL (ρ < 1,0)",
+      "pureOilSub": "Óleo Essencial 100% Puro",
+      "hydrosolLayer": "CAMADA DE ÁGUA DE HIDROSOL",
+      "hydrosolSub": "Reciclagem de refluxo fechado para caldeira",
+      "refluxWater": "REFLUXO DE CONDENSADO FECHADO",
+      "glassStopper": "ROLHA DE VIDRO TERRESTRE 24/40",
+      "oilPhase": "FASE ORGÂNICA: ÓLEO ESSENCIAL PURO",
+      "oilPhaseSub": "Densidade: 0,88 - 0,92 g/cm³ // Insolúvel em água",
+      "hydrosolPhase": "FASE AQUOSA: HIDROSOL NATURAL",
+      "hydrosolPhaseSub": "Densidade: ~1,00 g/cm³ // Aromáticos solúveis em água",
+      "meniscus": "LIMITE DE FASE (MENISCO)",
+      "meniscusSub": "Separação por gravidade física 100% sem solvente químico",
+      "ptfeValve": "VÁLVULA DE BLOQUEIO DE PRECISÃO EM PTFE",
+      "membraneFilter": "FILTRO DE MICROMEMBRANA 0,22 µm",
+      "pureDrop": "GOTAS DE ÓLEO ESSENCIAL 100% PURO",
+      "gcmsTitle": "ESPECTROMETRIA DE MASSA DE CROMATOGRAFIA GASOSA (AGILENT 7890B)",
+      "coaResult": "STATUS: 100% EM CONFORMIDADE COM COA",
+      "retentionTimeAxis": "TEMPO DE RETENÇÃO (MINUTOS)",
+      "dominantPeak": "PICO DOMINANTE: LINALOOL (99,8%)",
+      "nistMatch": "Taxa de correspondência da biblioteca NIST de especificação de massa de 99,4%",
+      "molStructure": "ESTRUTURA MOLECULAR",
+      "terpeneBenefits": "Antibacteriano • Calmante Natural",
+      "scentPyramid": "PIRÂMIDE OLFATÓRIA SOB MEDIDA",
+      "topNotes": "NOTAS PRINCIPAIS",
+      "topNotesList": "Bergamota, Toranja, Eucalipto",
+      "heartNotes": "NOTAS DO CORAÇÃO",
+      "heartNotesList": "Lavanda Francesa, Chá Branco, Jasmim",
+      "baseNotes": "NOTAS BÁSICAS",
+      "baseNotesList": "Cedro, âmbar quente, almíscar branco",
+      "longevityNote": "Longevidade de difusão 24h - 48h no espaço",
+      "venturiTitle": "BICO ULTRASSÔNICO DE DOIS FLUIDO VENTURI",
+      "compressedAir": "FLUXO DE AR COMPRIMIDO [2,5 BAR]",
+      "oilSuction": "EXTRAÇÃO DE ÓLEO ESSENCIAL NATURAL",
+      "bernoulliSub": "Efeito de sucção a vácuo Bernoulli",
+      "nanoMist": "NÉVOA SECA SUBMICRON <0,1 µm",
+      "hvacNote": "Dispersa através de fluxos de ar HVAC • Zero resíduo"
+    }
+  },
+  "nl": {
+    "header": {
+      "eyebrow": "_LAB DISTILLATIE & EXTRACTIE ARCHITECTUUR/",
+      "title": "Farmacopee-extractie en raffinage van etherische oliën CAD-blauwdruk",
+      "desc": "De essentiële oliën van Lemy Finest worden gedistilleerd en op kwaliteit gecontroleerd onder strenge laboratoriumprotocollen: van lagedrukstoomketels, Clevenger-afscheiders tot Agilent GC-MS-spectrometrie die 100% botanische authenticiteit verifieert."
+    },
+    "tabs": [
+      {
+        "id": "distillation",
+        "num": "01",
+        "code": "_FASE 01 / EXTRACTIE",
+        "title": "Stoomdestillatie en still",
+        "sub": "Clevenger-apparaat en stoomstill"
+      },
+      {
+        "id": "separation",
+        "num": "02",
+        "code": "_FASE 02 / SCHEIDING",
+        "title": "Scheitrechter en decanteren",
+        "sub": "Fasescheiding en geen oplosmiddel"
+      },
+      {
+        "id": "gcms",
+        "num": "03",
+        "code": "_FASE 03 / CHROMATOGRAFIE",
+        "title": "GC-MS Spectrometrie-vingerafdruk",
+        "sub": "Gaschromatografie & 100% COA"
+      },
+      {
+        "id": "blending",
+        "num": "04",
+        "code": "_STAGE 04 / NANO-DIFFUSIE",
+        "title": "Op maat gemaakte formulering en verspreiding",
+        "sub": "Koude verneveling en HVAC-integratie"
+      }
+    ],
+    "techLabels": {
+      "specsHeader": "UITRUSTINGSNORMEN",
+      "certHeader": "CERTIFICATIES & LABRAPPORTEN",
+      "certStandard": "Standaard",
+      "certPurity": "Zuiverheid",
+      "certPurityVal": "100% puur botanisch",
+      "certAlcohol": "Alcoholgehalte",
+      "certCoa": "COA-analyse",
+      "certCoaVal": "Elke importbatch",
+      "guaranteeNote": "Lemy Finest verbindt zich ertoe om voor elk bedrijfsproject zowel digitale als fysieke COA / GC-MS laboratoriumtestrapporten te leveren."
+    },
+    "techSpecs": {
+      "distillation": {
+        "title": "SUS 316L roestvrij en borosilicaat 3.3 glas",
+        "desc": "Bestand tegen thermische schokken tot 150°C, waarbij de moleculaire bindingen van esters en terpeen behouden blijven zonder thermische degradatie."
+      },
+      "separation": {
+        "title": "Afgestudeerde peervormige trechter en PTFE-klep",
+        "desc": "Scheidt fysieke deeltjes en overtollig vocht volledig af via natuurlijke zwaartekracht."
+      },
+      "gcms": {
+        "title": "Agilent 7890B GC-MS met MSD 5977A massadetector",
+        "desc": "Nauwkeurig vingerafdrukken van individuele aromatische tonen, waardoor synthetische geurstoffen of industriële alcoholvervalsing worden geëlimineerd."
+      },
+      "blending": {
+        "title": "Geanodiseerd corrosiebestendig mondstuk met dubbele vloeistof",
+        "desc": "Aerosoliseert de geur in zwevende sub-micron droge mist zonder interne vochtigheid te veroorzaken."
+      }
+    },
+    "svgLabels": {
+      "plantChamber": "BOTANISCHE MATERIAALKAMER",
+      "plantChamberSub": "Botanische plantmateriaalkamer",
+      "heatingWater": "STOOMVERWARMINGSWATER [100°C]",
+      "vaporDuct": "ZWANENHALS DAMPKANAAL [Ø38mm]",
+      "oilLayer": "ESSENTIËLE OLIELAAG (ρ < 1,0)",
+      "pureOilSub": "100% pure etherische olie",
+      "hydrosolLayer": "HYDROSOL-WATERLAAG",
+      "hydrosolSub": "Gesloten refluxrecycling naar de ketel",
+      "refluxWater": "GESLOTEN CONDENSAATREFLUX",
+      "glassStopper": "GEBAKKEN GLAZEN STOP 24/40",
+      "oilPhase": "ORGANISCHE FASE: PURE ESSENTIËLE OLIE",
+      "oilPhaseSub": "Dichtheid: 0,88 - 0,92 g/cm³ // Onoplosbaar in water",
+      "hydrosolPhase": "WATERIGE FASE: NATUURLIJKE HYDROSOL",
+      "hydrosolPhaseSub": "Dichtheid: ~1,00 g/cm³ // In water oplosbare aromaten",
+      "meniscus": "FASEGRENS (MENISCUS)",
+      "meniscusSub": "100% fysieke zwaartekrachtscheiding zonder chemisch oplosmiddel",
+      "ptfeValve": "PRECISIE PTFE-AFSLUITKLEP",
+      "membraneFilter": "0,22 µm MICROMEMBRAANFILTER",
+      "pureDrop": "100% PURE ESSENTIËLE OLIE DRUPPELTJE",
+      "gcmsTitle": "GASCHROMATOGRAFIE MASSASPECTROMETRIE (AGILENT 7890B)",
+      "coaResult": "STATUS: 100% COA-conform",
+      "retentionTimeAxis": "BEWAARTIJD (MINUTEN)",
+      "dominantPeak": "DOMINANTE PIEK: LINALOOL (99,8%)",
+      "nistMatch": "Massaspecificatie NIST-bibliotheekmatchpercentage 99,4%",
+      "molStructure": "MOLECULAIRE STRUCTUUR",
+      "terpeneBenefits": "Antibacterieel • Natuurlijk kalmerend",
+      "scentPyramid": "OP MAAT GEMAAKTE OLFACTORISCHE PIRAMIDE",
+      "topNotes": "TOPNOTEN",
+      "topNotesList": "Bergamot, Grapefruit, Eucalyptus",
+      "heartNotes": "HARTNOTITIES",
+      "heartNotesList": "Franse lavendel, witte thee, jasmijn",
+      "baseNotes": "BASISNOTEN",
+      "baseNotesList": "Cederhout, warme amber, witte muskus",
+      "longevityNote": "Verspreidingsduur 24 uur - 48 uur in de ruimte",
+      "venturiTitle": "VENTURI ULTRASOON SPUITSTUK MET TWEE VLOEISTOFFEN",
+      "compressedAir": "PERSLUCHTSTROOM [2,5 BAR]",
+      "oilSuction": "NATUURLIJKE ESSENTIËLE OLIETAKT",
+      "bernoulliSub": "Bernoulli vacuümzuigeffect",
+      "nanoMist": "SUB-MICRON DROGE MIST < 0,1 µm",
+      "hvacNote": "Verspreidt zich via HVAC-luchtstromen • Geen residu"
+    }
+  },
+  "id": {
+    "header": {
+      "eyebrow": "_ARSITEKTUR DISTILASI & EKSTRAKSI LAB/",
+      "title": "Ekstraksi Minyak Esensial Farmakope & Cetak Biru Pemurnian CAD",
+      "desc": "Minyak atsiri Lemy Finest disuling dan dikontrol kualitasnya melalui protokol laboratorium yang ketat: Dari penyulingan uap bertekanan rendah, pemisah Clevenger hingga spektrometri Agilent GC-MS yang memverifikasi 100% keaslian tumbuhan."
+    },
+    "tabs": [
+      {
+        "id": "distillation",
+        "num": "01",
+        "code": "_TAHAP 01 / EKSTRAKSI",
+        "title": "Distilasi Uap & Penyulingan",
+        "sub": "Peralatan Clevenger & Alat Uap"
+      },
+      {
+        "id": "separation",
+        "num": "02",
+        "code": "_TAHAP 02 / PEMISAHAN",
+        "title": "Corong Pemisah & Penuangan",
+        "sub": "Pemisahan Fase & Nol Pelarut"
+      },
+      {
+        "id": "gcms",
+        "num": "03",
+        "code": "_TAHAP 03 / KROMATOGRAFI",
+        "title": "Sidik Jari Spektrometri GC-MS",
+        "sub": "Kromatografi Gas & 100% COA"
+      },
+      {
+        "id": "blending",
+        "num": "04",
+        "code": "_TAHAP 04 / DIFUSI NANO",
+        "title": "Formulasi & Difusi yang dipesan lebih dahulu",
+        "sub": "Atomisasi Dingin & Integrasi HVAC"
+      }
+    ],
+    "techLabels": {
+      "specsHeader": "STANDAR PERALATAN",
+      "certHeader": "SERTIFIKASI & LAPORAN LAB",
+      "certStandard": "Standar",
+      "certPurity": "Kemurnian",
+      "certPurityVal": "100% Botani Murni",
+      "certAlcohol": "Kandungan Alkohol",
+      "certCoa": "Analisis COA",
+      "certCoaVal": "Setiap Batch Impor",
+      "guaranteeNote": "Lemy Finest berkomitmen untuk menyediakan laporan pengujian laboratorium COA/GC-MS secara digital dan fisik untuk setiap proyek perusahaan."
+    },
+    "techSpecs": {
+      "distillation": {
+        "title": "Kaca SUS 316L Stainless & Borosilikat 3.3",
+        "desc": "Tahan guncangan termal hingga 150°C, menjaga ikatan molekul ester dan terpen tanpa degradasi termal."
+      },
+      "separation": {
+        "title": "Corong Berbentuk Buah Pir & Katup PTFE",
+        "desc": "Memisahkan sepenuhnya partikulat fisik dan kelembapan berlebih melalui gravitasi alami."
+      },
+      "gcms": {
+        "title": "Agilent 7890B GC-MS dengan Detektor Massa MSD 5977A",
+        "desc": "Tepatnya sidik jari aroma aromatik individu, menghilangkan wewangian sintetis atau pemalsuan alkohol industri."
+      },
+      "blending": {
+        "title": "Nozel Cairan Ganda Tahan Korosi Anodized",
+        "desc": "Aerosolisasi aroma menjadi kabut kering sub-mikron yang tersuspensi tanpa menyebabkan kelembapan interior."
+      }
+    },
+    "svgLabels": {
+      "plantChamber": "RUANG BAHAN BOTANI",
+      "plantChamberSub": "Ruang Bahan Tanaman Botani",
+      "heatingWater": "PEMANASAN UAP AIR [100°C]",
+      "vaporDuct": "SALURAN UAP GOOSENECK [Ø38mm]",
+      "oilLayer": "LAPISAN MINYAK ESENSIAL (ρ < 1.0)",
+      "pureOilSub": "100% Minyak Esensial Murni",
+      "hydrosolLayer": "LAPISAN AIR HIDROSOL",
+      "hydrosolSub": "Daur ulang refluks tertutup ke boiler",
+      "refluxWater": "REFLUX KONDENSAT TERTUTUP",
+      "glassStopper": "STOPPER KACA TANAH 24/40",
+      "oilPhase": "FASE ORGANIK: MINYAK ESENSIAL MURNI",
+      "oilPhaseSub": "Massa jenis: 0,88 - 0,92 g/cm³ // Tidak larut dalam air",
+      "hydrosolPhase": "FASE AQUEOUS: HIDROSOL ALAMI",
+      "hydrosolPhaseSub": "Massa jenis: ~1,00 g/cm³ // Aromatik yang larut dalam air",
+      "meniscus": "BATAS FASE (MENISKUS)",
+      "meniscusSub": "Pemisahan gravitasi fisik 100% tanpa pelarut kimia",
+      "ptfeValve": "KATUP STOPCOCK PTFE PRESISI",
+      "membraneFilter": "FILTER MEMBRAN MIKRO 0,22 µm",
+      "pureDrop": "100% TETESAN MINYAK ESENSIAL MURNI",
+      "gcmsTitle": "SPEKTROMETRI MASSA KROMATOGRAFI GAS (AGILENT 7890B)",
+      "coaResult": "STATUS: 100% SESUAI COA",
+      "retentionTimeAxis": "WAKTU RETENSI (MENIT)",
+      "dominantPeak": "PUNCAK DOMINAN: LINALOOL (99,8%)",
+      "nistMatch": "Tingkat kecocokan Perpustakaan NIST spesifikasi massal 99,4%",
+      "molStructure": "STRUKTUR MOLEKULER",
+      "terpeneBenefits": "Antibakteri • Penenang Alami",
+      "scentPyramid": "PIRAMIDA OLFAKTORI YANG DIPERHATIKAN",
+      "topNotes": "CATATAN TERATAS",
+      "topNotesList": "Bergamot, Grapefruit, Kayu Putih",
+      "heartNotes": "CATATAN HATI",
+      "heartNotesList": "Lavender Perancis, Teh Putih, Melati",
+      "baseNotes": "CATATAN DASAR",
+      "baseNotesList": "Cedarwood, Amber Hangat, Musk Putih",
+      "longevityNote": "Umur panjang difusi 24 jam - 48 jam di ruang angkasa",
+      "venturiTitle": "NOZZLE ULTRASONIK DUA CAIRAN VENTURI",
+      "compressedAir": "ALIRAN UDARA TERKOMPRESI [2,5 BAR]",
+      "oilSuction": "PENGAMBILAN MINYAK ESENSIAL ALAMI",
+      "bernoulliSub": "Efek hisap vakum Bernoulli",
+      "nanoMist": "KABUT KERING SUB-MIKRON < 0,1 µm",
+      "hvacNote": "Disebarkan melalui aliran udara HVAC • Nol residu"
+    }
+  },
+  "ar": {
+    "header": {
+      "eyebrow": "_هندسة معمل التقطير والاستخلاص/",
+      "title": "مخطط CAD لاستخلاص الزيوت العطرية وتكريرها من دستور الأدوية",
+      "desc": "يتم تقطير زيوت Lemy Finest الأساسية ومراقبة جودتها بموجب بروتوكولات مختبرية صارمة: بدءًا من اللقطات البخارية ذات الضغط المنخفض وفواصل Clevenger وحتى قياس الطيف Agilent GC-MS الذي يتحقق من الأصالة النباتية بنسبة 100%."
+    },
+    "tabs": [
+      {
+        "id": "distillation",
+        "num": "01",
+        "code": "_المرحلة 01 / الاستخراج",
+        "title": "التقطير بالبخار والتقطير",
+        "sub": "جهاز Clevenger وجهاز البخار"
+      },
+      {
+        "id": "separation",
+        "num": "02",
+        "code": "_المرحلة 02 / الانفصال",
+        "title": "قمع الفصل والصب",
+        "sub": "فصل المرحلة وصفر المذيبات"
+      },
+      {
+        "id": "gcms",
+        "num": "03",
+        "code": "_المرحلة 03 / الكروماتوغرافيا",
+        "title": "بصمة قياس الطيف GC-MS",
+        "sub": "كروماتوغرافيا الغاز و100% COA"
+      },
+      {
+        "id": "blending",
+        "num": "04",
+        "code": "_المرحلة 04 / انتشار النانو",
+        "title": "صياغة وانتشار مفصل",
+        "sub": "الانحلال البارد وتكامل HVAC"
+      }
+    ],
+    "techLabels": {
+      "specsHeader": "معايير المعدات",
+      "certHeader": "الشهادات وتقارير المختبر",
+      "certStandard": "معيار",
+      "certPurity": "نقاء",
+      "certPurityVal": "نباتي نقي 100%",
+      "certAlcohol": "محتوى الكحول",
+      "certCoa": "تحليل شهادة توثيق البرامج",
+      "certCoaVal": "كل دفعة استيراد",
+      "guaranteeNote": "تلتزم Lemy Finest بتوفير تقارير الاختبارات المعملية الرقمية والمادية لـ COA / GC-MS لكل مشروع مؤسسي."
+    },
+    "techSpecs": {
+      "distillation": {
+        "title": "SUS 316L ستانلس وزجاج بوروسيليكات 3.3",
+        "desc": "يتحمل الصدمات الحرارية حتى 150 درجة مئوية، ويحافظ على الروابط الجزيئية للإستر والتيربين دون تدهور حراري."
+      },
+      "separation": {
+        "title": "قمع متدرج على شكل كمثرى وصمام PTFE",
+        "desc": "يفصل تماما الجسيمات المادية والرطوبة الزائدة عن طريق الجاذبية الطبيعية."
+      },
+      "gcms": {
+        "title": "Agilent 7890B GC-MS مع كاشف الكتلة MSD 5977A",
+        "desc": "بصمات الأصابع العطرية الفردية بدقة، والقضاء على العطور الاصطناعية أو غش الكحول الصناعي."
+      },
+      "blending": {
+        "title": "فوهة مزدوجة السوائل مؤكسدة ومقاومة للتآكل",
+        "desc": "يعمل على رذاذ الرائحة إلى رذاذ جاف معلق دون ميكرون دون التسبب في رطوبة داخلية."
+      }
+    },
+    "svgLabels": {
+      "plantChamber": "غرفة المواد النباتية",
+      "plantChamberSub": "غرفة المواد النباتية النباتية",
+      "heatingWater": "تسخين الماء بالبخار [100 درجة مئوية]",
+      "vaporDuct": "قناة بخار معقوفة [قطر 38 مم]",
+      "oilLayer": "طبقة الزيت العطري (ρ < 1.0)",
+      "pureOilSub": "زيت عطري نقي 100%",
+      "hydrosolLayer": "طبقة الماء الهيدروسول",
+      "hydrosolSub": "إعادة تدوير الارتجاع المغلق إلى الغلاية",
+      "refluxWater": "ارتجاع المكثفات المغلقة",
+      "glassStopper": "سدادة زجاجية ارضية 24/40",
+      "oilPhase": "المرحلة العضوية: زيت عطري نقي",
+      "oilPhaseSub": "الكثافة: 0.88 - 0.92 جم/سم3 // غير قابل للذوبان في الماء",
+      "hydrosolPhase": "المرحلة المائية: هيدروسول طبيعي",
+      "hydrosolPhaseSub": "الكثافة: ~1.00 جم/سم³ // مواد عطرية قابلة للذوبان في الماء",
+      "meniscus": "حدود المرحلة ( الغضروف المفصلي )",
+      "meniscusSub": "فصل الجاذبية الفيزيائية بنسبة 100% بدون مذيبات كيميائية",
+      "ptfeValve": "صمام محبس PTFE الدقيق",
+      "membraneFilter": "مرشح ذو غشاء صغير 0.22 ميكرومتر",
+      "pureDrop": "قطرات زيت عطري نقية 100%",
+      "gcmsTitle": "كروماتوغرافيا الغاز مطياف الكتلة (أجيلنت 7890B)",
+      "coaResult": "الحالة: متوافقة مع شهادة توثيق البرامج بنسبة 100%",
+      "retentionTimeAxis": "وقت الاحتفاظ (بالدقائق)",
+      "dominantPeak": "الذروة المهيمنة: لينالول (99.8%)",
+      "nistMatch": "معدل مطابقة مكتبة NIST للمواصفات الشاملة 99.4%",
+      "molStructure": "البنية الجزيئية",
+      "terpeneBenefits": "مضاد للجراثيم • مهدئ طبيعي",
+      "scentPyramid": "هرم عطري مفصل",
+      "topNotes": "أهم الملاحظات",
+      "topNotesList": "البارغموت، الجريب فروت، الأوكالبتوس",
+      "heartNotes": "ملاحظات القلب",
+      "heartNotesList": "اللافندر الفرنسي، الشاي الأبيض، الياسمين",
+      "baseNotes": "ملاحظات أساسية",
+      "baseNotesList": "خشب الأرز، العنبر الدافئ، المسك الأبيض",
+      "longevityNote": "مدة الانتشار 24 ساعة - 48 ساعة في الفضاء",
+      "venturiTitle": "فوهة فينتوري بالموجات فوق الصوتية ذات سائلين",
+      "compressedAir": "تيار الهواء المضغوط [2.5 بار]",
+      "oilSuction": "سحب الزيت العطري الطبيعي",
+      "bernoulliSub": "تأثير شفط فراغ برنولي",
+      "nanoMist": "رذاذ جاف ميكرون <0.1 ميكرومتر",
+      "hvacNote": "يتوزع عبر تدفقات هواء التدفئة والتهوية وتكييف الهواء (HVAC) • لا توجد بقايا"
+    }
   }
 };

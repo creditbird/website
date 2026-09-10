@@ -9,7 +9,13 @@ export type SupportedLocale =
   | 'ms'
   | 'es'
   | 'fr'
-  | 'hi';
+  | 'hi'
+  | 'de'
+  | 'it'
+  | 'pt'
+  | 'nl'
+  | 'id'
+  | 'ar';
 
 export interface SecurityContent {
   sec1: {

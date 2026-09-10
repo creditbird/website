@@ -1188,6 +1188,654 @@ export const warrantyContent: Record<SupportedLocale, WarrantyContent> = {
       ],
       "paidSupportNote": "उपरोक्त मामलों में भी CreditBird कॉर्पोरेट भागीदारों के लिए रियायती दरों पर वास्तविक स्पेयर पार्ट्स के साथ सशुल्क मरम्मत प्रदान करता है।"
     }
+  },
+  "de": {
+    "sec1": {
+      "title": "1. Garantie auf Hardware und HVAC-Diffusor",
+      "intro": "CreditBird garantiert umfassende Herstellergarantieunterstützung für alle gelieferten und eingesetzten gewerblichen Diffusoreinheiten:",
+      "cards": {
+        "hvacTitle": "HVAC-integrierte industrielle Duftdiffusoren",
+        "hvacWarranty": "24 MONATE GARANTIE",
+        "hvacDesc": "Vorbeugende Wartung von Aerosolleitungen, Hochdruck-Ultraschalldüsen und Magnetventilen für die Gebäudelüftung.",
+        "retailTitle": "Duftdiffusoren für Ausstellungsräume und Gastronomie",
+        "retailWarranty": "12 - 18 MONATE GARANTIE",
+        "retailDesc": "Hardware-Abdeckung für WiFi/Bluetooth-Controller-Motherboards, automatisierte Timer-Module und monolithische Luftkompressionspumpen."
+      },
+      "replacementTitle": "Richtlinie zum schnellen Austausch von Komponenten:",
+      "replacementItems": [
+        "Vollständiger Geräteaustausch innerhalb der ersten 30 Betriebstage im Falle validierter Herstellungsfehler der Hardware.",
+        "Temporäre Hot-Swap-Maschinenlieferung innerhalb von 24 Stunden im Großraum Ho-Chi-Minh-Stadt während der Diagnosewartung."
+      ]
+    },
+    "sec2": {
+      "title": "2. COA-Qualitätsversprechen für reine botanische ätherische Öle",
+      "intro": "Die Reinheit ätherischer Öle hat direkten Einfluss auf die Gesundheit des Verbrauchers und die Lebensdauer der Hardware. CreditBird zertifiziert:",
+      "items": [
+        {
+          "label": "100 % reine botanische ätherische Öle",
+          "text": "Keine industrielle Alkoholmischung, strikt frei von Blei, Quecksilber, Phthalaten oder verbotenen Zusatzstoffen."
+        },
+        {
+          "label": "Vollständige internationale Verifizierungsdossiers",
+          "text": "Jede Charge wird mit offiziellen Analysezertifikaten (COA), Materialsicherheitsdatenblättern (MSDS) und GC-MS-Chromatographieprofilen geliefert."
+        },
+        {
+          "label": "Sofortige Ersatzgarantie",
+          "text": "100 % Ersatz innerhalb von 7 Tagen, wenn die Werksdichtungen während des Transports beschädigt werden oder die Aromaprofile von den genehmigten Benchmark-Proben abweichen."
+        }
+      ]
+    },
+    "sec3": {
+      "title": "3. Service Level Agreements (SLA) für Software und ERP",
+      "intro": "Für maßgeschneiderte Softwarearchitekturen und ERP-Umgebungen, die von CreditBird entwickelt oder gewartet werden, halten wir strenge SLA-Benchmarks ein:",
+      "table": {
+        "thLevel": "Vorfallpriorität",
+        "thImpact": "Definition der geschäftlichen Auswirkungen",
+        "thResponse": "SLA für die Erstreaktion",
+        "thResolution": "Zielauflösungszeit",
+        "rows": [
+          {
+            "level": "P1 – Kritischer Ausfall",
+            "levelClass": "text-rot-600",
+            "impact": "Systemweiter Ausfall, Transaktionsfehler oder unmittelbare Gefahr einer Datenbeschädigung.",
+            "response": "< 15 Min",
+            "resolution": "Auflösung innerhalb von 2 - 4 Stunden"
+          },
+          {
+            "level": "P2 – Hoher Schweregrad",
+            "levelClass": "text-amber-600",
+            "impact": "Beeinträchtigung des Kernbetriebs (Verkaufsabwicklung, Lagerbuchhaltung, Abrechnung), Problemumgehung verfügbar.",
+            "response": "< 1 Stunde",
+            "resolution": "Lösung innerhalb von 8 Stunden"
+          },
+          {
+            "level": "P3 – Standardausgabe",
+            "levelClass": "text-blau-600",
+            "impact": "Unkritische Fehler, kosmetische Inkonsistenzen, Workflow-Benutzerunterstützung oder kleinere UI-Anpassungen.",
+            "response": "< 4 Stunden",
+            "resolution": "Lösung innerhalb von 24 - 48 Stunden"
+          }
+        ]
+      },
+      "uptimeLabel": "Verfügbarkeitsverpflichtung:",
+      "uptimeNote": "CreditBird garantiert eine minimale monatliche Serverinfrastruktur- und Anwendungsverfügbarkeit von 99,9 % (ausgenommen geplante Wartungsarbeiten, die 48 Stunden im Voraus angekündigt werden)."
+    },
+    "sec4": {
+      "title": "4. Garantieannahme- und Vorfalllösungsprotokoll",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Aufnahme von Vorfällen:",
+          "desc": "Senden Sie Tickets über die Hotline 0932.640.968 oder senden Sie eine E-Mail an contact@creditbirdtech.com unter Angabe Ihres Vertragscodes und Ihrer Hardware-Seriennummer."
+        },
+        {
+          "num": "02",
+          "title": "Ferntelemetrie und Triage:",
+          "desc": "Zugewiesene technische Leiter reagieren innerhalb von 15 bis 30 Minuten, um Telemetrie-Fehlerprotokolle zu überprüfen oder eine Ferndiagnose einzuleiten."
+        },
+        {
+          "num": "03",
+          "title": "Vor-Ort-Service oder Code-Hotfix:",
+          "desc": "Techniker schicken sich für Hardware-Reparaturen vor Ort oder Ingenieure stellen Sicherheits-Hotfixes für das Staging bereit, bevor sie in der Produktion ohne Ausfallzeiten bereitgestellt werden."
+        },
+        {
+          "num": "04",
+          "title": "Kundenannahme und -abschluss:",
+          "desc": "Formelle Unterzeichnung des Übergabeberichts zum Vorfall und Überprüfung der Zufriedenheit nach der Lösung."
+        }
+      ]
+    },
+    "sec5": {
+      "title": "5. Garantieausschlüsse und kostenpflichtiger Service",
+      "intro": "Die kostenlose Garantiedeckung gilt nicht unter den folgenden Umständen:",
+      "exclusions": [
+        "Physische Stöße, Stürze, äußere Verformung oder das Eindringen anderer Flüssigkeiten als zugelassener ätherischer Öle.",
+        "Unbefugte Demontage, unbefugte Schaltkreismodifikationen oder Codebasis-Manipulationen ohne vorherige schriftliche Genehmigung von CreditBird.",
+        "Schäden aufgrund von Naturkatastrophen, Blitzeinschlägen, Bränden oder starken Überspannungen im Stromnetz, die die Hardware-Nennwerte überschreiten.",
+        "Die Verwendung gefälschter, mit Mineralien verdünnter oder nicht zertifizierter ätherischer Öle führt zu Verstopfungen der Diffusionspumpe oder Motorausfällen."
+      ],
+      "paidSupportNote": "In nicht abgedeckten Fällen bietet CreditBird Unternehmenspartnern kostenpflichtige Wartung und den Austausch von Originalkomponenten zu Vorzugskonditionen an."
+    }
+  },
+  "it": {
+    "sec1": {
+      "title": "1. Garanzia sull'hardware e sul diffusore HVAC",
+      "intro": "CreditBird garantisce un supporto completo in garanzia del produttore per tutte le unità di diffusione commerciali fornite e installate:",
+      "cards": {
+        "hvacTitle": "Diffusori di profumo industriali integrati HVAC",
+        "hvacWarranty": "GARANZIA 24 MESI",
+        "hvacDesc": "Manutenzione preventiva di condotti aerosol, ugelli a ultrasuoni ad alta pressione ed elettrovalvole per la ventilazione degli edifici.",
+        "retailTitle": "Diffusori di fragranze per showroom e ospitalità",
+        "retailWarranty": "GARANZIA 12 - 18 MESI",
+        "retailDesc": "Copertura hardware per schede madri controller WiFi/Bluetooth, moduli timer automatizzati e pompe di compressione dell'aria monolitiche."
+      },
+      "replacementTitle": "Politica di sostituzione rapida dei componenti:",
+      "replacementItems": [
+        "Sostituzione completa dell'unità entro i primi 30 giorni di funzionamento in caso di difetti hardware di produzione convalidati.",
+        "Consegna temporanea della macchina hot-swap entro 24 ore nell'area metropolitana di Ho Chi Minh City durante la manutenzione diagnostica."
+      ]
+    },
+    "sec2": {
+      "title": "2. Impegno sulla qualità dell'olio essenziale botanico puro COA",
+      "intro": "La purezza dell'olio essenziale influenza direttamente la salute dei consumatori e la durata dell'hardware. CreditBird certifica:",
+      "items": [
+        {
+          "label": "Oli essenziali botanici puri al 100%.",
+          "text": "Miscelazione senza alcol industriale, rigorosamente priva di piombo, mercurio, ftalati o additivi vietati."
+        },
+        {
+          "label": "Completare i dossier di verifica internazionale",
+          "text": "Ogni lotto viene fornito con certificati di analisi (COA) ufficiali, schede di sicurezza dei materiali (MSDS) e profili cromatografici GC-MS."
+        },
+        {
+          "label": "Garanzia di sostituzione immediata",
+          "text": "Sostituzione al 100% entro 7 giorni se i sigilli di fabbrica vengono compromessi durante il trasporto o se i profili aromatici si discostano dai campioni di riferimento approvati."
+        }
+      ]
+    },
+    "sec3": {
+      "title": "3. Accordi sul livello di servizio (SLA) per software ed ERP",
+      "intro": "Per architetture software su misura e ambienti ERP progettati o gestiti da CreditBird, rispettiamo rigorosi benchmark SLA:",
+      "table": {
+        "thLevel": "Priorità dell'incidente",
+        "thImpact": "Definizione di impatto aziendale",
+        "thResponse": "SLA di risposta iniziale",
+        "thResolution": "Tempo di risoluzione dell'obiettivo",
+        "rows": [
+          {
+            "level": "P1 - Interruzione critica",
+            "levelClass": "testo-rosso-600",
+            "impact": "Interruzione a livello di sistema, errore transazionale o minaccia immediata di danneggiamento dei dati.",
+            "response": "< 15 minuti",
+            "resolution": "Risoluzione entro 2 - 4 ore"
+          },
+          {
+            "level": "P2 – Severità elevata",
+            "levelClass": "testo-ambra-600",
+            "impact": "Degrado operativo principale (elaborazione delle vendite, registro dell'inventario, fatturazione), soluzione alternativa disponibile.",
+            "response": "<1 ora",
+            "resolution": "Risoluzione entro 8 ore"
+          },
+          {
+            "level": "P3 - Emissione standard",
+            "levelClass": "testo-blu-600",
+            "impact": "Bug non critici, incoerenze estetiche, supporto utente del flusso di lavoro o modifiche minori dell'interfaccia utente.",
+            "response": "< 4 ore",
+            "resolution": "Risoluzione entro 24 - 48 ore"
+          }
+        ]
+      },
+      "uptimeLabel": "Impegno di operatività:",
+      "uptimeNote": "CreditBird garantisce una disponibilità minima mensile dell'infrastruttura server e delle applicazioni pari al 99,9% (esclusa la manutenzione programmata prenotificata con 48 ore di anticipo)."
+    },
+    "sec4": {
+      "title": "4. Protocollo di richiesta di garanzia e risoluzione degli incidenti",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Assunzione dell'incidente:",
+          "desc": "Invia i ticket tramite la hotline 0932.640.968 o tramite e-mail contact@creditbirdtech.com facendo riferimento al codice contratto e al numero di serie dell'hardware."
+        },
+        {
+          "num": "02",
+          "title": "Telemetria e triage remoti:",
+          "desc": "I responsabili tecnici assegnati rispondono entro 15-30 minuti per esaminare i registri degli errori di telemetria o avviare la diagnostica remota."
+        },
+        {
+          "num": "03",
+          "title": "Servizio in loco o hotfix del codice:",
+          "desc": "I tecnici si recano in sede per le riparazioni hardware oppure gli ingegneri distribuiscono gli hotfix di sicurezza nello staging prima dell'implementazione della produzione senza tempi di inattività."
+        },
+        {
+          "num": "04",
+          "title": "Accettazione e chiusura del cliente:",
+          "desc": "Approvazione formale del rapporto di consegna dell'incidente e revisione della soddisfazione al momento della risoluzione."
+        }
+      ]
+    },
+    "sec5": {
+      "title": "5. Esclusioni della garanzia e assistenza fatturabile",
+      "intro": "La copertura della garanzia gratuita non si applica nelle seguenti circostanze:",
+      "exclusions": [
+        "Impatti fisici, cadute, deformazioni esterne o ingresso di liquidi diversi dagli oli essenziali approvati.",
+        "Smontaggio non autorizzato, modifiche del circuito non autorizzate o manomissione del codice senza previa autorizzazione scritta di CreditBird.",
+        "Danni derivanti da disastri naturali, fulmini, incendi o gravi sovratensioni della rete elettrica che superano le specifiche dell'hardware.",
+        "Utilizzo di oli essenziali contraffatti, diluiti con minerali o non certificati che causano intasamenti della pompa di diffusione o bruciature del motore."
+      ],
+      "paidSupportNote": "In circostanze non coperte, CreditBird fornisce manutenzione a pagamento e sostituzione di componenti originali a tariffe preferenziali per i partner aziendali."
+    }
+  },
+  "pt": {
+    "sec1": {
+      "title": "1. Garantia de hardware e difusor HVAC",
+      "intro": "CreditBird garante suporte abrangente de garantia do fabricante para todas as unidades difusoras comerciais fornecidas e implantadas:",
+      "cards": {
+        "hvacTitle": "Difusores de aromas industriais integrados em HVAC",
+        "hvacWarranty": "GARANTIA DE 24 MESES",
+        "hvacDesc": "Manutenção preventiva de conduítes de aerossóis, bicos ultrassônicos de alta pressão e válvulas solenóides de ventilação predial.",
+        "retailTitle": "Difusores de fragrâncias para showroom e hospitalidade",
+        "retailWarranty": "GARANTIA DE 12 - 18 MESES",
+        "retailDesc": "Cobertura de hardware para placas-mãe de controladores WiFi/Bluetooth, módulos de temporizador automatizados e bombas de compressão de ar monolíticas."
+      },
+      "replacementTitle": "Política de substituição rápida de componentes:",
+      "replacementItems": [
+        "Substituição completa da unidade nos primeiros 30 dias de operação em caso de defeitos de hardware de fabricação validados.",
+        "Entrega temporária de máquinas hot-swap em até 24 horas na área metropolitana da cidade de Ho Chi Minh durante serviços de diagnóstico."
+      ]
+    },
+    "sec2": {
+      "title": "2. Compromisso de qualidade do óleo essencial botânico puro COA",
+      "intro": "A pureza do óleo essencial rege diretamente a saúde do consumidor e a vida útil do hardware. CreditBird certifica:",
+      "items": [
+        {
+          "label": "Óleos essenciais botânicos 100% puros",
+          "text": "Mistura zero de álcool industrial, estritamente isenta de chumbo, mercúrio, ftalatos ou aditivos proibidos."
+        },
+        {
+          "label": "Dossiês de Verificação Internacional Completos",
+          "text": "Cada lote é enviado com Certificados de Análise (COA), Fichas de Dados de Segurança de Materiais (MSDS) oficiais e perfis de cromatografia GC-MS."
+        },
+        {
+          "label": "Garantia de substituição imediata",
+          "text": "Substituição de 100% em 7 dias se os selos de fábrica forem comprometidos durante o transporte ou se os perfis de aroma se desviarem das amostras de referência aprovadas."
+        }
+      ]
+    },
+    "sec3": {
+      "title": "3. Acordos de nível de serviço (SLA) para software e ERP",
+      "intro": "Para arquiteturas de software personalizadas e ambientes ERP projetados ou mantidos pela CreditBird, mantemos benchmarks rigorosos de SLA:",
+      "table": {
+        "thLevel": "Prioridade do Incidente",
+        "thImpact": "Definição de impacto nos negócios",
+        "thResponse": "SLA de resposta inicial",
+        "thResolution": "Tempo de resolução alvo",
+        "rows": [
+          {
+            "level": "P1 - Interrupção Crítica",
+            "levelClass": "texto-vermelho-600",
+            "impact": "Interrupção em todo o sistema, falha transacional ou ameaça imediata de corrupção de dados.",
+            "response": "<15 minutos",
+            "resolution": "Resolução dentro de 2 a 4 horas"
+          },
+          {
+            "level": "P2 - Alta Gravidade",
+            "levelClass": "texto-âmbar-600",
+            "impact": "Degradação operacional principal (processamento de vendas, registro de estoque, faturamento), solução alternativa disponível.",
+            "response": "< 1 hora",
+            "resolution": "Resolução em 8 horas"
+          },
+          {
+            "level": "P3 - Emissão Padrão",
+            "levelClass": "texto-azul-600",
+            "impact": "Bugs não críticos, inconsistências cosméticas, suporte ao usuário no fluxo de trabalho ou pequenos ajustes na interface do usuário.",
+            "response": "< 4 horas",
+            "resolution": "Resolução dentro de 24 a 48 horas"
+          }
+        ]
+      },
+      "uptimeLabel": "Compromisso de tempo de atividade:",
+      "uptimeNote": "CreditBird garante uma infraestrutura mínima mensal de servidores e disponibilidade de aplicativos de 99,9% (excluindo manutenções programadas pré-notificadas com 48 horas de antecedência)."
+    },
+    "sec4": {
+      "title": "4. Protocolo de admissão de garantia e resolução de incidentes",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Entrada de Incidentes:",
+          "desc": "Envie tickets via Hotline 0932.640.968 ou e-mail contact@creditbirdtech.com referenciando seu código de contrato e número de série de hardware."
+        },
+        {
+          "num": "02",
+          "title": "Telemetria e triagem remota:",
+          "desc": "Os líderes de engenharia designados respondem dentro de 15 a 30 minutos para revisar os registros de erros de telemetria ou iniciar diagnósticos remotos."
+        },
+        {
+          "num": "03",
+          "title": "Serviço no local ou hotfix de código:",
+          "desc": "Os técnicos enviam reparos de hardware ao local ou os engenheiros implantam hotfixes de segurança na preparação antes da implantação da produção sem tempo de inatividade."
+        },
+        {
+          "num": "04",
+          "title": "Aceitação e fechamento do cliente:",
+          "desc": "Aprovação formal do relatório de transferência do incidente e avaliação de satisfação após a resolução."
+        }
+      ]
+    },
+    "sec5": {
+      "title": "5. Exclusões de garantia e serviços faturáveis",
+      "intro": "A cobertura de garantia gratuita não se aplica nas seguintes circunstâncias:",
+      "exclusions": [
+        "Impactos físicos, quedas, deformação externa ou entrada de líquidos que não sejam óleos essenciais aprovados.",
+        "Desmontagem não autorizada, modificações não autorizadas de circuito ou adulteração de base de código sem autorização prévia por escrito da CreditBird.",
+        "Danos resultantes de desastres naturais, quedas de raios, incêndios ou surtos graves na rede elétrica que excedam as classificações de hardware.",
+        "Utilização de óleos essenciais falsificados, diluídos em minerais ou não certificados, causando entupimentos em bombas de difusão ou queima de motores."
+      ],
+      "paidSupportNote": "Em circunstâncias não cobertas, o CreditBird oferece manutenção paga e substituição de componentes originais a taxas preferenciais para parceiros empresariais."
+    }
+  },
+  "nl": {
+    "sec1": {
+      "title": "1. Garantie op hardware en HVAC-diffusor",
+      "intro": "CreditBird garandeert uitgebreide ondersteuning door de fabrikant voor alle commerciële diffusoreenheden die worden geleverd en ingezet:",
+      "cards": {
+        "hvacTitle": "HVAC-geïntegreerde industriële geurverspreiders",
+        "hvacWarranty": "24 MAANDEN GARANTIE",
+        "hvacDesc": "Preventief onderhoud van aërosolleidingen, ultrasone hogedruksproeiers en magneetkleppen voor ventilatie van gebouwen.",
+        "retailTitle": "Geurverspreiders voor showrooms en horeca",
+        "retailWarranty": "12 - 18 MAANDEN GARANTIE",
+        "retailDesc": "Hardwaredekking voor moederborden met WiFi/Bluetooth-controller, geautomatiseerde timermodules en monolithische luchtcompressiepompen."
+      },
+      "replacementTitle": "Beleid voor snelle vervanging van componenten:",
+      "replacementItems": [
+        "Volledige vervanging van het apparaat binnen de eerste 30 dagen na gebruik in geval van gevalideerde hardwarefouten.",
+        "Hot-swap tijdelijke machinelevering binnen 24 uur in het grootstedelijk gebied van Ho Chi Minh-stad tijdens diagnostisch onderhoud."
+      ]
+    },
+    "sec2": {
+      "title": "2. COA Kwaliteitsbelofte voor pure botanische etherische olie",
+      "intro": "De zuiverheid van essentiële oliën is rechtstreeks van invloed op de gezondheid van de consument en de levensduur van hardware. CreditBird certificeert:",
+      "items": [
+        {
+          "label": "100% pure botanische essentiële oliën",
+          "text": "Geen industriële alcoholmenging, strikt vrij van lood, kwik, ftalaten of verboden additieven."
+        },
+        {
+          "label": "Volledige internationale verificatiedossiers",
+          "text": "Elke batch wordt geleverd met officiële analysecertificaten (COA), veiligheidsinformatiebladen (MSDS) en GC-MS-chromatografieprofielen."
+        },
+        {
+          "label": "Onmiddellijke vervangingsgarantie",
+          "text": "100% vervanging binnen 7 dagen als de fabrieksafdichtingen tijdens het transport worden aangetast of als de aromaprofielen afwijken van goedgekeurde benchmarkmonsters."
+        }
+      ]
+    },
+    "sec3": {
+      "title": "3. Service Level Agreements (SLA) voor Software & ERP",
+      "intro": "Voor op maat gemaakte software-architecturen en ERP-omgevingen die door CreditBird zijn ontworpen of onderhouden, hanteren we strenge SLA-benchmarks:",
+      "table": {
+        "thLevel": "Incidentprioriteit",
+        "thImpact": "Definitie van bedrijfsimpact",
+        "thResponse": "SLA voor eerste reactie",
+        "thResolution": "Doelresolutietijd",
+        "rows": [
+          {
+            "level": "P1 - Kritieke storing",
+            "levelClass": "tekst-rood-600",
+            "impact": "Systeembrede storing, mislukte transacties of onmiddellijke dreiging van gegevensbeschadiging.",
+            "response": "< 15 minuten",
+            "resolution": "Oplossing binnen 2 - 4 uur"
+          },
+          {
+            "level": "P2 - Hoge ernst",
+            "levelClass": "tekst-amber-600",
+            "impact": "Operationele achteruitgang van de kern (verkoopverwerking, inventarisgrootboek, facturering), oplossing beschikbaar.",
+            "response": "< 1 uur",
+            "resolution": "Oplossing binnen 8 uur"
+          },
+          {
+            "level": "P3 - Standaardprobleem",
+            "levelClass": "tekst-blauw-600",
+            "impact": "Niet-kritieke bugs, cosmetische inconsistenties, gebruikersondersteuning voor de workflow of kleine aanpassingen aan de gebruikersinterface.",
+            "response": "< 4 uur",
+            "resolution": "Oplossing binnen 24 - 48 uur"
+          }
+        ]
+      },
+      "uptimeLabel": "Uptime-verplichting:",
+      "uptimeNote": "CreditBird garandeert een minimale maandelijkse serverinfrastructuur en applicatiebeschikbaarheid van 99,9% (exclusief gepland onderhoud dat 48 uur van tevoren is aangemeld)."
+    },
+    "sec4": {
+      "title": "4. Protocol voor garantie-intake en oplossing van incidenten",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Incidentintake:",
+          "desc": "Dien tickets in via Hotline 0932.640.968 of e-mail contact@creditbirdtech.com met vermelding van uw contractcode en hardwareserienummer."
+        },
+        {
+          "num": "02",
+          "title": "Telemetrie en triage op afstand:",
+          "desc": "Toegewezen technische leads reageren binnen 15 - 30 minuten om logbestanden van telemetriefouten te bekijken of om diagnostiek op afstand te starten."
+        },
+        {
+          "num": "03",
+          "title": "Service ter plaatse of code-hotfix:",
+          "desc": "Technici gaan ter plaatse voor hardwarereparaties, of technici implementeren beveiligingshotfixes in de fasering voorafgaand aan de productie-implementatie zonder downtime."
+        },
+        {
+          "num": "04",
+          "title": "Klantacceptatie en sluiting:",
+          "desc": "Formele aftekening van het incidentoverdrachtsrapport en tevredenheidsbeoordeling na oplossing."
+        }
+      ]
+    },
+    "sec5": {
+      "title": "5. Garantie-uitsluitingen en factureerbaar onderhoud",
+      "intro": "Gratis garantiedekking is niet van toepassing onder de volgende omstandigheden:",
+      "exclusions": [
+        "Fysieke schokken, vallen, externe vervorming of binnendringen van vloeistoffen anders dan goedgekeurde essentiële oliën.",
+        "Ongeautoriseerde demontage, ongeoorloofde circuitwijzigingen of manipulatie van de codebase zonder voorafgaande schriftelijke toestemming van CreditBird.",
+        "Schade als gevolg van natuurrampen, blikseminslagen, brand of ernstige spanningspieken in het elektriciteitsnet die de hardwarespecificaties overschrijden.",
+        "Gebruik van nagemaakte, mineraalverdunde of niet-gecertificeerde essentiële oliën die verstoppingen van de diffusiepomp of doorbranden van de motor veroorzaken."
+      ],
+      "paidSupportNote": "In niet-gedekte omstandigheden biedt CreditBird betaald onderhoud en vervanging van originele componenten tegen preferentiële tarieven voor zakelijke partners."
+    }
+  },
+  "id": {
+    "sec1": {
+      "title": "1. Garansi Perangkat Keras & Diffuser HVAC",
+      "intro": "CreditBird menjamin dukungan garansi pabrik yang komprehensif untuk semua unit diffuser komersial yang dipasok dan digunakan:",
+      "cards": {
+        "hvacTitle": "Diffuser Aroma Industri Terintegrasi HVAC",
+        "hvacWarranty": "GARANSI 24 BULAN",
+        "hvacDesc": "Pemeliharaan preventif saluran aerosol, nozel ultrasonik bertekanan tinggi, dan katup solenoid ventilasi gedung.",
+        "retailTitle": "Penyebar Wewangian Showroom & Perhotelan",
+        "retailWarranty": "GARANSI 12 - 18 BULAN",
+        "retailDesc": "Cakupan perangkat keras untuk motherboard pengontrol WiFi/Bluetooth, modul pengatur waktu otomatis, dan pompa kompresi udara monolitik."
+      },
+      "replacementTitle": "Kebijakan Penggantian Komponen Cepat:",
+      "replacementItems": [
+        "Penggantian unit penuh dalam 30 hari pertama pengoperasian jika terjadi cacat perangkat keras produksi yang tervalidasi.",
+        "Pengiriman mesin sementara hot-swap dalam waktu 24 jam di wilayah metropolitan Kota Ho Chi Minh selama servis diagnostik."
+      ]
+    },
+    "sec2": {
+      "title": "2. Ikrar Kualitas Minyak Atsiri Botani Murni COA",
+      "intro": "Kemurnian minyak atsiri secara langsung mengatur kesehatan konsumen dan umur perangkat keras. CreditBird menyatakan:",
+      "items": [
+        {
+          "label": "100% Minyak Esensial Botani Murni",
+          "text": "Tanpa campuran alkohol industri, tanpa timbal, merkuri, ftalat, atau bahan tambahan terlarang."
+        },
+        {
+          "label": "Berkas Verifikasi Internasional Lengkap",
+          "text": "Setiap batch dikirimkan dengan Sertifikat Analisis (COA) resmi, Lembar Data Keamanan Bahan (MSDS), dan profil kromatografi GC-MS."
+        },
+        {
+          "label": "Jaminan Penggantian Segera",
+          "text": "Penggantian 100% dalam waktu 7 hari jika segel pabrik rusak selama transit atau profil aroma menyimpang dari sampel patokan yang disetujui."
+        }
+      ]
+    },
+    "sec3": {
+      "title": "3. Perjanjian Tingkat Layanan (SLA) untuk Perangkat Lunak & ERP",
+      "intro": "Untuk arsitektur perangkat lunak dan lingkungan ERP yang dirancang atau dikelola oleh CreditBird, kami menjunjung tinggi tolok ukur SLA yang ketat:",
+      "table": {
+        "thLevel": "Prioritas Insiden",
+        "thImpact": "Definisi Dampak Bisnis",
+        "thResponse": "SLA Respon Awal",
+        "thResolution": "Waktu Resolusi Target",
+        "rows": [
+          {
+            "level": "P1 - Pemadaman Kritis",
+            "levelClass": "teks-merah-600",
+            "impact": "Pemadaman seluruh sistem, kegagalan transaksi, atau ancaman kerusakan data.",
+            "response": "<15 menit",
+            "resolution": "Resolusi dalam 2 - 4 jam"
+          },
+          {
+            "level": "P2 - Keparahan Tinggi",
+            "levelClass": "teks-kuning-600",
+            "impact": "Degradasi operasional inti (pemrosesan penjualan, buku besar inventaris, penagihan), solusi tersedia.",
+            "response": "< 1 jam",
+            "resolution": "Resolusi dalam waktu 8 jam"
+          },
+          {
+            "level": "P3 - Edisi Standar",
+            "levelClass": "teks-biru-600",
+            "impact": "Bug yang tidak kritis, inkonsistensi tampilan, dukungan pengguna alur kerja, atau sedikit penyesuaian UI.",
+            "response": "< 4 jam",
+            "resolution": "Resolusi dalam 24 - 48 jam"
+          }
+        ]
+      },
+      "uptimeLabel": "Komitmen Waktu Aktif:",
+      "uptimeNote": "CreditBird menjamin infrastruktur server bulanan minimum dan ketersediaan aplikasi sebesar 99,9% (tidak termasuk pemeliharaan terjadwal yang diberitahukan sebelumnya 48 jam sebelumnya)."
+    },
+    "sec4": {
+      "title": "4. Protokol Penerimaan Garansi & Resolusi Insiden",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Pengambilan Insiden:",
+          "desc": "Kirimkan tiket melalui Hotline 0932.640.968 atau email contact@creditbirdtech.com dengan merujuk pada kode kontrak dan nomor seri perangkat keras Anda."
+        },
+        {
+          "num": "02",
+          "title": "Telemetri & Triase Jarak Jauh:",
+          "desc": "Pimpinan teknik yang ditugaskan akan merespons dalam waktu 15 - 30 menit untuk meninjau log kesalahan telemetri atau memulai diagnostik jarak jauh."
+        },
+        {
+          "num": "03",
+          "title": "Layanan di Tempat atau Perbaikan Terbaru Kode:",
+          "desc": "Teknisi mengirimkan perbaikan perangkat keras ke lokasi, atau teknisi menerapkan perbaikan terbaru keamanan untuk melakukan staging sebelum penerapan produksi tanpa waktu henti."
+        },
+        {
+          "num": "04",
+          "title": "Penerimaan & Penutupan Klien:",
+          "desc": "Penandatanganan resmi laporan serah terima insiden dan tinjauan kepuasan setelah resolusi."
+        }
+      ]
+    },
+    "sec5": {
+      "title": "5. Pengecualian Garansi & Layanan yang Dapat Ditagih",
+      "intro": "Cakupan garansi gratis tidak berlaku dalam kondisi berikut:",
+      "exclusions": [
+        "Benturan fisik, terjatuh, perubahan bentuk eksternal, atau masuknya cairan selain minyak atsiri yang disetujui.",
+        "Pembongkaran tanpa izin, modifikasi sirkuit tanpa izin, atau gangguan basis kode tanpa izin tertulis sebelumnya dari CreditBird.",
+        "Kerusakan akibat bencana alam, sambaran petir, kebakaran, atau lonjakan jaringan listrik yang parah melebihi peringkat perangkat keras.",
+        "Penggunaan minyak atsiri palsu, encer mineral, atau tidak bersertifikat menyebabkan penyumbatan pompa difusi atau motor terbakar."
+      ],
+      "paidSupportNote": "Dalam keadaan yang tidak tercakup, CreditBird menyediakan pemeliharaan berbayar dan penggantian komponen asli dengan tarif istimewa untuk mitra perusahaan."
+    }
+  },
+  "ar": {
+    "sec1": {
+      "title": "1. ضمان الأجهزة وموزع التدفئة والتهوية وتكييف الهواء (HVAC).",
+      "intro": "يضمن CreditBird دعم ضمان الشركة المصنعة الشامل لجميع وحدات الناشر التجارية الموردة والموزعة:",
+      "cards": {
+        "hvacTitle": "أجهزة نشر الروائح الصناعية المتكاملة بنظام التدفئة والتهوية وتكييف الهواء (HVAC).",
+        "hvacWarranty": "ضمان لمدة 24 شهرًا",
+        "hvacDesc": "الصيانة الوقائية لقنوات الهباء الجوي، وفوهات الموجات فوق الصوتية عالية الضغط، وصمامات الملف اللولبي للتهوية في المباني.",
+        "retailTitle": "ناشرو عطور صالات العرض والضيافة",
+        "retailWarranty": "ضمان لمدة 12 - 18 شهرًا",
+        "retailDesc": "تغطية الأجهزة للوحات الأم لوحدة التحكم WiFi/Bluetooth، ووحدات المؤقت الآلي، ومضخات ضغط الهواء المتجانسة."
+      },
+      "replacementTitle": "سياسة استبدال المكونات السريعة:",
+      "replacementItems": [
+        "استبدال الوحدة بالكامل خلال أول 30 يومًا من التشغيل في حالة وجود عيوب في تصنيع الأجهزة.",
+        "تسليم الماكينة مؤقتًا بالتبديل السريع خلال 24 ساعة في منطقة العاصمة بمدينة هوشي منه أثناء تقديم الخدمة التشخيصية."
+      ]
+    },
+    "sec2": {
+      "title": "2. تعهد جودة الزيوت العطرية النباتية النقية من COA",
+      "intro": "نقاء الزيت العطري يحكم بشكل مباشر صحة المستهلك وعمر الأجهزة. يشهد كريديت بيرد:",
+      "items": [
+        {
+          "label": "زيوت عطرية نباتية نقية 100%",
+          "text": "خالٍ من الكحول الصناعي، وخالي تمامًا من الرصاص أو الزئبق أو الفثالات أو الإضافات المحظورة."
+        },
+        {
+          "label": "استكمال ملفات التحقق الدولي",
+          "text": "يتم شحن كل دفعة مع شهادات التحليل الرسمية (COA)، وأوراق بيانات سلامة المواد (MSDS)، وملفات تعريف اللوني GC-MS."
+        },
+        {
+          "label": "ضمان الاستبدال الفوري",
+          "text": "استبدال بنسبة 100% خلال 7 أيام في حالة تعرض أختام المصنع للخطر أثناء النقل أو انحراف ملفات تعريف الرائحة عن العينات القياسية المعتمدة."
+        }
+      ]
+    },
+    "sec3": {
+      "title": "3. اتفاقيات مستوى الخدمة (SLA) للبرامج وتخطيط موارد المؤسسات (ERP).",
+      "intro": "بالنسبة لبنيات البرامج المخصصة وبيئات تخطيط موارد المؤسسات (ERP) التي تم تصميمها أو صيانتها بواسطة CreditBird، فإننا نلتزم بمعايير SLA الصارمة:",
+      "table": {
+        "thLevel": "أولوية الحادث",
+        "thImpact": "تعريف تأثير الأعمال",
+        "thResponse": "الاستجابة الأولية لاتفاقية مستوى الخدمة",
+        "thResolution": "وقت حل الهدف",
+        "rows": [
+          {
+            "level": "P1 - الانقطاع الحرج",
+            "levelClass": "نص-أحمر-600",
+            "impact": "انقطاع الخدمة على مستوى النظام، أو فشل المعاملات، أو التهديد المباشر بتلف البيانات.",
+            "response": "< 15 دقيقة",
+            "resolution": "القرار خلال 2-4 ساعات"
+          },
+          {
+            "level": "P2 - خطورة عالية",
+            "levelClass": "النص-العنبر-600",
+            "impact": "التدهور التشغيلي الأساسي (معالجة المبيعات، ودفتر الأستاذ المخزون، والفواتير)، والحل البديل متاح.",
+            "response": "<1 ساعة",
+            "resolution": "القرار خلال 8 ساعات"
+          },
+          {
+            "level": "P3 - الإصدار القياسي",
+            "levelClass": "النص الأزرق-600",
+            "impact": "الأخطاء غير الحرجة، أو التناقضات التجميلية، أو دعم مستخدم سير العمل، أو تعديلات طفيفة في واجهة المستخدم.",
+            "response": "< 4 ساعات",
+            "resolution": "الحل خلال 24 - 48 ساعة"
+          }
+        ]
+      },
+      "uptimeLabel": "التزام وقت التشغيل:",
+      "uptimeNote": "يضمن CreditBird الحد الأدنى من البنية التحتية الشهرية للخادم وتوافر التطبيقات بنسبة 99.9% (باستثناء الصيانة المجدولة التي تم الإخطار بها مسبقًا قبل 48 ساعة)."
+    },
+    "sec4": {
+      "title": "4. مدخل الضمان وبروتوكول حل الحوادث",
+      "steps": [
+        {
+          "num": "01",
+          "title": "كمية الحادث:",
+          "desc": "أرسل التذاكر عبر الخط الساخن 0932.640.968 أو أرسل بريدًا إلكترونيًا إلى contact@creditbirdtech.com مع الإشارة إلى رمز العقد والرقم التسلسلي للجهاز."
+        },
+        {
+          "num": "02",
+          "title": "القياس عن بعد والفرز:",
+          "desc": "يستجيب قادة الهندسة المعينون في غضون 15 إلى 30 دقيقة لمراجعة سجلات أخطاء القياس عن بعد أو بدء التشخيص عن بعد."
+        },
+        {
+          "num": "03",
+          "title": "الخدمة في الموقع أو الإصلاح العاجل للكود:",
+          "desc": "يرسل الفنيون إلى الموقع لإصلاح الأجهزة، أو ينشر المهندسون إصلاحات الأمان العاجلة للترحيل قبل نشر الإنتاج بدون توقف."
+        },
+        {
+          "num": "04",
+          "title": "قبول العميل وإغلاقه:",
+          "desc": "التوقيع الرسمي على تقرير تسليم الحادث ومراجعة الرضا عند الحل."
+        }
+      ]
+    },
+    "sec5": {
+      "title": "5. استثناءات الضمان والخدمة القابلة للفوترة",
+      "intro": "لا تنطبق تغطية الضمان المجانية في الحالات التالية:",
+      "exclusions": [
+        "التأثيرات الجسدية أو القطرات أو التشوه الخارجي أو دخول السوائل بخلاف الزيوت العطرية المعتمدة.",
+        "التفكيك غير المصرح به، أو تعديلات الدائرة غير المصرح بها، أو التلاعب بقاعدة التعليمات البرمجية دون الحصول على إذن كتابي مسبق من CreditBird.",
+        "الأضرار الناجمة عن الكوارث الطبيعية أو الصواعق أو الحرائق أو الاندفاعات الشديدة في الشبكة الكهربائية التي تتجاوز تقييمات الأجهزة.",
+        "استخدام الزيوت العطرية المزيفة أو المخففة بالمعادن أو غير المعتمدة مما يتسبب في انسداد مضخة الانتشار أو احتراق المحرك."
+      ],
+      "paidSupportNote": "في الظروف غير المغطاة، يوفر CreditBird الصيانة المدفوعة واستبدال المكونات الأصلية بأسعار تفضيلية لشركاء المؤسسة."
+    }
   }
 };
 

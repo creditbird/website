@@ -891,6 +891,492 @@ export const privacyContent: Record<SupportedLocale, PrivacyContent> = {
         "emailVal": "contact@creditbirdtech.com"
       }
     }
+  },
+  "de": {
+    "sec1": {
+      "title": "1. Rechtsgrundlage und Geltungsbereich",
+      "intro": "Diese Datenschutzrichtlinie wird unter strikter Einhaltung folgender Richtlinien erstellt:",
+      "legalBases": [
+        "Regierungserlass Nr. 13/2023/ND-CP zum Schutz personenbezogener Daten vom 17. April 2023.",
+        "Gesetz zur Cyber-Informationssicherheit Nr. 86/2015/QH13 und regulatorische Leitlinien.",
+        "Gesetz zur Cybersicherheit Nr. 24/2018/QH14, verabschiedet von der vietnamesischen Nationalversammlung."
+      ],
+      "scope": "Diese Richtlinie gilt für alle persönlichen und geschäftlichen Kontaktdaten, die über CreditBird-Websites, Software-Apps, ERP-Systeme, IT-Personalvereinbarungen und Installationen intelligenter Duftdiffusoren erfasst werden."
+    },
+    "sec2": {
+      "title": "2. Zwecke der Datenverarbeitung",
+      "intro": "CreditBird erhebt und verarbeitet Daten ausschließlich im Rahmen der für einen rechtmäßigen Geschäftsbetrieb erforderlichen Grenzen:",
+      "purposes": [
+        "Beratung, Erstellung technischer Vorschläge und Erstellung von Angeboten für kundenspezifische Software, ERP, IT-Personal und Aromasysteme.",
+        "Entwurf, Abschluss und Ausführung von Handelsverträgen zwischen CreditBird und Kunden.",
+        "Erfüllung der Hardware-Garantieverpflichtungen (12–24 Monate), regelmäßige Ölversorgung und Software-SLA-Wartung.",
+        "Ausstellen gesetzlich vorgeschriebener elektronischer Mehrwertsteuerrechnungen gemäß den Vorschriften des General Department of Taxation.",
+        "Bereitstellung von Software-Patch-Benachrichtigungen, Cybersicherheits-Bulletins und Systembetriebshinweisen."
+      ]
+    },
+    "sec3": {
+      "title": "3. Arten der erfassten Daten",
+      "directTitle": "3.1. Von Kunden aktiv bereitgestellte Daten:",
+      "directItems": [
+        "Vollständige Namen der Ansprechpartner und gesetzlichen Unternehmensvertreter.",
+        "Geschäftliche E-Mail-Adressen und direkte Telefonnummern.",
+        "Namen von Körperschaften, Steueridentifikationsnummern des Unternehmens und Adressen des Hauptsitzes.",
+        "Standorte der Anlagenvermessung, Hardware-Installationskoordinaten oder Standorte der Cloud-Bereitstellung."
+      ],
+      "autoTitle": "3.2. Automatisch aufgezeichnete technische Telemetrie:",
+      "autoItems": [
+        "IP-Adressen, Client-Geräteeigenschaften, Browser-Benutzeragenten und Verbindungszugriffsprotokolle.",
+        "Systemüberwachungsprotokolle, die zur Erkennung von Eindringlingen und zur Betrugsprävention verwendet werden."
+      ]
+    },
+    "sec4": {
+      "title": "4. Technische Sicherheits- und Schutzmaßnahmen",
+      "intro": "CreditBird erzwingt strenge technische und organisatorische Protokolle, um unbefugten Datenzugriff, -verlust oder -verlust zu verhindern:",
+      "cards": {
+        "encryptionTitle": "Transport- und Speicherverschlüsselung",
+        "encryptionDesc": "TLS 1.3-Verschlüsselung in allen öffentlichen Netzwerken; AES-256-Kryptografiestandards für ruhende Daten.",
+        "rbacTitle": "Rollenbasierte Zugriffskontrolle (RBAC)",
+        "rbacDesc": "Der Zugriff mit den geringsten Rechten ist ausschließlich Ingenieuren vorbehalten, die aktiven Projektverträgen zugewiesen sind."
+      },
+      "noSellCommitment": "Wir verpflichten uns strikt, persönliche oder Firmenkundendaten niemals zu kommerziellen oder Werbezwecken an externe Dritte zu verkaufen, zu monetarisieren oder zu vermieten."
+    },
+    "sec5": {
+      "title": "5. Datenaufbewahrung und geografischer Datenstandort",
+      "p1": "Kundendaten werden in inländischen staatlichen Datenzentren der Stufe III in Vietnam (Viettel IDC, VNPT Data Center, FPT Telecom) gehostet, wodurch die Einhaltung der Onshore-Datenresidenzvorschriften gemäß dem vietnamesischen Cybersicherheitsgesetz gewährleistet wird.",
+      "p2": "Aufzeichnungen werden für die Dauer der Handelsvereinbarung aufbewahrt und gemäß den vietnamesischen Steuer- und Buchhaltungsgesetzen archiviert, bevor sie einer sicheren kryptografischen Löschung unterzogen werden."
+    },
+    "sec6": {
+      "title": "6. Rechte und Kontrollen der betroffenen Person",
+      "intro": "Gemäß Dekret 13/2023/ND-CP verfügen betroffene Personen über die vollen gesetzlichen Rechte:",
+      "rights": [
+        "Recht auf Information über die Verarbeitung personenbezogener Daten.",
+        "Recht, die Einwilligung zu erteilen, die Einwilligung zu verweigern oder die vorherige Genehmigung zu widerrufen.",
+        "Recht auf Zugang, Überprüfung und Korrektur unrichtiger Aufzeichnungen.",
+        "Recht, die Löschung personenbezogener Daten zu verlangen, sobald die Verarbeitungsziele abgeschlossen sind.",
+        "Recht, formelle Beschwerden bezüglich Verstößen gegen gesetzliche Datenschutzbestimmungen einzureichen."
+      ]
+    },
+    "sec7": {
+      "title": "7. Kontakt zum Datenschutzbeauftragten (DSB).",
+      "intro": "Um die Rechte der betroffenen Person auszuüben oder Bedenken hinsichtlich der Cybersicherheit zu melden, wenden Sie sich bitte an unsere Datenschutzabteilung:",
+      "contact": {
+        "controllerLabel": "Datenverantwortlicher",
+        "controllerVal": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD",
+        "taxLabel": "Steueridentifikation",
+        "taxVal": "0315397327",
+        "addrLabel": "Hauptquartier",
+        "addrVal": "100/20 Street 79, Phuoc Long Ward, Ho-Chi-Minh-Stadt, Vietnam",
+        "hotlineLabel": "DPO-Hotline",
+        "hotlineVal": "0932.640.968",
+        "emailLabel": "Spezielle Datenschutz-E-Mail",
+        "emailVal": "contact@creditbirdtech.com"
+      }
+    }
+  },
+  "it": {
+    "sec1": {
+      "title": "1. Base giuridica e ambito di applicazione",
+      "intro": "La presente informativa sulla privacy è stabilita nel rigoroso rispetto di:",
+      "legalBases": [
+        "Decreto governativo n. 13/2023/ND-CP sulla protezione dei dati personali del 17 aprile 2023.",
+        "Legge sulla sicurezza informatica delle informazioni n. 86/2015/QH13 e orientamenti normativi.",
+        "Legge sulla sicurezza informatica n. 24/2018/QH14 approvata dall’Assemblea nazionale del Vietnam."
+      ],
+      "scope": "Questa politica si applica a tutti i dati di contatto personali e aziendali raccolti tramite siti Web CreditBird, app software, sistemi ERP, disposizioni del personale IT e installazioni di diffusori di fragranze intelligenti."
+    },
+    "sec2": {
+      "title": "2. Finalità del trattamento dei dati",
+      "intro": "CreditBird raccoglie e tratta i dati rigorosamente entro i limiti necessari per le operazioni aziendali legittime:",
+      "purposes": [
+        "Consulenza, emissione di proposte tecniche e preparazione di preventivi per software personalizzato, ERP, personale IT e sistemi di aromi.",
+        "Redazione, conclusione ed esecuzione di contratti commerciali tra CreditBird e i clienti.",
+        "Rispetto degli impegni di garanzia hardware (12-24 mesi), fornitura regolare di olio e manutenzione SLA del software.",
+        "Emissione di fatture elettroniche legali relative all'imposta sul valore aggiunto (IVA) conformi alle normative del Dipartimento generale delle imposte.",
+        "Fornitura di notifiche di patch software, bollettini sulla sicurezza informatica e avvisi operativi del sistema."
+      ]
+    },
+    "sec3": {
+      "title": "3. Tipologie di dati raccolti",
+      "directTitle": "3.1. Dati forniti attivamente dai clienti:",
+      "directItems": [
+        "Nomi completi delle persone da contattare e dei rappresentanti legali dell'azienda.",
+        "Indirizzi email aziendali e numeri di telefono diretti.",
+        "Nomi di entità aziendali, numeri di identificazione fiscale delle imprese e indirizzi delle sedi centrali.",
+        "Siti di indagine della struttura, coordinate di installazione dell'hardware o posizioni di distribuzione cloud."
+      ],
+      "autoTitle": "3.2. Telemetria tecnica registrata automaticamente:",
+      "autoItems": [
+        "Indirizzi IP, caratteristiche del dispositivo client, agenti utente del browser e registri di accesso alla connessione.",
+        "Registri di controllo del sistema utilizzati per il rilevamento delle intrusioni e la prevenzione delle frodi."
+      ]
+    },
+    "sec4": {
+      "title": "4. Garanzie di sicurezza e protezione tecnica",
+      "intro": "CreditBird applica rigorosi protocolli tecnici e organizzativi per prevenire l'accesso non autorizzato, la fuga o la perdita dei dati:",
+      "cards": {
+        "encryptionTitle": "Crittografia di transito e archiviazione",
+        "encryptionDesc": "Crittografia TLS 1.3 su tutte le reti pubbliche; Standard crittografici AES-256 per i dati inattivi.",
+        "rbacTitle": "Controllo degli accessi basato sui ruoli (RBAC)",
+        "rbacDesc": "Accesso con privilegi minimi riservato esclusivamente agli ingegneri assegnati a contratti di progetto attivi."
+      },
+      "noSellCommitment": "Ci impegniamo rigorosamente a non vendere, monetizzare o affittare i dati personali o aziendali dei clienti a terzi esterni per guadagni commerciali o pubblicitari."
+    },
+    "sec5": {
+      "title": "5. Conservazione dei dati e posizione sovrana dei dati geografici",
+      "p1": "I dati dei clienti sono ospitati in data center nazionali Tier III sovrani in Vietnam (Viettel IDC, VNPT Data Center, FPT Telecom), garantendo la conformità ai mandati di residenza dei dati onshore ai sensi della legge sulla sicurezza informatica del Vietnam.",
+      "p2": "I registri vengono conservati per tutta la durata dell'accordo commerciale e archiviati in conformità con gli statuti fiscali e contabili vietnamiti prima di essere sottoposti a cancellazione crittografica sicura."
+    },
+    "sec6": {
+      "title": "6. Diritti e controlli dell'interessato",
+      "intro": "Ai sensi del Decreto 13/2023/ND-CP, gli interessati godono di tutti i diritti previsti dalla legge:",
+      "rights": [
+        "Diritto di essere informato sulle operazioni di trattamento dei dati personali.",
+        "Diritto di dare il consenso, negare il consenso o revocare l'autorizzazione preventiva.",
+        "Diritto di accesso, revisione e richiesta di correzione di registrazioni inesatte.",
+        "Diritto di richiedere la cancellazione dei dati personali una volta concluse le finalità del trattamento.",
+        "Diritto di presentare reclami formali in merito a violazioni normative dei dati."
+      ]
+    },
+    "sec7": {
+      "title": "7. Contatto del Responsabile della Protezione dei Dati (RPD).",
+      "intro": "Per esercitare i diritti dell'interessato o segnalare problemi di sicurezza informatica, contattare il nostro ufficio per la protezione dei dati:",
+      "contact": {
+        "controllerLabel": "Titolare del trattamento",
+        "controllerVal": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD",
+        "taxLabel": "Identificazione fiscale",
+        "taxVal": "0315397327",
+        "addrLabel": "Sede",
+        "addrVal": "100/20 Street 79, Phuoc Long Ward, Ho Chi Minh City, Vietnam",
+        "hotlineLabel": "Linea diretta dell'RPD",
+        "hotlineVal": "0932.640.968",
+        "emailLabel": "E-mail dedicata alla privacy",
+        "emailVal": "contact@creditbirdtech.com"
+      }
+    }
+  },
+  "pt": {
+    "sec1": {
+      "title": "1. Base jurídica e âmbito de aplicação",
+      "intro": "Esta política de privacidade é estabelecida no rigoroso cumprimento de:",
+      "legalBases": [
+        "Decreto Governamental n.º 13/2023/ND-CP sobre Proteção de Dados Pessoais de 17 de abril de 2023.",
+        "Lei de Segurança Cibernética da Informação nº 86/2015/QH13 e orientação regulatória.",
+        "Lei sobre Segurança Cibernética n.º 24/2018/QH14 aprovada pela Assembleia Nacional do Vietname."
+      ],
+      "scope": "Esta política se aplica a todos os dados de contato pessoais e empresariais coletados por meio de sites da CreditBird, aplicativos de software, sistemas ERP, acordos de equipe de TI e instalações inteligentes de difusores de aromas."
+    },
+    "sec2": {
+      "title": "2. Finalidades do Tratamento de Dados",
+      "intro": "CreditBird coleta e processa dados estritamente dentro dos limites necessários para operações comerciais legítimas:",
+      "purposes": [
+        "Consultoria, emissão de propostas técnicas e preparação de cotações de softwares customizados, ERP, equipe de TI e sistemas de aromas.",
+        "Elaboração, celebração e execução de contratos comerciais entre CreditBird e clientes.",
+        "Cumprir compromissos de garantia de hardware (12 a 24 meses), fornecimento regular de óleo e manutenção de SLA de software.",
+        "Emissão de faturas eletrônicas legais de Imposto sobre Valor Agregado (IVA) em conformidade com os regulamentos do Departamento Geral de Tributação.",
+        "Entrega de notificações de patches de software, boletins de segurança cibernética e avisos operacionais do sistema."
+      ]
+    },
+    "sec3": {
+      "title": "3. Tipos de dados coletados",
+      "directTitle": "3.1. Dados fornecidos ativamente pelos clientes:",
+      "directItems": [
+        "Nomes completos das pessoas de contato e representantes corporativos legais.",
+        "Endereços de e-mail comerciais e números de telefone diretos.",
+        "Nomes de entidades corporativas, números de identificação fiscal da empresa e endereços da sede.",
+        "Locais de pesquisa de instalações, coordenadas de instalação de hardware ou locais de implantação em nuvem."
+      ],
+      "autoTitle": "3.2. Telemetria Técnica Registrada Automaticamente:",
+      "autoItems": [
+        "Endereços IP, características do dispositivo cliente, agentes de usuário do navegador e logs de acesso à conexão.",
+        "Logs de auditoria do sistema utilizados para detecção de invasões e prevenção de fraudes."
+      ]
+    },
+    "sec4": {
+      "title": "4. Salvaguardas técnicas de segurança e proteção",
+      "intro": "CreditBird aplica protocolos técnicos e organizacionais rigorosos para evitar acesso não autorizado, vazamento ou perda de dados:",
+      "cards": {
+        "encryptionTitle": "Criptografia de trânsito e armazenamento",
+        "encryptionDesc": "Criptografia TLS 1.3 em todas as redes públicas; Padrões criptográficos AES-256 para dados em repouso.",
+        "rbacTitle": "Controle de acesso baseado em função (RBAC)",
+        "rbacDesc": "Acesso com privilégios mínimos restrito exclusivamente a engenheiros designados para contratos de projetos ativos."
+      },
+      "noSellCommitment": "Comprometemo-nos estritamente a nunca vender, monetizar ou alugar dados pessoais ou corporativos de clientes a terceiros externos para fins comerciais ou publicitários."
+    },
+    "sec5": {
+      "title": "5. Retenção de dados e localização soberana de dados geográficos",
+      "p1": "Os dados dos clientes são hospedados em data centers nacionais soberanos de nível III no Vietnã (Vettel IDC, VNPT Data Center, FPT Telecom), garantindo a conformidade com os mandatos de residência de dados onshore sob a Lei de Segurança Cibernética do Vietnã.",
+      "p2": "Os registos são retidos durante a vigência do acordo comercial e arquivados de acordo com os estatutos fiscais e contabilísticos vietnamitas antes de serem submetidos a uma eliminação criptográfica segura."
+    },
+    "sec6": {
+      "title": "6. Direitos e controles do titular dos dados",
+      "intro": "Nos termos do Decreto 13/2023/ND-CP, os titulares dos dados possuem plenos direitos legais:",
+      "rights": [
+        "Direito de ser informado sobre as operações de tratamento de dados pessoais.",
+        "Direito de dar consentimento, recusar consentimento ou retirar autorização prévia.",
+        "Direito de acessar, revisar e solicitar correção de registros imprecisos.",
+        "Direito de solicitar a exclusão de informações pessoais uma vez concluídos os objetivos de processamento.",
+        "Direito de apresentar reclamações formais sobre violações de dados regulamentares."
+      ]
+    },
+    "sec7": {
+      "title": "7. Contato do responsável pela proteção de dados (DPO)",
+      "intro": "Para exercer os direitos do titular dos dados ou comunicar preocupações de cibersegurança, contacte o nosso Gabinete de Proteção de Dados:",
+      "contact": {
+        "controllerLabel": "Controlador de dados",
+        "controllerVal": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD",
+        "taxLabel": "Identificação Fiscal",
+        "taxVal": "0315397327",
+        "addrLabel": "Sede",
+        "addrVal": "100/20 Street 79, Phuoc Long Ward, Cidade de Ho Chi Minh, Vietnã",
+        "hotlineLabel": "Linha direta do DPO",
+        "hotlineVal": "0932.640.968",
+        "emailLabel": "E-mail de privacidade dedicado",
+        "emailVal": "contact@creditbirdtech.com"
+      }
+    }
+  },
+  "nl": {
+    "sec1": {
+      "title": "1. Wettelijke basis en toepassingsgebied",
+      "intro": "Dit privacybeleid is opgesteld met strikte naleving van:",
+      "legalBases": [
+        "Regeringsbesluit nr. 13/2023/ND-CP inzake de bescherming van persoonsgegevens van 17 april 2023.",
+        "Wet inzake cyberinformatiebeveiliging nr. 86/2015/QH13 en regelgevingsrichtlijnen.",
+        "Wet op cyberbeveiliging nr. 24/2018/QH14 aangenomen door de Nationale Vergadering van Vietnam."
+      ],
+      "scope": "Dit beleid is van toepassing op alle persoonlijke en zakelijke contactgegevens die worden verzameld via CreditBird-websites, software-apps, ERP-systemen, IT-personeelsregelingen en slimme geurverspreiderinstallaties."
+    },
+    "sec2": {
+      "title": "2. Doeleinden van gegevensverwerking",
+      "intro": "CreditBird verzamelt en verwerkt gegevens strikt binnen de noodzakelijke grenzen voor legitieme bedrijfsactiviteiten:",
+      "purposes": [
+        "Advisering, het uitbrengen van technische voorstellen en het opstellen van offertes voor maatwerksoftware, ERP, IT-staffing en aromasystemen.",
+        "Opstellen, afsluiten en uitvoeren van commerciële contracten tussen CreditBird en klanten.",
+        "Voldoen aan hardwaregarantieverplichtingen (12 - 24 maanden), regelmatige olietoevoer en software-SLA-onderhoud.",
+        "Het uitreiken van wettelijke elektronische facturen voor de belasting over de toegevoegde waarde (btw) in overeenstemming met de voorschriften van de Algemene Afdeling Belastingen.",
+        "Het leveren van softwarepatchmeldingen, cyberbeveiligingsbulletins en operationele systeemadviezen."
+      ]
+    },
+    "sec3": {
+      "title": "3. Soorten verzamelde gegevens",
+      "directTitle": "3.1. Gegevens die actief door klanten worden verstrekt:",
+      "directItems": [
+        "Volledige namen van contactpersonen en wettelijke bedrijfsvertegenwoordigers.",
+        "Zakelijke e-mailadressen en directe telefoonnummers.",
+        "Namen van bedrijfsentiteiten, identificatienummers voor de ondernemingsbelasting en adressen van het hoofdkantoor.",
+        "Onderzoekslocaties van faciliteiten, coördinaten voor hardware-installaties of locaties voor cloudimplementatie."
+      ],
+      "autoTitle": "3.2. Technische telemetrie automatisch opgenomen:",
+      "autoItems": [
+        "IP-adressen, kenmerken van clientapparaten, browsergebruikersagenten en logboeken voor verbindingstoegang.",
+        "Systeemauditlogboeken gebruikt voor inbraakdetectie en fraudepreventie."
+      ]
+    },
+    "sec4": {
+      "title": "4. Technische beveiliging en beschermingsmaatregelen",
+      "intro": "CreditBird handhaaft strenge technische en organisatorische protocollen om ongeoorloofde gegevenstoegang, lekkage of verlies te voorkomen:",
+      "cards": {
+        "encryptionTitle": "Versleuteling van doorvoer en opslag",
+        "encryptionDesc": "TLS 1.3-encryptie voor alle openbare netwerken; AES-256 cryptografische standaarden voor gegevens in rust.",
+        "rbacTitle": "Op rollen gebaseerd toegangscontrole (RBAC)",
+        "rbacDesc": "Toegang met de minste rechten is uitsluitend beperkt tot technici die zijn toegewezen aan actieve projectcontracten."
+      },
+      "noSellCommitment": "We beloven strikt dat we persoonlijke of zakelijke klantgegevens nooit zullen verkopen, te gelde maken of verhuren aan een externe derde partij voor commercieel of reclamegewin."
+    },
+    "sec5": {
+      "title": "5. Bewaring van gegevens en soevereine geografische locatie van gegevens",
+      "p1": "Klantgegevens worden gehost in binnenlandse soevereine Tier III-datacentra in Vietnam (Viettel IDC, VNPT Data Center, FPT Telecom), waardoor naleving van de onshore gegevensresidentiemandaten onder de Vietnamese cyberbeveiligingswet wordt gegarandeerd.",
+      "p2": "Gegevens worden bewaard voor de duur van de commerciële overeenkomst en gearchiveerd in overeenstemming met de Vietnamese belasting- en boekhoudstatuten voordat ze veilig cryptografisch worden verwijderd."
+    },
+    "sec6": {
+      "title": "6. Rechten en controles van betrokkenen",
+      "intro": "Op grond van Decreet 13/2023/ND-CP beschikken betrokkenen over volledige wettelijke rechten:",
+      "rights": [
+        "Recht om geïnformeerd te worden over de verwerking van persoonsgegevens.",
+        "Recht om toestemming te geven, toestemming te onthouden of voorafgaande toestemming in te trekken.",
+        "Recht op toegang, beoordeling en correctie van onjuiste gegevens.",
+        "Recht om te verzoeken om verwijdering van persoonlijke informatie zodra de verwerkingsdoelstellingen zijn bereikt.",
+        "Recht om formele klachten in te dienen over schendingen van regelgevingsgegevens."
+      ]
+    },
+    "sec7": {
+      "title": "7. Contactpersoon voor de gegevensbeschermingsfunctionaris (DPO).",
+      "intro": "Als u de rechten van betrokkenen wilt uitoefenen of cyberveiligheidsproblemen wilt melden, kunt u contact opnemen met ons Gegevensbeschermingskantoor:",
+      "contact": {
+        "controllerLabel": "Gegevensbeheerder",
+        "controllerVal": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD",
+        "taxLabel": "Belastingidentificatie",
+        "taxVal": "0315397327",
+        "addrLabel": "Hoofdkwartier",
+        "addrVal": "100/20 Street 79, Phuoc Long Ward, Ho Chi Minh-stad, Vietnam",
+        "hotlineLabel": "DPO-hotline",
+        "hotlineVal": "0932.640.968",
+        "emailLabel": "Speciale privacy-e-mail",
+        "emailVal": "contact@creditbirdtech.com"
+      }
+    }
+  },
+  "id": {
+    "sec1": {
+      "title": "1. Dasar Hukum & Ruang Lingkup Penerapan",
+      "intro": "Kebijakan privasi ini dibuat dengan kepatuhan yang ketat terhadap:",
+      "legalBases": [
+        "Peraturan Pemerintah Nomor 13/2023/ND-CP tentang Perlindungan Data Pribadi tanggal 17 April 2023.",
+        "Undang-Undang Keamanan Informasi Siber No. 86/2015/QH13 dan pedoman peraturannya.",
+        "Undang-Undang Keamanan Siber No. 24/2018/QH14 disahkan oleh Majelis Nasional Vietnam."
+      ],
+      "scope": "Kebijakan ini berlaku untuk semua data kontak pribadi dan perusahaan yang dikumpulkan melalui situs web CreditBird, aplikasi perangkat lunak, sistem ERP, pengaturan staf TI, dan instalasi penyebar aroma pintar."
+    },
+    "sec2": {
+      "title": "2. Tujuan Pengolahan Data",
+      "intro": "CreditBird mengumpulkan dan memproses data secara ketat dalam batasan yang diperlukan untuk operasi bisnis yang sah:",
+      "purposes": [
+        "Berkonsultasi, menerbitkan proposal teknis, dan menyiapkan penawaran untuk perangkat lunak khusus, ERP, staf TI, dan sistem aroma.",
+        "Menyusun, menyimpulkan, dan melaksanakan kontrak komersial antara CreditBird dan klien.",
+        "Memenuhi komitmen garansi perangkat keras (12 - 24 bulan), pasokan oli rutin, dan pemeliharaan SLA perangkat lunak.",
+        "Menerbitkan faktur Pajak Pertambahan Nilai (PPN) elektronik sesuai dengan peraturan Departemen Umum Pajak.",
+        "Menyampaikan pemberitahuan patch perangkat lunak, buletin keamanan siber, dan saran operasional sistem."
+      ]
+    },
+    "sec3": {
+      "title": "3. Jenis Data yang Dikumpulkan",
+      "directTitle": "3.1. Data yang Disediakan Secara Aktif oleh Klien:",
+      "directItems": [
+        "Nama lengkap contact person dan perwakilan hukum perusahaan.",
+        "Alamat email bisnis dan nomor telepon langsung.",
+        "Nama entitas perusahaan, nomor identifikasi pajak perusahaan, dan alamat kantor pusat.",
+        "Lokasi survei fasilitas, koordinat instalasi perangkat keras, atau lokasi penerapan cloud."
+      ],
+      "autoTitle": "3.2. Telemetri Teknis Direkam Secara Otomatis:",
+      "autoItems": [
+        "Alamat IP, karakteristik perangkat klien, agen pengguna browser, dan log akses koneksi.",
+        "Log audit sistem digunakan untuk deteksi intrusi dan pencegahan penipuan."
+      ]
+    },
+    "sec4": {
+      "title": "4. Perlindungan Teknis & Perlindungan",
+      "intro": "CreditBird menerapkan protokol teknis dan organisasi yang ketat untuk mencegah akses, kebocoran, atau kehilangan data yang tidak sah:",
+      "cards": {
+        "encryptionTitle": "Enkripsi Transit & Penyimpanan",
+        "encryptionDesc": "Enkripsi TLS 1.3 di semua jaringan publik; Standar kriptografi AES-256 untuk data tidak aktif.",
+        "rbacTitle": "Kontrol Akses Berbasis Peran (RBAC)",
+        "rbacDesc": "Akses dengan hak istimewa paling rendah dibatasi secara eksklusif untuk insinyur yang ditugaskan pada kontrak proyek aktif."
+      },
+      "noSellCommitment": "Kami berjanji dengan tegas untuk tidak menjual, memonetisasi, atau menyewakan data klien pribadi atau perusahaan kepada pihak ketiga eksternal mana pun untuk keuntungan komersial atau iklan."
+    },
+    "sec5": {
+      "title": "5. Retensi Data & Lokasi Kedaulatan Data Geografis",
+      "p1": "Data klien disimpan di Pusat Data Tier III pemerintah dalam negeri di Vietnam (Viettel IDC, VNPT Data Center, FPT Telecom), memastikan kepatuhan terhadap mandat residensi data dalam negeri berdasarkan Undang-undang Keamanan Siber Vietnam.",
+      "p2": "Catatan disimpan selama jangka waktu perjanjian komersial dan diarsipkan sesuai dengan undang-undang pajak dan akuntansi Vietnam sebelum menjalani penghapusan kriptografi yang aman."
+    },
+    "sec6": {
+      "title": "6. Hak & Kontrol Subjek Data",
+      "intro": "Berdasarkan Keputusan 13/2023/ND-CP, subjek data memiliki hak hukum penuh:",
+      "rights": [
+        "Hak untuk mendapat informasi mengenai operasi pemrosesan data pribadi.",
+        "Hak untuk memberikan persetujuan, tidak memberikan persetujuan, atau menarik izin sebelumnya.",
+        "Hak untuk mengakses, meninjau, dan meminta koreksi atas catatan yang tidak akurat.",
+        "Hak untuk meminta penghapusan informasi pribadi setelah tujuan pemrosesan selesai.",
+        "Hak untuk mengajukan pengaduan resmi mengenai pelanggaran data peraturan."
+      ]
+    },
+    "sec7": {
+      "title": "7. Kontak Petugas Perlindungan Data (DPO).",
+      "intro": "Untuk menggunakan hak subjek data atau melaporkan masalah keamanan siber, silakan hubungi Kantor Perlindungan Data kami:",
+      "contact": {
+        "controllerLabel": "Pengontrol Data",
+        "controllerVal": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD",
+        "taxLabel": "Identifikasi Pajak",
+        "taxVal": "0315397327",
+        "addrLabel": "Markas Besar",
+        "addrVal": "100/20 Street 79, Bangsal Phuoc Long, Kota Ho Chi Minh, Vietnam",
+        "hotlineLabel": "Saluran Siaga DPO",
+        "hotlineVal": "0932.640.968",
+        "emailLabel": "Email Privasi Khusus",
+        "emailVal": "contact@creditbirdtech.com"
+      }
+    }
+  },
+  "ar": {
+    "sec1": {
+      "title": "1. الأساس القانوني ونطاق التطبيق",
+      "intro": "تم وضع سياسة الخصوصية هذه وفقًا للامتثال الصارم لما يلي:",
+      "legalBases": [
+        "المرسوم الحكومي رقم 13/2023/ND-CP بشأن حماية البيانات الشخصية بتاريخ 17 أبريل 2023.",
+        "قانون أمن المعلومات السيبرانية رقم 86/2015/QH13 والتوجيهات التنظيمية.",
+        "قانون الأمن السيبراني رقم 24/2018/QH14 الذي أقرته الجمعية الوطنية الفيتنامية."
+      ],
+      "scope": "تنطبق هذه السياسة على جميع بيانات الاتصال الشخصية والمؤسسية التي يتم جمعها من خلال مواقع CreditBird الإلكترونية، وتطبيقات البرامج، وأنظمة تخطيط موارد المؤسسات (ERP)، وترتيبات توظيف تكنولوجيا المعلومات، وتركيبات ناشرات الروائح الذكية."
+    },
+    "sec2": {
+      "title": "2. أغراض معالجة البيانات",
+      "intro": "يقوم CreditBird بجمع البيانات ومعالجتها بدقة ضمن الحدود اللازمة للعمليات التجارية المشروعة:",
+      "purposes": [
+        "الاستشارات وإصدار العروض الفنية وإعداد عروض الأسعار للبرامج المخصصة وتخطيط موارد المؤسسات وتوظيف تكنولوجيا المعلومات وأنظمة الروائح.",
+        "صياغة وإبرام وتنفيذ العقود التجارية بين CreditBird والعملاء.",
+        "الوفاء بالتزامات ضمان الأجهزة (12 - 24 شهرًا)، وإمدادات الزيت المنتظمة، وصيانة اتفاقية مستوى الخدمة (SLA) للبرامج.",
+        "إصدار فواتير ضريبة القيمة المضافة القانونية الإلكترونية المتوافقة مع لوائح الإدارة العامة للضرائب.",
+        "تسليم إشعارات تصحيح البرامج ونشرات الأمن السيبراني والنصائح التشغيلية للنظام."
+      ]
+    },
+    "sec3": {
+      "title": "3. أنواع البيانات التي تم جمعها",
+      "directTitle": "3.1. البيانات المقدمة بشكل نشط من قبل العملاء:",
+      "directItems": [
+        "الأسماء الكاملة لجهات الاتصال وممثلي الشركات القانونيين.",
+        "عناوين البريد الإلكتروني للأعمال وأرقام الهواتف المباشرة.",
+        "أسماء كيانات الشركة وأرقام التعريف الضريبي للمؤسسة وعناوين المقر الرئيسي.",
+        "مواقع مسح المرافق، أو إحداثيات تثبيت الأجهزة، أو مواقع النشر السحابية."
+      ],
+      "autoTitle": "3.2. القياس الفني عن بعد المسجل تلقائيًا:",
+      "autoItems": [
+        "عناوين IP وخصائص جهاز العميل ووكلاء مستخدم المتصفح وسجلات الوصول إلى الاتصال.",
+        "يتم استخدام سجلات تدقيق النظام لكشف التسلل ومنع الاحتيال."
+      ]
+    },
+    "sec4": {
+      "title": "4. ضمانات الأمن والحماية الفنية",
+      "intro": "يفرض CreditBird بروتوكولات فنية وتنظيمية صارمة لمنع الوصول غير المصرح به إلى البيانات أو تسربها أو فقدانها:",
+      "cards": {
+        "encryptionTitle": "تشفير النقل والتخزين",
+        "encryptionDesc": "تشفير TLS 1.3 عبر جميع الشبكات العامة؛ معايير التشفير AES-256 للبيانات غير النشطة.",
+        "rbacTitle": "التحكم في الوصول المستند إلى الدور (RBAC)",
+        "rbacDesc": "يقتصر الوصول الأقل امتيازًا حصريًا على المهندسين المكلفين بعقود المشاريع النشطة."
+      },
+      "noSellCommitment": "نحن نتعهد بشدة بعدم بيع أو استثمار أو تأجير بيانات العملاء الشخصية أو بيانات الشركة إلى أي طرف ثالث خارجي لتحقيق مكاسب تجارية أو إعلانية."
+    },
+    "sec5": {
+      "title": "5. الاحتفاظ بالبيانات والبيانات الجغرافية للموقع السيادي",
+      "p1": "تتم استضافة بيانات العملاء في مراكز بيانات سيادية محلية من المستوى III في فيتنام (Viettel IDC، ومركز بيانات VNPT، وFPT Telecom)، مما يضمن الامتثال لتفويضات إقامة البيانات الداخلية بموجب قانون الأمن السيبراني الفيتنامي.",
+      "p2": "يتم الاحتفاظ بالسجلات طوال مدة الاتفاقية التجارية ويتم أرشفتها وفقًا لقوانين الضرائب والمحاسبة الفيتنامية قبل الخضوع للحذف المشفر الآمن."
+    },
+    "sec6": {
+      "title": "6. حقوق وضوابط صاحب البيانات",
+      "intro": "بموجب المرسوم رقم 13/2023/ND-CP، يمتلك أصحاب البيانات الحقوق القانونية الكاملة:",
+      "rights": [
+        "الحق في الحصول على معلومات بشأن عمليات معالجة البيانات الشخصية.",
+        "الحق في إعطاء الموافقة أو حجب الموافقة أو سحب التفويض المسبق.",
+        "الحق في الوصول إلى السجلات غير الدقيقة ومراجعتها وطلب تصحيحها.",
+        "الحق في طلب حذف المعلومات الشخصية بمجرد انتهاء أهداف المعالجة.",
+        "الحق في تقديم شكاوى رسمية بشأن انتهاكات البيانات التنظيمية."
+      ]
+    },
+    "sec7": {
+      "title": "7. جهة الاتصال بمسؤول حماية البيانات (DPO).",
+      "intro": "لممارسة حقوق أصحاب البيانات أو الإبلاغ عن مخاوف تتعلق بالأمن السيبراني، يرجى الاتصال بمكتب حماية البيانات لدينا:",
+      "contact": {
+        "controllerLabel": "مراقب البيانات",
+        "controllerVal": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD",
+        "taxLabel": "التعريف الضريبي",
+        "taxVal": "0315397327",
+        "addrLabel": "المقر الرئيسي",
+        "addrVal": "100/20 شارع 79، فوك لونج وارد، مدينة هوشي منه، فيتنام",
+        "hotlineLabel": "الخط الساخن DPO",
+        "hotlineVal": "0932.640.968",
+        "emailLabel": "بريد إلكتروني مخصص للخصوصية",
+        "emailVal": "contact@creditbirdtech.com"
+      }
+    }
   }
 };
 

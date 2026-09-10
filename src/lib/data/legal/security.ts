@@ -1221,6 +1221,672 @@ export const securityContent: Record<SupportedLocale, SecurityContent> = {
         "slaVal": "24 कार्य घंटों के भीतर"
       }
     }
+  },
+  "de": {
+    "sec1": {
+      "title": "1. ISO/IEC 27001 Informationssicherheits-Framework",
+      "p1": "CreditBird richtet ein Informationssicherheits-Managementsystem (ISMS) ein und unterhält es, das sich strikt an den <strong>ISO/IEC 27001</strong>-Standards und dem <strong>Cybersicherheitsgesetz Vietnams</strong> orientiert.",
+      "p2": "Der gesamte Bereitstellungslebenszyklus – von der Talentüberprüfung, Anforderungsaufnahme, Infrastrukturkonfiguration bis hin zur Übergabe des Quellcodes – setzt drei zentrale Sicherheitssäulen durch:",
+      "pillars": {
+        "confidentiality": {
+          "title": "VERTRAULICHKEIT",
+          "subtitle": "Zugangskontrolle",
+          "desc": "Die Information ist ausschließlich autorisiertem Personal vorbehalten."
+        },
+        "integrity": {
+          "title": "INTEGRITÄT",
+          "subtitle": "Manipulationssicher",
+          "desc": "ERP-Buchhaltungsbücher und Code-Repositories sind manipulationssicher."
+        },
+        "availability": {
+          "title": "VERFÜGBARKEIT",
+          "subtitle": "99,9 % Betriebszeit",
+          "desc": "Geschäftskritische Dienste werden durch SLA-Vertragsbedingungen garantiert."
+        }
+      }
+    },
+    "sec2": {
+      "title": "2. Quellcodesicherheit und DevSecOps-Pipeline",
+      "desc": "Für kundenspezifische Softwareentwicklung und maßgeschneiderte ERP-Implementierungen erzwingt CreditBird einen strengen Secure Software Development Lifecycle (SSDLC):",
+      "items": [
+        {
+          "label": "Isolierte Code-Repository-Architektur",
+          "text": "Jedem Kundenprojekt wird ein isoliertes Repository mit Branch-Schutzregeln zugewiesen, für das vor der Zusammenführung mindestens zwei Genehmigungen des Senior Tech Lead erforderlich sind."
+        },
+        {
+          "label": "Automatisierte Sicherheitsüberprüfung",
+          "text": "Integrierter statischer Anwendungssicherheitstest (SAST) zur Erkennung der zehn häufigsten OWASP-Schwachstellen und Softwarezusammensetzungsanalyse (SCA) zur Vorbeugung von Open-Source-Zero-Day-Schwachstellen."
+        },
+        {
+          "label": "Geheime Leckageprävention",
+          "text": "Automatisierte Pre-Commit-Hooks und CI-Pipelines verhindern das versehentliche Einchecken von API-Schlüsseln, Anmeldeinformationen oder geheimen Token."
+        },
+        {
+          "label": "100 % saubere Codeübergabe",
+          "text": "Lieferung des Quellcodes begleitet von Verifizierungsberichten, um sicherzustellen, dass es keine hohen/kritischen Schwachstellen gibt."
+        }
+      ]
+    },
+    "sec3": {
+      "title": "3. ERP-Datensicherheit und Notfallwiederherstellung (DRP)",
+      "desc": "Unternehmens-ERP-Aufzeichnungen (Verkaufstransaktionen, Lagerbuchhaltung, VAS-Buchhaltung und Personalabrechnung) stellen geschäftskritische Unternehmenswerte dar. Zu den Schutzprotokollen gehören:",
+      "items": [
+        {
+          "label": "Automatisierte tägliche Backups",
+          "text": "Geplante Snapshots außerhalb der Spitzenzeiten, die Point-In-Time Recovery (PITR) unterstützen, um das Risiko von Datenverlusten zu minimieren."
+        },
+        {
+          "label": "3-2-1 Backup-Strategie für Unternehmen",
+          "text": "Mindestens 3 Kopien in 2 unabhängigen Medienformaten, mit 1 externen, unveränderlichen Archiv, das in einem sekundären Tier-III-Rechenzentrum gehostet wird."
+        },
+        {
+          "label": "Ende-zu-Ende-Verschlüsselung",
+          "text": "Alle Datenbanksicherungen werden mit AES-256 stark verschlüsselt, bevor sie in einen sicheren, souveränen Cloud-Speicher hochgeladen werden."
+        },
+        {
+          "label": "Unveränderlicher Prüfpfad",
+          "text": "Jede Änderung des Hauptbuchbelegs, jede Bestandstransaktion und jede Änderung der Zugriffsberechtigung wird in einmal beschreibbaren Prüfprotokollen aufgezeichnet."
+        }
+      ]
+    },
+    "sec4": {
+      "title": "4. Sicherheitsstandards für die IT-Besetzung vor Ort/Remote",
+      "desc": "Um den absoluten Schutz des geistigen Eigentums und der Geschäftsgeheimnisse des Kunden bei IT-Outsourcing-Verträgen zu gewährleisten:",
+      "items": [
+        {
+          "label": "Individuelle Geheimhaltungsvereinbarungen (individuelle NDA)",
+          "text": "100 % der eingesetzten Software-Ingenieure erfüllen vor der Projekteinführung rechtsverbindliche persönliche Vertraulichkeitsvereinbarungen."
+        },
+        {
+          "label": "Standardisierte sichere Workstations",
+          "text": "Ingenieure arbeiten ausschließlich auf vom Kunden bereitgestellten Terminals oder auf CreditBird-Unternehmenshardware, die mit BitLocker/FileVault-Vollfestplattenverschlüsselung und MDM-Kontrollen ausgestattet ist."
+        },
+        {
+          "label": "Keine lokale, nicht autorisierte Speicherung",
+          "text": "Ingenieuren ist es strengstens untersagt, Client-Repositorys oder Kundendatenbanken auf persönliche Hardware oder nicht genehmigte USB-Medien zu kopieren."
+        }
+      ]
+    },
+    "sec5": {
+      "title": "5. Intelligente kommerzielle Diffusoren und HVAC-Sicherheit",
+      "desc": "Kommerzielle Duftdiffusoren mit WiFi-Konnektivität und Orchestrierung mobiler Apps werden mit gehärteten IoT-Protokollen entwickelt:",
+      "items": [
+        "Verschlüsselte TLS/MQTT-Kommunikationskanäle, unterstützt durch gegenseitige Serverauthentifizierung.",
+        "Netzwerkisolierung, die Diffusoren auf dedizierte IoT-VLANs von internen Unternehmensnetzwerken trennt.",
+        "Digital signierte Firmware-Updates von CreditBird, um unbefugte Manipulationen oder Entführungen der Firmware zu verhindern."
+      ]
+    },
+    "sec6": {
+      "title": "6. Meldung von Sicherheitslücken und Umgang mit Vorfällen",
+      "desc": "CreditBird begrüßt verantwortungsbewusste Offenlegungen von Sicherheitslücken durch Sicherheitsforscher und die globale Entwicklergemeinschaft. Um potenzielle Sicherheitsprobleme zu melden, wenden Sie sich bitte an:",
+      "contact": {
+        "deptLabel": "Informationssicherheitsteam",
+        "deptVal": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD (CreditBird Technology Co., Ltd.)",
+        "taxLabel": "Steuer-ID",
+        "taxVal": "0315397327",
+        "hotlineLabel": "Notfall-Hotline",
+        "hotlineVal": "0932.640.968",
+        "emailLabel": "Sicherheitsanfragen",
+        "emailVal": "contact@creditbirdtech.com",
+        "slaLabel": "SLA für die Erstreaktion",
+        "slaVal": "Innerhalb von 24 Geschäftsstunden"
+      }
+    }
+  },
+  "it": {
+    "sec1": {
+      "title": "1. Quadro di sicurezza delle informazioni ISO/IEC 27001",
+      "p1": "CreditBird stabilisce e mantiene un sistema di gestione della sicurezza delle informazioni (ISMS) rigorosamente in linea con gli standard <strong>ISO/IEC 27001</strong> e con la <strong>legge sulla sicurezza informatica del Vietnam</strong>.",
+      "p2": "L'intero ciclo di vita della distribuzione, dalla verifica dei talenti, all'assunzione dei requisiti, alla configurazione dell'infrastruttura, alla consegna del codice sorgente, applica tre pilastri fondamentali della sicurezza:",
+      "pillars": {
+        "confidentiality": {
+          "title": "RISERVATEZZA",
+          "subtitle": "Controllo degli accessi",
+          "desc": "Le informazioni sono riservate esclusivamente al personale autorizzato."
+        },
+        "integrity": {
+          "title": "INTEGRITÀ",
+          "subtitle": "A prova di manomissione",
+          "desc": "I libri contabili e gli archivi di codici ERP sono a prova di manomissione."
+        },
+        "availability": {
+          "title": "DISPONIBILITÀ",
+          "subtitle": "Tempo di attività del 99,9%.",
+          "desc": "Servizi mission-critical garantiti secondo i termini contrattuali SLA."
+        }
+      }
+    },
+    "sec2": {
+      "title": "2. Sicurezza del codice sorgente e pipeline DevSecOps",
+      "desc": "Per l'ingegneria del software personalizzata e le implementazioni ERP su misura, CreditBird applica un rigoroso ciclo di vita dello sviluppo software sicuro (SSDLC):",
+      "items": [
+        {
+          "label": "Architettura del repository di codice isolato",
+          "text": "A ogni progetto cliente viene assegnato un repository isolato con regole di protezione delle filiali, che richiedono almeno 2 approvazioni di Senior Tech Lead prima della fusione."
+        },
+        {
+          "label": "Scansione di sicurezza automatizzata",
+          "text": "Testing statico integrato di sicurezza delle applicazioni (SAST) che rileva le 10 principali vulnerabilità OWASP e analisi della composizione software (SCA) per prevenire le vulnerabilità zero-day open source."
+        },
+        {
+          "label": "Prevenzione delle perdite segrete",
+          "text": "Hook pre-commit automatizzati e pipeline CI che bloccano i check-in accidentali di chiavi API, credenziali o token segreti."
+        },
+        {
+          "label": "Consegna del codice pulita al 100%.",
+          "text": "Consegna del codice sorgente accompagnata da rapporti di verifica che garantiscono zero vulnerabilità elevate/critiche."
+        }
+      ]
+    },
+    "sec3": {
+      "title": "3. Sicurezza dei dati ERP e ripristino di emergenza (DRP)",
+      "desc": "I record ERP aziendali (transazioni di vendita, registro dell'inventario, contabilità VAS e buste paga delle risorse umane) costituiscono risorse aziendali mission-critical. I protocolli di protezione includono:",
+      "items": [
+        {
+          "label": "Backup giornalieri automatizzati",
+          "text": "Snapshot pianificati non di punta che supportano il ripristino point-in-time (PITR) per ridurre al minimo il rischio di perdita di dati."
+        },
+        {
+          "label": "Strategia di backup aziendale 3-2-1",
+          "text": "Almeno 3 copie in 2 formati multimediali indipendenti, con 1 archivio immutabile fuori sede ospitato in un data center secondario di livello III."
+        },
+        {
+          "label": "Crittografia end-to-end",
+          "text": "Tutti i backup del database sono fortemente crittografati utilizzando AES-256 prima del caricamento per proteggere l'archiviazione cloud sovrana."
+        },
+        {
+          "label": "Traccia di controllo immutabile",
+          "text": "Ogni modifica del voucher del registro, transazione di inventario e modifica delle autorizzazioni di accesso viene registrata in registri di controllo riscrivibili."
+        }
+      ]
+    },
+    "sec4": {
+      "title": "4. Standard di sicurezza per il personale IT in sede/remoto",
+      "desc": "Per garantire l’assoluta protezione della proprietà intellettuale e dei segreti commerciali del cliente durante i contratti di outsourcing IT:",
+      "items": [
+        {
+          "label": "Accordi individuali di non divulgazione (NDA individuale)",
+          "text": "Il 100% degli ingegneri software impiegati sottoscrive accordi di riservatezza personale legalmente vincolanti prima dell'onboarding del progetto."
+        },
+        {
+          "label": "Workstation sicure standardizzate",
+          "text": "Gli ingegneri operano esclusivamente su terminali forniti dal client o su hardware aziendale CreditBird dotato di crittografia dell'intero disco BitLocker/FileVault e controlli MDM."
+        },
+        {
+          "label": "Zero archiviazione locale non autorizzata",
+          "text": "Agli ingegneri è severamente vietato copiare archivi o database dei clienti su hardware personale o supporti USB non approvati."
+        }
+      ]
+    },
+    "sec5": {
+      "title": "5. Diffusori commerciali intelligenti e sicurezza HVAC",
+      "desc": "I diffusori di fragranze commerciali dotati di connettività WiFi e orchestrazione di app mobili sono progettati con protocolli IoT rafforzati:",
+      "items": [
+        "Canali di comunicazione TLS/MQTT crittografati supportati dall'autenticazione reciproca del server.",
+        "Isolamento della rete che separa i diffusori su VLAN IoT dedicate lontano dalle reti aziendali interne.",
+        "Aggiornamenti firmware firmati digitalmente da CreditBird per impedire manomissioni o dirottamenti non autorizzati del firmware."
+      ]
+    },
+    "sec6": {
+      "title": "6. Segnalazione di vulnerabilità della sicurezza e gestione degli incidenti",
+      "desc": "CreditBird accoglie con favore le divulgazioni responsabili delle vulnerabilità da parte dei ricercatori di sicurezza e della comunità globale degli sviluppatori. Per segnalare potenziali problemi di sicurezza, contattare:",
+      "contact": {
+        "deptLabel": "Squadra per la sicurezza delle informazioni",
+        "deptVal": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD (CreditBird Technology Co., Ltd.)",
+        "taxLabel": "Codice fiscale",
+        "taxVal": "0315397327",
+        "hotlineLabel": "Numero verde di emergenza",
+        "hotlineVal": "0932.640.968",
+        "emailLabel": "Richieste di sicurezza",
+        "emailVal": "contact@creditbirdtech.com",
+        "slaLabel": "SLA di risposta iniziale",
+        "slaVal": "Entro 24 ore lavorative"
+      }
+    }
+  },
+  "pt": {
+    "sec1": {
+      "title": "1. Estrutura de Segurança da Informação ISO/IEC 27001",
+      "p1": "CreditBird estabelece e mantém um Sistema de Gestão de Segurança da Informação (SGSI) estritamente alinhado com os padrões <strong>ISO/IEC 27001</strong> e com a <strong>Lei de Segurança Cibernética do Vietnã</strong>.",
+      "p2": "Todo o ciclo de vida da entrega – desde a verificação de talentos, o recebimento de requisitos, a configuração da infraestrutura até a transferência do código-fonte – impõe três pilares principais de segurança:",
+      "pillars": {
+        "confidentiality": {
+          "title": "CONFIDENCIALIDADE",
+          "subtitle": "Controle de acesso",
+          "desc": "As informações são restritas apenas ao pessoal autorizado."
+        },
+        "integrity": {
+          "title": "INTEGRIDADE",
+          "subtitle": "À prova de adulteração",
+          "desc": "Os livros de contabilidade e repositórios de códigos do ERP são invioláveis."
+        },
+        "availability": {
+          "title": "DISPONIBILIDADE",
+          "subtitle": "99,9% de tempo de atividade",
+          "desc": "Serviços de missão crítica garantidos pelos termos contratuais do SLA."
+        }
+      }
+    },
+    "sec2": {
+      "title": "2. Segurança do código-fonte e pipeline DevSecOps",
+      "desc": "Para engenharia de software personalizada e implementações de ERP sob medida, a CreditBird impõe um rigoroso Ciclo de Vida de Desenvolvimento de Software Seguro (SSDLC):",
+      "items": [
+        {
+          "label": "Arquitetura de repositório de código isolado",
+          "text": "Cada projeto do cliente recebe um repositório isolado com regras de proteção de ramificação, exigindo pelo menos 2 aprovações de líder técnico sênior antes da fusão."
+        },
+        {
+          "label": "Verificação de segurança automatizada",
+          "text": "Testes integrados de segurança de aplicativos estáticos (SAST), detectando as 10 principais vulnerabilidades do OWASP e análise de composição de software (SCA) para prevenir vulnerabilidades de dia zero de código aberto."
+        },
+        {
+          "label": "Prevenção de vazamento secreto",
+          "text": "Ganchos de pré-confirmação automatizados e pipelines de CI que bloqueiam check-ins acidentais de chaves de API, credenciais ou tokens secretos."
+        },
+        {
+          "label": "Transferência de código 100% limpo",
+          "text": "Entrega de código-fonte acompanhada de relatórios de verificação garantindo zero vulnerabilidades altas/críticas."
+        }
+      ]
+    },
+    "sec3": {
+      "title": "3. Segurança de dados e recuperação de desastres ERP (DRP)",
+      "desc": "Os registros do ERP empresarial (transações de vendas, livro-razão de estoque, contabilidade VAS e folha de pagamento de RH) constituem ativos corporativos de missão crítica. Os protocolos de proteção incluem:",
+      "items": [
+        {
+          "label": "Backups diários automatizados",
+          "text": "Snapshots programados fora de pico com suporte para recuperação pontual (PITR) para minimizar o risco de perda de dados."
+        },
+        {
+          "label": "Estratégia de backup empresarial 3-2-1",
+          "text": "Pelo menos 3 cópias em 2 formatos de mídia independentes, com 1 arquivo imutável externo hospedado em um data center secundário de Nível III."
+        },
+        {
+          "label": "Criptografia ponta a ponta",
+          "text": "Todos os backups de banco de dados são fortemente criptografados usando AES-256 antes do upload para armazenamento seguro em nuvem soberana."
+        },
+        {
+          "label": "Trilha de auditoria imutável",
+          "text": "Cada alteração de comprovante contábil, transação de estoque e alteração de permissão de acesso é registrada em registros de auditoria de gravação única."
+        }
+      ]
+    },
+    "sec4": {
+      "title": "4. Padrões de segurança para equipe de TI local/remota",
+      "desc": "Garantir a proteção absoluta da propriedade intelectual e dos segredos comerciais dos clientes durante os contratos de terceirização de TI:",
+      "items": [
+        {
+          "label": "Acordos Individuais de Não Divulgação (NDA Individual)",
+          "text": "100% dos engenheiros de software implantados executam acordos de confidencialidade pessoal juridicamente vinculativos antes da integração do projeto."
+        },
+        {
+          "label": "Estações de trabalho seguras padronizadas",
+          "text": "Os engenheiros operam exclusivamente em terminais fornecidos pelo cliente ou em hardware corporativo CreditBird equipado com criptografia de disco completo BitLocker/FileVault e controles MDM."
+        },
+        {
+          "label": "Zero armazenamento local não autorizado",
+          "text": "Os engenheiros estão estritamente proibidos de copiar repositórios ou bancos de dados de clientes para hardware pessoal ou mídia USB não aprovada."
+        }
+      ]
+    },
+    "sec5": {
+      "title": "5. Difusores comerciais inteligentes e segurança HVAC",
+      "desc": "Difusores de aromas comerciais com conectividade WiFi e orquestração de aplicativos móveis são projetados com protocolos IoT reforçados:",
+      "items": [
+        "Canais de comunicação TLS/MQTT criptografados apoiados por autenticação mútua de servidor.",
+        "Isolamento de rede segregando difusores em VLANs IoT dedicadas, longe das redes corporativas internas.",
+        "Atualizações de firmware assinadas digitalmente da CreditBird para evitar adulteração ou sequestro não autorizado de firmware."
+      ]
+    },
+    "sec6": {
+      "title": "6. Relatórios de vulnerabilidades de segurança e tratamento de incidentes",
+      "desc": "CreditBird aceita divulgações responsáveis de vulnerabilidades por parte de pesquisadores de segurança e da comunidade global de desenvolvedores. Para relatar possíveis problemas de segurança, entre em contato com:",
+      "contact": {
+        "deptLabel": "Equipe de Segurança da Informação",
+        "deptVal": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD (CreditBird Technology Co., Ltd.)",
+        "taxLabel": "ID fiscal",
+        "taxVal": "0315397327",
+        "hotlineLabel": "Linha Direta de Emergência",
+        "hotlineVal": "0932.640.968",
+        "emailLabel": "Consultas de segurança",
+        "emailVal": "contact@creditbirdtech.com",
+        "slaLabel": "SLA de resposta inicial",
+        "slaVal": "Dentro de 24 horas úteis"
+      }
+    }
+  },
+  "nl": {
+    "sec1": {
+      "title": "1. ISO/IEC 27001 Kader voor informatiebeveiliging",
+      "p1": "CreditBird zet een Information Security Management System (ISMS) op en onderhoudt dit, strikt in lijn met de <strong>ISO/IEC 27001</strong> standaarden en de <strong>Cybersecuritywet van Vietnam</strong>.",
+      "p2": "De gehele levenscyclus van de levering – van het doorlichten van talent, de intake van vereisten, de configuratie van de infrastructuur tot de overdracht van de broncode – handhaaft drie belangrijke beveiligingspijlers:",
+      "pillars": {
+        "confidentiality": {
+          "title": "VERTROUWELIJKHEID",
+          "subtitle": "Toegangscontrole",
+          "desc": "Informatie is uitsluitend voorbehouden aan bevoegd personeel."
+        },
+        "integrity": {
+          "title": "INTEGRITEIT",
+          "subtitle": "Fraudebestendig",
+          "desc": "ERP-boekhoudboeken en codeopslagplaatsen zijn fraudebestendig."
+        },
+        "availability": {
+          "title": "BESCHIKBAARHEID",
+          "subtitle": "99,9% uptime",
+          "desc": "Bedrijfskritische services gegarandeerd onder contractuele SLA-voorwaarden."
+        }
+      }
+    },
+    "sec2": {
+      "title": "2. Broncodebeveiliging en DevSecOps-pijplijn",
+      "desc": "Voor software-engineering op maat en ERP-implementaties op maat hanteert CreditBird een strikte Secure Software Development Lifecycle (SSDLC):",
+      "items": [
+        {
+          "label": "Geïsoleerde architectuur voor codeopslag",
+          "text": "Elk klantproject krijgt een geïsoleerde repository toegewezen met branchebeschermingsregels, waarvoor ten minste twee goedkeuringen van de Senior Tech Lead vereist zijn voordat het project kan worden samengevoegd."
+        },
+        {
+          "label": "Geautomatiseerde beveiligingsscans",
+          "text": "Geïntegreerde Static Application Security Testing (SAST) die OWASP Top 10-kwetsbaarheden detecteert en Software Composition Analysis (SCA) om open-source zero-day-kwetsbaarheden te voorkomen."
+        },
+        {
+          "label": "Geheime lekpreventie",
+          "text": "Geautomatiseerde pre-commit hooks en CI-pijplijnen die onbedoelde check-ins van API-sleutels, inloggegevens of geheime tokens blokkeren."
+        },
+        {
+          "label": "100% schone code-overdracht",
+          "text": "Levering van broncode vergezeld van verificatierapporten die geen hoge/kritieke kwetsbaarheden garanderen."
+        }
+      ]
+    },
+    "sec3": {
+      "title": "3. ERP-gegevensbeveiliging en noodherstel (DRP)",
+      "desc": "Enterprise ERP-records (verkooptransacties, inventarisgrootboek, VAS-boekhouding en HR-salaris) vormen bedrijfskritische bedrijfsmiddelen. Beveiligingsprotocollen omvatten:",
+      "items": [
+        {
+          "label": "Geautomatiseerde dagelijkse back-ups",
+          "text": "Geplande niet-piekmomentopnamen die Point-In-Time Recovery (PITR) ondersteunen om het risico op gegevensverlies te minimaliseren."
+        },
+        {
+          "label": "3-2-1 Enterprise-back-upstrategie",
+          "text": "Minimaal 3 kopieën in 2 onafhankelijke mediaformaten, met 1 onveranderlijk archief op een externe locatie, gehost in een secundair Tier III-datacenter."
+        },
+        {
+          "label": "End-to-end-codering",
+          "text": "Alle databaseback-ups worden sterk gecodeerd met AES-256 voordat ze worden geüpload naar beveiligde soevereine cloudopslag."
+        },
+        {
+          "label": "Onveranderlijke audittrail",
+          "text": "Elke grootboekvoucherwijziging, voorraadtransactie en wijziging van toegangsrechten wordt vastgelegd in auditlogboeken die eenmalig kunnen worden geschreven."
+        }
+      ]
+    },
+    "sec4": {
+      "title": "4. Beveiligingsnormen voor IT-personeel op locatie/op afstand",
+      "desc": "Om absolute bescherming van de intellectuele eigendommen en commerciële geheimen van klanten te garanderen tijdens IT-outsourcingcontracten:",
+      "items": [
+        {
+          "label": "Individuele geheimhoudingsovereenkomsten (individuele geheimhoudingsverklaring)",
+          "text": "100% van de ingezette software-ingenieurs voert juridisch bindende persoonlijke vertrouwelijkheidsconvenanten uit voorafgaand aan de onboarding van projecten."
+        },
+        {
+          "label": "Gestandaardiseerde veilige werkstations",
+          "text": "Technici werken uitsluitend op door de klant geleverde terminals of op CreditBird-bedrijfshardware die is uitgerust met BitLocker/FileVault-codering op volledige schijf en MDM-besturingselementen."
+        },
+        {
+          "label": "Geen lokale ongeautoriseerde opslag",
+          "text": "Het is technici ten strengste verboden clientrepository's of klantendatabases te kopiëren naar persoonlijke hardware of niet-goedgekeurde USB-media."
+        }
+      ]
+    },
+    "sec5": {
+      "title": "5. Slimme commerciële diffusers en HVAC-beveiliging",
+      "desc": "Commerciële geurverspreiders met WiFi-connectiviteit en mobiele app-orkestratie zijn ontworpen met geharde IoT-protocollen:",
+      "items": [
+        "Gecodeerde TLS/MQTT-communicatiekanalen ondersteund door wederzijdse serverauthenticatie.",
+        "Netwerkisolatie waarbij diffusers worden gescheiden op speciale IoT VLAN's, weg van interne bedrijfsnetwerken.",
+        "Digitaal ondertekende firmware-updates van CreditBird om ongeautoriseerde manipulatie of kaping van de firmware te voorkomen."
+      ]
+    },
+    "sec6": {
+      "title": "6. Rapportage van beveiligingskwetsbaarheden en afhandeling van incidenten",
+      "desc": "CreditBird verwelkomt verantwoorde openbaarmakingen van kwetsbaarheden door beveiligingsonderzoekers en de wereldwijde ontwikkelaarsgemeenschap. Als u potentiële beveiligingsproblemen wilt melden, kunt u contact opnemen met:",
+      "contact": {
+        "deptLabel": "Informatiebeveiligingsteam",
+        "deptVal": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD (CreditBird Technology Co., Ltd.)",
+        "taxLabel": "Belastingnummer",
+        "taxVal": "0315397327",
+        "hotlineLabel": "Noodlijn",
+        "hotlineVal": "0932.640.968",
+        "emailLabel": "Beveiligingsvragen",
+        "emailVal": "contact@creditbirdtech.com",
+        "slaLabel": "SLA voor eerste reactie",
+        "slaVal": "Binnen 24 kantooruren"
+      }
+    }
+  },
+  "id": {
+    "sec1": {
+      "title": "1. Kerangka Keamanan Informasi ISO/IEC 27001",
+      "p1": "CreditBird menetapkan dan memelihara Sistem Manajemen Keamanan Informasi (ISMS) yang selaras dengan standar <strong>ISO/IEC 27001</strong> dan <strong>Hukum Keamanan Siber Vietnam</strong>.",
+      "p2": "Seluruh siklus pengiriman—mulai dari pemeriksaan bakat, penerimaan kebutuhan, konfigurasi infrastruktur, hingga serah terima kode sumber—menerapkan tiga pilar keamanan inti:",
+      "pillars": {
+        "confidentiality": {
+          "title": "KERAHASIAAN",
+          "subtitle": "Kontrol Akses",
+          "desc": "Informasi dibatasi hanya untuk personel yang berwenang."
+        },
+        "integrity": {
+          "title": "INTEGRITAS",
+          "subtitle": "Bukti Tamper",
+          "desc": "Buku akuntansi ERP dan repositori kode tidak mudah rusak."
+        },
+        "availability": {
+          "title": "KETERSEDIAAN",
+          "subtitle": "99,9% Waktu Aktif",
+          "desc": "Layanan penting yang dijamin berdasarkan ketentuan kontrak SLA."
+        }
+      }
+    },
+    "sec2": {
+      "title": "2. Keamanan Kode Sumber & Saluran DevSecOps",
+      "desc": "Untuk rekayasa perangkat lunak khusus dan implementasi ERP yang dipesan lebih dahulu, CreditBird menerapkan Siklus Hidup Pengembangan Perangkat Lunak Aman (SSDLC) yang ketat:",
+      "items": [
+        {
+          "label": "Arsitektur Repositori Kode Terisolasi",
+          "text": "Setiap proyek klien dialokasikan repositori terisolasi dengan aturan perlindungan cabang, yang memerlukan setidaknya 2 persetujuan Pemimpin Teknologi Senior sebelum penggabungan."
+        },
+        {
+          "label": "Pemindaian Keamanan Otomatis",
+          "text": "Pengujian Keamanan Aplikasi Statis Terintegrasi (SAST) yang mendeteksi 10 kerentanan OWASP Teratas dan Analisis Komposisi Perangkat Lunak (SCA) untuk mencegah kerentanan zero-day sumber terbuka."
+        },
+        {
+          "label": "Pencegahan Kebocoran Rahasia",
+          "text": "Hook pra-komit otomatis dan pipeline CI memblokir check-in kunci API, kredensial, atau token rahasia yang tidak disengaja."
+        },
+        {
+          "label": "Penyerahan Kode Bersih 100%.",
+          "text": "Pengiriman kode sumber disertai dengan laporan verifikasi memastikan tidak ada kerentanan tinggi/kritis."
+        }
+      ]
+    },
+    "sec3": {
+      "title": "3. Keamanan Data ERP & Pemulihan Bencana (DRP)",
+      "desc": "Catatan ERP perusahaan (transaksi penjualan, buku besar inventaris, akuntansi VAS, dan penggajian SDM) merupakan aset perusahaan yang sangat penting. Protokol perlindungan meliputi:",
+      "items": [
+        {
+          "label": "Pencadangan Harian Otomatis",
+          "text": "Snapshot non-puncak terjadwal yang mendukung Pemulihan Point-In-Time (PITR) untuk meminimalkan risiko kehilangan data."
+        },
+        {
+          "label": "3-2-1 Strategi Pencadangan Perusahaan",
+          "text": "Setidaknya 3 salinan dalam 2 format media independen, dengan 1 arsip abadi di luar lokasi yang dihosting di pusat data sekunder Tingkat III."
+        },
+        {
+          "label": "Enkripsi ujung ke ujung",
+          "text": "Semua cadangan basis data dienkripsi dengan kuat menggunakan AES-256 sebelum diunggah untuk mengamankan penyimpanan cloud yang berdaulat."
+        },
+        {
+          "label": "Jejak Audit yang Tidak Dapat Diubah",
+          "text": "Setiap perubahan voucher buku besar, transaksi inventaris, dan perubahan izin akses dicatat dalam log audit sekali tulis."
+        }
+      ]
+    },
+    "sec4": {
+      "title": "4. Standar Keamanan untuk Staf TI di Lokasi/Jarak Jauh",
+      "desc": "Untuk menjamin perlindungan mutlak atas kekayaan intelektual dan rahasia komersial klien selama kontrak alih daya TI:",
+      "items": [
+        {
+          "label": "Perjanjian Kerahasiaan Individu (NDA Individu)",
+          "text": "100% insinyur perangkat lunak yang dikerahkan menjalankan perjanjian kerahasiaan pribadi yang mengikat secara hukum sebelum proyek dilaksanakan."
+        },
+        {
+          "label": "Stasiun Kerja Aman Terstandar",
+          "text": "Insinyur beroperasi secara eksklusif pada terminal yang disediakan klien atau perangkat keras perusahaan CreditBird yang dilengkapi dengan enkripsi disk penuh BitLocker/FileVault dan kontrol MDM."
+        },
+        {
+          "label": "Nol Penyimpanan Lokal Tidak Sah",
+          "text": "Insinyur dilarang keras menyalin repositori klien atau database pelanggan ke perangkat keras pribadi atau media USB yang tidak disetujui."
+        }
+      ]
+    },
+    "sec5": {
+      "title": "5. Diffuser Komersial Cerdas & Keamanan HVAC",
+      "desc": "Penyebar aroma komersial yang dilengkapi konektivitas WiFi dan orkestrasi aplikasi seluler dirancang dengan protokol IoT yang diperkuat:",
+      "items": [
+        "Saluran komunikasi TLS/MQTT terenkripsi yang didukung oleh otentikasi server bersama.",
+        "Isolasi jaringan memisahkan diffuser ke VLAN IoT khusus yang jauh dari jaringan internal perusahaan.",
+        "Pembaruan firmware yang ditandatangani secara digital dari CreditBird untuk mencegah gangguan atau pembajakan firmware yang tidak sah."
+      ]
+    },
+    "sec6": {
+      "title": "6. Pelaporan Kerentanan Keamanan & Penanganan Insiden",
+      "desc": "CreditBird menyambut baik pengungkapan kerentanan yang bertanggung jawab dari peneliti keamanan dan komunitas pengembang global. Untuk melaporkan potensi masalah keamanan, silakan hubungi:",
+      "contact": {
+        "deptLabel": "Tim Keamanan Informasi",
+        "deptVal": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD (CreditBird Technology Co., Ltd.)",
+        "taxLabel": "Nomor Pajak",
+        "taxVal": "0315397327",
+        "hotlineLabel": "Saluran Siaga Darurat",
+        "hotlineVal": "0932.640.968",
+        "emailLabel": "Pertanyaan Keamanan",
+        "emailVal": "contact@creditbirdtech.com",
+        "slaLabel": "SLA Respon Awal",
+        "slaVal": "Dalam waktu 24 jam kerja"
+      }
+    }
+  },
+  "ar": {
+    "sec1": {
+      "title": "1. إطار عمل أمن المعلومات ISO/IEC 27001",
+      "p1": "تقوم CreditBird بإنشاء نظام إدارة أمن المعلومات (ISMS) والحفاظ عليه بشكل يتوافق تمامًا مع معايير <strong>ISO/IEC 27001</strong> و<strong>قانون الأمن السيبراني في فيتنام</strong>.",
+      "p2": "إن دورة حياة التسليم بأكملها - بدءًا من فحص المواهب، واستيعاب المتطلبات، وتكوين البنية التحتية، وحتى تسليم التعليمات البرمجية المصدر - تفرض ثلاث ركائز أمنية أساسية:",
+      "pillars": {
+        "confidentiality": {
+          "title": "السرية",
+          "subtitle": "التحكم في الوصول",
+          "desc": "تقتصر المعلومات فقط على الموظفين المصرح لهم."
+        },
+        "integrity": {
+          "title": "نزاهة",
+          "subtitle": "دليل على العبث",
+          "desc": "تعتبر دفاتر المحاسبة ومستودعات الأكواد الخاصة بنظام تخطيط موارد المؤسسات (ERP) واضحة للتلاعب."
+        },
+        "availability": {
+          "title": "التوفر",
+          "subtitle": "وقت تشغيل بنسبة 99.9%",
+          "desc": "خدمات المهام الحرجة مضمونة بموجب الشروط التعاقدية لاتفاقية مستوى الخدمة."
+        }
+      }
+    },
+    "sec2": {
+      "title": "2. أمان كود المصدر وخط أنابيب DevSecOps",
+      "desc": "بالنسبة لهندسة البرمجيات المخصصة وتطبيقات تخطيط موارد المؤسسات (ERP) المخصصة، يفرض CreditBird دورة حياة صارمة لتطوير البرمجيات الآمنة (SSDLC):",
+      "items": [
+        {
+          "label": "بنية مستودع التعليمات البرمجية المعزولة",
+          "text": "يتم تخصيص مستودع معزول لكل مشروع عميل مع قواعد حماية الفرع، الأمر الذي يتطلب موافقتين على الأقل من كبار المسؤولين الفنيين قبل الدمج."
+        },
+        {
+          "label": "المسح الأمني ​​الآلي",
+          "text": "يكشف اختبار أمان التطبيقات الثابتة المتكامل (SAST) عن أهم 10 نقاط ضعف في OWASP وتحليل تكوين البرامج (SCA) لاستباق ثغرات يوم الصفر مفتوحة المصدر."
+        },
+        {
+          "label": "منع التسرب السري",
+          "text": "تعمل خطافات الالتزام المسبق الآلية وخطوط أنابيب CI على حظر تسجيلات الوصول غير المقصودة لمفاتيح API أو بيانات الاعتماد أو الرموز المميزة السرية."
+        },
+        {
+          "label": "تسليم الكود النظيف بنسبة 100%",
+          "text": "تسليم كود المصدر مصحوبًا بتقارير التحقق مما يضمن عدم وجود ثغرات أمنية عالية/حرجة."
+        }
+      ]
+    },
+    "sec3": {
+      "title": "3. نظام تخطيط موارد المؤسسات (ERP) لأمن البيانات والتعافي من الكوارث (DRP)",
+      "desc": "تشكل سجلات تخطيط موارد المؤسسات (ERP) (معاملات المبيعات، ودفتر أستاذ المخزون، ومحاسبة خدمات القيمة المضافة، وكشوف مرتبات الموارد البشرية) أصول الشركة ذات المهام الحرجة. تتضمن بروتوكولات الحماية ما يلي:",
+      "items": [
+        {
+          "label": "النسخ الاحتياطي اليومي الآلي",
+          "text": "لقطات مجدولة في غير أوقات الذروة تدعم استرداد النقاط في الوقت المناسب (PITR) لتقليل مخاطر فقدان البيانات."
+        },
+        {
+          "label": "3-2-1 استراتيجية النسخ الاحتياطي للمؤسسات",
+          "text": "ما لا يقل عن 3 نسخ عبر تنسيقي وسائط مستقلين، مع أرشيف واحد غير قابل للتغيير خارج الموقع مستضاف في مركز بيانات ثانوي من المستوى III."
+        },
+        {
+          "label": "التشفير من النهاية إلى النهاية",
+          "text": "يتم تشفير جميع النسخ الاحتياطية لقاعدة البيانات بقوة باستخدام AES-256 قبل التحميل لتأمين التخزين السحابي السيادي."
+        },
+        {
+          "label": "مسار التدقيق غير القابل للتغيير",
+          "text": "يتم تسجيل كل تعديل لإيصال دفتر الأستاذ، ومعاملة المخزون، وتغيير إذن الوصول في سجلات التدقيق التي يتم كتابتها مرة واحدة."
+        }
+      ]
+    },
+    "sec4": {
+      "title": "4. معايير الأمان لموظفي تكنولوجيا المعلومات في الموقع/عن بعد",
+      "desc": "لضمان الحماية المطلقة للملكية الفكرية للعميل والأسرار التجارية خلال عقود الاستعانة بمصادر خارجية لتكنولوجيا المعلومات:",
+      "items": [
+        {
+          "label": "اتفاقيات عدم الإفصاح الفردية (NDA الفردية)",
+          "text": "يقوم 100% من مهندسي البرمجيات المنتشرين بتنفيذ مواثيق السرية الشخصية الملزمة قانونًا قبل بدء المشروع."
+        },
+        {
+          "label": "محطات العمل الآمنة الموحدة",
+          "text": "يعمل المهندسون حصريًا على المحطات الطرفية التي يوفرها العميل أو أجهزة شركة CreditBird المجهزة بتشفير القرص الكامل BitLocker/FileVault وعناصر تحكم MDM."
+        },
+        {
+          "label": "صفر تخزين محلي غير مصرح به",
+          "text": "يُمنع المهندسون منعًا باتًا من نسخ مستودعات العملاء أو قواعد بيانات العملاء إلى الأجهزة الشخصية أو وسائط USB غير المعتمدة."
+        }
+      ]
+    },
+    "sec5": {
+      "title": "5. الناشرون التجاريون الذكيون وأمن أنظمة التدفئة والتهوية وتكييف الهواء",
+      "desc": "تم تصميم أجهزة نشر الروائح التجارية التي تتميز باتصال WiFi وتنسيق تطبيقات الهاتف المحمول باستخدام بروتوكولات إنترنت الأشياء المعززة:",
+      "items": [
+        "قنوات اتصال TLS/MQTT مشفرة مدعومة بمصادقة الخادم المتبادلة.",
+        "يعمل عزل الشبكة على فصل الناشرين على شبكات VLAN المخصصة لإنترنت الأشياء بعيدًا عن شبكات المؤسسة الداخلية.",
+        "تحديثات البرامج الثابتة الموقعة رقميًا من CreditBird لمنع التلاعب بالبرامج الثابتة أو اختطافها بشكل غير مصرح به."
+      ]
+    },
+    "sec6": {
+      "title": "6. الإبلاغ عن الثغرات الأمنية والتعامل مع الحوادث",
+      "desc": "يرحب CreditBird بالإفصاح المسؤول عن الثغرات الأمنية من الباحثين الأمنيين ومجتمع المطورين العالمي. للإبلاغ عن مشكلات أمنية محتملة، يرجى الاتصال بـ:",
+      "contact": {
+        "deptLabel": "فريق أمن المعلومات",
+        "deptVal": "CÔNG TY TNHH CÔNG NGHỆ CREDITBIRD (CreditBird Technology Co., Ltd.)",
+        "taxLabel": "معرف الضريبة",
+        "taxVal": "0315397327",
+        "hotlineLabel": "الخط الساخن للطوارئ",
+        "hotlineVal": "0932.640.968",
+        "emailLabel": "الاستفسارات الأمنية",
+        "emailVal": "contact@creditbirdtech.com",
+        "slaLabel": "الاستجابة الأولية لاتفاقية مستوى الخدمة",
+        "slaVal": "خلال 24 ساعة عمل"
+      }
+    }
   }
 };
 
